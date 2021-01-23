@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tab 1
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 1</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-slides [options]="slideOpts" style="height: 100%;">
+    <ion-slide class="flex-center-x-row" >
+      <div class="contentFlex content"  routerLink="/game">
+              <ion-img src="/assets/shapes.svg"></ion-img> 
+              <p>Prehistoire 1</p>
+     </div>
+    </ion-slide>
+    <ion-slide class="flex-center-x-row" >
+      <div class="contentFlex content"  routerLink="/game">
+              <ion-img src="/assets/shapes.svg"></ion-img> 
+              <p>Prehistoire 1</p>
+     </div>
+    </ion-slide>
+    <ion-slide class="flex-center-x-row" >
+      <div class="contentFlex content"  routerLink="/game">
+              <ion-img src="/assets/shapes.svg"></ion-img> 
+              <p>Prehistoire 1</p>
+     </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

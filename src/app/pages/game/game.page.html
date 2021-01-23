@@ -1,0 +1,47 @@
+<ion-header class="ion-no-border ion-padding-vertical" mode='md'>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <div style="padding: 14px;" routerLink="/tabs/games" routerDirection="back">
+        <ion-icon name="close-outline" size="large"></ion-icon>
+      </div>   
+    </ion-buttons>
+    <ion-text class="ion-text-center">
+      <h3>{{score}}</h3>
+    </ion-text>
+    <ion-buttons slot="end" class="ion-margin-horizontal">
+      <ion-icon name="heart" size="large" [ngClass]="{'life-active': true, 'life-inactive': life === 0}"></ion-icon>
+      <ion-icon name="heart" size="large"[ngClass]="{'life-active': true, 'life-inactive': life <= 1}"></ion-icon>
+      <ion-icon name="heart" size="large" [ngClass]="{'life-active': true, 'life-inactive': life <= 2}"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding-horizontal">
+  <ion-text class="ion-text-center ion-padding-vertical">
+    <h3>{{questions[id].questionText}}</h3>
+  </ion-text>
+
+  <div class="ion-padding-vertical">
+    <ion-button mode="ios" size="large" expand="block" *ngFor="let answer of questions[id].answers; let i = index;" (click)="answerButtonPressed(i)"
+    [ngClass]="{'button-class': true, 'button-class-active': isAnswerButtonPressed[i] === true}"
+    (click)="validateAnswer()"
+    [disabled]="!isAnswerButtonsActive">
+        {{answer.answer}}
+    </ion-button>
+  </div>
+</ion-content>
+
+<ion-footer class="ion-no-border ion-padding" mode='md' transparent>
+  <ion-toolbar transparent>
+    <ion-button (click)="nextQuestion()" mode="ios" size="medium" expand="block"
+    [ngClass]="{'button-check': true, 'button-check-active': solutionDiv === true, 'button-check-false': solutionDiv === false}"
+    *ngIf="CheckButton === false">
+      Next
+    </ion-button>
+  </ion-toolbar>
+
+  <div [ngClass]="{'false-div': solutionDiv === false, 'correct-div': solutionDiv === true }" *ngIf="CheckButton === false">
+    <ion-text class="ion-text-center ion-padding-vertical"><h2 [ngClass]="{'false-title': solutionDiv === false, 'correct-title': solutionDiv === true }">{{ solutionTitle }}</h2></ion-text>
+    <ion-text class="ion-text-center ion-padding-vertical"><p [ngClass]="{'false-text': solutionDiv === false}"> {{ solutionText }}</p></ion-text>
+  </div>
+</ion-footer>
