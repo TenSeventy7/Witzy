@@ -1,8 +1,8 @@
 {
   "name": "Witzy",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "TenSeventy7",
+  "homepage": "https://gma.uphsl.edu.ph/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
