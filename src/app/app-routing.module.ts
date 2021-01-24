@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { CurrentGameDataResolverService } from './resolvers/current-game-data-resolver.service';
+import { GameDataResolverService } from './resolvers/game-data-resolver.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -10,7 +10,7 @@ const routes: Routes = [
   {
     path: 'results/:id',
     resolve: {
-      gameScore: CurrentGameDataResolverService
+      currentGameScore: GameDataResolverService
     },
     loadChildren: './pages/results/results.module#ResultsPageModule'
   },

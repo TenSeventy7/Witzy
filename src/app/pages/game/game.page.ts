@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CurrentGameDataService } from '../../services/current-game-data.service';
+import { GameDataService } from '../../services/game-data.service';
 import { GameServiceService } from 'src/app/services/game-service.service';
 
 @Component({
@@ -30,7 +30,7 @@ export class GamePage implements OnInit {
   CheckButton = true
   disabledButton: boolean
 
-  constructor(private router: Router, private gameServiceService: GameServiceService, private scoreData: CurrentGameDataService) {}
+  constructor(private router: Router, private gameServiceService: GameServiceService, private scoreData: GameDataService) {}
 
   ngOnInit() {
     this.questions = this.gameServiceService.questionsChapter1
@@ -65,8 +65,8 @@ export class GamePage implements OnInit {
       this.id = 0
       this.counter = 9
       this.disabledButton = true
-      this.scoreData.setData('gameScore', this.score);
-      this.router.navigate(['/results', 'gameScore']);
+      this.scoreData.setGameData('currentGameScore', this.score);
+      this.router.navigate(['/results', 'currentGameScore']);
     }
     else {
       this.id++
@@ -77,13 +77,13 @@ export class GamePage implements OnInit {
     }
 
     if (this.life === 0) {
-      this.scoreData.setData('gameScore', this.score);
-      this.router.navigate(['/results', 'gameScore']);
+      this.scoreData.setGameData('currentGameScore', this.score);
+      this.router.navigate(['/results', 'currentGameScore']);
     }
 
     if (this.life === 100) {
-      this.scoreData.setData('gameScore', this.score);
-      this.router.navigate(['/results', 'gameScore']);
+      this.scoreData.setGameData('currentGameScore', this.score);
+      this.router.navigate(['/results', 'currentGameScore']);
     }
 }
 

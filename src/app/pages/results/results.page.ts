@@ -11,10 +11,10 @@ export class ResultsPage implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    if (this.route.snapshot.data['gameScore']) {
-      this.gameResult = this.route.snapshot.data['gameScore'];
+    if (this.route.snapshot.data['currentGameScore']) {
+      this.gameResult = this.route.snapshot.data['currentGameScore'];
+      console.log('Inf: Player score for game is ' + this.route.snapshot.data['currentGameScore']);
     }
-    console.log(this.route.snapshot.data['gameScore']);
   }
 
 }
