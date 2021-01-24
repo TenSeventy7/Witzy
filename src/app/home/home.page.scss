@@ -1,1 +1,30 @@
 
+$splash-background: var(--ion-color-light);
+
+ion-content, ion-footer, ion-toolbar {
+    --background: $splash-background;
+	background: $splash-background;
+    border: none;
+}
+
+.splash-text {
+    padding: 12vh 0;
+    font-size: 24pt;
+}
+
+.play-button {
+    height: 86px;
+    width: 86px;
+    line-height: 86px;
+}
+.play-button-container {
+    padding: 32vh 0;
+}
+
+.footer-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
