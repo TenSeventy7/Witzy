@@ -15,7 +15,8 @@ import { AppComponent } from './app.component';
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot({
-    navAnimation: iosTransitionAnimation
+    navAnimation: iosTransitionAnimation,
+    mode: 'md'
  }), AppRoutingModule],
   providers: [
     StatusBar,
