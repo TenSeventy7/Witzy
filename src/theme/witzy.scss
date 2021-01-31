@@ -1,0 +1,77 @@
+
+$splash-background: var(--ion-color-accent);
+
+ion-content, ion-footer, ion-toolbar, ion-header {
+  --background: $splash-background;
+	background: $splash-background;
+  border: none;
+  color: var(--ion-color-white);
+  padding: 0 6vw;
+}
+
+.witzy-header {
+  padding: 6vh 0;
+}
+
+.witzy-header-title {
+  font-weight: 700;
+  font-size: 20pt;
+  padding-inline: 8px;
+}
+
+.witzy-header-back-button {
+  height: 48px !important;
+  width: 48px;
+}
+
+.witzy-header-back-button:focus { 
+  outline: none !important;
+}
+
+
+
+.witzy-question-card { 
+  border-radius: 18px;
+}
+.witzy-leveldetail-container { 
+  padding: 0;
+}
+.witzy-leveldetail-question {
+  padding-inline-start: 0;
+}
+.witzy-leveldetail-question-icon {
+  font-size: 24px;
+}
+.witzy-leveldetail-question-text {
+  font-size: 18px;
+  margin-top: 2px;
+}
+.witzy-leveldetail-score { 
+  height: 32px;
+  line-height: 26px;
+  font-size: 18px;
+  width: 72px;
+  border-radius: 100px;
+}
+.witzy-leveldetail-stars { 
+  font-size: 24px;
+  padding-inline-end: 0;
+}
+
+
+
+.witzy-hint-card { 
+  margin-top: 1vh;
+  border-radius: 18px;
+  --background: rgba(var(--ion-color-dark-rgb), 0.5);
+  color: white;
+}
+.witzy-hint-container {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+.witzy-hint-question-icon {
+  font-size: 64px;
+  margin-top: 4px;
+}
+
