@@ -1,24 +1,23 @@
 
-$splash-background: var(--ion-color-light);
-
-ion-content, ion-footer, ion-toolbar {
-    --background: $splash-background;
-	background: $splash-background;
-    border: none;
-}
-
 .splash-text {
     padding: 12vh 0;
     font-size: 24pt;
 }
 
 .play-button {
-    height: 86px;
-    width: 86px;
-    line-height: 86px;
+    text-transform: capitalize;
+    font-weight: 700;
+    height: 60px;
 }
+
+.setting-button {
+    text-transform: capitalize;
+    font-weight: 700;
+    width: 180px;
+}
+
 .play-button-container {
-    padding: 32vh 0;
+    padding: 8vh 18vw;
 }
 
 .footer-container {
