@@ -3,7 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { GameDataResolverService } from './resolvers/game-data-resolver.service';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'splash', pathMatch: 'full' },
   { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
   { path: 'results', loadChildren: () => import('./pages/results/results.module').then( m => m.ResultsPageModule)},
   { path: 'game', loadChildren: () => import('./pages/game/game.module').then( m => m.GamePageModule)},
@@ -30,6 +30,10 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule)
+  },
+  {
+    path: 'splash',
+    loadChildren: () => import('./pages/splash/splash.module').then( m => m.SplashPageModule)
   },
 ];
 @NgModule({
