@@ -35,6 +35,14 @@ const routes: Routes = [
     path: 'splash',
     loadChildren: () => import('./pages/splash/splash.module').then( m => m.SplashPageModule)
   },
+  {
+    path: 'categories',
+    loadChildren: () => import('./pages/categories/categories.module').then( m => m.CategoriesPageModule)
+  },
+  {
+    path: 'levels',
+    loadChildren: () => import('./pages/levels/levels.module').then( m => m.LevelsPageModule)
+  },
 ];
 @NgModule({
   imports: [
