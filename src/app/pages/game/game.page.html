@@ -1,47 +1,96 @@
-<ion-header class="ion-no-border ion-padding-vertical" mode='md'>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <div style="padding: 14px;" routerLink="/tabs/games" routerDirection="back">
-        <ion-icon name="close-outline" size="large"></ion-icon>
-      </div>   
-    </ion-buttons>
-    <ion-text class="ion-text-center">
-      <h3>{{score}}</h3>
-    </ion-text>
-    <ion-buttons slot="end" class="ion-margin-horizontal">
-      <ion-icon name="heart" size="large" [ngClass]="{'life-active': true, 'life-inactive': life === 0}"></ion-icon>
-      <ion-icon name="heart" size="large"[ngClass]="{'life-active': true, 'life-inactive': life <= 1}"></ion-icon>
-      <ion-icon name="heart" size="large" [ngClass]="{'life-active': true, 'life-inactive': life <= 2}"></ion-icon>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content class="ion-padding-horizontal">
-  <ion-text class="ion-text-center ion-padding-vertical">
-    <h3>{{questions[id].questionText}}</h3>
-  </ion-text>
+  <ion-header class="ion-no-border ion-padding-vertical" mode='md'>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <div style="padding: 14px;" routerLink="/tabs/games" routerDirection="back">
+          <ion-icon name="close-outline" size="large"></ion-icon>
+        </div>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
 
-  <div class="ion-padding-vertical">
-    <ion-button mode="ios" size="large" expand="block" *ngFor="let answer of questions[id].answers; let i = index;" (click)="answerButtonPressed(i)"
-    [ngClass]="{'button-class': true, 'button-class-active': isAnswerButtonPressed[i] === true}"
-    (click)="validateAnswer()"
-    [disabled]="!isAnswerButtonsActive">
-        {{answer.answer}}
-    </ion-button>
-  </div>
+  <ion-card mode="ios" class="witzy-question-card">
+    <ion-card-header>
+      <div>
+        <ion-grid class="witzy-leveldetail-container">
+          <ion-row class="ion-align-items-center">
+            <ion-col size="4" class="witzy-leveldetail-question ion-align-items-center">
+              <ion-grid>
+                <ion-row class="ion-align-items-left witzy-leveldetail-question">
+                  <ion-col size="3" class="witzy-leveldetail-question-icon ion-align-items-center">
+                    <ion-icon name="help-circle-outline"></ion-icon>
+                  </ion-col>
+                  <ion-col size="9" class="witzy-leveldetail-question-text ion-align-items-center ion-text-center">
+                    <ion-text>4/10</ion-text>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-col>
+            <ion-col size="4" class="ion-text-center">
+              <ion-badge color="main" class="witzy-leveldetail-score" mode="ios">{{score}}</ion-badge>
+            </ion-col>
+            <ion-col size="4" class="ion-text-center witzy-leveldetail-stars">
+        <ion-icon name="heart" [ngClass]="{'life-active': true, 'life-inactive': life === 0}"></ion-icon>
+        <ion-icon name="heart" [ngClass]="{'life-active': true, 'life-inactive': life <= 1}"></ion-icon>
+        <ion-icon name="heart" [ngClass]="{'life-active': true, 'life-inactive': life <= 2}"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+      <ion-card-title>Timer Container</ion-card-title>
+      <ion-card-title class="witzy-question-text">
+        <ion-text class="ion-text-center">
+          <h3>{{questions[id].questionText}}</h3>
+        </ion-text>
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div class="ion-padding-vertical">
+        <ion-button mode="ios" shape="round" size="large" expand="block"
+          *ngFor="let answer of questions[id].answers; let i = index;" (click)="answerButtonPressed(i)"
+          [ngClass]="{'button-class': true, 'button-class-active': isAnswerButtonPressed[i] === true}"
+          (click)="validateAnswer()" [disabled]="!isAnswerButtonsActive">
+          {{answer.answer}}
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+    <ion-card mode="ios" class="witzy-hint-card">
+      <ion-card-content class="witzy-hint-container">
+        <ion-grid class="witzy-levelhint-container">
+          <ion-row class="ion-align-items-center">
+            <ion-col size="3" class="ion-align-items-center">
+              <ion-icon class="witzy-hint-question-icon" name="help-circle-outline"></ion-icon>
+            </ion-col>
+            <ion-col size="9" class="ion-text-center">
+              Text Uwu
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
 </ion-content>
 
 <ion-footer class="ion-no-border ion-padding" mode='md' transparent>
   <ion-toolbar transparent>
     <ion-button (click)="nextQuestion()" mode="ios" size="medium" expand="block"
-    [ngClass]="{'button-check': true, 'button-check-active': solutionDiv === true, 'button-check-false': solutionDiv === false}"
-    *ngIf="CheckButton === false">
+      [ngClass]="{'button-check': true, 'button-check-active': solutionDiv === true, 'button-check-false': solutionDiv === false}"
+      *ngIf="CheckButton === false">
       Next
     </ion-button>
   </ion-toolbar>
 
-  <div [ngClass]="{'false-div': solutionDiv === false, 'correct-div': solutionDiv === true }" *ngIf="CheckButton === false">
-    <ion-text class="ion-text-center ion-padding-vertical"><h2 [ngClass]="{'false-title': solutionDiv === false, 'correct-title': solutionDiv === true }">{{ solutionTitle }}</h2></ion-text>
-    <ion-text class="ion-text-center ion-padding-vertical"><p [ngClass]="{'false-text': solutionDiv === false}"> {{ solutionText }}</p></ion-text>
+  <div [ngClass]="{'false-div': solutionDiv === false, 'correct-div': solutionDiv === true }"
+    *ngIf="CheckButton === false">
+    <ion-text class="ion-text-center ion-padding-vertical">
+      <h2 [ngClass]="{'false-title': solutionDiv === false, 'correct-title': solutionDiv === true }">{{ solutionTitle }}
+      </h2>
+    </ion-text>
+    <ion-text class="ion-text-center ion-padding-vertical">
+      <p [ngClass]="{'false-text': solutionDiv === false}"> {{ solutionText }}</p>
+    </ion-text>
   </div>
 </ion-footer>
