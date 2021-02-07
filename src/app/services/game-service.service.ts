@@ -11,10 +11,18 @@ export class GameServiceService {
   questionsChapter1 = [
 	{
 		"questionText": "This is a question.",
+		"solutionText": "This is a solution.",
+		"hintText": "This is a hint.",
+		"questionScore": 10,
 		"answers": [
 		  {
 			"answer": "This is a right answer.",
 			"correct": true,
+			"selected": false
+		  },
+		  {
+			"answer": "This is a wrong answer.",
+			"correct": false,
 			"selected": false
 		  },
 		  {
@@ -31,10 +39,18 @@ export class GameServiceService {
 	  },
 	{
 		"questionText": "This is a question.",
+		"solutionText": "This is a solution.",
+		"hintText": "This is a hint.",
+		"questionScore": 20,
 		"answers": [
 		  {
 			"answer": "This is a right answer.",
 			"correct": true,
+			"selected": false
+		  },
+		  {
+			"answer": "This is a wrong answer.",
+			"correct": false,
 			"selected": false
 		  },
 		  {
@@ -51,10 +67,18 @@ export class GameServiceService {
 	  },
 	{
 		"questionText": "This is a question.",
+		"solutionText": "This is a solution.",
+		"hintText": "This is a hint.",
+		"questionScore": 30,
 		"answers": [
 		  {
 			"answer": "This is a right answer.",
 			"correct": true,
+			"selected": false
+		  },
+		  {
+			"answer": "This is a wrong answer.",
+			"correct": false,
 			"selected": false
 		  },
 		  {
@@ -71,10 +95,18 @@ export class GameServiceService {
 	  },
 	{
 		"questionText": "This is a question.",
+		"solutionText": "This is a solution.",
+		"hintText": "This is a hint.",
+		"questionScore": 40,
 		"answers": [
 		  {
 			"answer": "This is a right answer.",
 			"correct": true,
+			"selected": false
+		  },
+		  {
+			"answer": "This is a wrong answer.",
+			"correct": false,
 			"selected": false
 		  },
 		  {
@@ -91,10 +123,18 @@ export class GameServiceService {
 	  },
 	{
 		"questionText": "This is a question.",
+		"solutionText": "This is a solution.",
+		"hintText": "This is a hint.",
+		"questionScore": 50,
 		"answers": [
 		  {
 			"answer": "This is a right answer.",
 			"correct": true,
+			"selected": false
+		  },
+		  {
+			"answer": "This is a wrong answer.",
+			"correct": false,
 			"selected": false
 		  },
 		  {
@@ -111,10 +151,18 @@ export class GameServiceService {
 	  },
 	{
 		"questionText": "This is a question.",
+		"solutionText": "This is a solution.",
+		"hintText": "This is a hint.",
+		"questionScore": 60,
 		"answers": [
 		  {
 			"answer": "This is a right answer.",
 			"correct": true,
+			"selected": false
+		  },
+		  {
+			"answer": "This is a wrong answer.",
+			"correct": false,
 			"selected": false
 		  },
 		  {
