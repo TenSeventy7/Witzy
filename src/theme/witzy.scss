@@ -13,6 +13,11 @@ ion-content, ion-footer, ion-toolbar, ion-header {
   padding: 6vh 0;
 }
 
+.witzy-game-header {
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
 .witzy-header-title {
   font-weight: 700;
   font-size: 20pt;
@@ -28,16 +33,12 @@ ion-content, ion-footer, ion-toolbar, ion-header {
   outline: none !important;
 }
 
-
-
-.witzy-question-card { 
-  border-radius: 18px;
-}
 .witzy-leveldetail-container { 
   padding: 0;
 }
 .witzy-leveldetail-question {
   padding-inline-start: 0;
+  margin-top: 2px;
 }
 .witzy-leveldetail-question-icon {
   font-size: 24px;
@@ -46,6 +47,9 @@ ion-content, ion-footer, ion-toolbar, ion-header {
   font-size: 18px;
   margin-top: 2px;
 }
+.witzy-leveldetail-question-text-bold {
+  font-weight: 700;
+}
 .witzy-leveldetail-score { 
   height: 32px;
   line-height: 26px;
@@ -53,15 +57,45 @@ ion-content, ion-footer, ion-toolbar, ion-header {
   width: 72px;
   border-radius: 100px;
 }
+.witzy-leveldetail-score-animation {
+  animation-name: pulse;
+  animation-duration: 0.75s;
+}
 .witzy-leveldetail-stars { 
   font-size: 24px;
   padding-inline-end: 0;
 }
 
-
+.witzy-question-card-container {
+  height: 60%;
+}
+.witzy-question-card {
+  --background: var(--ion-color-white);
+  height: 100%;
+  width: 100%;
+  border-radius: 18px;
+}
+.witzy-question-answer-button {
+  margin-bottom: 18px;
+}
+.witzy-question-card-correct {
+  color: var(--ion-color-white) !important;
+  background-color: var(--ion-color-success);
+}
+.witzy-question-card-incorrect {
+  color: var(--ion-color-white) !important;
+  background-color: var(--ion-color-danger);
+}
+.witzy-question-card-normal {
+  background-color: var(--ion-color-white);
+  transition: background-color 800ms ease;
+}
 
 .witzy-hint-card { 
-  margin-top: 1vh;
+  position: absolute;
+  bottom: 2vh;
+  left: 0;
+  right: 0;
   border-radius: 18px;
   --background: rgba(var(--ion-color-dark-rgb), 0.5);
   color: white;
@@ -75,3 +109,77 @@ ion-content, ion-footer, ion-toolbar, ion-header {
   margin-top: 4px;
 }
 
+.witzy-hint-text-fadein {
+  animation: fadeIn ease 400ms;
+}
+.witzy-hint-text-fadeout {
+  animation: fadeOut ease 400ms;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+  }
+
+
+@keyframes fadeOut {
+  0% {opacity:1;}
+  100% {opacity:0;}
+  }
+
+  @keyframes answerColorIn {
+    0% {--background: var(--ion-color-white);}
+    100% {--background: var(--ion-color-success);}
+    }
+  
+  
+  @keyframes answerColorOut {
+    0% {--background: var(--ion-color-success);}
+    100% { --background: var(--ion-color-white);}
+    }
+
+@keyframes pulse {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.1);}
+  100% {transform: scale(1);}
+}
+
+
+      /*
+       *  Flip animation by David Walsh: https://davidwalsh.name/css-flip
+       */
+
+      /* entire container, keeps perspective */
+      .flip-container {
+          perspective: 1000px;
+      }
+
+          /* flip the pane when hovered */
+          .flip-container.flipped .flipper {
+              transform: rotateY(180deg);
+          }
+
+      /* flip speed goes here */
+      .flipper {
+          transition: 1s;
+          transform-style: preserve-3d;
+
+          position: relative;
+      }
+
+      /* hide back of pane during swap */
+      .front, .back {
+          backface-visibility: hidden;
+      }
+
+      /* front pane, placed above back */
+      .front {
+          z-index: 2;
+          /* for firefox 31 */
+          transform: rotateY(0deg);
+      }
+
+      /* back, initially hidden pane */
+      .back {
+          transform: rotateY(180deg);
+      }
