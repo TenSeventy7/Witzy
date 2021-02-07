@@ -1,15 +1,24 @@
 
+$splash-background: var(--ion-color-main);
+
+ion-content, ion-footer, ion-toolbar, ion-header {
+  --background: $splash-background;
+	background: $splash-background;
+  border: none;
+  color: var(--ion-color-white);
+  padding: 0 6vw;
+}
+
 ion-toolbar {
     --background: transparent;
 }
 
 .life-active {
-    color: var(--ion-color-danger);
+    color: var(--ion-color-white);
 }
 
 .life-inactive {
     color: var(--ion-color-medium);
-    animation: fadeHeart ease 1s;
 }
 
 .button-class {
@@ -90,11 +99,3 @@ ion-toolbar {
     }
     
 }
-
-@keyframes fadeHeart {
-    0%   {color:var(--ion-color-danger)}
-    25%  {color:var(--ion-color-danger-shade)}
-    50%  {color:var(--ion-color-medium-shade)}
-    75%  {color:var(--ion-color-medium-tint)}
-    100% {color:var(--ion-color-medium)}
-  }

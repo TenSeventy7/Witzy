@@ -10,6 +10,13 @@ import { GameServiceService } from 'src/app/services/game-service.service';
 })
 export class GamePage implements OnInit {
 
+  slideOptions = {
+    slidesPerView: 1,
+    loop: false,
+    centeredSlides: true,
+    centeredSlidesBounds: true,
+    preventInteractionOnTransition: true
+  };
 
   counter= 9
   score: number = 0;
