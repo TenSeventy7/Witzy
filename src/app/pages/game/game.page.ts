@@ -18,12 +18,36 @@ export class GamePage implements OnInit {
     preventInteractionOnTransition: true
   };
 
-  counter= 9
+  questionIndex = 0;
+  answerButtons: boolean;
+
+  hintText: string;
+  hintClass: string;
+
+  cardAnimate: string = "none";
+  cardClass: any;
+
+  currentScore: number = 0;
+  cuurentScoreAnimate: boolean = false;
+  questionScore: number = 0;
+  totalPossibleScore: number = 0;
+
+  roundStars: number = 0;
+  roundStar1Requirement: number = 0;
+  roundStar2Requirement: number = 0;
+  roundStar3Requirement: number = 0;
+
+  userAnswer: any;
+  questionResponseClass: any;
+
+  counter = 9
   score: number = 0;
   id = 0
   questions: any
+  questionData: any
+  slideLength: number
   life = 3
-  //bool qui active les anim CSS des buttons
+  
   isAnswerButtonPressed = [false,false,false]
   isActive2 = false
   isAnswerButtonsActive = true
@@ -41,9 +65,154 @@ export class GamePage implements OnInit {
 
   ngOnInit() {
     this.questions = this.gameServiceService.questionsChapter1
-    //this.randomizeQuestions()
+    this.questionData = this.gameServiceService.questionsChapter1
     this.randomizeAnswers()
     this.disabledButton = true
+    
+    let slides = document.querySelector('ion-slides');
+    slides.options = this.slideOptions;
+    slides.lockSwipes(true);
+
+    this.calculateRequiredStars();
+    this.answerButtons = true;
+
+    this.hintText = this.questions[this.questionIndex].hintText
+    this.hintClass = "witzy-hint-text-fadein"
+  }
+
+  calculateRequiredStars() {
+    // Calculate the scores needed based on the total possible score.
+    for (var index = 0; index < this.questionData.length; index++) {
+      // Get total score based on question index
+      var questionScore: number = this.questions[index].questionScore;
+      this.totalPossibleScore = this.totalPossibleScore + questionScore;
+    }
+
+    // console.log(this.totalPossibleScore);
+
+    // Since we already have our total scores, calculate
+    // the stars based on our algorithms
+    this.roundStar1Requirement = Math.round(this.totalPossibleScore / 3); // Divide total score by three
+    this.roundStar2Requirement = Math.round(this.roundStar1Requirement * 2); // Multiply first star requirement by 2
+    this.roundStar3Requirement = Math.round((this.totalPossibleScore / 3.75) + this.roundStar2Requirement); // Divide total score by three, then add first star requirement
+    
+    // console.log(this.roundStar1Requirement);
+    // console.log(this.roundStar2Requirement);
+    // console.log(this.roundStar3Requirement);
+  }
+
+  checkStarScore() {
+    // Check if the current score matches our star requirements
+    if (this.currentScore >= this.roundStar1Requirement) {
+      this.roundStars = 1;
+    }
+
+    if (this.currentScore >= this.roundStar2Requirement) {
+      this.roundStars = 2;
+    }
+    
+    if (this.currentScore >= this.roundStar3Requirement) {
+      this.roundStars = 3;
+    }
+  }
+
+  checkUserAnswer(index: number) {
+    // Set current question index
+    this.questionScore = this.questions[this.questionIndex].questionScore
+    this.userAnswer = this.questions[this.questionIndex].answers[index]
+    this.answerButtons = false;
+    // console.log(this.userAnswer);
+
+    this.cardAnimate = "start"
+
+    // Check if the answer user selected is correct
+    if (this.id > -1) {
+      if (this.userAnswer.correct) {
+          this.currentScore = this.currentScore + this.questionScore;
+          this.checkStarScore(); // Check if the current score matches our star requirements
+          this.questionResponseClass = "correct"
+          this.cuurentScoreAnimate = true;
+          this.questionResponse()
+      }
+      else {
+          this.questionResponseClass = "incorrect"
+          this.questionResponse()
+      }
+    }
+  }
+
+  questionResponse() {
+    setTimeout(()=> {
+      this.cardAnimate = "end"
+      this.cardClass = this.questionResponseClass;
+    }, 250);
+
+    this.hintClass = "witzy-hint-text-fadeout"
+    setTimeout(()=> {
+      this.hintText = this.questions[this.questionIndex].solutionText
+    }, 400);
+    setTimeout(()=> {
+      this.hintClass = "witzy-hint-text-fadein"
+    }, 400);
+
+    setTimeout(()=> {
+      this.presentNextQuestion();
+    }, 5000);
+  }
+
+  presentNextQuestion() {
+    let slides = document.querySelector('ion-slides');
+    this.cuurentScoreAnimate = false;
+
+    if (this.questionIndex >= this.questions.length - 1) {
+      // Move to score screen if quiz is finished
+      this.questionIndex = 0
+      this.scoreData.setGameData('currentGameScore', this.currentScore);
+      this.scoreData.setGameData('currentGameStars', this.roundStars);
+      this.router.navigate(['/results', 'currentGameScore']);
+    }
+    else {
+      // Else, present new question
+      this.questionIndex = this.questionIndex + 1;
+
+      slides.lockSwipes(false);
+      slides.slideNext(300);
+      this.cardClass = "";
+      slides.lockSwipes(true);
+
+      this.randomizeAnswerArray();
+      this.answerButtons = true;
+      this.questionResponseClass = "normal"
+
+      this.hintClass = "witzy-hint-text-fadeout"
+      setTimeout(()=> {
+        this.hintText = this.questions[this.questionIndex].hintText
+      }, 400);
+      setTimeout(()=> {
+        this.hintClass = "witzy-hint-text-fadein"
+      }, 400);
+    }
+  }
+
+  randomizeAnswerArray() {
+    var shuffleArray = function(array) {
+      var m = array.length, t, i;
+    
+      // While there remain elements to shuffle
+      while (m) {
+        // Pick a remaining element…
+        i = Math.floor(Math.random() * m--);
+    
+        // And swap it with the current element.
+        t = array[m];
+        array[m] = array[i];
+        array[i] = t;
+      }
+    
+      return array;
+    }
+
+    this.questions[this.questionIndex].answers = shuffleArray(this.questions[this.questionIndex].answers)
   }
 
   validateAnswer() {
