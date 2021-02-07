@@ -1,0 +1,21 @@
+
+.life-active {
+    color: var(--ion-color-main);
+}
+
+.life-inactive {
+    color: var(--ion-color-medium);
+}
+
+.witzy-results-score {
+    font-size: 52pt
+}
+.witzy-results-star-container-div {
+    display: block;
+    height: 52px;
+}
+.witzy-results-star-container {
+    display: flex;
+    justify-content: center;
+    margin: 0
+}
