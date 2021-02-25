@@ -7,15 +7,35 @@
     color: var(--ion-color-medium);
 }
 
-.witzy-results-score {
-    font-size: 52pt
+.results-score {
+    font-size: 64pt;
+    font-family: 'Witzy';
+    font-weight: 700;
 }
-.witzy-results-star-container-div {
+
+.results-star {
     display: block;
-    height: 52px;
+    height: 78px;
+
+    div {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+    
+        ion-icon {
+            font-size: 32pt !important;
+            margin: 0 4px;
+        }
+    }
 }
-.witzy-results-star-container {
-    display: flex;
-    justify-content: center;
-    margin: 0
+
+
+.results-card-container {
+  padding: 0 6vw;
+}
+
+.results-card {
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.0);
+  border-radius: 22px;
+  padding: 8vh 0;
 }

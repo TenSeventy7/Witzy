@@ -7,12 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { ResultsPageRoutingModule } from './results-routing.module';
 
 import { ResultsPage } from './results.page';
+import { HeaderComponentModule } from '../../components/header/header.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    HeaderComponentModule,
     ResultsPageRoutingModule
   ],
   declarations: [ResultsPage]
