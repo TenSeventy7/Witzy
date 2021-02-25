@@ -5,8 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class GameDataService {
  
-  private encodedData: any;
-  private decodedData: any;
   private encodedId: any;
   private data = [];
  
@@ -16,18 +14,16 @@ export class GameDataService {
   // more-or-less compatible with Angular
   setGameData(id, data) {
     this.encodedId = btoa(id);
-    this.encodedData = btoa(data);
-    this.data[this.encodedId] = this.encodedData;
+    this.data[this.encodedId] = data;
   }
  
   getGameData(id) {
     this.encodedId = btoa(id);
     if (this.data[this.encodedId]) {
-      this.decodedData = atob(this.data[this.encodedId]);
+      return this.data[this.encodedId];
     } else {
       console.log('Err: Data not found for ID ' + id)
-      this.decodedData = ' ';
+      return ' ';
     }
-    return this.decodedData;
   }
 }
