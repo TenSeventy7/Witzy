@@ -10,5 +10,7 @@
     }
   },
   "backgroundColor": "#000000",
+  "splashFullScreen": true,
+  "splashImmersive": true,
   "cordova": {}
 }
