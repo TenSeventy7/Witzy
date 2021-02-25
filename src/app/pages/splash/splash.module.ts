@@ -14,8 +14,9 @@ import { SplashComponent } from '../../components/splash/splash.component';
     CommonModule,
     FormsModule,
     IonicModule,
+    SplashComponent,
     SplashPageRoutingModule
   ],
-  declarations: [SplashPage, SplashComponent]
+  declarations: [SplashPage]
 })
 export class SplashPageModule {}
