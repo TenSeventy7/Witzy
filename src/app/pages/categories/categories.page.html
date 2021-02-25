@@ -1,13 +1,19 @@
 <ion-content>
-  <ion-header class="ion-no-border ion-padding-vertical witzy-header" mode='md'>
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-button class="witzy-header-back-button" shape="round" size="small" fill="clear" routerLink="/home" routerDirection="back">
-          <ion-icon name="arrow-back-outline" size="large" mode='md'></ion-icon>
-        </ion-button>
-      </ion-buttons>
-      <ion-title class="witzy-header-title">Casual Mode</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <app-header name="Categories" backLink="/home"></app-header>
 
+  <ion-grid class="witzy-category-container">
+    <ion-row>
+
+      <ion-col size="6" *ngFor="let category of categories" class="witzy-category-card-container">
+        <img *ngIf="category.isAvailable == true" src="{{ category.categoryIcon }}" class="witzy-category-icon" />
+        <ion-card mode="ios" class="witzy-category-card witzy-category-card-{{ category.categoryId }}">
+          <ion-card-content class="witzy-category-title">
+            <ion-card-title *ngIf="category.isAvailable == true">{{ category.categoryName }}</ion-card-title>
+            <ion-card-title *ngIf="category.isAvailable == false">Coming Soon!</ion-card-title>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      
+    </ion-row>
+  </ion-grid>
 </ion-content>

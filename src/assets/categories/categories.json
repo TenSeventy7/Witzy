@@ -1,0 +1,46 @@
+{
+  "categories": [
+    {
+      "categoryId": "mathematics",
+      "isAvailable": true,
+      "categoryName": "Math",
+      "categoryIcon": "/assets/categories/math/icon.png",
+      "jsonUrl": "/assets/categories/math.json"
+    },
+    {
+      "categoryId": "science",
+      "isAvailable": true,
+      "categoryName": "Science",
+      "categoryIcon": "/assets/categories/science/icon.png",
+      "jsonUrl": "/assets/categories/science.json"
+    },
+    {
+      "categoryId": "literature",
+      "isAvailable": true,
+      "categoryName": "Literature",
+      "categoryIcon": "/assets/categories/literature/icon.png",
+      "jsonUrl": "/assets/categories/literature.json"
+    },
+    {
+      "categoryId": "history",
+      "isAvailable": false,
+      "categoryName": "History",
+      "categoryIcon": "/assets/categories/blank/icon.png",
+      "jsonUrl": "/assets/categories/blank.json"
+    },
+    {
+      "categoryId": "technology",
+      "isAvailable": false,
+      "categoryName": "Tech",
+      "categoryIcon": "/assets/categories/blank/icon.png",
+      "jsonUrl": "/assets/categories/blank.json"
+    },
+    {
+      "categoryId": "pop-culture",
+      "isAvailable": false,
+      "categoryName": "Pop Culture",
+      "categoryIcon": "/assets/categories/blank/icon.png",
+      "jsonUrl": "/assets/categories/blank.json"
+    }
+  ]
+}

@@ -8,11 +8,14 @@ import { CategoriesPageRoutingModule } from './categories-routing.module';
 
 import { CategoriesPage } from './categories.page';
 
+import { HeaderComponentModule } from '../../components/header/header.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    HeaderComponentModule,
     CategoriesPageRoutingModule
   ],
   declarations: [CategoriesPage]
