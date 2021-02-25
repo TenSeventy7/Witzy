@@ -1,0 +1,164 @@
+
+:root {
+    // Common Colors
+    --ion-color-white: #FBFFF1;
+    --ion-color-white-rgb: 251,255,241;
+    --ion-color-white-contrast: var(--ion-color-main);
+    --ion-color-white-contrast-rgb: 0,0,0;
+    --ion-color-white-shade: #dde0d4;
+    --ion-color-white-tint: #fbfff2;
+    //
+
+    // =======================================
+    // Subject Colors
+    --ion-color-main: #FF7F11;
+    --ion-color-main-rgb: 255,127,17;
+    --ion-color-main-contrast: #ffffff;
+    --ion-color-main-contrast-rgb: 0,0,0;
+    --ion-color-main-shade: #e0700f;
+    --ion-color-main-tint: #ff8c29;
+  
+    --ion-color-accent: #032B43;
+    --ion-color-accent-rgb: 3,43,67;
+    --ion-color-accent-contrast: #ffffff;
+    --ion-color-accent-contrast-rgb: 255,255,255;
+    --ion-color-accent-shade: #03263b;
+    --ion-color-accent-tint: #1c4056;
+
+    // Math
+    --ion-color-mathematics-main: #E73636;
+    --ion-color-mathematics-main-rgb: 231,54,54;
+    --ion-color-mathematics-main-contrast: #ffffff;
+    --ion-color-mathematics-main-contrast-rgb: 255,255,255;
+    --ion-color-mathematics-main-shade: #cb3030;
+    --ion-color-mathematics-main-tint: #e94a4a;
+
+    --ion-color-mathematics-accent: #05A632;
+    --ion-color-mathematics-accent-rgb: 5,166,50;
+    --ion-color-mathematics-accent-contrast: #ffffff;
+    --ion-color-mathematics-accent-contrast-rgb: 255,255,255;
+    --ion-color-mathematics-accent-shade: #04922c;
+    --ion-color-mathematics-accent-tint: #1eaf47;
+    //
+  
+    // Science
+    --ion-color-science-main: #FF9233;
+    --ion-color-science-main-rgb: 255,146,51;
+    --ion-color-science-main-contrast: #000000;
+    --ion-color-science-main-contrast-rgb: 0,0,0;
+    --ion-color-science-main-shade: #e0802d;
+    --ion-color-science-main-tint: #ff9d47;
+  
+    --ion-color-science-accent: #058AA6;
+    --ion-color-science-accent-rgb: 5,138,166;
+    --ion-color-science-accent-contrast: #ffffff;
+    --ion-color-science-accent-contrast-rgb: 255,255,255;
+    --ion-color-science-accent-shade: #047992;
+    --ion-color-science-accent-tint: #1e96af;
+    //
+  
+    // Literature
+    --ion-color-literature-main: #849324;
+    --ion-color-literature-main-rgb: 132,147,36;
+    --ion-color-literature-main-contrast: #000000;
+    --ion-color-literature-main-contrast-rgb: 0,0,0;
+    --ion-color-literature-main-shade: #748120;
+    --ion-color-literature-main-tint: #909e3a;
+  
+    --ion-color-literature-accent: #6505A6;
+    --ion-color-literature-accent-rgb: 101,5,166;
+    --ion-color-literature-accent-contrast: #ffffff;
+    --ion-color-literature-accent-contrast-rgb: 255,255,255;
+    --ion-color-literature-accent-shade: #590492;
+    --ion-color-literature-accent-tint: #741eaf;
+    //
+    // =======================================
+  }
+  
+  .ion-color-main {
+    --ion-color-base: var(--ion-color-main);
+    --ion-color-base-rgb: var(--ion-color-main-rgb);
+    --ion-color-contrast: var(--ion-color-main-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-main-contrast-rgb);
+    --ion-color-shade: var(--ion-color-main-shade);
+    --ion-color-tint: var(--ion-color-main-tint);
+  }
+  
+  .ion-color-accent {
+    --ion-color-base: var(--ion-color-accent);
+    --ion-color-base-rgb: var(--ion-color-accent-rgb);
+    --ion-color-contrast: var(--ion-color-accent-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-accent-contrast-rgb);
+    --ion-color-shade: var(--ion-color-accent-shade);
+    --ion-color-tint: var(--ion-color-accent-tint);
+  }
+  
+  // Mathematics
+  .ion-color-math-main {
+    --ion-color-base: var(--ion-color-math-main);
+    --ion-color-base-rgb: var(--ion-color-math-main-rgb);
+    --ion-color-contrast: var(--ion-color-math-main-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-math-main-contrast-rgb);
+    --ion-color-shade: var(--ion-color-math-main-shade);
+    --ion-color-tint: var(--ion-color-math-main-tint);
+  }
+
+  .ion-color-math-accent {
+    --ion-color-base: var(--ion-color-math-accent);
+    --ion-color-base-rgb: var(--ion-color-math-accent-rgb);
+    --ion-color-contrast: var(--ion-color-math-accent-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-math-accent-contrast-rgb);
+    --ion-color-shade: var(--ion-color-math-accent-shade);
+    --ion-color-tint: var(--ion-color-math-accent-tint);
+  }
+  //
+
+  // Science
+  .ion-color-science-main {
+    --ion-color-base: var(--ion-color-science-main);
+    --ion-color-base-rgb: var(--ion-color-science-main-rgb);
+    --ion-color-contrast: var(--ion-color-science-main-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-science-main-contrast-rgb);
+    --ion-color-shade: var(--ion-color-science-main-shade);
+    --ion-color-tint: var(--ion-color-science-main-tint);
+  }
+  
+  .ion-color-science-accent {
+    --ion-color-base: var(--ion-color-science-accent);
+    --ion-color-base-rgb: var(--ion-color-science-accent-rgb);
+    --ion-color-contrast: var(--ion-color-science-accent-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-science-accent-contrast-rgb);
+    --ion-color-shade: var(--ion-color-science-accent-shade);
+    --ion-color-tint: var(--ion-color-science-accent-tint);
+  }
+  //
+  
+  // Literature
+  .ion-color-literature-main {
+    --ion-color-base: var(--ion-color-literature-main);
+    --ion-color-base-rgb: var(--ion-color-literature-main-rgb);
+    --ion-color-contrast: var(--ion-color-literature-main-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-literature-main-contrast-rgb);
+    --ion-color-shade: var(--ion-color-literature-main-shade);
+    --ion-color-tint: var(--ion-color-literature-main-tint);
+  }
+  
+  .ion-color-literature-accent {
+    --ion-color-base: var(--ion-color-literature-accent);
+    --ion-color-base-rgb: var(--ion-color-literature-accent-rgb);
+    --ion-color-contrast: var(--ion-color-literature-accent-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-literature-accent-contrast-rgb);
+    --ion-color-shade: var(--ion-color-literature-accent-shade);
+    --ion-color-tint: var(--ion-color-literature-accent-tint);
+  }
+  //
+  
+  .ion-color-white {
+    --ion-color-base: var(--ion-color-white);
+    --ion-color-base-rgb: var(--ion-color-white-rgb);
+    --ion-color-contrast: var(--ion-color-white-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-white-contrast-rgb);
+    --ion-color-shade: var(--ion-color-white-shade);
+    --ion-color-tint: var(--ion-color-white-tint);
+  }
+  

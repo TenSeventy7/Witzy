@@ -1,0 +1,239 @@
+@font-face {
+    font-family: 'Witzy';
+    src: url('/assets/font/BlackItalic.eot');
+    src: url('/assets/font/BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('/assets/font/BlackItalic.woff2') format('woff2'),
+        url('/assets/font/BlackItalic.woff') format('woff'),
+        url('/assets/font/BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Witzy';
+    src: url('/assets/font/Black.eot');
+    src: url('/assets/font/Black.eot?#iefix') format('embedded-opentype'),
+        url('/assets/font/Black.woff2') format('woff2'),
+        url('/assets/font/Black.woff') format('woff'),
+        url('/assets/font/Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Witzy';
+    src: url('/assets/font/Bold.eot');
+    src: url('/assets/font/Bold.eot?#iefix') format('embedded-opentype'),
+        url('/assets/font/Bold.woff2') format('woff2'),
+        url('/assets/font/Bold.woff') format('woff'),
+        url('/assets/font/Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Witzy';
+    src: url('/assets/font/ExtraBold.eot');
+    src: url('/assets/font/ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('/assets/font/ExtraBold.woff2') format('woff2'),
+        url('/assets/font/ExtraBold.woff') format('woff'),
+        url('/assets/font/ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Witzy';
+    src: url('/assets/font/BoldItalic.eot');
+    src: url('/assets/font/BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('/assets/font/BoldItalic.woff2') format('woff2'),
+        url('/assets/font/BoldItalic.woff') format('woff'),
+        url('/assets/font/BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Witzy';
+    src: url('/assets/font/ExtraBoldItalic.eot');
+    src: url('/assets/font/ExtraBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('/assets/font/ExtraBoldItalic.woff2') format('woff2'),
+        url('/assets/font/ExtraBoldItalic.woff') format('woff'),
+        url('/assets/font/ExtraBoldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Witzy';
+    src: url('/assets/font/Heavy.eot');
+    src: url('/assets/font/Heavy.eot?#iefix') format('embedded-opentype'),
+        url('/assets/font/Heavy.woff2') format('woff2'),
+        url('/assets/font/Heavy.woff') format('woff'),
+        url('/assets/font/Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Witzy';
+    src: url('/assets/font/HeavyItalic.eot');
+    src: url('/assets/font/HeavyItalic.eot?#iefix') format('embedded-opentype'),
+        url('/assets/font/HeavyItalic.woff2') format('woff2'),
+        url('/assets/font/HeavyItalic.woff') format('woff'),
+        url('/assets/font/HeavyItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Witzy';
+    src: url('/assets/font/Light.eot');
+    src: url('/assets/font/Light.eot?#iefix') format('embedded-opentype'),
+        url('/assets/font/Light.woff2') format('woff2'),
+        url('/assets/font/Light.woff') format('woff'),
+        url('/assets/font/Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Witzy';
+    src: url('/assets/font/LightItalic.eot');
+    src: url('/assets/font/LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('/assets/font/LightItalic.woff2') format('woff2'),
+        url('/assets/font/LightItalic.woff') format('woff'),
+        url('/assets/font/LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Witzy';
+    src: url('/assets/font/Medium.eot');
+    src: url('/assets/font/Medium.eot?#iefix') format('embedded-opentype'),
+        url('/assets/font/Medium.woff2') format('woff2'),
+        url('/assets/font/Medium.woff') format('woff'),
+        url('/assets/font/Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Witzy';
+    src: url('/assets/font/MediumItalic.eot');
+    src: url('/assets/font/MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('/assets/font/MediumItalic.woff2') format('woff2'),
+        url('/assets/font/MediumItalic.woff') format('woff'),
+        url('/assets/font/MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Witzy';
+    src: url('/assets/font/Regular.eot');
+    src: url('/assets/font/Regular.eot?#iefix') format('embedded-opentype'),
+        url('/assets/font/Regular.woff2') format('woff2'),
+        url('/assets/font/Regular.woff') format('woff'),
+        url('/assets/font/Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Witzy';
+    src: url('/assets/font/SemiBold.eot');
+    src: url('/assets/font/SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('/assets/font/SemiBold.woff2') format('woff2'),
+        url('/assets/font/SemiBold.woff') format('woff'),
+        url('/assets/font/SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'RegularItalic';
+    src: url('/assets/font/RegularItalic.eot');
+    src: url('/assets/font/RegularItalic.eot?#iefix') format('embedded-opentype'),
+        url('/assets/font/RegularItalic.woff2') format('woff2'),
+        url('/assets/font/RegularItalic.woff') format('woff'),
+        url('/assets/font/RegularItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Witzy';
+    src: url('/assets/font/SemiBoldItalic.eot');
+    src: url('/assets/font/SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('/assets/font/SemiBoldItalic.woff2') format('woff2'),
+        url('/assets/font/SemiBoldItalic.woff') format('woff'),
+        url('/assets/font/SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Witzy';
+    src: url('/assets/font/Thin.eot');
+    src: url('/assets/font/Thin.eot?#iefix') format('embedded-opentype'),
+        url('/assets/font/Thin.woff2') format('woff2'),
+        url('/assets/font/Thin.woff') format('woff'),
+        url('/assets/font/Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Witzy';
+    src: url('/assets/font/ThinItalic.eot');
+    src: url('/assets/font/ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('/assets/font/ThinItalic.woff2') format('woff2'),
+        url('/assets/font/ThinItalic.woff') format('woff'),
+        url('/assets/font/ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Witzy';
+    src: url('/assets/font/UltraLightItalic.eot');
+    src: url('/assets/font/UltraLightItalic.eot?#iefix') format('embedded-opentype'),
+        url('/assets/font/UltraLightItalic.woff2') format('woff2'),
+        url('/assets/font/UltraLightItalic.woff') format('woff'),
+        url('/assets/font/UltraLightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Witzy';
+    src: url('/assets/font/UltraLight.eot');
+    src: url('/assets/font/UltraLight.eot?#iefix') format('embedded-opentype'),
+        url('/assets/font/UltraLight.woff2') format('woff2'),
+        url('/assets/font/UltraLight.woff') format('woff'),
+        url('/assets/font/UltraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
