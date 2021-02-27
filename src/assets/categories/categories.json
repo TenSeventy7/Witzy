@@ -17,26 +17,19 @@
     {
       "categoryId": "literature",
       "isAvailable": true,
-      "categoryName": "Literature",
+      "categoryName": "Prose",
       "categoryIcon": "/assets/categories/literature/icon.png",
       "jsonUrl": "/assets/categories/literature.json"
     },
     {
-      "categoryId": "history",
-      "isAvailable": false,
-      "categoryName": "History",
-      "categoryIcon": "/assets/categories/blank/icon.png",
-      "jsonUrl": "/assets/categories/blank.json"
-    },
-    {
-      "categoryId": "technology",
+      "categoryId": "coming-soon",
       "isAvailable": false,
       "categoryName": "Tech",
       "categoryIcon": "/assets/categories/blank/icon.png",
       "jsonUrl": "/assets/categories/blank.json"
     },
     {
-      "categoryId": "pop-culture",
+      "categoryId": "coming-soon",
       "isAvailable": false,
       "categoryName": "Pop Culture",
       "categoryIcon": "/assets/categories/blank/icon.png",
