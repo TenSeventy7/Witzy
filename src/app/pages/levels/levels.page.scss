@@ -1,0 +1,264 @@
+$button-elevation: .15em;
+
+.level-buttons-container {
+    padding: 0 12vw;
+}
+
+.level-button-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1vw;
+    margin-top: 4vh;
+}
+
+.level-button {
+    --background: rgb(0, 0, 0, 0.0);
+    --background-activated: rgb(0, 0, 0, 0.0);
+    --ripple-color: transparent;
+    background: url("/assets/buttons/css-texture.png");
+    background-size: contain;
+    background-repeat: repeat-x;
+	margin: 5px;
+	display: inline-block;
+	border-radius: 7px;
+    padding: 10px 10px 10px 10px;
+    transition: top 300ms ease-in-out;
+    box-sizing: border-box;
+    height: 30vw;
+    width: 30vw;
+
+    &:active {
+        top: $button-elevation;
+        box-shadow: none;
+        position: relative;
+    }
+
+    ion-text {
+        font-family: "Kenney-Mini";
+        font-size: 14vw;
+    }
+
+    .earned-star {
+        filter: invert(100%) sepia(3%) saturate(13%) hue-rotate(81deg) brightness(106%) contrast(106%);
+    }
+}
+
+.level-button-mathematics {
+    $color: #cb3030;
+
+    background-color: var(--ion-color-mathematics-main);
+    box-shadow: 0 $button-elevation var(--ion-color-mathematics-main-shade);
+    border: 3px solid var(--ion-color-mathematics-main-tint);
+
+    ion-text {
+        color: darken(saturate($color, 0.38), 16.08);
+    }
+
+    .unearned-star {
+        filter: invert(18%) sepia(22%) saturate(4978%) hue-rotate(337deg) brightness(91%) contrast(97%);
+    }
+}
+
+.level-button-science {
+    $color: #FF9233;
+
+    background-color: var(--ion-color-science-main);
+    box-shadow: 0 $button-elevation var(--ion-color-science-main-shade);
+    border: 3px solid var(--ion-color-science-main-tint);
+
+    ion-text {
+        color: darken(saturate($color, 0.38), 16.08);
+    }
+
+    .unearned-star {
+        filter: invert(34%) sepia(75%) saturate(2904%) hue-rotate(22deg) brightness(98%) contrast(105%);
+    }
+}
+
+.level-button-literature {
+    $color: #849324;
+
+    background-color: var(--ion-color-literature-main);
+    box-shadow: 0 $button-elevation var(--ion-color-literature-main-shade);
+    border: 3px solid var(--ion-color-literature-main-tint);
+
+    ion-text {
+        color: darken(saturate($color, 0.38), 16.08);
+    }
+
+    .unearned-star {
+        filter: invert(20%) sepia(81%) saturate(372%) hue-rotate(29deg) brightness(97%) contrast(96%);
+    }
+}
+
+.earned-star-mathematics {
+    filter: invert(22%) sepia(79%) saturate(1970%) hue-rotate(339deg) brightness(103%) contrast(93%);
+}
+
+.earned-star-science {
+    filter: invert(69%) sepia(87%) saturate(1942%) hue-rotate(334deg) brightness(100%) contrast(102%);
+}
+
+.earned-star-literature {
+    filter: invert(55%) sepia(10%) saturate(3942%) hue-rotate(29deg) brightness(94%) contrast(72%);
+}
+
+.level-stars {
+    display: block;
+    height: 32px;
+    width: 108px;
+
+    div:nth-child(1) {
+        margin-right: 2px;
+    }
+
+    img {
+        width: 32px;
+        height: 32px;
+        margin: 0 -2px;
+    }
+}
+                
+.unearned-star-modal {
+    filter: invert(62%) sepia(8%) saturate(243%) hue-rotate(191deg) brightness(94%) contrast(92%);
+}
+
+.level-modal-visible {
+    opacity: 1 !important;
+    transition: opacity ease-in-out 250ms;
+}
+
+.level-modal {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: opacity ease-in-out 250ms;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    .level-modal-window {
+        position: fixed;
+        left: 10%;
+        bottom: 5vh;
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        height: 50%;
+        width: 80%;
+        background-color: var(--ion-color-white);
+        border: 3px ridge var(--ion-color-white-shade);
+        border-radius: 10px;
+
+        ion-text {
+            font-family: "KenVector-Future";
+            font-size: 10vw;
+            margin: 4vw 4vw;
+        }
+
+        .level-modal-description {
+            font-family: "Witzy";
+            font-weight: 400;
+            font-size: 5vw;
+        }
+
+        .level-modal-remark {
+            font-family: "KenVector-Future-Thin";
+            font-weight: 500;
+            font-size: 4vw;
+        }
+
+        .level-modal-stars {
+            height: 64px;
+
+            img {
+                width: 64px;
+                height: 64px;
+                margin: 0 -4px;
+            }
+
+        }
+    }
+}
+
+.close-modal {
+    background: rgba(0, 0, 0, 0.0);
+    height: 100%;
+    width: 100%;
+}
+
+.button-container {
+    margin: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 8vw;
+}
+
+.modal-button {
+    --background: rgb(0, 0, 0, 0.0);
+    --background-activated: rgb(0, 0, 0, 0.0);
+    --ripple-color: transparent;
+    background: url("/assets/buttons/css-texture.png");
+    background-size: contain;
+    background-repeat: repeat-x;
+	margin: 5px;
+	display: inline-block;
+	border-radius: 7px;
+    padding: 10px 10px 10px 10px;
+    transition: top 300ms ease-in-out;
+    box-sizing: border-box;
+    height: 12vw;
+    width: 30vw;
+
+    font-family: "Kenney-Mini";
+    font-size: 5vw;
+
+    &:active {
+        box-shadow: none;
+        position: relative;
+        top: $button-elevation;
+    }
+}
+
+.modal-button-mathematics {
+    $color: #cb3030;
+
+    background-color: var(--ion-color-mathematics-main);
+    box-shadow: 0 $button-elevation var(--ion-color-mathematics-main-shade);
+    border: 3px solid var(--ion-color-mathematics-main-tint);
+    color: darken(saturate($color, 0.38), 16.08);
+}
+
+.modal-button-science {
+    $color: #FF9233;
+
+    background-color: var(--ion-color-science-main);
+    box-shadow: 0 $button-elevation var(--ion-color-science-main-shade);
+    border: 3px solid var(--ion-color-science-main-tint);
+    color: darken(saturate($color, 0.38), 16.08);
+}
+
+.modal-button-literature {
+    $color: #849324;
+
+    background-color: var(--ion-color-literature-main);
+    box-shadow: 0 $button-elevation var(--ion-color-literature-main-shade);
+    border: 3px solid var(--ion-color-literature-main-tint);
+    color: darken(saturate($color, 0.38), 16.08);
+}
+
+.disable-input {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+}

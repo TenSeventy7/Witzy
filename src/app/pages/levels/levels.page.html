@@ -1,9 +1,55 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>levels</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <app-header name="{{ categoryName }}" backLink="/categories"></app-header>
 
+  <ion-grid class="level-buttons-container">
+  <ion-row class="ion-align-items-center ion-justify-content-evenly">
+    <ion-col size="6" class="level-button-container" *ngFor="let level of levels; let levelIndex = index;">
+      <ion-button class="level-button level-button-{{ categoryId }}" mode="ios" (click)="onClickLevel(levelIndex)">
+        <div class="level-button-inner">
+          <ion-grid class="ion-no-padding ion-no-padding">
+            <ion-row>
+              <ion-col size="12">
+                <ion-text class="ion-text-center">{{ levelIndex + 1 }}</ion-text>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="12">
+                <div class="level-stars">
+                  <div>
+                    <img src="/assets/ui/icons/star.png" class="earned-star"/>
+                    <img src="/assets/ui/icons/star.png" class="unearned-star" />
+                    <img src="/assets/ui/icons/star.png" class="unearned-star" />
+                  </div>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
 </ion-content>
+
+<div class="level-modal" [ngClass]="{ 'level-modal-visible': modalFade == 'fadeIn' }" *ngIf="modalVisible">
+  <div class="level-modal-window" *ngIf="modalWindowRoll" [@slideInOut]>
+
+    <ion-text>Level {{ levelNumber }}</ion-text>
+
+    <div class="level-modal-stars">
+      <div>
+        <img src="/assets/ui/icons/star.png" class="earned-star-{{ categoryId }}"/>
+        <img src="/assets/ui/icons/star.png" class="unearned-star-modal" />
+        <img src="/assets/ui/icons/star.png" class="unearned-star-modal" />
+      </div>
+    </div>
+
+    <ion-text class="level-modal-description">{{ levelDescription }}</ion-text>
+    <ion-text class="level-modal-remark">{{ levelRemark }}</ion-text>
+
+    <ion-button class="modal-button modal-button-{{ categoryId }}" mode="ios" (click)="onClickPlayButton()">PLAY</ion-button>
+  </div>
+  <div class="close-modal" (click)="onClickOutsideModal()"></div>
+</div>
+
+<div class="disable-input" [hidden]="inputEnabled"></div>
