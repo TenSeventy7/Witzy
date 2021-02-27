@@ -1,0 +1,170 @@
+$button-elevation: .3em;
+
+.category-button-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 8vw;
+
+    &:active {
+        top: $button-elevation;
+
+        .category-button {
+            box-shadow: none;
+            position: relative;
+        }
+    }
+}
+
+.category-button {
+    --background: rgb(0, 0, 0, 0.0);
+    --background-activated: rgb(0, 0, 0, 0.0);
+    --ripple-color: transparent;
+    background: url("/assets/buttons/css-texture.png");
+    background-size: contain;
+    background-repeat: repeat-x;
+	margin: 5px;
+	display: inline-block;
+	border-radius: 7px;
+    padding: 10px 0 10px 10px;
+    transition: top 300ms ease-in-out;
+    box-sizing: border-box;
+    height: 13vh;
+    width: 100%;
+    margin-top: 6vw;
+}
+
+.category-button-mathematics {
+    $color: #cb3030;
+
+    background-color: var(--ion-color-mathematics-main);
+    box-shadow: 0 $button-elevation var(--ion-color-mathematics-main-shade);
+    border: 3px solid var(--ion-color-mathematics-main-tint);
+
+    .category-name {
+        color: darken(saturate($color, 0.38), 16.08);
+    }
+
+    .category-data-container ion-label {
+        color: darken(saturate($color, 0.38), 16.08);
+    }
+
+    .category-data-container img {
+        filter: invert(18%) sepia(22%) saturate(4978%) hue-rotate(337deg) brightness(91%) contrast(97%);
+    }
+}
+
+.category-button-science {
+    $color: #FF9233;
+
+    background-color: var(--ion-color-science-main);
+    box-shadow: 0 $button-elevation var(--ion-color-science-main-shade);
+    border: 3px solid var(--ion-color-science-main-tint);
+
+    .category-name {
+        color: darken(saturate($color, 0.38), 16.08);
+        font-size: 8vw;
+    }
+
+    .category-data-container ion-label {
+        color: darken(saturate($color, 0.38), 16.08);
+    }
+
+    .category-data-container img {
+        filter: invert(34%) sepia(75%) saturate(2904%) hue-rotate(22deg) brightness(98%) contrast(105%);
+    }
+}
+
+.category-button-literature {
+    $color: #849324;
+
+    background-color: var(--ion-color-literature-main);
+    box-shadow: 0 $button-elevation var(--ion-color-literature-main-shade);
+    border: 3px solid var(--ion-color-literature-main-tint);
+
+    .category-name {
+        color: darken(saturate($color, 0.38), 16.08);
+        font-size: 9vw;
+    }
+
+    .category-data-container ion-label {
+        color: darken(saturate($color, 0.38), 16.08);
+    }
+
+    .category-data-container img {
+        filter: invert(20%) sepia(81%) saturate(372%) hue-rotate(29deg) brightness(97%) contrast(96%);
+    }
+}
+
+.category-button-coming-soon {
+    $color: #92949c;
+
+    background-color: var(--ion-color-medium);
+    box-shadow: 0 $button-elevation var(--ion-color-medium-shade);
+    border: 3px solid var(--ion-color-medium-tint);
+
+    .category-name {
+        color: darken(saturate($color, 0.38), 16.08);
+        font-size: 6vw;
+    }
+
+    .category-data-container ion-label {
+        color: var(--ion-color-medium);
+    }
+
+    .category-data-container img {
+        filter: invert(61%) sepia(6%) saturate(321%) hue-rotate(191deg) brightness(95%) contrast(91%);
+    }
+}
+
+.category-icon {
+    position: absolute;
+    float: left;
+    left: 5vw;
+    top: 0;
+    z-index: 4;
+    height: 36vw;
+	width: auto;
+}
+
+.category-name {
+    font-family: "KenVector-Future";
+    font-size: 10vw;
+    text-align: left;
+}
+
+.category-name-container {
+    width: 100%;
+}
+
+.category-data-container {
+    height: 28px;
+    width: 72px;
+    padding: 0;
+
+    ion-col {
+        display: inline-flex;
+    }
+
+    .category-detail {
+        height: 20px;
+        display: flex;
+        flex: 1;
+    }
+
+    img {
+        height: 24px;
+        width: 24px;
+        margin: auto;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    ion-label {
+        vertical-align: middle;
+        line-height: 22px;
+        font-family: 'Kenney-Mini';
+    }
+}

@@ -1,19 +1,44 @@
 <ion-content>
   <app-header name="Categories" backLink="/home"></app-header>
 
-  <ion-grid class="witzy-category-container">
-    <ion-row>
-
-      <ion-col size="6" *ngFor="let category of categories" class="witzy-category-card-container">
-        <img *ngIf="category.isAvailable == true" src="{{ category.categoryIcon }}" class="witzy-category-icon" />
-        <ion-card mode="ios" class="witzy-category-card witzy-category-card-{{ category.categoryId }}">
-          <ion-card-content class="witzy-category-title">
-            <ion-card-title *ngIf="category.isAvailable == true">{{ category.categoryName }}</ion-card-title>
-            <ion-card-title *ngIf="category.isAvailable == false">Coming Soon!</ion-card-title>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      
-    </ion-row>
-  </ion-grid>
+  <div class="category-button-container" *ngFor="let category of categories; let categoryIndex = index;"
+  (click)="onClickCategory(categoryIndex)">
+    <img *ngIf="category.isAvailable == true" src="{{ category.categoryIcon }}" class="category-icon" />
+    <ion-button *ngIf="category.isAvailable == true" class="category-button category-button-{{ category.categoryId }}" mode="ios">
+      <div class="category-button-inner">
+        <ion-grid class="ion-no-padding">
+          <ion-row>
+            <ion-col size="4">
+            </ion-col>
+              <ion-col size="8">
+                <ion-grid>
+                  <ion-row class="category-name-container">
+                    <ion-col size="12">
+                          <ion-card-title class="category-name">{{ category.categoryName }}</ion-card-title>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row class="category-data-container ion-align-items-start">
+                    <ion-col>
+                      <div class="category-detail">
+                        <img src="/assets/ui/icons/star.png" />
+                      </div>
+                      <div class="category-detail ion-text-center">
+                        <ion-label>1</ion-label><ion-label>/2</ion-label>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-button>
+    <ion-button *ngIf="category.isAvailable == false" class="category-button category-button-coming-soon" mode="ios">
+      <div class="category-button-inner">
+        <ion-card-title class="category-name">Coming Soon!</ion-card-title>
+      </div>
+    </ion-button>
+  </div>
+  
+  <witzy-menu-background></witzy-menu-background>
 </ion-content>
