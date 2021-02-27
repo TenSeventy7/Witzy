@@ -7,7 +7,6 @@ import { AnimationOptions } from 'ngx-lottie';
   selector: 'witzy-menu-background',
   template: `
     <ng-lottie [options]="options" (animationCreated)="animationCreated($event)" class="background"></ng-lottie>
-    <ng-lottie [options]="spaceOptions" (animationCreated)="animationCreated($event)" class="background-spaceman"></ng-lottie>
   `,
   styleUrls: ['./menu-background.component.scss'],
 })
