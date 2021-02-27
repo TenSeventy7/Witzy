@@ -26,10 +26,6 @@ const routes: Routes = [
     path: 'levels',
     loadChildren: () => import('./pages/levels/levels.module').then( m => m.LevelsPageModule)
   },
-  {
-    path: 'level-detail',
-    loadChildren: () => import('./modals/level-detail/level-detail.module').then( m => m.LevelDetailPageModule)
-  },
 ];
 @NgModule({
   imports: [
