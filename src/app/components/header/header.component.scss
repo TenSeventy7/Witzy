@@ -1,0 +1,29 @@
+ion-header {
+  padding: 6vh 0;
+  padding-bottom: 0;
+}
+
+.witzy-game-header {
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+.header-title {
+  font-family: 'KenVector-Future';
+  font-size: 20pt;
+  padding-inline: 8px;
+}
+
+.header-back-button {
+  height: 48px !important;
+  width: 48px;
+
+  &:focus { 
+    outline: none !important;
+  }
+
+  img {
+    height: 28px !important;
+    width: 28px;
+  }
+}
