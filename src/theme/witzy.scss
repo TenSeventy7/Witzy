@@ -9,33 +9,6 @@ ion-content, ion-footer, ion-toolbar, ion-header {
   padding: 0 6vw;
 }
 
-.witzy-header {
-  padding: 6vh 0;
-  padding-bottom: 0;
-}
-
-.witzy-game-header {
-  padding-top: 1vh;
-  padding-bottom: 1vh;
-}
-
-.witzy-header-title {
-  font-family: 'Witzy';
-  font-weight: 700;
-  font-size: 18pt;
-  margin-top: 2px;
-  padding-inline: 8px;
-}
-
-.witzy-header-back-button {
-  height: 48px !important;
-  width: 48px;
-}
-
-.witzy-header-back-button:focus { 
-  outline: none !important;
-}
-
 .witzy-leveldetail-container { 
   padding: 0;
 }
