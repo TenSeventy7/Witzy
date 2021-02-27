@@ -5,9 +5,24 @@
 }
 
 .play-button {
+    --background: url('/assets/buttons/blue_button00.png') cover no-repeat;
+  background-image: url('/assets/buttons/blue_button00.png');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+    --ripple-color: transparent;
+    background-size: cover;
     text-transform: capitalize;
     font-weight: 700;
-    height: 60px;
+    height: 49px;
+    width: 190px;
+}
+
+.play-button:active {
+    --background: url('/assets/buttons/blue_button01.png') cover no-repeat;
+    background-image: url('/assets/buttons/blue_button01.png');
+    background-size: cover;
+    height: 45px;
 }
 
 .setting-button {
