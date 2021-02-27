@@ -15,23 +15,6 @@ const routes: Routes = [
     loadChildren: './pages/results/results.module#ResultsPageModule'
   },
   {
-    path: 'game',
-    children: [
-      {
-        path: '',
-        loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule)
-      },
-      {
-        path: ':id',
-        loadChildren: () => import('./pages/game/game.module').then( m => m.GamePageModule)
-      }
-    ]
-  },
-  {
-    path: '',
-    loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule)
-  },
-  {
     path: 'splash',
     loadChildren: () => import('./pages/splash/splash.module').then( m => m.SplashPageModule)
   },
@@ -42,6 +25,10 @@ const routes: Routes = [
   {
     path: 'levels',
     loadChildren: () => import('./pages/levels/levels.module').then( m => m.LevelsPageModule)
+  },
+  {
+    path: 'level-detail',
+    loadChildren: () => import('./modals/level-detail/level-detail.module').then( m => m.LevelDetailPageModule)
   },
 ];
 @NgModule({
