@@ -85,6 +85,10 @@ export class LevelsPage implements OnInit {
     }, 400);
   }
 
+  onClickPlayButton(){
+    this.router.navigate(['/game']);
+  }
+
   onClickLevel(levelIndex: number) {
     this.selectedLevel = this.levels[levelIndex];
     this.levelNumber = levelIndex + 1;
