@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { GameDataService } from '../../services/game-data.service';
+import { NavController } from '@ionic/angular';
+import { Platform } from '@ionic/angular';
+import { AudioService } from '../../services/audio.service';
+import { getGameData } from '../../services/game-storage.service';
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.page.html',
@@ -12,23 +16,32 @@ export class CategoriesPage implements OnInit {
 
   showCategoryCards: boolean;
   selectedCategory: string;
+  buttonClass: string;
+  audioEnabled: boolean = true;
   categories: Array<string> = this.gameData.getGameData('categoryData').categories;
 
-  constructor(private router: Router, private http: HttpClient, private gameData: GameDataService) { }
+  constructor(private navCtrl: NavController, private platform: Platform, private router: Router, private http: HttpClient, private gameData: GameDataService, private audio: AudioService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
     let categories: Array<string> = this.gameData.getGameData('categoryData').categories;
-    console.log(this.categories);
+    this.audioEnabled = await getGameData("game_audio");
+
+    setTimeout(()=> {
+      this.buttonClass = "category-buttons-in";
+    }, 1000);
+
+    this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
+      this.navCtrl.navigateBack(['/home']);
+    });
   }
 
   goCategory(url) {
     if (url.isAvailable) {
-      this.http.get(url.jsonUrl, {responseType: 'json'}).subscribe(
-        (data) => {
-        console.log(data);
-        this.gameData.setGameData('currentLevelData', data);
-        this.router.navigate(['/levels']);
-      });
+      if (this.audioEnabled) {
+        this.audio.playSfx('game-sfx-select');
+      }
+
+      this.router.navigate(['/levels']);
     }
   }
 

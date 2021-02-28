@@ -6,7 +6,7 @@ import { AnimationOptions } from 'ngx-lottie';
 @Component({
   selector: 'witzy-menu-background',
   template: `
-    <ng-lottie [options]="options" (animationCreated)="animationCreated($event)" class="background"></ng-lottie>
+    <ng-lottie [options]="options" class="background"></ng-lottie>
   `,
   styleUrls: ['./menu-background.component.scss'],
 })
@@ -15,12 +15,4 @@ export class MenuBackgroundComponent implements CommonModule {
   options: AnimationOptions = {
     path: '/assets/bodymovin/space-bg.json',
   };
-
-  spaceOptions: AnimationOptions = {
-    path: '/assets/bodymovin/spaceman.json',
-  };
- 
-  animationCreated(animationItem: AnimationItem): void {
-    console.log(animationItem);
-  }
 }

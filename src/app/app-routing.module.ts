@@ -26,6 +26,18 @@ const routes: Routes = [
     path: 'levels',
     loadChildren: () => import('./pages/levels/levels.module').then( m => m.LevelsPageModule)
   },
+  {
+    path: 'about',
+    loadChildren: () => import('./pages/about/about.module').then( m => m.AboutPageModule)
+  },
+  {
+    path: 'loading',
+    loadChildren: () => import('./pages/loading/loading.module').then( m => m.LoadingPageModule)
+  },
+  {
+    path: 'exit',
+    loadChildren: () => import('./pages/exit/exit.module').then( m => m.ExitPageModule)
+  },
 ];
 @NgModule({
   imports: [

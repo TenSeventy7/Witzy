@@ -5,18 +5,33 @@
 
     <div class="footer-container">
       <ion-grid class="play-button-container">
+
         <ion-row class="ion-align-items-center">
           <ion-col size="12" class="ion-text-center">
-              <ion-button expand="block" class="play-button" (click)="goCategories()">PLAY</ion-button>
+              <ion-button class="play-button" (click)="goCategories()">PLAY</ion-button>
           </ion-col>
         </ion-row>
+
         <ion-row class="ion-align-items-center">
-          <ion-col size="12" class="ion-text-center">
-            <ion-toolbar>
-              <ion-button color="primary" class="setting-button" mode="ios" shape="round" routerLink="/game">Settings</ion-button>
-            </ion-toolbar>
+          <ion-col size="4" class="ion-text-center">
+              <ion-button class="setting-button" mode="ios" (click)="toggleMusic()">
+                <img *ngIf="musicEnabled" src="/assets/ui/icons/musicOn.png"/>
+                <img *ngIf="!musicEnabled" class="icon-inactive" src="/assets/ui/icons/musicOff.png"/>
+              </ion-button>
+          </ion-col>
+          <ion-col size="4" class="ion-text-center">
+              <ion-button class="setting-button" mode="ios" (click)="toggleAudio()">
+                <img *ngIf="audioEnabled" src="/assets/ui/icons/audioOn.png"/>
+                <img *ngIf="!audioEnabled" class="icon-inactive" src="/assets/ui/icons/audioOff.png"/>
+              </ion-button>
+          </ion-col>
+          <ion-col size="4" class="ion-text-center">
+              <ion-button class="setting-button" mode="ios" routerLink="/about">
+                <img class="icon-inactive" src="/assets/ui/icons/information.png"/>
+              </ion-button>
           </ion-col>
         </ion-row>
+
       </ion-grid>
     </div>
     <witzy-menu-background></witzy-menu-background>

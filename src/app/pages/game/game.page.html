@@ -1,76 +1,104 @@
 <ion-content>
-  <ion-header class="ion-no-border" mode='ios'>
+  <ion-header class="ion-no-border game-header" mode='md'>
     <ion-toolbar>
-      <ion-title>Level Name</ion-title>
+      <ion-buttons slot="start">
+        <ion-button class="header-back-button" shape="round" size="small" fill="clear" (click)="showGameModal()">
+          <img src="/assets/ui/icons/barsHorizontal.png"/>
+        </ion-button>
+      </ion-buttons>
+      <ion-title class="header-title">Level {{ currentLevelTrue }}</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <ion-header class="ion-no-border witzy-game-header" mode='md'>
-    <div>
-      <ion-grid class="witzy-leveldetail-container ion-align-items-center">
+  <ion-header class="ion-no-border" mode='md'>
+      <ion-grid class="ion-align-items-center">
         <ion-row class="ion-align-items-center">
-          <ion-col size="4" class="witzy-leveldetail-question ion-align-items-center">
+          <ion-col size="4" class="ion-align-items-center game-detail-question">
             <ion-grid>
-              <ion-row class="ion-align-items-left witzy-leveldetail-question">
-                <ion-col size="3" class="witzy-leveldetail-question-icon ion-align-items-center">
-                  <ion-icon name="help-circle-outline"></ion-icon>
+              <ion-row class="ion-align-items-left ion-text-center">
+                <ion-col size="4" class="ion-align-items-center game-detail-icon">
+                  <img src="/assets/ui/icons/question.png" class="unearned-star"/>
                 </ion-col>
-                <ion-col size="9" class="witzy-leveldetail-question-text ion-align-items-center ion-text-center">
-                  <ion-text class="witzy-leveldetail-question-text-bold">{{ questionIndex + 1 }}</ion-text><ion-text>/{{ questions.length }}</ion-text>
+                <ion-col size="8" class="ion-align-items-center game-detail-text">
+                  <div class="game-detail-text">
+                    <ion-text>{{ questionIndex + 1 }}</ion-text><ion-text>/{{ questions.length }}</ion-text>
+                  </div>
                 </ion-col>
               </ion-row>
             </ion-grid>
           </ion-col>
-          <ion-col size="4" class="ion-text-center">
-            <ion-badge color="accent" class="witzy-leveldetail-score" [ngClass]="{ 'witzy-leveldetail-score-animation': cuurentScoreAnimate == true }" mode="ios">{{ currentScore }}</ion-badge>
+          <ion-col size="4" class="ion-text-center game-detail-score">
+            <ion-badge [ngClass]="{ 'witzy-leveldetail-score-animation': cuurentScoreAnimate == true }" mode="ios">{{ currentScore }}</ion-badge>
           </ion-col>
-          <ion-col size="4" class="ion-text-center witzy-leveldetail-stars">
-            <ion-icon name="star" [ngClass]="{'life-active': true, 'life-inactive': roundStars === 0}"></ion-icon>
-            <ion-icon name="star" [ngClass]="{'life-active': true, 'life-inactive': roundStars <= 1}"></ion-icon>
-            <ion-icon name="star" [ngClass]="{'life-active': true, 'life-inactive': roundStars <= 2}"></ion-icon>
+          <ion-col size="4" class="ion-text-center game-detail-stars">
+            <img src="/assets/ui/icons/star.png" class="earned-star-science" [ngClass]="{'unearned-star': roundStars < 1}"/>
+            <img src="/assets/ui/icons/star.png" class="earned-star-science" [ngClass]="{'unearned-star': roundStars < 2}"/>
+            <img src="/assets/ui/icons/star.png" class="earned-star-science" [ngClass]="{'unearned-star': roundStars < 3}"/>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  </ion-header>
+
+  <ion-slides class="game-cards-container">
+    <ion-slide *ngFor="let question of questions">
+      <div class="game-card card-color-science"
+      [ngClass]="{ 'card-color-correct': questionResponseClass == 'correct',
+                   'card-color-incorrect': questionResponseClass == 'incorrect'
+                  }">
+        <ion-card-header class="game-card-timer timer-color-science"
+        [ngClass]="{ 'timer-color-correct': questionResponseClass == 'correct',
+                     'timer-color-incorrect': questionResponseClass == 'incorrect'
+                    }">
+          <ion-card-title>
+            <ion-text>{{ timeLeft }}</ion-text>
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-header class="game-card-question">
+          <ion-card-title >
+            <ion-text class="ion-text-center" *ngIf="questionResponseClass == 'normal'">{{ question.questionText }}</ion-text>
+            <ion-text class="ion-text-center" *ngIf="questionResponseClass == 'correct'">Your answer is correct!</ion-text>
+            <ion-text class="ion-text-center" *ngIf="questionResponseClass == 'incorrect'">Oh noes!</ion-text>
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="game-card-answers">
+          <div class="ion-padding-vertical">
+            <ion-button class="game-answer-button button-color-science"
+            [ngClass]="{ 'button-color-disabled': !answerButtons }" mode="ios"
+            *ngFor="let answer of questions[questionIndex].answers; let userAnswerIndex = index;"
+            (click)="checkUserAnswer(userAnswerIndex)" [disabled]="!answerButtons">{{answer.answer}}</ion-button>
+          </div>
+        </ion-card-content>
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+  <div class="game-window-container">
+    <div class="game-window">
+      <ion-grid>
+        <ion-row class="ion-align-items-center">
+          <ion-col size="3" class="ion-align-items-center">
+            <img src="/assets/ui/icons/information.png" />
+          </ion-col>
+          <ion-col size="9" class="game-window-text">
+            <ngx-typed-js [strings]="[ hintText ]" [showCursor]="false" *ngIf="typedJs">
+              <h1 class="typing"></h1>
+            </ngx-typed-js>
           </ion-col>
         </ion-row>
       </ion-grid>
     </div>
-  </ion-header>
-
-  <ion-slides class="witzy-question-card-container">
-    <ion-slide *ngFor="let slide of questions">
-      <ion-card mode="ios" class="witzy-question-card" [ngClass]="{ 'back': cardAnimate == 'start', 'front': cardAnimate == 'end', 'witzy-question-card-correct': questionResponseClass == 'correct', 'witzy-question-card-incorrect': questionResponseClass == 'incorrect', 'witzy-question-card-normal': questionResponseClass == 'normal' }">
-        <ion-card-header>
-          <ion-card-title>Timer Container</ion-card-title>
-          <ion-card-title class="witzy-question-text">
-            <ion-text class="ion-text-center">
-              <h3>{{questions[questionIndex].questionText}}</h3>
-            </ion-text>
-          </ion-card-title>
-        </ion-card-header>
-    
-        <ion-card-content>
-          <div class="ion-padding-vertical">
-            <ion-button mode="ios" shape="round" color="main" fill="outline" size="large" expand="block" class="witzy-question-answer-button"
-              *ngFor="let answer of questions[questionIndex].answers; let userAnswerIndex = index;"
-              (click)="checkUserAnswer(userAnswerIndex)" [disabled]="!answerButtons">
-              {{answer.answer}}
-            </ion-button>
-          </div>
-        </ion-card-content>
-      </ion-card>
-    </ion-slide>
-  </ion-slides>
-
-  <ion-card mode="ios" class="witzy-hint-card">
-      <ion-card-content class="witzy-hint-container">
-        <ion-grid class="witzy-levelhint-container">
-          <ion-row class="ion-align-items-center">
-            <ion-col size="3" class="ion-align-items-center">
-              <ion-icon class="witzy-hint-question-icon" name="help-circle-outline"></ion-icon>
-            </ion-col>
-            <ion-col size="9" class="ion-text-center {{ hintClass }}">
-              {{ hintText }}
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-card-content>
-  </ion-card>
+  </div>
 </ion-content>
+
+<div class="level-modal" [ngClass]="{ 'level-modal-visible': modalFade == 'fadeIn' }" *ngIf="modalVisible">
+  <div class="level-modal-window" *ngIf="modalWindowRoll" [@slideInOut]>
+
+    <ion-text>Level {{ currentLevelTrue }}</ion-text>
+
+    <ion-button class="modal-button modal-button-science" mode="ios" (click)="onClickOutsideModal()">CONTINUE</ion-button>
+    <ion-button class="modal-button modal-button-science" mode="ios" (click)="onClickPlayButton()">OPTIONS</ion-button>
+    <ion-button class="modal-button modal-button-science" mode="ios" (click)="presentAlertMultipleButtons()">EXIT</ion-button>
+  </div>
+  <div class="close-modal" (click)="onClickOutsideModal()"></div>
+</div>
+<div class="disable-input" [hidden]="inputEnabled"></div>

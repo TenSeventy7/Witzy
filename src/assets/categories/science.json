@@ -4,7 +4,7 @@
       "levelId": 1,
       "levelDesc": "Science",
       "levelRemark": "Science",
-      "neededStars": -1,
+      "neededStars": 0,
       "levelUrl": "/assets/categories/science/level_1.json"
     },
     {

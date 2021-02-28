@@ -1,6 +1,13 @@
+.splash-progress-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
 
 .splash-progress-bar {
-    padding: 2vh 6vw !important;
+    padding: 1vh 15vw !important;
+    width: 100%;
 
     ion-progress-bar {
         height: 20px;

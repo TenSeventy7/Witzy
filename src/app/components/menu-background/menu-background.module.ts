@@ -17,7 +17,8 @@ import { MenuBackgroundComponent } from './menu-background.component';
 
 @NgModule({
   imports: [ CommonModule, FormsModule, 
-    LottieModule.forRoot({ player: playerFactory }), IonicModule ],
+    LottieModule.forRoot({ player: playerFactory, 
+      useCache: true, }), IonicModule ],
   declarations: [MenuBackgroundComponent],
   exports: [MenuBackgroundComponent]
 })

@@ -1,101 +1,243 @@
+@import '../../components/header/header.component';
+@import '../levels/levels.page';
 
-$splash-background: var(--ion-color-main);
+$button-elevation: .2em;
 
-ion-content, ion-footer, ion-toolbar, ion-header {
-  --background: $splash-background;
-	background: $splash-background;
-  border: none;
-  color: var(--ion-color-white);
-  padding: 0 6vw;
+.game-detail-question {
+
+  .game-detail-icon {
+    max-width: 32px !important;
+    margin-bottom: 6px;
+
+    img {
+      filter: invert(62%) sepia(8%) saturate(243%) hue-rotate(191deg) brightness(94%) contrast(92%) !important;  
+    }
+  }
+
+  .game-detail-text { 
+    margin-top: 1px;
+
+    ion-text {
+      margin: auto;
+      font-family: 'KenVector-Future-Thin';
+      font-size: 18px;
+
+      &:nth-child(1) {
+        font-family: 'KenVector-Future';
+        font-weight: 700;
+      }
+    }
+  }
 }
 
-ion-toolbar {
-    --background: transparent;
+.game-detail-score ion-badge {
+    border-radius: 24px;
+    font-family: 'KenVector-Future-Thin';
+    line-height: 2.25vh;
+    font-size: 2vh;
+    width: 60%;
+    height: 3vh;
 }
 
-.life-active {
-    color: var(--ion-color-white);
+.game-detail-stars {
+  height: 48px;
+
+  img {
+    height: 32px;
+    width: 32px;
+    margin-left: -6px;
+  }
+
+  .unearned-star {
+    filter: invert(62%) sepia(8%) saturate(243%) hue-rotate(191deg) brightness(94%) contrast(92%) !important;
+  }
 }
 
-.life-inactive {
-    color: var(--ion-color-medium);
+.earned-star-mathematics {
+  filter: invert(22%) sepia(79%) saturate(1970%) hue-rotate(339deg) brightness(103%) contrast(93%);
 }
 
-.button-class {
-    --background: var(--ion-color-medium);
-    --color: #fff;
-    margin: 12px;
+.earned-star-science {
+  filter: invert(69%) sepia(87%) saturate(1942%) hue-rotate(334deg) brightness(100%) contrast(102%);
 }
 
-.button-class-active {
-    --background: var(--ion-color-primary);
+.earned-star-literature {
+  filter: invert(55%) sepia(10%) saturate(3942%) hue-rotate(29deg) brightness(94%) contrast(72%);
 }
 
-.button-check {
-    --background: var(--ion-color-success);
+
+
+.game-cards-container {
+    height: 60vh;
 }
 
-.button-check-false {
-    --background: var(--ion-color-danger);
+.game-card {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    background: url("/assets/buttons/css-texture.png");
+    background-size: contain;
+    background-repeat: repeat-x;
+
+    height: 90%;
+    width: 80%;
+    border-radius: 10px;
 }
 
-.button-check-active {
-    animation-duration: 0.3s;
-    animation-name: button-check-anim;
-}
-
-.correct-div {
-    animation: answer-animation ease 0.5s;
-    width: 100%;
-    height: 300px; background: #b8f28b;
-    color: #8dbc01;
+.game-card-timer {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 0;
+    top: 3vh;
+
+    ion-text {
+        font-family: 'Kenney-Mini';
+        font-size: 8vw;
+        font-weight: 700;
+    }
 }
 
-.false-div {
-    animation: answer-animation ease 0.5s;
-    width: 100%;
-    height: 300px; background: #ffc1c1;
+.game-card-question {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 0;
-}
+    width: 80%;
+    top: 9vh;
 
-.correct-title {
-    font-size: 22px;
-    color: #58a700;
-}
-
-.false-title {
-    color: #ec0c1c;
-    font-size: 22px;
-}
-
-
-.false-text {
-    color: #ff2f2f;
-    font-size: 15px;
-    margin-top: 3px;
-}
-
-@keyframes answer-animation {
-    from {
-        width: 100%;
-        height: 0;
+    ion-card-title {
+        font-family: 'KenVector-Future';
+        color: var(--ion-color-white);
+        font-size: 4.25vw;
+        font-weight: 400;
     }
-      
-    30% {
-        width: 100%;
-        height: 350px;
+}
+
+.game-card-answers {
+    position: absolute;
+    bottom: 4vh;
+}
+
+.game-answer-button {
+    --background: rgb(0, 0, 0, 0.0);
+    --background-activated: rgb(0, 0, 0, 0.0);
+    --ripple-color: transparent;
+    background: url("/assets/buttons/css-texture.png");
+    background-size: contain;
+    background-repeat: repeat-x;
+	margin: 10px;
+	display: inline-block;
+	border-radius: 7px;
+    padding: 10px 10px 10px 10px;
+    transition: top 300ms ease-in-out;
+    box-sizing: border-box;
+    height: 12vw;
+    width: 60vw;
+
+    font-family: "Kenney-Mini";
+    font-size: 4.5vw;
+    font-weight: 500;
+
+    transition: background-color 300ms ease;
+
+    &:active {
+        top: $button-elevation;
+        box-shadow: none;
+        position: relative;
     }
-    
-    to {
-        width: 100%;
-        height: 300px;
+}
+
+.card-color-correct {
+    background-color: var(--ion-color-success-tint) !important;
+    border: 3px solid var(--ion-color-success) !important;
+    transition: background-color 400ms ease;
+}
+
+.timer-color-correct ion-text {
+    $color: #42d77d;
+    color: darken(saturate($color, 0.38), 16.08) !important;
+    transition: color 400ms ease;
+}
+
+.card-color-incorrect {
+    background-color: var(--ion-color-danger-tint) !important;
+    border: 3px solid var(--ion-color-danger) !important;
+    transition: background-color 400ms ease;
+}
+
+.timer-color-incorrect ion-text {
+    $color: #ed576b;
+    color: darken(saturate($color, 0.38), 16.08) !important;
+    transition: color 400ms ease;
+}
+
+.button-color-disabled {
+    background-color: var(--ion-color-medium) !important;
+    box-shadow: 0 $button-elevation var(--ion-color-medium-shade) !important;
+    border: 3px solid var(--ion-color-medium-tint) !important;
+}
+
+// ================================== //
+// Science //
+.card-color-science {
+    background-color: var(--ion-color-science-accent);
+    border: 3px solid var(--ion-color-science-accent-shade);
+    transition: background-color 300ms ease;
+}
+
+.button-color-science {
+    $color: #FF9233;
+
+    background-color: var(--ion-color-science-main);
+    box-shadow: 0 $button-elevation var(--ion-color-science-main-shade);
+    border: 3px solid var(--ion-color-science-main-tint);
+}
+
+.timer-color-science ion-text {
+    $color: #058AA6;
+    color: darken(saturate($color, 0.38), 16.08);
+}
+// Science //
+// ================================== //
+
+.game-window {
+    position: fixed;
+    left: 10%;
+    bottom: 5vh;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    height: 12%;
+    width: 80%;
+    background-color: #121212;
+    border: 3px ridge #4e4e4e;
+    border-radius: 10px;
+
+    img {
+      filter: invert(82%) sepia(19%) saturate(5858%) hue-rotate(39deg) brightness(111%) contrast(106%);
     }
-    
+}
+
+.game-window-text {
+  width: 77vw !important;
+  padding-right: 4vw !important;
+
+  ngx-typed-js {
+    font-family: "Kenney-Mini";
+    font-weight: 400;
+    text-align: justify;
+
+    h1 {
+        font-size: 2vh;
+        color: #87ff00;
+    }
+  }
+}
+
+.disable-lottie {
+  height: 0;
+  width: 0;
+  opacity: 0;
 }

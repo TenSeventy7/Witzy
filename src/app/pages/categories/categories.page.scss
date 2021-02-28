@@ -16,6 +16,37 @@ $button-elevation: .3em;
             position: relative;
         }
     }
+
+    transform: translateX(150%);
+    transition: 0.4s;
+}
+
+.category-buttons-in {
+    transform: translateX(0%) !important;
+
+    &:nth-child(1) {
+        transition-delay: 0.0s;
+    }
+
+    &:nth-child(2) {
+        transition-delay: 0.05s;
+    }
+
+    &:nth-child(3) {
+        transition-delay: 0.1s;
+    }
+
+    &:nth-child(4) {
+        transition-delay: 0.15s;
+    }
+
+    &:nth-child(5) {
+        transition-delay: 0.2s;
+    }
+
+    &:nth-child(6) {
+        transition-delay: 0.25s;
+    }
 }
 
 .category-button {
@@ -34,6 +65,10 @@ $button-elevation: .3em;
     height: 13vh;
     width: 100%;
     margin-top: 6vw;
+
+    .category-button-inner {
+        margin-left: 25vw;
+    }
 }
 
 .category-button-mathematics {

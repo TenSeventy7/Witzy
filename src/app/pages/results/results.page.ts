@@ -8,17 +8,17 @@ import { GameDataService } from '../../services/game-data.service';
   styleUrls: ['./results.page.scss'],
 })
 export class ResultsPage implements OnInit {
-  gameResult: any;
-  gameStars: any;
+  gameResult: any = 0;
+  gameStars: any = 0;
+  gameLevel: any = 1;
+  hintText: string;
   constructor(private route: ActivatedRoute, private scoreData: GameDataService) { }
 
   ngOnInit() {
-    if (this.route.snapshot.data['currentGameScore']) {
-      this.gameStars = this.scoreData.getGameData('currentGameStars');
-      this.gameResult = this.route.snapshot.data['currentGameScore'];
-      console.log('Inf: Player score for game is ' + this.route.snapshot.data['currentGameScore']);
-      console.log('Inf: Player star for game is ' + this.gameStars);
-    }
+    this.gameStars = this.scoreData.getGameData('currentGameStars');
+    this.gameResult = this.scoreData.getGameData('currentGameScore');
+    this.gameLevel = (this.scoreData.getGameData('currentLevelNumberTrue')).toString();
+    this.hintText = 'Wow';
   }
 
 }

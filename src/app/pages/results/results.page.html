@@ -1,24 +1,41 @@
 <ion-content>
-  <app-header name="Level 1" backLink="/home"></app-header>
+  <app-header name="Level {{ gameLevel }}" backLink="/home"></app-header>
 
-  <div class="results-card-container">
-<ion-card mode="ios" class="results-card">
-    <ion-card-header>
-      <ion-card-title class="results-score ion-text-center">240{{gameResult}}</ion-card-title>
-
-      <div class="results-star">
+  <div class="results-window-container">
+    <div class="results-window">
+  
+      <ion-text>240</ion-text>
+  
+      <div class="level-modal-stars">
         <div>
-            <ion-icon name="star" [ngClass]="{'life-active': true, 'life-inactive': gameStars === 0}"></ion-icon>
-            <ion-icon name="star" [ngClass]="{'life-active': true, 'life-inactive': gameStars <= 1}"></ion-icon>
-            <ion-icon name="star" [ngClass]="{'life-active': true, 'life-inactive': gameStars <= 2}"></ion-icon>
+          <img src="/assets/ui/icons/star.png" class="earned-star-{{ categoryId }}" [ngClass]="{'unearned-star-modal': gameStars == 0}"/>
+          <img src="/assets/ui/icons/star.png" class="earned-star-{{ categoryId }}" [ngClass]="{'unearned-star-modal': gameStars < 2}"/>
+          <img src="/assets/ui/icons/star.png" class="earned-star-{{ categoryId }}" [ngClass]="{'unearned-star-modal': gameStars < 3}"/>
         </div>
       </div>
 
-    </ion-card-header>
+      <ion-text class="level-modal-remark">I knew you can do it!</ion-text>
   
-    <ion-card-content>
-        <ion-button routerLink="/home" routerDirection="back">Back to Home</ion-button>
-    </ion-card-content>
-  </ion-card>
-</div>
+      <ion-button class="modal-button modal-button-science" mode="ios" (click)="onClickPlayButton()">PLAY AGAIN</ion-button>
+      <ion-button class="modal-button modal-button-science" mode="ios" (click)="onClickOutsideModal()">BACK</ion-button>
+
+    </div>
+  </div>
+
+  <div class="game-window-container">
+    <div class="game-window">
+      <ion-grid>
+        <ion-row class="ion-align-items-center">
+          <ion-col size="3" class="ion-align-items-center">
+            <img src="/assets/ui/icons/information.png" />
+          </ion-col>
+          <ion-col size="9" class="game-window-text">
+            <ngx-typed-js [strings]="[ hintText ]" [showCursor]="false">
+              <h1 class="typing"></h1>
+            </ngx-typed-js>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
 </ion-content>

@@ -1,14 +1,42 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { GameDataService } from '../../services/game-data.service';
 import { GameServiceService } from 'src/app/services/game-service.service';
+import { NgxTypedJsComponent } from 'ngx-typed-js';
+import { trigger, transition, animate, style } from '@angular/animations'
+import { Platform, AlertController } from '@ionic/angular';
+import { AudioService } from '../../services/audio.service';
 
 @Component({
   selector: 'app-game',
   templateUrl: './game.page.html',
   styleUrls: ['./game.page.scss'],
+  animations: [
+    trigger('slideInOut', [
+      transition(':enter', [
+        style({transform: 'translateY(120%)'}),
+        animate('400ms ease', style({transform: 'translateY(0%)'}))
+      ]),
+      transition(':leave', [
+        animate('400ms ease', style({transform: 'translateY(120%)'}))
+      ])
+    ])
+  ],
 })
 export class GamePage implements OnInit {
+  @ViewChild(NgxTypedJsComponent) typed: NgxTypedJsComponent;
+  
+  correctSfxArray = [
+    'game-sfx-correct_1',
+    'game-sfx-correct_2'
+  ];
+  
+  incorrectSfxArray = [
+    'game-sfx-wrong_1',
+    'game-sfx-wrong_2'
+  ];
+
+  randomAudioSelection: number;
 
   slideOptions = {
     slidesPerView: 1,
@@ -26,6 +54,8 @@ export class GamePage implements OnInit {
 
   cardAnimate: string = "none";
   cardClass: any;
+  currentLevel: string;
+  currentCategory: string;
 
   currentScore: number = 0;
   cuurentScoreAnimate: boolean = false;
@@ -56,16 +86,42 @@ export class GamePage implements OnInit {
   solutionTitle: string
   solutionText: string
   solutionDiv: boolean
-  
+
+  timeLeft: number = 10;
+  interval: any;
+  multiplierScore: number;
+  actualScore: number;
 
   CheckButton = true
   disabledButton: boolean
 
-  constructor(private router: Router, private gameServiceService: GameServiceService, private scoreData: GameDataService) {}
+  typedJs: boolean = true
+
+  modalFade: string;
+  currentLevelTrue: string;
+  userInputOk: boolean = true;
+  modalVisible: boolean = false;
+  inputEnabled: boolean = true;
+  modalWindowRoll: boolean = false;
+
+  constructor(private router: Router, private platform: Platform, private audio: AudioService, public alertController: AlertController, private gameServiceService: GameServiceService, private scoreData: GameDataService) {}
 
   ngOnInit() {
-    this.questions = this.gameServiceService.questionsChapter1
-    this.questionData = this.gameServiceService.questionsChapter1
+    this.currentCategory = this.scoreData.getGameData('currentCategoryId');
+    this.currentLevel = this.scoreData.getGameData('currentLevelNumber');
+    this.currentLevelTrue = (this.scoreData.getGameData('currentLevelNumberTrue')).toString();
+    console.log("current level is: "+this.currentLevel);
+    console.log("current category is: "+this.currentCategory);
+
+
+    this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
+      console.log('Handler was called!');
+      this.showGameModal();
+    });
+
+    this.questions = this.scoreData.getGameData('currentQuestionsData').questions
+    this.questionData = this.scoreData.getGameData('currentQuestionsData').questions
+    this.questionResponseClass = "normal"
     this.randomizeAnswers()
     this.disabledButton = true
     
@@ -76,8 +132,95 @@ export class GamePage implements OnInit {
     this.calculateRequiredStars();
     this.answerButtons = true;
 
-    this.hintText = this.questions[this.questionIndex].hintText
-    this.hintClass = "witzy-hint-text-fadein"
+    this.startTimer();
+
+    this.hintText = this.questions[this.questionIndex].hintText;
+  }
+
+  showGameModal() {
+    // Only allow modal show if game not presenting solution
+    if (this.userInputOk) {
+      this.modalVisible = true;
+      this.inputEnabled = false;
+
+      clearInterval(this.interval);
+
+      setTimeout(()=> {
+        this.modalFade = "fadeIn";
+        setTimeout(()=> {
+          this.modalWindowRoll = true;
+          setTimeout(()=> {
+            this.inputEnabled = true;
+            this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
+              console.log('Handler was called!');
+              this.onClickOutsideModal();
+            });
+          }, 400);
+        }, 400);
+      }, 300);
+    }
+  }
+
+  onClickOutsideModal() {
+    this.modalWindowRoll = false;
+    this.inputEnabled = false;
+
+    setTimeout(()=> {
+      this.modalFade = "fadeOut"
+      setTimeout(()=> {
+        this.modalVisible = false;
+        setTimeout(()=> {
+          this.inputEnabled = true;
+
+
+          this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
+            console.log('Handler was called!');
+            this.showGameModal();
+          });
+
+          this.startTimer();
+        }, 400);
+      }, 300);
+    }, 400);
+  }
+
+  async presentAlertMultipleButtons() {
+    const alert = await this.alertController.create({
+      header: 'Exit Level',
+      message: 'Are you sure you want to exit?',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: (blah) => {
+            // console.log('Confirm Cancel: blah');
+          }
+        }, {
+          text: 'OK',
+          handler: () => {
+            this.router.navigate(['/exit']);
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+  onClickPlayButton(){
+    this.router.navigate(['/game']);
+  }
+
+  startTimer() {
+      this.interval = setInterval(() => {
+        if(this.timeLeft > 1) {
+          this.timeLeft--;
+        } else {
+          this.timeLeft = 0;
+          this.questionResponseClass = "incorrect"
+          this.questionResponse()
+        }
+      },1000)
   }
 
   calculateRequiredStars() {
@@ -88,7 +231,7 @@ export class GamePage implements OnInit {
       this.totalPossibleScore = this.totalPossibleScore + questionScore;
     }
 
-    // console.log(this.totalPossibleScore);
+    console.log(this.totalPossibleScore);
 
     // Since we already have our total scores, calculate
     // the stars based on our algorithms
@@ -96,9 +239,9 @@ export class GamePage implements OnInit {
     this.roundStar2Requirement = Math.round(this.roundStar1Requirement * 2); // Multiply first star requirement by 2
     this.roundStar3Requirement = Math.round((this.totalPossibleScore / 3.75) + this.roundStar2Requirement); // Divide total score by three, then add first star requirement
     
-    // console.log(this.roundStar1Requirement);
-    // console.log(this.roundStar2Requirement);
-    // console.log(this.roundStar3Requirement);
+    console.log(this.roundStar1Requirement);
+    console.log(this.roundStar2Requirement);
+    console.log(this.roundStar3Requirement);
   }
 
   checkStarScore() {
@@ -119,16 +262,20 @@ export class GamePage implements OnInit {
   checkUserAnswer(index: number) {
     // Set current question index
     this.questionScore = this.questions[this.questionIndex].questionScore
+    if ( this.timeLeft > 5 ) {
+      this.multiplierScore = this.questionScore / 10
+    } else {  
+      this.multiplierScore = this.questionScore / 8
+    }
+
+    this.actualScore = Math.round(this.multiplierScore * this.timeLeft)
+
     this.userAnswer = this.questions[this.questionIndex].answers[index]
-    this.answerButtons = false;
-    // console.log(this.userAnswer);
-
-    this.cardAnimate = "start"
-
+    
     // Check if the answer user selected is correct
     if (this.id > -1) {
       if (this.userAnswer.correct) {
-          this.currentScore = this.currentScore + this.questionScore;
+          this.currentScore = this.currentScore + this.actualScore;
           this.checkStarScore(); // Check if the current score matches our star requirements
           this.questionResponseClass = "correct"
           this.cuurentScoreAnimate = true;
@@ -142,22 +289,26 @@ export class GamePage implements OnInit {
   }
 
   questionResponse() {
-    setTimeout(()=> {
-      this.cardAnimate = "end"
-      this.cardClass = this.questionResponseClass;
-    }, 250);
+    this.answerButtons = false;
+    this.typedJs = false;
+    this.userInputOk = false;
+    clearInterval(this.interval);
+    this.randomAudioSelection = Math.floor(Math.random()*this.correctSfxArray.length);
 
-    this.hintClass = "witzy-hint-text-fadeout"
-    setTimeout(()=> {
-      this.hintText = this.questions[this.questionIndex].solutionText
-    }, 400);
-    setTimeout(()=> {
-      this.hintClass = "witzy-hint-text-fadein"
-    }, 400);
+    if ( this.questionResponseClass == "incorrect" ) {
+      this.audio.playSfx(this.incorrectSfxArray[this.randomAudioSelection]);
+    } else {
+      this.audio.playSfx(this.correctSfxArray[this.randomAudioSelection]);
+    }
 
     setTimeout(()=> {
-      this.presentNextQuestion();
-    }, 5000);
+      this.hintText = this.questions[this.questionIndex].solutionText;
+      this.typedJs = true;
+
+      setTimeout(()=> {
+        this.presentNextQuestion();
+      }, 4000);
+    }, 300);
   }
 
   presentNextQuestion() {
@@ -167,6 +318,10 @@ export class GamePage implements OnInit {
     if (this.questionIndex >= this.questions.length - 1) {
       // Move to score screen if quiz is finished
       this.questionIndex = 0
+
+      this.scoreData.setScoreInfo(this.currentCategory, this.currentLevel, this.currentScore)
+      this.scoreData.setStarInfo(this.currentCategory, this.currentLevel, this.roundStars)
+
       this.scoreData.setGameData('currentGameScore', this.currentScore);
       this.scoreData.setGameData('currentGameStars', this.roundStars);
       this.router.navigate(['/results', 'currentGameScore']);
@@ -174,23 +329,27 @@ export class GamePage implements OnInit {
     else {
       // Else, present new question
       this.questionIndex = this.questionIndex + 1;
+      this.typedJs = false;
+      
+      this.randomizeAnswerArray();
 
       slides.lockSwipes(false);
-      slides.slideNext(300);
-      this.cardClass = "";
-      slides.lockSwipes(true);
 
-      this.randomizeAnswerArray();
-      this.answerButtons = true;
+      setTimeout(()=> {
+        slides.slideNext(350);
+        slides.lockSwipes(true);
+      }, 350);
+
       this.questionResponseClass = "normal"
+      this.hintText = this.questions[this.questionIndex].hintText
 
-      this.hintClass = "witzy-hint-text-fadeout"
       setTimeout(()=> {
-        this.hintText = this.questions[this.questionIndex].hintText
-      }, 400);
-      setTimeout(()=> {
-        this.hintClass = "witzy-hint-text-fadein"
-      }, 400);
+        this.answerButtons = true;
+        this.userInputOk = true;
+        this.typedJs = true;
+        this.timeLeft = 10;
+        this.startTimer();
+      }, 500);
     }
   }
 
