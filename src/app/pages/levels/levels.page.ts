@@ -29,8 +29,8 @@ export class LevelsPage implements OnInit {
   jsonUrl: string;
   levels: any;
 
-  categoryName: any = this.gameData.getGameData('currentCategoryName');
-  categoryId: any = this.gameData.getGameData('currentCategoryId');
+  categoryName: any;
+  categoryId: any;
   
   levelNumber: string;
   levelNumberShow: number;
@@ -54,6 +54,8 @@ export class LevelsPage implements OnInit {
   constructor(private navCtrl: NavController, private router: Router, private platform: Platform, private audio: AudioService, private gameData: GameDataService) { }
 
   async ngOnInit() {
+    this.categoryName = await this.gameData.getGameData('currentCategoryName');
+    this.categoryId = await this.gameData.getGameData('currentCategoryId');
     this.levels = this.gameData.getGameData("currentLevelData_"+this.categoryId);
     this.audioEnabled = await getGameData("game_audio");
     this.musicEnabled = await getGameData("game_music");
