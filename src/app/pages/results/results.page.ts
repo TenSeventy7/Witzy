@@ -15,11 +15,11 @@ export class ResultsPage implements OnInit {
   hintText: string;
   constructor(private router: Router, private scoreData: GameDataService) { }
 
-  ngOnInit() {
-    this.gameStars = this.scoreData.getGameData('currentGameStars');
-    this.gameResult = this.scoreData.getGameData('currentGameScore');
-    this.gameLevel = (this.scoreData.getGameData('currentLevelNumberTrue')).toString();
-    this.categoryId = this.scoreData.getGameData('currentCategoryId');
+  async ngOnInit() {
+    this.gameStars = await this.scoreData.getGameData('currentGameStars');
+    this.gameResult = await this.scoreData.getGameData('currentGameScore');
+    this.gameLevel = (await this.scoreData.getGameData('currentLevelNumberTrue')).toString();
+    this.categoryId = await this.scoreData.getGameData('currentCategoryId');
     this.hintText = 'Wow';
   }
 

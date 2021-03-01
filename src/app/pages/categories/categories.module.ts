@@ -9,14 +9,12 @@ import { CategoriesPageRoutingModule } from './categories-routing.module';
 import { CategoriesPage } from './categories.page';
 
 import { HeaderComponentModule } from '../../components/header/header.module';
-import { MenuBackgroundComponentModule } from '../../components/menu-background/menu-background.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MenuBackgroundComponentModule,
     HeaderComponentModule,
     CategoriesPageRoutingModule
   ],

@@ -21,7 +21,7 @@
                 </ion-col>
                 <ion-col size="8" class="ion-align-items-center game-detail-text">
                   <div class="game-detail-text">
-                    <ion-text>{{ questionIndex + 1 }}</ion-text><ion-text>/{{ questions.length }}</ion-text>
+                    <ion-text>{{ questionIndex + 1 }}</ion-text><ion-text>/{{ questionData.length }}</ion-text>
                   </div>
                 </ion-col>
               </ion-row>
@@ -40,7 +40,7 @@
   </ion-header>
 
   <ion-slides class="game-cards-container">
-    <ion-slide *ngFor="let question of questions">
+    <ion-slide *ngFor="let question of questionData">
       <div class="game-card card-color-science"
       [ngClass]="{ 'card-color-correct': questionResponseClass == 'correct',
                    'card-color-incorrect': questionResponseClass == 'incorrect'
@@ -64,7 +64,7 @@
           <div class="ion-padding-vertical">
             <ion-button class="game-answer-button button-color-science"
             [ngClass]="{ 'button-color-disabled': !answerButtons }" mode="ios"
-            *ngFor="let answer of questions[questionIndex].answers; let userAnswerIndex = index;"
+            *ngFor="let answer of questionData[questionIndex].answers; let userAnswerIndex = index;"
             (click)="checkUserAnswer(userAnswerIndex)" [disabled]="!answerButtons">{{answer.answer}}</ion-button>
           </div>
         </ion-card-content>

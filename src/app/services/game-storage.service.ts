@@ -1,5 +1,4 @@
 import { Plugins } from "@capacitor/core";
-
 const { Storage } = Plugins;
 
 export async function setGameData(key: string, value: any): Promise<void> {

@@ -18,12 +18,14 @@ export class CategoriesPage implements OnInit {
   selectedCategory: string;
   buttonClass: string;
   audioEnabled: boolean = true;
-  categories: Array<string> = this.gameData.getGameData('categoryData').categories;
+  categories: Array<string>;
+  categoriesData: any;
 
   constructor(private navCtrl: NavController, private platform: Platform, private router: Router, private http: HttpClient, private gameData: GameDataService, private audio: AudioService) { }
 
   async ngOnInit() {
-    let categories: Array<string> = this.gameData.getGameData('categoryData').categories;
+    this.categoriesData = await this.gameData.getGameData('categoryData');
+    this.categories = this.categoriesData.categories;
     this.audioEnabled = await getGameData("game_audio");
 
     setTimeout(()=> {

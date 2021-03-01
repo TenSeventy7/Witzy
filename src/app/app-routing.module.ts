@@ -1,19 +1,11 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { GameDataResolverService } from './resolvers/game-data-resolver.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'splash', pathMatch: 'full' },
   { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
   { path: 'results', loadChildren: () => import('./pages/results/results.module').then( m => m.ResultsPageModule)},
   { path: 'game', loadChildren: () => import('./pages/game/game.module').then( m => m.GamePageModule)},
-  {
-    path: 'results/:id',
-    resolve: {
-      currentGameScore: GameDataResolverService
-    },
-    loadChildren: './pages/results/results.module#ResultsPageModule'
-  },
   {
     path: 'splash',
     loadChildren: () => import('./pages/splash/splash.module').then( m => m.SplashPageModule)

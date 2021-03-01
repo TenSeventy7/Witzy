@@ -15,6 +15,7 @@ export class ExitPage implements OnInit {
   categoryData: any;
   categoryId: any;
   completeLevelData: any;
+  recievedcategoryData: any;
   musicEnabled: boolean;
   audioEnabled: boolean;
   jsonUrl: any;
@@ -24,14 +25,20 @@ export class ExitPage implements OnInit {
   async ngOnInit() {
     this.splashProgress = 0.1;
     
-    this.jsonUrl = await this.gameData.getGameData('levelJsonData');
+    this.recievedcategoryData = await this.gameData.getGameData('categoryData');
+    this.categoryData =  this.recievedcategoryData.categories;
     this.splashProgress = 0.5;
 
-    await this.gameData.getGameInfo(this.jsonUrl, 'currentQuestionsData');
-    this.splashProgress = 0.8;
+    for (var index = 0; index < this.categoryData.length; index++) {
+      this.categoryId = this.categoryData[index].categoryId;
+      await this.gameData.getGameInfo(this.categoryData[index].jsonUrl, "currentLevelData_"+this.categoryId);
+      this.completeLevelData = await this.gameData.getUnlockedLevels(this.categoryId);
+      this.gameData.setGameData("currentLevelData_"+this.categoryId, this.completeLevelData);
+      this.splashProgress = this.splashProgress + 0.05
+    }
 
     setTimeout(()=> {
-      this.navCtrl.navigateBack(['/categories']);
+      this.navCtrl.navigateBack(['/levels']);
     }, 1000);
   }
 

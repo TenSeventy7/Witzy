@@ -15,6 +15,7 @@ export class SplashPage implements OnInit {
   categoryData: any;
   categoryId: any;
   completeLevelData: any;
+  receivedcategoryData: any;
   musicEnabled: boolean;
   audioEnabled: boolean;
 
@@ -38,7 +39,8 @@ export class SplashPage implements OnInit {
     this.preloadAudio('game-sfx-toggle', '/assets/ui/sounds/toggle.ogg');
 
     await this.gameData.getGameInfo('/assets/categories/categories.json', 'categoryData');
-    this.categoryData =  this.gameData.getGameData('categoryData').categories;
+    this.receivedcategoryData =  await this.gameData.getGameData('categoryData');
+    this.categoryData =  this.receivedcategoryData.categories;
 
     this.musicEnabled = await getGameData("game_music");
     this.audioEnabled = await getGameData("game_audio");

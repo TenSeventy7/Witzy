@@ -1,11 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { GameDataService } from '../../services/game-data.service';
-import { GameServiceService } from 'src/app/services/game-service.service';
-import { NgxTypedJsComponent } from 'ngx-typed-js';
 import { trigger, transition, animate, style } from '@angular/animations'
+
 import { Platform, AlertController } from '@ionic/angular';
+
+import { NgxTypedJsComponent } from 'ngx-typed-js';
 import { AudioService } from '../../services/audio.service';
+import { GameDataService } from '../../services/game-data.service';
 
 @Component({
   selector: 'app-game',
@@ -23,15 +24,32 @@ import { AudioService } from '../../services/audio.service';
     ])
   ],
 })
+
 export class GamePage implements OnInit {
   @ViewChild(NgxTypedJsComponent) typed: NgxTypedJsComponent;
   
   correctSfxArray = [
     'game-sfx-correct_1',
+    'game-sfx-correct_2',
+    'game-sfx-correct_1',
+    'game-sfx-correct_2',
+    'game-sfx-correct_1',
+    'game-sfx-correct_2',
+    'game-sfx-correct_1',
+    'game-sfx-correct_2',
+    'game-sfx-correct_1',
     'game-sfx-correct_2'
   ];
   
   incorrectSfxArray = [
+    'game-sfx-wrong_1',
+    'game-sfx-wrong_2',
+    'game-sfx-wrong_1',
+    'game-sfx-wrong_2',
+    'game-sfx-wrong_1',
+    'game-sfx-wrong_2',
+    'game-sfx-wrong_1',
+    'game-sfx-wrong_2',
     'game-sfx-wrong_1',
     'game-sfx-wrong_2'
   ];
@@ -46,22 +64,27 @@ export class GamePage implements OnInit {
     preventInteractionOnTransition: true
   };
 
+  slides = document.querySelector('ion-slides');
+
   questionIndex = 0;
   answerButtons: boolean;
-
   hintText: string;
-  hintClass: string;
 
-  cardAnimate: string = "none";
-  cardClass: any;
-  currentLevel: string;
-  currentCategory: string;
+  currentLevel: any;
+  currentLevelTrue: any;
+  currentCategory: any;
+  recievedquestionData: any;
 
+  // Score
   currentScore: number = 0;
-  cuurentScoreAnimate: boolean = false;
   questionScore: number = 0;
   totalPossibleScore: number = 0;
+  cuurentScoreAnimate: boolean = false;
 
+  multiplierScore: number;
+  actualScore: number;
+
+  // Stars
   roundStars: number = 0;
   roundStar1Requirement: number = 0;
   roundStar2Requirement: number = 0;
@@ -70,48 +93,28 @@ export class GamePage implements OnInit {
   userAnswer: any;
   questionResponseClass: any;
 
-  counter = 9
-  score: number = 0;
-  id = 0
-  questions: any
+  id: number = 0
   questionData: any
-  slideLength: number
-  life = 3
-  
-  isAnswerButtonPressed = [false,false,false]
-  isActive2 = false
-  isAnswerButtonsActive = true
-  response: any
-
-  solutionTitle: string
-  solutionText: string
-  solutionDiv: boolean
 
   timeLeft: number = 10;
   interval: any;
-  multiplierScore: number;
-  actualScore: number;
 
-  CheckButton = true
-  disabledButton: boolean
-
+  // Typed.js
   typedJs: boolean = true
 
+  // Modal
   modalFade: string;
-  currentLevelTrue: string;
   userInputOk: boolean = true;
-  modalVisible: boolean = false;
   inputEnabled: boolean = true;
+  modalVisible: boolean = false;
   modalWindowRoll: boolean = false;
 
-  constructor(private router: Router, private platform: Platform, private audio: AudioService, public alertController: AlertController, private gameServiceService: GameServiceService, private scoreData: GameDataService) {}
+  constructor(private router: Router, private platform: Platform, private audio: AudioService, public alertController: AlertController, private scoreData: GameDataService) {}
 
-  ngOnInit() {
+  async ngOnInit() {
     this.currentCategory = this.scoreData.getGameData('currentCategoryId');
     this.currentLevel = this.scoreData.getGameData('currentLevelNumber');
     this.currentLevelTrue = (this.scoreData.getGameData('currentLevelNumberTrue')).toString();
-    console.log("current level is: "+this.currentLevel);
-    console.log("current category is: "+this.currentCategory);
 
 
     this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
@@ -119,26 +122,22 @@ export class GamePage implements OnInit {
       this.showGameModal();
     });
 
-    this.questions = this.scoreData.getGameData('currentQuestionsData').questions
-    this.questionData = this.scoreData.getGameData('currentQuestionsData').questions
+    this.recievedquestionData = await this.scoreData.getGameData('currentQuestionsData')
+    this.questionData = this.recievedquestionData.questions
     this.questionResponseClass = "normal"
-    this.randomizeAnswers()
-    this.disabledButton = true
-    
-    let slides = document.querySelector('ion-slides');
-    slides.options = this.slideOptions;
-    slides.lockSwipes(true);
+    this.randomizeAnswerArray()
+    this.slides.options = this.slideOptions;
+    this.slides.lockSwipes(true);
 
     this.calculateRequiredStars();
     this.answerButtons = true;
 
     this.startTimer();
 
-    this.hintText = this.questions[this.questionIndex].hintText;
+    this.hintText = this.questionData[this.questionIndex].hintText;
   }
 
   showGameModal() {
-    // Only allow modal show if game not presenting solution
     if (this.userInputOk) {
       this.modalVisible = true;
       this.inputEnabled = false;
@@ -152,7 +151,6 @@ export class GamePage implements OnInit {
           setTimeout(()=> {
             this.inputEnabled = true;
             this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
-              console.log('Handler was called!');
               this.onClickOutsideModal();
             });
           }, 400);
@@ -172,9 +170,7 @@ export class GamePage implements OnInit {
         setTimeout(()=> {
           this.inputEnabled = true;
 
-
           this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
-            console.log('Handler was called!');
             this.showGameModal();
           });
 
@@ -186,19 +182,19 @@ export class GamePage implements OnInit {
 
   async presentAlertMultipleButtons() {
     const alert = await this.alertController.create({
-      header: 'Exit Level',
+      header: 'Exit Level '+this.currentLevelTrue,
       message: 'Are you sure you want to exit?',
       buttons: [
         {
-          text: 'Cancel',
+          text: 'Yes',
+          handler: () => {
+            this.router.navigate(['/exit']);
+          }
+        }, {
+          text: 'No',
           role: 'cancel',
           handler: (blah) => {
             // console.log('Confirm Cancel: blah');
-          }
-        }, {
-          text: 'OK',
-          handler: () => {
-            this.router.navigate(['/exit']);
           }
         }
       ]
@@ -227,7 +223,7 @@ export class GamePage implements OnInit {
     // Calculate the scores needed based on the total possible score.
     for (var index = 0; index < this.questionData.length; index++) {
       // Get total score based on question index
-      var questionScore: number = this.questions[index].questionScore;
+      var questionScore: number = this.questionData[index].questionScore;
       this.totalPossibleScore = this.totalPossibleScore + questionScore;
     }
 
@@ -261,7 +257,7 @@ export class GamePage implements OnInit {
 
   checkUserAnswer(index: number) {
     // Set current question index
-    this.questionScore = this.questions[this.questionIndex].questionScore
+    this.questionScore = this.questionData[this.questionIndex].questionScore
     if ( this.timeLeft > 5 ) {
       this.multiplierScore = this.questionScore / 10
     } else {  
@@ -270,7 +266,7 @@ export class GamePage implements OnInit {
 
     this.actualScore = Math.round(this.multiplierScore * this.timeLeft)
 
-    this.userAnswer = this.questions[this.questionIndex].answers[index]
+    this.userAnswer = this.questionData[this.questionIndex].answers[index]
     
     // Check if the answer user selected is correct
     if (this.id > -1) {
@@ -302,7 +298,7 @@ export class GamePage implements OnInit {
     }
 
     setTimeout(()=> {
-      this.hintText = this.questions[this.questionIndex].solutionText;
+      this.hintText = this.questionData[this.questionIndex].solutionText;
       this.typedJs = true;
 
       setTimeout(()=> {
@@ -312,11 +308,9 @@ export class GamePage implements OnInit {
   }
 
   presentNextQuestion() {
-    let slides = document.querySelector('ion-slides');
     this.cuurentScoreAnimate = false;
 
-    if (this.questionIndex >= this.questions.length - 1) {
-      // Move to score screen if quiz is finished
+    if (this.questionIndex >= this.questionData.length - 1) {
       this.questionIndex = 0
 
       this.scoreData.setScoreInfo(this.currentCategory, this.currentLevel, this.currentScore)
@@ -329,19 +323,18 @@ export class GamePage implements OnInit {
     else {
       // Else, present new question
       this.questionIndex = this.questionIndex + 1;
+      this.slides.lockSwipes(false);
       this.typedJs = false;
       
       this.randomizeAnswerArray();
 
-      slides.lockSwipes(false);
-
       setTimeout(()=> {
-        slides.slideNext(350);
-        slides.lockSwipes(true);
+        this.slides.slideNext(350);
+        this.slides.lockSwipes(true);
       }, 350);
 
       this.questionResponseClass = "normal"
-      this.hintText = this.questions[this.questionIndex].hintText
+      this.hintText = this.questionData[this.questionIndex].hintText
 
       setTimeout(()=> {
         this.answerButtons = true;
@@ -371,95 +364,6 @@ export class GamePage implements OnInit {
       return array;
     }
 
-    this.questions[this.questionIndex].answers = shuffleArray(this.questions[this.questionIndex].answers)
+    this.questionData[this.questionIndex].answers = shuffleArray(this.questionData[this.questionIndex].answers)
   }
-
-  validateAnswer() {
-      if(this.id > -1) {
-        if(this.response.correct){
-          this.score = this.score + 20;
-          this.trueResponse()
-      }
-       else{
-         this.life--
-         this.falseResponse()
-       }
-      }
-    
-     this.isActive2 = !this.isActive2
-     this.isAnswerButtonsActive = false
-     this.CheckButton = false
-  }
-
-  
-  nextQuestion(){
-    this.isAnswerButtonsActive = true
-
-    if (this.id >= this.questions.length - 1) {
-      this.life = 3
-      this.id = 0
-      this.counter = 9
-      this.disabledButton = true
-      this.scoreData.setGameData('currentGameScore', this.score);
-      this.router.navigate(['/results', 'currentGameScore']);
-    }
-    else {
-      this.id++
-      this.isAnswerButtonPressed = [false,false,false]
-      this.randomizeAnswers()
-      this.CheckButton = true
-      this.disabledButton = !this.disabledButton
-    }
-
-    if (this.life === 0) {
-      this.scoreData.setGameData('currentGameScore', this.score);
-      this.router.navigate(['/results', 'currentGameScore']);
-    }
-
-    if (this.life === 100) {
-      this.scoreData.setGameData('currentGameScore', this.score);
-      this.router.navigate(['/results', 'currentGameScore']);
-    }
-}
-
-randomizeAnswers()
-   {
-    for (let i = this.questions[this.id].answers.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        let temp = this.questions[this.id].answers[i];
-        this.questions[this.id].answers[i] = this.questions[this.id].answers[j];
-        this.questions[this.id].answers[j] = temp;
-    }
-
-}
-
-answerButtonPressed(index: number){
-  this.isAnswerButtonPressed = [false,false,false]
-  this.isAnswerButtonPressed[index] = !this.isAnswerButtonPressed[index]
-
-  this.response = this.questions[this.id].answers[index]
-  console.log(this.response.correct)
-  this.disabledButton = false
-}
-
-falseResponse(){
-  this.solutionDiv = false
-  this.solutionTitle = "Correct solution:"
-  for(let i = this.questions[this.id].answers.length - 1; i >= 0; i--){
-    if(this.questions[this.id].answers[i].correct)
-        this.solutionText = this.questions[this.id].answers[i].answer
-        console.log(this.solutionText)
-  }
-}
-
-trueResponse(){
-  this.solutionDiv = true
-  this.solutionTitle = "You are correct"
-  this.solutionText = ""
-}
-
-progress(){
-  let progress = this.score + '%'
-  return progress
-}
 }

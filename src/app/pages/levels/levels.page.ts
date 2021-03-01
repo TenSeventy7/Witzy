@@ -1,11 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-import { NavController } from '@ionic/angular';
-import { Platform } from '@ionic/angular';
-import { GameDataService } from '../../services/game-data.service';
-import { NgxTypedJsComponent } from 'ngx-typed-js';
 import { trigger, transition, animate, style } from '@angular/animations'
+
+import { Platform, NavController } from '@ionic/angular';
+
+import { GameDataService } from '../../services/game-data.service';
 import { getGameData } from '../../services/game-storage.service';
 import { AudioService } from '../../services/audio.service';
 
@@ -25,46 +24,41 @@ import { AudioService } from '../../services/audio.service';
     ])
   ],
 })
-export class LevelsPage implements OnInit {
-  @ViewChild(NgxTypedJsComponent) typed: NgxTypedJsComponent;
 
+export class LevelsPage implements OnInit {
   jsonUrl: string;
   levels: any;
-  unlockedLevels: any;
-  selectedCategoryId: string = this.gameData.getGameData('currentCategoryId');
-  categoryName: string = this.gameData.getGameData('currentCategoryName');
-  categoryId: string = this.gameData.getGameData('currentCategoryId');
-  modalVisible: boolean = false;
-  inputEnabled: boolean = true;
+
+  categoryName: any = this.gameData.getGameData('currentCategoryName');
+  categoryId: any = this.gameData.getGameData('currentCategoryId');
+  
   levelNumber: string;
   levelNumberShow: number;
   levelScore: any;
+
+  modalVisible: boolean = false;
+  inputEnabled: boolean = true;
   selectedLevel: any;
+
   musicEnabled: boolean = true;
   audioEnabled: boolean = true;
+
   levelRemark: string;
   levelDescription: string;
+
   modalFade: string;
   modalWindowRoll: boolean = false;
   earnedStars: number;
   modalShow: string;
 
-  levelEnabled: boolean = true;
-  starRequirement: any;
-
-  constructor(private navCtrl: NavController, private router: Router, private platform: Platform, private audio: AudioService, private http: HttpClient, private gameData: GameDataService) { }
+  constructor(private navCtrl: NavController, private router: Router, private platform: Platform, private audio: AudioService, private gameData: GameDataService) { }
 
   async ngOnInit() {
-    this.levels = this.gameData.getGameData("currentLevelData_"+this.selectedCategoryId);
+    this.levels = this.gameData.getGameData("currentLevelData_"+this.categoryId);
     this.audioEnabled = await getGameData("game_audio");
     this.musicEnabled = await getGameData("game_music");
     this.modalVisible = false;
     this.modalWindowRoll = false;
-  }
-
-  isLevelUnlocked(index) {
-    console.log(this.unlockedLevels[index].disabled);
-    return this.unlockedLevels[index].disabled;
   }
 
   setCurrentLevelData(index) {
@@ -137,7 +131,7 @@ export class LevelsPage implements OnInit {
     this.earnedStars = this.levels[levelIndex].starsObtained;
     this.levelNumber = levelIndex.toString();
     this.levelNumberShow = levelIndex + 1;
-    this.levelScore = await this.gameData.getScoreInfo(this.selectedCategoryId, this.levelNumber);
+    this.levelScore = await this.gameData.getScoreInfo(this.categoryId, this.levelNumber);
 
     if (this.levelScore) {
       this.modalShow = "score"

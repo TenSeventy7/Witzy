@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { getGameData, setGameData } from '../services/game-storage.service';
-import { setIndex } from '@ionic-native/core/decorators/common';
 
 interface LevelData {
   disabled: boolean,
@@ -20,12 +19,12 @@ export class GameDataService {
  
   private encodedId: any;
   private formerStars: any;
+  private receivedData: any;
   private neededStars: any;
   private formerLevel: any;
   private response: any;
   private data = [];
   private category: any;
-  private disabled: boolean
   private starsObtained: number
   private levelId: number
   private levelDesc: string
@@ -40,13 +39,15 @@ export class GameDataService {
   // more-or-less compatible with Angular
   setGameData(id: string, data: any) {
     this.encodedId = btoa(id);
-    this.data[this.encodedId] = data;
+    setGameData("temp_"+this.encodedId, data)
   }
  
-  getGameData(id: string) {
+  async getGameData(id: string) {
     this.encodedId = btoa(id);
-    if (this.data[this.encodedId]) {
-      return this.data[this.encodedId];
+    this.data = await getGameData("temp_"+this.encodedId);
+
+    if (this.data) {
+      return this.data;
     } else {
       console.log('Err: Data not found for ID ' + id)
       return ' ';
@@ -82,7 +83,8 @@ export class GameDataService {
   }
 
   async getUnlockedLevels(category:string) {
-    this.category = this.getGameData('currentLevelData_'+category).levels
+    this.receivedData = await this.getGameData('currentLevelData_'+category)
+    this.category = this.receivedData.levels
     this.levelData = []
 
     for (var index = 0; index < this.category.length; index++) {
