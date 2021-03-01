@@ -5,6 +5,7 @@
       "isAvailable": true,
       "categoryName": "Math",
       "categoryIcon": "/assets/categories/math/icon.png",
+      "musicUrl": "/assets/music/game_bgm_mathematics.ogg",
       "jsonUrl": "/assets/categories/math.json"
     },
     {
@@ -12,6 +13,7 @@
       "isAvailable": true,
       "categoryName": "Science",
       "categoryIcon": "/assets/categories/science/icon.png",
+      "musicUrl": "/assets/music/game_bgm_science.ogg",
       "jsonUrl": "/assets/categories/science.json"
     },
     {
@@ -19,6 +21,7 @@
       "isAvailable": true,
       "categoryName": "Prose",
       "categoryIcon": "/assets/categories/literature/icon.png",
+      "musicUrl": "/assets/music/game_bgm_literature.ogg",
       "jsonUrl": "/assets/categories/literature.json"
     },
     {
@@ -26,6 +29,7 @@
       "isAvailable": false,
       "categoryName": "Tech",
       "categoryIcon": "/assets/categories/blank/icon.png",
+      "musicUrl": "/assets/music/game_bgm_mathematics.ogg",
       "jsonUrl": "/assets/categories/blank.json"
     },
     {
@@ -33,6 +37,7 @@
       "isAvailable": false,
       "categoryName": "Pop Culture",
       "categoryIcon": "/assets/categories/blank/icon.png",
+      "musicUrl": "/assets/music/game_bgm_mathematics.ogg",
       "jsonUrl": "/assets/categories/blank.json"
     }
   ]
