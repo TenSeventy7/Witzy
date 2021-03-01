@@ -16,17 +16,18 @@ export class CategoriesPage implements OnInit {
 
   showCategoryCards: boolean;
   selectedCategory: string;
+  selectedCategoryMusic: any;
   buttonClass: string;
   audioEnabled: boolean = true;
-  categories: Array<string>;
-  categoriesData: any;
+  musicEnabled: boolean = true;
+  categories: Array<string> = this.gameData.getGameData('categoryData').categories;
 
   constructor(private navCtrl: NavController, private platform: Platform, private router: Router, private http: HttpClient, private gameData: GameDataService, private audio: AudioService) { }
 
   async ngOnInit() {
-    this.categoriesData = await this.gameData.getGameData('categoryData');
-    this.categories = this.categoriesData.categories;
+    let categories: Array<string> = this.gameData.getGameData('categoryData').categories;
     this.audioEnabled = await getGameData("game_audio");
+    this.musicEnabled = await getGameData("game_music");
 
     setTimeout(()=> {
       this.buttonClass = "category-buttons-in";
@@ -43,6 +44,11 @@ export class CategoriesPage implements OnInit {
         this.audio.playSfx('game-sfx-select');
       }
 
+      if (this.musicEnabled) {
+        this.audio.preloadBgm('game-bgm-current-category', this.selectedCategoryMusic);
+        this.audio.playBgm('game-bgm-current-category');
+      }
+
       this.router.navigate(['/levels']);
     }
   }
@@ -50,11 +56,14 @@ export class CategoriesPage implements OnInit {
   setCurrentCategoryData(name) {
     this.gameData.setGameData('currentCategoryName', name.categoryName);
     this.gameData.setGameData('currentCategoryId', name.categoryId);
+    this.gameData.setGameData('currentCategoryMusic', name.musicUrl);
   }
 
-  onClickCategory(index: number) {
+  async onClickCategory(index: number) {
     this.selectedCategory = this.categories[index];
+    this.audio.stopBgm('game-bgm-main-menu');
     this.setCurrentCategoryData(this.selectedCategory);
+    this.selectedCategoryMusic = await this.gameData.getGameData('currentCategoryMusic');
     this.goCategory(this.selectedCategory);
   }
 }

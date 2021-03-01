@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 import { trigger, transition, animate, style } from '@angular/animations'
 
 import { Platform, AlertController } from '@ionic/angular';
@@ -64,8 +65,6 @@ export class GamePage implements OnInit {
     preventInteractionOnTransition: true
   };
 
-  slides = document.querySelector('ion-slides');
-
   questionIndex = 0;
   answerButtons: boolean;
   hintText: string;
@@ -73,7 +72,7 @@ export class GamePage implements OnInit {
   currentLevel: any;
   currentLevelTrue: any;
   currentCategory: any;
-  recievedquestionData: any;
+  recievedquestionData = this.scoreData.getGameData('currentQuestionsData');
 
   // Score
   currentScore: number = 0;
@@ -109,31 +108,35 @@ export class GamePage implements OnInit {
   modalVisible: boolean = false;
   modalWindowRoll: boolean = false;
 
-  constructor(private router: Router, private platform: Platform, private audio: AudioService, public alertController: AlertController, private scoreData: GameDataService) {}
+  constructor(private navCtrl: NavController, private router: Router, private platform: Platform, private audio: AudioService, public alertController: AlertController, private scoreData: GameDataService) {}
 
   async ngOnInit() {
+    let slides = document.querySelector('ion-slides');
+
     this.currentCategory = this.scoreData.getGameData('currentCategoryId');
     this.currentLevel = this.scoreData.getGameData('currentLevelNumber');
     this.currentLevelTrue = (this.scoreData.getGameData('currentLevelNumberTrue')).toString();
-
+    this.roundStar1Requirement = this.scoreData.getGameData('roundStar1Requirement')
+    this.roundStar2Requirement = this.scoreData.getGameData('roundStar2Requirement')
+    this.roundStar3Requirement = this.scoreData.getGameData('roundStar3Requirement')
 
     this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
       console.log('Handler was called!');
       this.showGameModal();
     });
 
-    this.recievedquestionData = await this.scoreData.getGameData('currentQuestionsData')
-    this.questionData = this.recievedquestionData.questions
+    this.questionData = this.scoreData.getGameData('currentQuestionsData').questions
+    console.log(this.scoreData.getGameData('currentQuestionsData').questions)
     this.questionResponseClass = "normal"
     this.randomizeAnswerArray()
-    this.slides.options = this.slideOptions;
-    this.slides.lockSwipes(true);
+    slides.options = this.slideOptions;
+    slides.lockSwipes(true);
 
-    this.calculateRequiredStars();
     this.answerButtons = true;
 
     this.startTimer();
 
+    this.audio.playBgm("game-bgm-level-screen");
     this.hintText = this.questionData[this.questionIndex].hintText;
   }
 
@@ -188,7 +191,7 @@ export class GamePage implements OnInit {
         {
           text: 'Yes',
           handler: () => {
-            this.router.navigate(['/exit']);
+            this.navCtrl.navigateBack(['/exit']);
           }
         }, {
           text: 'No',
@@ -217,27 +220,6 @@ export class GamePage implements OnInit {
           this.questionResponse()
         }
       },1000)
-  }
-
-  calculateRequiredStars() {
-    // Calculate the scores needed based on the total possible score.
-    for (var index = 0; index < this.questionData.length; index++) {
-      // Get total score based on question index
-      var questionScore: number = this.questionData[index].questionScore;
-      this.totalPossibleScore = this.totalPossibleScore + questionScore;
-    }
-
-    console.log(this.totalPossibleScore);
-
-    // Since we already have our total scores, calculate
-    // the stars based on our algorithms
-    this.roundStar1Requirement = Math.round(this.totalPossibleScore / 3); // Divide total score by three
-    this.roundStar2Requirement = Math.round(this.roundStar1Requirement * 2); // Multiply first star requirement by 2
-    this.roundStar3Requirement = Math.round((this.totalPossibleScore / 3.75) + this.roundStar2Requirement); // Divide total score by three, then add first star requirement
-    
-    console.log(this.roundStar1Requirement);
-    console.log(this.roundStar2Requirement);
-    console.log(this.roundStar3Requirement);
   }
 
   checkStarScore() {
@@ -313,24 +295,26 @@ export class GamePage implements OnInit {
     if (this.questionIndex >= this.questionData.length - 1) {
       this.questionIndex = 0
 
+      this.audio.stopBgm("game-bgm-level-screen");
       this.scoreData.setScoreInfo(this.currentCategory, this.currentLevel, this.currentScore)
       this.scoreData.setStarInfo(this.currentCategory, this.currentLevel, this.roundStars)
 
       this.scoreData.setGameData('currentGameScore', this.currentScore);
       this.scoreData.setGameData('currentGameStars', this.roundStars);
-      this.router.navigate(['/results', 'currentGameScore']);
+      this.router.navigate(['/results']);
     }
     else {
+      let slides = document.querySelector('ion-slides');
       // Else, present new question
       this.questionIndex = this.questionIndex + 1;
-      this.slides.lockSwipes(false);
+      slides.lockSwipes(false);
       this.typedJs = false;
       
       this.randomizeAnswerArray();
 
       setTimeout(()=> {
-        this.slides.slideNext(350);
-        this.slides.lockSwipes(true);
+        slides.slideNext(350);
+        slides.lockSwipes(true);
       }, 350);
 
       this.questionResponseClass = "normal"

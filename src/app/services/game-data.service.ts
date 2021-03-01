@@ -39,15 +39,14 @@ export class GameDataService {
   // more-or-less compatible with Angular
   setGameData(id: string, data: any) {
     this.encodedId = btoa(id);
-    setGameData("temp_"+this.encodedId, data)
+    this.data[this.encodedId] = data;
   }
  
-  async getGameData(id: string) {
+  getGameData(id: string) {
     this.encodedId = btoa(id);
-    this.data = await getGameData("temp_"+this.encodedId);
 
-    if (this.data) {
-      return this.data;
+    if (this.data[this.encodedId]) {
+      return this.data[this.encodedId];
     } else {
       console.log('Err: Data not found for ID ' + id)
       return ' ';

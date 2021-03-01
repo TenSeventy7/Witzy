@@ -1,3 +1,4 @@
+import { TitleCasePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AudioService } from '../../services/audio.service';
@@ -24,7 +25,7 @@ export class SplashPage implements OnInit {
   async ngOnInit() {
     this.splashProgress = 0.1;
 
-    this.preloadAudio('game-bgm-main-menu', '/assets/music/game-bg.ogg');
+    this.preloadAudio('game-bgm-main-menu', '/assets/music/game_bgm_primary.ogg');
     
     this.preloadAudio('game-sfx-correct_1', '/assets/ui/sounds/correct_1.ogg');
     this.preloadAudio('game-sfx-correct_2', '/assets/ui/sounds/correct_2.ogg');
@@ -39,8 +40,7 @@ export class SplashPage implements OnInit {
     this.preloadAudio('game-sfx-toggle', '/assets/ui/sounds/toggle.ogg');
 
     await this.gameData.getGameInfo('/assets/categories/categories.json', 'categoryData');
-    this.receivedcategoryData =  await this.gameData.getGameData('categoryData');
-    this.categoryData =  this.receivedcategoryData.categories;
+    this.categoryData = this.gameData.getGameData('categoryData').categories;
 
     this.musicEnabled = await getGameData("game_music");
     this.audioEnabled = await getGameData("game_audio");

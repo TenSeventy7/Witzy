@@ -241,3 +241,14 @@ $button-elevation: .2em;
   width: 0;
   opacity: 0;
 }
+
+.witzy-leveldetail-score-animation {
+  animation-name: pulse;
+  animation-duration: 0.75s;
+}
+
+@keyframes pulse {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.1);}
+  100% {transform: scale(1);}
+}
