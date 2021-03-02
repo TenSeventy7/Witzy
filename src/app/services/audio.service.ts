@@ -3,6 +3,7 @@ import { Platform } from '@ionic/angular';
 import { Plugins } from "@capacitor/core";
 const { NativeAudio } = Plugins;
 import { getGameData, setGameData } from './game-storage.service';
+import { FindValueSubscriber } from 'rxjs/internal/operators/find';
 
 interface Sound {
   key: string;
@@ -25,14 +26,16 @@ export class AudioService {
   }
 
   public preload(key: string, asset: string): void {
+    var raw = /[^/]*$/.exec(asset)[0];
+    var actualAsset = raw.split('.').slice(0, -1).join('.')
 
     if(this.platform.is('capacitor') && !this.forceWebAudio){
       NativeAudio.preloadComplex({
-        assetPath: asset,
+        assetPath: actualAsset,
         assetId: key,
         volume: 1.0,
         audioChannelNum: 1,
-        isUrl: true
+        isUrl: false
       });
 
       this.sounds.push({
@@ -56,15 +59,18 @@ export class AudioService {
   }
 
   public preloadBgm(key: string, asset: any): void {
+    var raw = /[^/]*$/.exec(asset)[0];
+    var actualAsset = raw.split('.').slice(0, -1).join('.')
 
     if(this.platform.is('capacitor') && !this.forceWebAudio){
+
       NativeAudio.preloadComplex({
-        assetPath: asset,
+        assetPath: actualAsset,
         assetId: key,
         volume: 0.8,
         audioChannelNum: 1,
         fade: true,
-        isUrl: true
+        isUrl: false
       });
 
       this.sounds.push({
