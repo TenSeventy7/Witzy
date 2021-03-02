@@ -4,7 +4,7 @@
   <div class="results-window-container">
     <div class="results-window">
   
-      <ion-text>240</ion-text>
+      <ion-text>{{ gameResult }}</ion-text>
   
       <div class="level-modal-stars">
         <div>
@@ -14,7 +14,8 @@
         </div>
       </div>
 
-      <ion-text class="level-modal-remark">I knew you can do it!</ion-text>
+      <ion-text class="level-modal-remark" *ngIf="newHighScore == '0'">{{ remarkText }}</ion-text>
+      <ion-text class="level-modal-remark" *ngIf="newHighScore == '1'">New high score!</ion-text>
   
       <ion-button class="modal-button modal-button-science" mode="ios" (click)="onClickPlay()">PLAY AGAIN</ion-button>
       <ion-button class="modal-button modal-button-science" mode="ios" (click)="onClickBack()">BACK</ion-button>
@@ -27,7 +28,7 @@
       <ion-grid>
         <ion-row class="ion-align-items-center">
           <ion-col size="3" class="ion-align-items-center">
-            <img src="/assets/ui/icons/information.png" />
+            <img src="/assets/ui/icons/alien_talk.png" />
           </ion-col>
           <ion-col size="9" class="game-window-text">
             <ngx-typed-js [strings]="[ hintText ]" [showCursor]="false">
