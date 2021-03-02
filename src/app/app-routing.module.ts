@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'splash', pathMatch: 'full' },
+  { path: '', redirectTo: 'intro', pathMatch: 'full' },
   { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
   { path: 'results', loadChildren: () => import('./pages/results/results.module').then( m => m.ResultsPageModule)},
   { path: 'game', loadChildren: () => import('./pages/game/game.module').then( m => m.GamePageModule)},
@@ -29,6 +29,10 @@ const routes: Routes = [
   {
     path: 'exit',
     loadChildren: () => import('./pages/exit/exit.module').then( m => m.ExitPageModule)
+  },
+  {
+    path: 'intro',
+    loadChildren: () => import('./intro/intro.module').then( m => m.IntroPageModule)
   },
 ];
 @NgModule({
