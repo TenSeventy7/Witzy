@@ -3,7 +3,7 @@
     {
       "questionScore": 150,
       "questionText": "Who named the Philippines?",
-      "solutionText": "Lopez de Villalobos was commissioned in 1541 by the Viceroy of New Spain, Antonio de Mendoza, who was the first colonial administrator in the New World, to send an expedition to the Islas del Poniente, meaning Islands of the West, now known as the Philippines.",
+      "solutionText": "Lopez de Villalobos was commissioned in 1541 by the Viceroy of New Spain, Antonio de Mendoza.",
       "hintText": "He gave the name ¡°Las Islas Filipinas¡± to the Philippine archipelago in 1543.",
       "answers": [
         {
@@ -26,7 +26,7 @@
     {
       "questionScore": 100,
       "questionText": "The National Hero of the Philippines",
-      "solutionText": "Jose Rizal became the National Hero of the Philippines not only because of his genius, his multiple talents but because of his unquenchable love of the Philippines.",
+      "solutionText": "Jose Rizal became the National Hero of the Philippines not only because of his genius.",
       "hintText": "Fought with a pen.",
       "answers": [
         {
@@ -35,13 +35,13 @@
           "selected": false
         },
         {
-          "answer": "Jose P. Rizal",
-          "correct": false,
+          "answer": "Dimasalang",
+          "correct": true,
           "selected": false
         },
         {
-          "answer": "Jose Protacio Rizal Mercado Alonzo y Realonda",
-          "correct": false,
+          "answer": "Pepe",
+          "correct": true,
           "selected": false
         }
       ]
@@ -96,7 +96,7 @@
     {
       "questionScore": 150,
       "questionText": "Who is the author of The Origin Of Species?",
-      "solutionText": "On the Origin of Species, published on 24 November 1859, is a work of scientific literature by Charles Darwin that is considered to be the foundation of evolutionary biology.",
+      "solutionText": "On the Origin of Species is a work of scientific literature by Charles Darwin.",
       "hintText": "Proposed the theory of Evolution.",
       "answers": [
         {

@@ -27,15 +27,12 @@ export class AudioService {
   public preload(key: string, asset: string): void {
 
     if(this.platform.is('capacitor') && !this.forceWebAudio){
-      var raw = /[^/]*$/.exec(asset)[0];
-      var actualAsset = /.\w+$/.exec(raw)[0];
-
       NativeAudio.preloadComplex({
-        assetPath: actualAsset,
+        assetPath: asset,
         assetId: key,
         volume: 1.0,
         audioChannelNum: 1,
-        isUrl: false
+        isUrl: true
       });
 
       this.sounds.push({
@@ -61,16 +58,13 @@ export class AudioService {
   public preloadBgm(key: string, asset: any): void {
 
     if(this.platform.is('capacitor') && !this.forceWebAudio){
-      var raw = /[^/]*$/.exec(asset)[0];
-      var actualAsset = /.\w+$/.exec(raw)[0];
-
       NativeAudio.preloadComplex({
-        assetPath: actualAsset,
+        assetPath: asset,
         assetId: key,
         volume: 0.8,
         audioChannelNum: 1,
         fade: true,
-        isUrl: false
+        isUrl: true
       });
 
       this.sounds.push({
@@ -130,6 +124,21 @@ export class AudioService {
     }
   }
 
+  public resumeBgm(key: string): void {
+
+    let soundToPlay = this.sounds.find((sound) => {
+      return sound.key === key;
+    });
+
+    if(soundToPlay.isNative){
+      NativeAudio.resume({
+        assetId: key,
+      });
+    } else {
+      this.bgAudioPlayer.play();
+    }
+  }
+
   public stopBgm(key: string): void {
 
     let soundToPlay = this.sounds.find((sound) => {
@@ -143,6 +152,21 @@ export class AudioService {
     } else {
       this.bgAudioPlayer.src = soundToPlay.asset;
       this.bgAudioPlayer.loop = true;
+    }
+  }
+
+  public pauseBgm(key: string): void {
+
+    let soundToPlay = this.sounds.find((sound) => {
+      return sound.key === key;
+    });
+
+    if(soundToPlay.isNative){
+      NativeAudio.pause({
+        assetId: key,
+      });
+    } else {
+      this.bgAudioPlayer.pause();
     }
   }
 
@@ -188,6 +212,14 @@ export class AudioService {
 
   public async setSfxState(state: boolean) {
     setGameData("game_audio", state);
+  }
+
+  public async getBgmState() {
+    await getGameData("game_music");
+  }
+
+  public async getSfxState() {
+    await getGameData("game_audio");
   }
 
   

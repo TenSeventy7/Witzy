@@ -24,7 +24,10 @@ export class GameDataService {
   private formerLevel: any;
   private response: any;
   private data = [];
+  private persistentData = [];
   private category: any;
+  private oldScore: any;
+  private oldStars: any;
   private starsObtained: number
   private levelId: number
   private levelDesc: string
@@ -53,11 +56,32 @@ export class GameDataService {
     }
   }
 
-  getGameInfo(url: string, key: string) {
+  setPersistentGameData(id: string, data: any) {
+    this.encodedId = btoa(id);
+    setGameData("temp_"+this.encodedId, data)
+  }
+ 
+  async getPersistentGameData(id: string) {
+    this.encodedId = btoa(id);
+    this.persistentData = await getGameData("temp_"+this.encodedId);
+
+    if (this.persistentData) {
+      return this.persistentData;
+    } else {
+      console.log('Err: Persistent data not found for ID ' + id)
+      return ' ';
+    }
+  }
+
+  getGameInfo(url: string, key: string, persist: boolean) {
     return new Promise<void>((resolve, reject) => {
       this.http.get(url, {responseType: 'json'}).toPromise().then(
         (data) => {
-        this.setGameData(key, data);
+        if (persist) {
+          this.setPersistentGameData(key, data);
+        } else {
+          this.setGameData(key, data);
+        }
         resolve();
       });
     });
@@ -74,15 +98,23 @@ export class GameDataService {
   }
 
   async setScoreInfo(category: string, level: any, score: number) {
-    setGameData("levelData_"+category+level+"_score", score);
+    this.oldScore = await this.getScoreInfo(category, level)
+
+    if (score > this.oldScore) {
+      setGameData("levelData_"+category+level+"_score", score);
+    }
   }
 
   async setStarInfo(category: string, level: any, stars: number) {
-    setGameData("levelData_"+category+level+"_stars", stars);
+    this.oldStars = await this.getStarInfo(category, level)
+
+    if (stars > this.oldStars) {
+      setGameData("levelData_"+category+level+"_stars", stars);
+    }
   }
 
   async getUnlockedLevels(category:string) {
-    this.receivedData = await this.getGameData('currentLevelData_'+category)
+    this.receivedData = await this.getPersistentGameData('currentLevelData_'+category)
     this.category = this.receivedData.levels
     this.levelData = []
 
@@ -124,7 +156,7 @@ export class GameDataService {
 
       }
     }
-    this.setGameData("levelData_"+category, this.levelData);
-    return this.getGameData("levelData_"+category);
+    this.setPersistentGameData("levelData_"+category, this.levelData);
+    return this.getPersistentGameData("levelData_"+category);
   }
 }
