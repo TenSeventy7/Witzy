@@ -117,10 +117,7 @@ export class AudioService {
       NativeAudio.loop({
         assetId: key,
       });
-
-      NativeAudio.play({
-        assetId: key,
-      });
+      
     } else {
       this.bgAudioPlayer.src = soundToPlay.asset;
       this.bgAudioPlayer.volume = 0.8;
