@@ -42,7 +42,7 @@ export class CategoriesPage implements OnInit {
       this.setCurrentCategoryData(this.selectedCategory);
       this.selectedCategoryMusic = await this.gameData.getPersistentGameData('currentCategoryMusic');
       
-      this.categoryId = await this.gameData.getPersistentGameData('currentCategoryId')
+      this.categoryId = await this.gameData.getGameData('currentCategoryId')
       if (this.audioEnabled) {
         this.audio.playSfx('game-sfx-select');
       }
@@ -58,7 +58,7 @@ export class CategoriesPage implements OnInit {
 
   setCurrentCategoryData(name) {
     this.gameData.setPersistentGameData('currentCategoryName', name.categoryName);
-    this.gameData.setPersistentGameData('currentCategoryId', name.categoryId);
+    this.gameData.setGameData('currentCategoryId', name.categoryId);
     this.gameData.setPersistentGameData('currentCategoryMusic', name.musicUrl);
   }
 
