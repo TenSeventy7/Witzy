@@ -1,6 +1,19 @@
 @import '../../components/header/header.component';
 @import '../levels/levels.page';
 
+ion-content {
+  background-image: url("/assets/backgrounds/blue.png");
+  background-repeat: repeat;
+}
+
+ion-toolbar {
+  background: transparent !important;
+}
+
+ion-header {
+  background: transparent !important;
+}
+
 $button-elevation: .2em;
 
 .game-detail-question {
@@ -198,6 +211,52 @@ $button-elevation: .2em;
 // Science //
 // ================================== //
 
+// ================================== //
+// Mathematics //
+.card-color-mathematics {
+  background-color: var(--ion-color-mathematics-accent);
+  border: 3px solid var(--ion-color-mathematics-accent-shade);
+  transition: background-color 300ms ease;
+}
+
+.button-color-mathematics {
+  $color: #E73636;
+
+  background-color: var(--ion-color-mathematics-main);
+  box-shadow: 0 $button-elevation var(--ion-color-mathematics-main-shade);
+  border: 3px solid var(--ion-color-mathematics-main-tint);
+}
+
+.timer-color-mathematics ion-text {
+  $color: #764EAD;
+  color: darken(saturate($color, 0.38), 16.08);
+}
+// Mathematics //
+// ================================== //
+
+// ================================== //
+// Literature //
+.card-color-literature {
+    background-color: var(--ion-color-literature-accent);
+    border: 3px solid var(--ion-color-literature-accent-shade);
+    transition: background-color 300ms ease;
+}
+
+.button-color-literature {
+    $color: #849324;
+
+    background-color: var(--ion-color-literature-main);
+    box-shadow: 0 $button-elevation var(--ion-color-literature-main-shade);
+    border: 3px solid var(--ion-color-literature-main-tint);
+}
+
+.timer-color-literature ion-text {
+    $color: #6505A6;
+    color: darken(saturate($color, 0.38), 16.08);
+}
+// Literature //
+// ================================== //
+
 .game-window {
     position: fixed;
     left: 10%;
@@ -236,10 +295,71 @@ $button-elevation: .2em;
   }
 }
 
-.disable-lottie {
-  height: 0;
-  width: 0;
-  opacity: 0;
+.setting-button {
+    --background: rgb(0, 0, 0, 0.0);
+    --background-activated: rgb(0, 0, 0, 0.0);
+    --ripple-color: transparent;
+    background: url("/assets/buttons/css-texture.png");
+    background-size: contain;
+    background-repeat: repeat-x;
+    margin: 8px;
+    border-radius: 7px;
+    transition: top 300ms ease-in-out;
+    box-sizing: border-box;
+    height: 15vw;
+    width: 15vw;
+  
+    font-family: "Kenney-Mini";
+    font-size: 7vw;
+  
+  
+    $color: #FF7F11;
+  
+    background-color: var(--ion-color-main);
+    box-shadow: 0 $button-elevation var(--ion-color-main-shade);
+    border: 3px solid var(--ion-color-main-tint);
+    color: darken(saturate($color, 0.38), 16.08);
+  
+    &:active {
+        box-shadow: none;
+        position: relative;
+        top: $button-elevation;
+    }
+
+    img {
+        position: fixed;
+        height: 42px;
+        width: 42px;
+    }
+
+    .icon-inactive {
+        filter: invert(48%) sepia(95%) saturate(578%) hue-rotate(349deg) brightness(55%) contrast(102%);
+    }
+}
+
+.countdown-div {
+  display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.countdown-text {
+  vertical-align: middle;
+  font-family: 'Kenney-Mini';
+  font-size: 16vh;
+  color: #ffffff;
+  text-align: center;
+}
+
+.bounce {
+	-webkit-animation-name: bounce;
+	animation-name: bounce;
+	-webkit-transform-origin: center bottom;
+	-ms-transform-origin: center bottom;
+	transform-origin: center bottom;
+  animation-duration: 0.4s
 }
 
 .witzy-leveldetail-score-animation {
@@ -251,4 +371,38 @@ $button-elevation: .2em;
   0% {transform: scale(1);}
   50% {transform: scale(1.1);}
   100% {transform: scale(1);}
+}
+
+@keyframes bounce {
+	0%,
+	100%,
+	20%,
+	53%,
+	80% {
+		-webkit-transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+		transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+		-webkit-transform: translate3d(0, 0, 0);
+		-ms-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0)
+	}
+	40%,
+	43% {
+		-webkit-transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+		transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+		-webkit-transform: translate3d(0, -30px, 0);
+		-ms-transform: translate3d(0, -30px, 0);
+		transform: translate3d(0, -30px, 0)
+	}
+	70% {
+		-webkit-transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+		transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+		-webkit-transform: translate3d(0, -15px, 0);
+		-ms-transform: translate3d(0, -15px, 0);
+		transform: translate3d(0, -15px, 0)
+	}
+	90% {
+		-webkit-transform: translate3d(0, -4px, 0);
+		-ms-transform: translate3d(0, -4px, 0);
+		transform: translate3d(0, -4px, 0)
+	}
 }

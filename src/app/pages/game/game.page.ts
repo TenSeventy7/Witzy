@@ -8,6 +8,7 @@ import { Platform, AlertController } from '@ionic/angular';
 import { NgxTypedJsComponent } from 'ngx-typed-js';
 import { AudioService } from '../../services/audio.service';
 import { GameDataService } from '../../services/game-data.service';
+import { getGameData } from '../../services/game-storage.service';
 
 @Component({
   selector: 'app-game',
@@ -91,11 +92,16 @@ export class GamePage implements OnInit {
 
   userAnswer: any;
   questionResponseClass: any;
+  countdownClass: any;
 
   id: number = 0
   questionData: any
 
   timeLeft: number = 10;
+  countdown: number = 3;
+  countdownInterval: any;
+  isCountdown: boolean = false;
+  isDone: boolean = false;
   interval: any;
 
   // Typed.js
@@ -107,43 +113,84 @@ export class GamePage implements OnInit {
   inputEnabled: boolean = true;
   modalVisible: boolean = false;
   modalWindowRoll: boolean = false;
+  oldScore: any;
+
+  musicEnabled: any;
+  audioEnabled: any;
 
   constructor(private navCtrl: NavController, private router: Router, private platform: Platform, private audio: AudioService, public alertController: AlertController, private scoreData: GameDataService) {}
 
-  async ngOnInit() {
+  ngOnInit() {
     let slides = document.querySelector('ion-slides');
-
     this.currentCategory = this.scoreData.getGameData('currentCategoryId');
     this.currentLevel = this.scoreData.getGameData('currentLevelNumber');
     this.currentLevelTrue = (this.scoreData.getGameData('currentLevelNumberTrue')).toString();
-    this.roundStar1Requirement = this.scoreData.getGameData('roundStar1Requirement')
-    this.roundStar2Requirement = this.scoreData.getGameData('roundStar2Requirement')
-    this.roundStar3Requirement = this.scoreData.getGameData('roundStar3Requirement')
-
-    this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
-      console.log('Handler was called!');
-      this.showGameModal();
-    });
-
     this.questionData = this.scoreData.getGameData('currentQuestionsData').questions
-    console.log(this.scoreData.getGameData('currentQuestionsData').questions)
     this.questionResponseClass = "normal"
-    this.randomizeAnswerArray()
     slides.options = this.slideOptions;
     slides.lockSwipes(true);
-
-    this.answerButtons = true;
-
-    this.startTimer();
-
-    this.audio.playBgm("game-bgm-level-screen");
     this.hintText = this.questionData[this.questionIndex].hintText;
+    this.typedJs = false;
+  }
+
+  startCountdown() {
+    this.countdownInterval = setInterval(() => {
+      if(this.countdown > 1) {
+        this.countdownClass = "bounce"
+        this.isDone = false;
+        if (this.audioEnabled) {
+          this.audio.playSfx('game-sfx-drop');
+        }
+        this.countdown--;
+        setTimeout(()=> {
+          this.countdownClass = "";
+        }, 500);
+      } else {
+        if (this.audioEnabled) {
+          this.audio.playSfx('game-sfx-start');
+        }
+        this.countdownClass = "bounce"
+        this.isDone = true;
+        clearInterval(this.countdownInterval);
+        clearInterval(this.interval);
+        this.startLevel()
+      }
+    },1000)
+  }
+
+  startLevel() {
+    setTimeout(()=> {
+      this.modalVisible = false;
+      this.isCountdown = false;
+      this.modalFade = "fadeOut";
+  
+      setTimeout(()=> {
+        if (this.musicEnabled) {
+          this.audio.playBgm("game-bgm-level-screen");
+        }
+        
+        this.startTimer();
+        this.typedJs = true;
+        setTimeout(()=> {
+          this.answerButtons = true;
+          this.inputEnabled = true;
+        }, 250);
+      }, 300);
+    }, 1000);
   }
 
   showGameModal() {
     if (this.userInputOk) {
       this.modalVisible = true;
       this.inputEnabled = false;
+
+      if (this.audioEnabled) {
+        this.audio.playSfx('game-sfx-alert');
+      }
+
+      if (this.musicEnabled) {
+        this.audio.pauseBgm("game-bgm-level-screen");
+      }
 
       clearInterval(this.interval);
 
@@ -162,7 +209,36 @@ export class GamePage implements OnInit {
     }
   }
 
+  async toggleMusic() {
+    if (this.musicEnabled) {
+      this.musicEnabled = false;
+      this.audio.setBgmState(false);
+    } else {
+      this.musicEnabled = true;
+      this.audio.setBgmState(true);
+    }
+  }
+
+  async toggleAudio() {
+    if (this.audioEnabled) {
+      this.audioEnabled = false;
+      this.audio.setSfxState(false);
+    } else {
+      this.audioEnabled = true;
+      this.audio.setSfxState(true);
+      this.audio.playSfx('game-sfx-select');
+    }
+  }
+
   onClickOutsideModal() {
+    if (this.audioEnabled) {
+      this.audio.playSfx('game-sfx-back');
+    }
+
+    if (this.musicEnabled) {
+      this.audio.resumeBgm("game-bgm-level-screen");
+    }
+
     this.modalWindowRoll = false;
     this.inputEnabled = false;
 
@@ -183,7 +259,11 @@ export class GamePage implements OnInit {
     }, 400);
   }
 
-  async presentAlertMultipleButtons() {
+  async alertExitLevel() {
+    if (this.audioEnabled) {
+      this.audio.playSfx('game-sfx-confirm');
+    }
+
     const alert = await this.alertController.create({
       header: 'Exit Level '+this.currentLevelTrue,
       message: 'Are you sure you want to exit?',
@@ -191,13 +271,25 @@ export class GamePage implements OnInit {
         {
           text: 'Yes',
           handler: () => {
-            this.navCtrl.navigateBack(['/exit']);
+            this.modalWindowRoll = false;
+            this.inputEnabled = false;
+            this.modalVisible = false;
+
+            if (this.audioEnabled) {
+              this.audio.playSfx('game-sfx-back');
+            }
+
+            setTimeout(()=> {
+              this.navCtrl.navigateBack(['/exit']);
+            }, 400);
           }
         }, {
           text: 'No',
           role: 'cancel',
           handler: (blah) => {
-            // console.log('Confirm Cancel: blah');
+            if (this.audioEnabled) {
+              this.audio.playSfx('game-sfx-back');
+            }
           }
         }
       ]
@@ -271,12 +363,14 @@ export class GamePage implements OnInit {
     this.typedJs = false;
     this.userInputOk = false;
     clearInterval(this.interval);
-    this.randomAudioSelection = Math.floor(Math.random()*this.correctSfxArray.length);
 
-    if ( this.questionResponseClass == "incorrect" ) {
-      this.audio.playSfx(this.incorrectSfxArray[this.randomAudioSelection]);
-    } else {
-      this.audio.playSfx(this.correctSfxArray[this.randomAudioSelection]);
+    if (this.audioEnabled) {
+      this.randomAudioSelection = Math.floor(Math.random()*this.correctSfxArray.length);
+      if ( this.questionResponseClass == "incorrect" ) {
+        this.audio.playSfx(this.incorrectSfxArray[this.randomAudioSelection]);
+      } else {
+        this.audio.playSfx(this.correctSfxArray[this.randomAudioSelection]);
+      }
     }
 
     setTimeout(()=> {
@@ -298,6 +392,12 @@ export class GamePage implements OnInit {
       this.audio.stopBgm("game-bgm-level-screen");
       this.scoreData.setScoreInfo(this.currentCategory, this.currentLevel, this.currentScore)
       this.scoreData.setStarInfo(this.currentCategory, this.currentLevel, this.roundStars)
+    
+      if (this.currentScore > this.oldScore) {
+        this.scoreData.setGameData('newHighScore', '1');
+      } else {
+        this.scoreData.setGameData('newHighScore', '0');
+      }
 
       this.scoreData.setGameData('currentGameScore', this.currentScore);
       this.scoreData.setGameData('currentGameStars', this.roundStars);
@@ -308,25 +408,25 @@ export class GamePage implements OnInit {
       // Else, present new question
       this.questionIndex = this.questionIndex + 1;
       slides.lockSwipes(false);
+      slides.slideNext(350);
+      slides.lockSwipes(true);
       this.typedJs = false;
       
       this.randomizeAnswerArray();
-
-      setTimeout(()=> {
-        slides.slideNext(350);
-        slides.lockSwipes(true);
-      }, 350);
 
       this.questionResponseClass = "normal"
       this.hintText = this.questionData[this.questionIndex].hintText
 
       setTimeout(()=> {
-        this.answerButtons = true;
-        this.userInputOk = true;
         this.typedJs = true;
         this.timeLeft = 10;
         this.startTimer();
-      }, 500);
+
+        setTimeout(()=> {
+          this.answerButtons = true;
+          this.userInputOk = true;
+        }, 300);
+      }, 700);
     }
   }
 
@@ -349,5 +449,49 @@ export class GamePage implements OnInit {
     }
 
     this.questionData[this.questionIndex].answers = shuffleArray(this.questionData[this.questionIndex].answers)
+  }
+
+  async ionViewWillEnter() {
+    
+    this.audioEnabled = await getGameData("game_audio")
+    this.musicEnabled = await getGameData("game_music")
+    this.inputEnabled = false;
+
+    this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
+      this.showGameModal();
+    });
+  }
+
+  ionViewDidEnter() {
+    let slides = document.querySelector('ion-slides');
+    this.currentCategory = this.scoreData.getGameData('currentCategoryId');
+    this.oldScore = this.scoreData.getGameData('lastGameScore');
+    this.currentLevel = this.scoreData.getGameData('currentLevelNumber');
+    this.currentLevelTrue = (this.scoreData.getGameData('currentLevelNumberTrue')).toString();
+    this.roundStar1Requirement = this.scoreData.getGameData('roundStar1Requirement')
+    this.roundStar2Requirement = this.scoreData.getGameData('roundStar2Requirement')
+    this.roundStar3Requirement = this.scoreData.getGameData('roundStar3Requirement')
+    this.questionData = this.scoreData.getGameData('currentQuestionsData').questions
+    this.questionResponseClass = "normal";
+
+    if (this.currentCategory = "mathematics" && this.currentLevel > 0) {
+      this.timeLeft = this.timeLeft * this.currentLevel;
+    }
+
+    slides.options = this.slideOptions;
+    slides.lockSwipes(true);
+    this.modalVisible = true;
+    this.inputEnabled = false;
+    this.isCountdown = true;
+    this.hintText = this.questionData[this.questionIndex].hintText;
+    this.typedJs = false;
+    this.isDone = false;
+
+    setTimeout(()=> {
+      this.modalFade = "fadeIn";
+      setTimeout(()=> {
+        this.startCountdown();
+      }, 400);
+    }, 300);
   }
 }

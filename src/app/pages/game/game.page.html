@@ -31,9 +31,9 @@
             <ion-badge [ngClass]="{ 'witzy-leveldetail-score-animation': cuurentScoreAnimate == true }" mode="ios">{{ currentScore }}</ion-badge>
           </ion-col>
           <ion-col size="4" class="ion-text-center game-detail-stars">
-            <img src="/assets/ui/icons/star.png" class="earned-star-science" [ngClass]="{'unearned-star': roundStars < 1}"/>
-            <img src="/assets/ui/icons/star.png" class="earned-star-science" [ngClass]="{'unearned-star': roundStars < 2}"/>
-            <img src="/assets/ui/icons/star.png" class="earned-star-science" [ngClass]="{'unearned-star': roundStars < 3}"/>
+            <img src="/assets/ui/icons/star.png" class="earned-star-{{ currentCategory }}" [ngClass]="{'unearned-star': roundStars < 1}"/>
+            <img src="/assets/ui/icons/star.png" class="earned-star-{{ currentCategory }}" [ngClass]="{'unearned-star': roundStars < 2}"/>
+            <img src="/assets/ui/icons/star.png" class="earned-star-{{ currentCategory }}" [ngClass]="{'unearned-star': roundStars < 3}"/>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -41,11 +41,11 @@
 
   <ion-slides class="game-cards-container">
     <ion-slide *ngFor="let question of questionData">
-      <div class="game-card card-color-science"
+      <div class="game-card card-color-{{ currentCategory }}"
       [ngClass]="{ 'card-color-correct': questionResponseClass == 'correct',
                    'card-color-incorrect': questionResponseClass == 'incorrect'
                   }">
-        <ion-card-header class="game-card-timer timer-color-science"
+        <ion-card-header class="game-card-timer timer-color-{{ currentCategory }}"
         [ngClass]="{ 'timer-color-correct': questionResponseClass == 'correct',
                      'timer-color-incorrect': questionResponseClass == 'incorrect'
                     }">
@@ -62,7 +62,7 @@
         </ion-card-header>
         <ion-card-content class="game-card-answers">
           <div class="ion-padding-vertical">
-            <ion-button class="game-answer-button button-color-science"
+            <ion-button class="game-answer-button button-color-{{ currentCategory }}"
             [ngClass]="{ 'button-color-disabled': !answerButtons }" mode="ios"
             *ngFor="let answer of questionData[questionIndex].answers; let userAnswerIndex = index;"
             (click)="checkUserAnswer(userAnswerIndex)" [disabled]="!answerButtons">{{answer.answer}}</ion-button>
@@ -77,7 +77,9 @@
       <ion-grid>
         <ion-row class="ion-align-items-center">
           <ion-col size="3" class="ion-align-items-center">
-            <img src="/assets/ui/icons/information.png" />
+            <img src="/assets/ui/icons/alien_talk.png" *ngIf="questionResponseClass == 'incorrect'" />
+            <img src="/assets/ui/icons/boy.png" *ngIf="questionResponseClass == 'normal'" />
+            <img src="/assets/ui/icons/boy_talk.png" *ngIf="questionResponseClass == 'correct'" />
           </ion-col>
           <ion-col size="9" class="game-window-text">
             <ngx-typed-js [strings]="[ hintText ]" [showCursor]="false" *ngIf="typedJs">
@@ -95,10 +97,27 @@
 
     <ion-text>Level {{ currentLevelTrue }}</ion-text>
 
-    <ion-button class="modal-button modal-button-science" mode="ios" (click)="onClickOutsideModal()">CONTINUE</ion-button>
-    <ion-button class="modal-button modal-button-science" mode="ios" (click)="onClickPlayButton()">OPTIONS</ion-button>
-    <ion-button class="modal-button modal-button-science" mode="ios" (click)="presentAlertMultipleButtons()">EXIT</ion-button>
+    <ion-button class="modal-button modal-button-{{ currentCategory }}" mode="ios" (click)="onClickOutsideModal()">CONTINUE</ion-button>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="6" class="ion-text-center">
+          <ion-button class="setting-button" mode="ios" (click)="toggleMusic()">
+            <img *ngIf="musicEnabled" src="/assets/ui/icons/musicOn.png"/>
+            <img *ngIf="!musicEnabled" class="icon-inactive" src="/assets/ui/icons/musicOff.png"/>
+          </ion-button>
+      </ion-col>
+      <ion-col size="6" class="ion-text-center">
+          <ion-button class="setting-button" mode="ios" (click)="toggleAudio()">
+            <img *ngIf="audioEnabled" src="/assets/ui/icons/audioOn.png"/>
+            <img *ngIf="!audioEnabled" class="icon-inactive" src="/assets/ui/icons/audioOff.png"/>
+          </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-button class="modal-button modal-button-{{ currentCategory }}" mode="ios" (click)="alertExitLevel()">EXIT</ion-button>
   </div>
-  <div class="close-modal" (click)="onClickOutsideModal()"></div>
+  <div class="countdown-div">
+    <ion-text class="countdown-text {{ countdownClass }}" *ngIf="(isCountdown && !isDone)">{{ countdown }}</ion-text>
+    <ion-text class="countdown-text {{ countdownClass }}" *ngIf="(isCountdown && isDone)">Go!</ion-text>
+  </div>
+  <div class="close-modal" (click)="onClickOutsideModal()" *ngIf="!isCountdown"></div>
 </div>
 <div class="disable-input" [hidden]="inputEnabled"></div>
