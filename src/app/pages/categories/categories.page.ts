@@ -36,19 +36,14 @@ export class CategoriesPage implements OnInit {
     }, 1000);
   }
 
-  async goCategory(url) {
+  goCategory(url) {
     if (url.isAvailable) {
-      this.audio.stopBgm('game-bgm-main-menu');
-      this.setCurrentCategoryData(this.selectedCategory);
-      this.selectedCategoryMusic = await this.gameData.getPersistentGameData('currentCategoryMusic');
-      
-      this.categoryId = await this.gameData.getPersistentGameData('currentCategoryId')
       if (this.audioEnabled) {
         this.audio.playSfx('game-sfx-select');
       }
 
       if (this.musicEnabled) {
-        this.audio.preloadBgm('game-bgm-current-category-'+this.categoryId, this.selectedCategoryMusic);
+        this.audio.stopBgm('game-bgm-main-menu');
         this.audio.playBgm('game-bgm-current-category-'+this.categoryId);
       }
 
@@ -64,6 +59,10 @@ export class CategoriesPage implements OnInit {
 
   async onClickCategory(index: number) {
     this.selectedCategory = this.categories[index];
+    await this.setCurrentCategoryData(this.selectedCategory);
+    await this.audio.preloadBgm('game-bgm-current-category-'+this.categoryId, this.selectedCategoryMusic);
+    this.selectedCategoryMusic = await this.gameData.getPersistentGameData('currentCategoryMusic');
+    this.categoryId = await this.gameData.getPersistentGameData('currentCategoryId')
     this.goCategory(this.selectedCategory);
   }
 

@@ -31,8 +31,31 @@ export class LoadingPage implements OnInit {
 
   constructor(private router: Router, private platform: Platform, private audio: AudioService, private gameData: GameDataService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.splashProgress = 0.1;
+
+    this.currentCategoryId = await this.gameData.getPersistentGameData('currentCategoryId')
+    this.splashProgress = 0.1;
+
+    this.audio.stopBgm("game-bgm-current-category-"+this.currentCategoryId);
+    this.audio.unloadBgm("game-bgm-current-category-"+this.currentCategoryId);
+    this.audio.preloadBgm("game-bgm-level-screen", '/assets/music/game_bgm_level_screen.ogg');
+    
+    this.jsonUrl = await this.gameData.getGameData('levelJsonData');
+    this.currentLevel = await this.gameData.getGameData('currentLevelNumber');
+    this.lastGameScore = await this.gameData.getScoreInfo(this.currentCategoryId, this.currentLevel);
+    this.splashProgress = 0.5;
+
+    await this.gameData.getGameInfo(this.jsonUrl, 'currentQuestionsData', false);
+
+    this.gameData.setGameData('lastGameScore', this.lastGameScore)
+    this.questionData = await this.gameData.getGameData('currentQuestionsData').questions
+    this.calculateRequiredStars();
+    this.splashProgress = 0.8;
+
+    setTimeout(()=> {
+      this.router.navigate(['/game']);
+    }, 1000);
   }
 
   calculateRequiredStars() {
@@ -62,31 +85,6 @@ export class LoadingPage implements OnInit {
     this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
       console.log("Back disabled.")
     });
-  }
-
-  async ionViewDidEnter() {
-    this.currentCategoryId = await this.gameData.getPersistentGameData('currentCategoryId')
-    this.splashProgress = 0.1;
-
-    this.audio.stopBgm("game-bgm-current-category-"+this.currentCategoryId);
-    this.audio.unloadBgm("game-bgm-current-category-"+this.currentCategoryId);
-    this.audio.preloadBgm("game-bgm-level-screen", '/assets/music/game_bgm_level_screen.ogg');
-    
-    this.jsonUrl = await this.gameData.getGameData('levelJsonData');
-    this.currentLevel = await this.gameData.getGameData('currentLevelNumber');
-    this.lastGameScore = await this.gameData.getScoreInfo(this.currentCategoryId, this.currentLevel);
-    this.splashProgress = 0.5;
-
-    await this.gameData.getGameInfo(this.jsonUrl, 'currentQuestionsData', false);
-
-    this.gameData.setGameData('lastGameScore', this.lastGameScore)
-    this.questionData = await this.gameData.getGameData('currentQuestionsData').questions
-    this.calculateRequiredStars();
-    this.splashProgress = 0.8;
-
-    setTimeout(()=> {
-      this.router.navigate(['/game']);
-    }, 1000);
   }
 
   ionViewDidLeave() {
