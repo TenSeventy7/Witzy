@@ -123,12 +123,8 @@ export class GamePage implements OnInit {
   ngOnInit() {
     let slides = document.querySelector('ion-slides');
     this.currentCategory = this.scoreData.getGameData('currentCategoryId');
-    this.oldScore = this.scoreData.getGameData('lastGameScore');
     this.currentLevel = this.scoreData.getGameData('currentLevelNumber');
     this.currentLevelTrue = (this.scoreData.getGameData('currentLevelNumberTrue')).toString();
-    this.roundStar1Requirement = this.scoreData.getGameData('roundStar1Requirement')
-    this.roundStar2Requirement = this.scoreData.getGameData('roundStar2Requirement')
-    this.roundStar3Requirement = this.scoreData.getGameData('roundStar3Requirement')
     this.questionData = this.scoreData.getGameData('currentQuestionsData').questions
     this.questionResponseClass = "normal"
     slides.options = this.slideOptions;
@@ -474,6 +470,14 @@ export class GamePage implements OnInit {
 
   ionViewDidEnter() {
     let slides = document.querySelector('ion-slides');
+    this.currentCategory = this.scoreData.getGameData('currentCategoryId');
+    this.oldScore = this.scoreData.getGameData('lastGameScore');
+    this.currentLevel = this.scoreData.getGameData('currentLevelNumber');
+    this.currentLevelTrue = (this.scoreData.getGameData('currentLevelNumberTrue')).toString();
+    this.roundStar1Requirement = this.scoreData.getGameData('roundStar1Requirement')
+    this.roundStar2Requirement = this.scoreData.getGameData('roundStar2Requirement')
+    this.roundStar3Requirement = this.scoreData.getGameData('roundStar3Requirement')
+    this.questionData = this.scoreData.getGameData('currentQuestionsData').questions
     this.questionResponseClass = "normal";
 
     if (this.currentCategory = "mathematics" && this.currentLevel > 0) {
