@@ -1,0 +1,77 @@
+
+ion-content {
+    background-image: url("/assets/backgrounds/blue.png");
+    background-repeat: repeat;
+    overflow: hidden;
+}
+
+ion-list {
+    background: transparent !important;
+    padding: 0.5vh 8vw;
+
+    ion-list-header {
+        --color: white;
+        font-family: 'KenVector-Future';
+        font-size: 2vh;
+        padding-top: 0 !important;
+    }
+
+    ion-item {
+        --background: transparent;
+        --border-color: transparent;
+        --color: white
+    }
+
+    ion-label {
+        h2 {
+            font-family: 'KenVector-Future-Thin';
+        }
+
+        h3 {
+            font-family: 'Kenney-Mini';
+        }
+    }
+}
+
+ion-badge {
+    --color: white;
+    font-family: 'Kenney-Mini';
+    font-size: 2vh;
+    color: white !important;
+    margin: 4px;
+}
+
+.contibutor-container {
+    padding: 1vh 4vw;
+}
+
+.list-header-inner {
+    padding-top: 0 !important;
+}
+
+.bottom-container {
+    position: fixed;
+    bottom: 5vh;
+    color: white;
+    padding: 0.5vh 8vw;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-wrap: wrap;
+
+    ion-text {
+        font-family: 'Kenney-Mini';
+        text-align: center;
+        font-size: 1.75vh;
+        color: white;
+        width: 100%;
+
+        &:nth-child(0) {
+            margin-bottom: 1vh;
+        }
+
+        &:nth-child(n+2) {
+            font-size: 1.5vh;
+        }
+    }
+}

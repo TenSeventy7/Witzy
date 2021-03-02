@@ -1,9 +1,69 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>about</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <app-header name="About Witzy" backLink="/home"></app-header>
+  
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Main Project Leaders</ion-label>
+    </ion-list-header>
 
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="/assets/tenseventy7.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>John Vincent Corcega</h2>
+        <h3>Programmer</h3>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="/assets/sarra.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>Micaela Denise Sarra</h2>
+        <h3>Art Designer</h3>
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+  
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Main Contributors</ion-label>
+    </ion-list-header>
+
+    <div class="contibutor-container">
+      <ion-badge color="mathematics-main">ANDRES, K.</ion-badge>
+      <ion-badge color="science-main">APUNTAR, A.</ion-badge>
+      <ion-badge color="science-accent">ARANDIA, J.</ion-badge>
+      <ion-badge color="literature-main">JAMOROL, R.</ion-badge>
+      <ion-badge color="literature-accent">RODAJE, R.</ion-badge>
+      <ion-badge color="accent">TALLOD, C.</ion-badge>
+    </div>
+
+  </ion-list>
+  
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Special Thanks</ion-label>
+    </ion-list-header>
+
+    <div class="contibutor-container">
+      <ion-badge color="success">MALIMATA, C.</ion-badge>
+      <ion-badge color="danger">LACHICA, J.</ion-badge>
+      <ion-badge color="main">STACKOVERFLOW (HAHA)</ion-badge>
+      <ion-badge color="science-accent">PERPETUAL GMA</ion-badge>
+      <ion-badge color="mathematics-accent">YOU! (OFC)</ion-badge>
+    </div>
+
+  </ion-list>
+
+  <div class="bottom-container">
+    <ion-text>Witzy, the easy and witty game for students!</ion-text>
+    <ion-text>A capstone project for UPHS-GMA SHS Dept.</ion-text>
+    <ion-text>Assets provided by Kenney Game Studios.</ion-text>
+    <ion-text>Music provided by HeatlyBros Music.</ion-text>
+  </div>
+  <witzy-menu-background></witzy-menu-background>
 </ion-content>
