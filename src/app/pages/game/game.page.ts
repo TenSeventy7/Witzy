@@ -135,22 +135,6 @@ export class GamePage implements OnInit {
     slides.lockSwipes(true);
     this.hintText = this.questionData[this.questionIndex].hintText;
     this.typedJs = false;
-
-    if (this.currentCategory = "mathematics" && this.currentLevel > 0) {
-      this.timeLeft = this.timeLeft * (this.currentLevel + 1);
-    }
-
-    this.modalVisible = true;
-    this.inputEnabled = false;
-    this.isCountdown = true;
-    this.isDone = false;
-
-    setTimeout(()=> {
-      this.modalFade = "fadeIn";
-      setTimeout(()=> {
-        this.startCountdown();
-      }, 400);
-    }, 300);
   }
 
   startCountdown() {
@@ -478,6 +462,7 @@ export class GamePage implements OnInit {
   }
 
   async ionViewWillEnter() {
+    
     this.audioEnabled = await getGameData("game_audio")
     this.musicEnabled = await getGameData("game_music")
     this.inputEnabled = false;
@@ -485,5 +470,30 @@ export class GamePage implements OnInit {
     this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
       this.showGameModal();
     });
+  }
+
+  ionViewDidEnter() {
+    let slides = document.querySelector('ion-slides');
+    this.questionResponseClass = "normal";
+
+    if (this.currentCategory = "mathematics" && this.currentLevel > 0) {
+      this.timeLeft = this.timeLeft * (this.currentLevel + 1);
+    }
+
+    slides.options = this.slideOptions;
+    slides.lockSwipes(true);
+    this.modalVisible = true;
+    this.inputEnabled = false;
+    this.isCountdown = true;
+    this.hintText = this.questionData[this.questionIndex].hintText;
+    this.typedJs = false;
+    this.isDone = false;
+
+    setTimeout(()=> {
+      this.modalFade = "fadeIn";
+      setTimeout(()=> {
+        this.startCountdown();
+      }, 400);
+    }, 300);
   }
 }

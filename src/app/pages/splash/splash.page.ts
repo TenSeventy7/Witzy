@@ -22,8 +22,21 @@ export class SplashPage implements OnInit {
 
   constructor(private router: Router, private platform: Platform, private audio: AudioService, private gameData: GameDataService) { }
 
-  async ngOnInit() {
+  ngOnInit() {
     this.splashProgress = 0.0;
+  }
+
+  preloadAudio(key: string, file: string) {
+    this.audio.preload(key, file);
+    this.splashProgress = this.splashProgress + 0.025
+  }
+
+  preloadBgm(key: string, file: string) {
+    this.audio.preloadBgm(key, file);
+    this.splashProgress = this.splashProgress + 0.025
+  }
+
+  async ionViewDidEnter() {
     this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
       console.log("Back disabled.")
     });
@@ -68,16 +81,6 @@ export class SplashPage implements OnInit {
     setTimeout(()=> {
       this.router.navigate(['/home']);
     }, 1000);
-  }
-
-  preloadAudio(key: string, file: string) {
-    this.audio.preload(key, file);
-    this.splashProgress = this.splashProgress + 0.025
-  }
-
-  preloadBgm(key: string, file: string) {
-    this.audio.preloadBgm(key, file);
-    this.splashProgress = this.splashProgress + 0.025
   }
 
   ionViewDidLeave() {

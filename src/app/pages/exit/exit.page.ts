@@ -24,8 +24,22 @@ export class ExitPage implements OnInit {
 
   constructor(private navCtrl: NavController, private platform: Platform, private audio: AudioService, private gameData: GameDataService) { }
 
-  async ngOnInit() {
+  ngOnInit() {
     this.splashProgress = 0.1;
+  }
+
+  preloadAudio(key: string, file: string) {
+    this.audio.preload(key, file);
+    this.splashProgress = this.splashProgress + 0.025
+  }
+
+  ionViewWillEnter() {
+    this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
+      console.log("Back disabled.")
+    });
+  }
+
+  async ionViewDidEnter() {
     this.musicEnabled = await getGameData("game_music")
     this.musicEnabled = await getGameData("game_audio")
 
@@ -58,17 +72,6 @@ export class ExitPage implements OnInit {
     }, 1000);
   }
 
-  preloadAudio(key: string, file: string) {
-    this.audio.preload(key, file);
-    this.splashProgress = this.splashProgress + 0.025
-  }
-
-  ionViewWillEnter() {
-    this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
-      console.log("Back disabled.")
-    });
-  }
-  
   ionViewDidLeave() {
     this.splashProgress = 0.0;
   }
