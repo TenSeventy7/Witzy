@@ -1,8 +1,22 @@
 .splash-progress-container {
     display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     height: 100%;
+}
+
+.logo-container {
+    margin-bottom: 4vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-logo {
+    width: 60%;
+    height: auto;
 }
 
 .splash-progress-bar {
