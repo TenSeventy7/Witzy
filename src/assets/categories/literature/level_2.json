@@ -1,0 +1,240 @@
+{
+  "questions": [
+    {
+      "questionScore": 150,
+      "questionText": "From which Asian language does 'salamat' came from?",
+      "solutionText": "These words were possibly brought by the Arab merchants and traders who came to the country in the 9th century.",
+      "hintText": "This language is widely spoken in Yemen, Algeria, Bahrain, Chad, Comoros, Djibouti, Egypt, Iraq and more.",
+      "answers": [
+        {
+          "answer": "Arabic",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Hebrew",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Spanish",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 150,
+      "questionText": "The first president of the United States of America is?",
+      "solutionText": "On April 30, 1789, George Washington took his oath of office as the first President of the United States.",
+      "hintText": "He was an American political leader, military general, statesman.",
+      "answers": [
+        {
+          "answer": "George Washington",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "John Hanson",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Theodore Roosevelt",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 175,
+      "questionText": "Who is the Greek God of the Underworld?",
+      "solutionText": "Hades, in ancient Greek religion, is the god of the underworld.",
+      "hintText": "Also called Pluto or Pluton.",
+      "answers": [
+        {
+          "answer": "Hades",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Zeus",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Poseidon",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 150,
+      "questionText": "Who was the first man on the moon?",
+      "solutionText": "On July 20, 1969, Neil Armstrong made history by becoming the first man to walk on the moon.",
+      "hintText": "He was also a naval aviator, test pilot, and university professor.",
+      "answers": [
+        {
+          "answer": "Neil Armstrong",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Bobby Leach",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Keith David",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 250,
+      "questionText": "Whom did Cleopatra marry after her relationship with Julius Caesar?",
+      "solutionText": "Cleopatra eventually married Mark Antony, but their relationship also spawned a massive scandal in Rome.",
+      "hintText": "Her younger brother.",
+      "answers": [
+        {
+          "answer": "Mark Anthony",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Theos Philopator",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Claudius Ptolemy",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 300,
+      "questionText": "What was the name of the Greek Goddess of Love?",
+      "solutionText": "Aphrodite, ancient Greek goddess of sexual love and beauty, identified with Venus by the Romans.",
+      "hintText": "Born from the white foam produced by the severed genitals of Uranus.",
+      "answers": [
+        {
+          "answer": "Aphrodite",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Athena",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Persephone",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 250,
+      "questionText": "What is the oldest Philippine city?",
+      "solutionText": "\"Cebu City or Cebu is the main center of Christianity in the Philippines. \"",
+      "hintText": "\"Known as the \"\"Queen City of the South\"\".\"",
+      "answers": [
+        {
+          "answer": "Cebu",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Davao",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Pangasinan",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 300,
+      "questionText": "In Which Book of the Holy Bible did the death of Moses take place?",
+      "solutionText": "In Deuteronomy 34, Moses died in the land of Moab, and no one knows his burial place to this day.",
+      "hintText": "The fifth book of the Jewish Torah.",
+      "answers": [
+        {
+          "answer": "Deuteronomy",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Leviticus",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Joshua",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 350,
+      "questionText": "‘A Brief History of Time’ is authored by whom?",
+      "solutionText": "Hawking wrote the book for readers who are interested in learning something new about interesting subjects.",
+      "hintText": "Famous Scientist of the 20th Century.",
+      "answers": [
+        {
+          "answer": "Stephen Hawking",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Alan Turing",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Richard Feynman",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 500,
+      "questionText": "What did Ptolemy think of the shape of the earth?",
+      "solutionText": "Ptolemy accepted Aristotle's idea that the Sun and the planets revolve around a spherical Earth, a geocentric view.",
+      "hintText": "Used in Mathematics to describe a round shape.",
+      "answers": [
+        {
+          "answer": "Sphere",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Square",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Oval",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,240 @@
+{
+  "questions": [
+    {
+      "questionScore": 300,
+      "questionText": "The distance light travels in 100 years is:",
+      "solutionText": "5,870,000,000,000 × 100 miles= 587,000,000,000,000",
+      "hintText": "The distance light travels in one year is approximately 5,870,000,000,000 miles.",
+      "answers": [
+        {
+          "answer": "587,000,000,000,000 miles",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "117,400,000,000,000 miles",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "293,500,000,000,000 miles",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 450,
+      "questionText": "Jones covered a distance of 50 miles, then 300 miles while going three times as fast. How does it compare?",
+      "solutionText": "\"So, times taken to covered a distance of 50 miles on his first trip = 50/x hr = 100/x hr.\"",
+      "hintText": "It is twice as much.",
+      "answers": [
+        {
+          "answer": "100/x hr",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "600/x hr",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "2500/x hr",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 230,
+      "questionText": "If 102y = 25, then 10-y is equal to ______.",
+      "solutionText": "\"102y = 25 = (10y)2 = 52 = 10y = 5 = 1/10y = 1/5 = 10-y = 1/5\"",
+      "hintText": "The denominator is 5.",
+      "answers": [
+        {
+          "answer": "1/5",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "1/25",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "1/50",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 530,
+      "questionText": "The value of x + x(xx) when x = 2 is _______.",
+      "solutionText": "\"Put the value of x = 2 in the above expression we get, 2 + 2(22) = 10\"",
+      "hintText": "Square root of the answer is 3.16227766017.",
+      "answers": [
+        {
+          "answer": "10",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "16",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "18",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 290,
+      "questionText": "Combine terms: 12a + 26b -4b – 16a",
+      "solutionText": "12a + 26b -4b – 16a.",
+      "hintText": "The answer has a negtive sign.",
+      "answers": [
+        {
+          "answer": "-4a + 22b",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "4a + 22b",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "-28a + 30b",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 450,
+      "questionText": "Simplify: (4 – 5) – (13 – 18 + 2)",
+      "solutionText": "\"(4 – 5) – (13 – 18 + 2) = -1-(13+2-18) = -1-(15-18) = -1-(-3) = -1+3 = 2\"",
+      "hintText": "It is prime number.",
+      "answers": [
+        {
+          "answer": "2",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "1",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "-2",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 190,
+      "questionText": "Multiply: (x – 4)(x + 5)",
+      "solutionText": "\"(x – 4)(x + 5) = x(x + 5) -4(x + 5) = x^2 + 5x – 4x – 20 = x^2 + x - 20\"",
+      "hintText": "Solve  x^2 + 5x – 4x – 20",
+      "answers": [
+        {
+          "answer": "x2 + x - 20",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "x^2 - 4x - 20",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "x^2 + 5x - 20",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 350,
+      "questionText": "Factor: 3y(x – 3) -2(x – 3)",
+      "solutionText": "\"3y(x – 3) -2(x – 3) = (x – 3)(3y – 2)\"",
+      "hintText": "The numbers are all prime number.",
+      "answers": [
+        {
+          "answer": "(x – 3)(3y – 2)",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "(x – 3)(x – 3)",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "3y(x – 3)",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 510,
+      "questionText": "Round (202)^2 to the nearest hundred.",
+      "solutionText": "\"=(202)^2 = 40804, rounded to the nearest hundreds = 40800\"",
+      "hintText": "Evaluate (202)^2 first then round up.",
+      "answers": [
+        {
+          "answer": "40800",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "30800",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "40900",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 450,
+      "questionText": "Simplify: (4x^2 - 2x) - (-5x^2 - 8x)",
+      "solutionText": "\"3x(3x + 2)\"",
+      "hintText": "Combination of the answer 9x^2 + 6x",
+      "answers": [
+        {
+          "answer": "3x(3x + 2)",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "3x(2x - 2)",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "3x(2x + 2)",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    }
+  ]
+}

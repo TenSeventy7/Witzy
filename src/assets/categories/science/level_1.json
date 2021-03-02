@@ -1,0 +1,240 @@
+{
+  "questions": [
+    {
+      "questionScore": 50,
+      "questionText": "What percentage of the earth is covered by water?",
+      "solutionText": "Water is the most abundant molecule on the Earth's surface, covering about 71% of the surface of the planet.",
+      "hintText": "If you multiply it to 7 the answer is 497.",
+      "answers": [
+        {
+          "answer": "71%",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "70%",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "69%",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 70,
+      "questionText": "How many of Earth's oxygen is produced by the Amazon rainforest.",
+      "solutionText": "Amazon rainforests contribute 20% of the total oxygen in the earth's atmosphere.",
+      "hintText": "The answer is lower than 50%.",
+      "answers": [
+        {
+          "answer": "20%",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "15%",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "10%",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 50,
+      "questionText": "This essential gas is important so that we can breathe.",
+      "solutionText": "Oxygen is the most important for keeping us alive because body cells need it for energy and growth.",
+      "hintText": "A colorless, odorless reactive gas, the life-supporting component of the air.",
+      "answers": [
+        {
+          "answer": "Oxygen",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Nitrogen",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Carbon Dioxide",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 100,
+      "questionText": "It is the largest planet in our solar system at nearly 11 times the size of Earth and 317 times its mass.",
+      "solutionText": "The largest planet in our solar system by far is Jupiter.",
+      "hintText": "The color of this planet is yellow or yellowish-orange.",
+      "answers": [
+        {
+          "answer": "Jupiter",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Venus",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Mars",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 90,
+      "questionText": "What is the nearest planet to the sun?",
+      "solutionText": "Even though Mercury is closest to the Sun, the average temperature on it's surface is much less than that of Venus.",
+      "hintText": "The planet probably received this name because it moves so quickly across the space.",
+      "answers": [
+        {
+          "answer": "Mercury",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Earth",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Pluto",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 250,
+      "questionText": "What is the rarest blood type?",
+      "solutionText": "AB negative is the rarest of the eight main blood types - just 1% of our donors have it.",
+      "hintText": "In total only 3% of donors belong to this blood type group.",
+      "answers": [
+        {
+          "answer": "AB Negative",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "AB Positive",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "O Negative",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 150,
+      "questionText": "What is the largest known animal?",
+      "solutionText": "Reaching a maximum confirmed length of 29.9 meters and weight of 173 tonnes, it is the largest animal",
+      "hintText": "It weighs up to 400,000 pounds (approximately 33 elephants) and reaching up to 98 feet in length.",
+      "answers": [
+        {
+          "answer": "Blue Whale",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Anaconda",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Gorilla",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 300,
+      "questionText": "What is the boiling point of water?",
+      "solutionText": "At sea level, water boils at 100 degree celsius. At higher altitudes the temperature of the boiling point is lower.",
+      "hintText": "It is more than 50 degrees Celcius.",
+      "answers": [
+        {
+          "answer": "100 degrees Celcius",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "-100 degrees Celcius",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "45 degrees Celcius",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 150,
+      "questionText": "Animals that eat both plants and meat are called what?",
+      "solutionText": "Omnivores are animals that eat both plant- and animal-derived food.",
+      "hintText": "The size of an animal does not determine what it eats.",
+      "answers": [
+        {
+          "answer": "Omnivore",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Herbivore",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Onmivore",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 400,
+      "questionText": "What part of the plant conducts photosyntehsis?",
+      "solutionText": "Chloroplasts absorbs certain portions of the visible spectrum and captures energy from sunlight.",
+      "hintText": "Photosynthesis takes place in chloroplasts, which contain the chlorophyll.",
+      "answers": [
+        {
+          "answer": "Chloroplasts",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Mitochondria",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Stroma",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    }
+  ]
+}

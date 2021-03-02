@@ -1,0 +1,222 @@
+{
+  "questions": [
+    {
+      "questionScore": 50,
+      "questionText": "Where can you find the smallest bone in the human body?",
+      "solutionText": "The femur is the longest bone in the human body and the shortest bone is the stapes found in the middle ear.",
+      "hintText": "The 3 smallest bones in the human body are located here.",
+      "answers": [
+        {
+          "answer": "Middle Ear",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Feet",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Finger",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 100,
+      "questionText": "How old are the oldest fossils on earth?",
+      "solutionText": "Researchers have verified that microscopic fossils uncovered in an almost 3.5 billion-year-old piece of rock in Western Australia are the oldest fossils ever found.",
+      "hintText": "It is a billion years old.",
+      "answers": [
+        {
+          "answer": "3.5 billion years old",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "8 million years old",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "4.9 billion years old",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 110,
+      "questionText": "What cell feature is responsible for helping turn the energy we take from food into energy that the cell can use?",
+      "solutionText": "The mitochondria are the converters, they convert the fuel into useable energy.",
+      "hintText": "It is also referred to as the powerhouse of the cell.",
+      "answers": [
+        {
+          "answer": "Mitochondria",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Ribosomes",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Cytoplasm",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 200,
+      "questionText": "The plant cell structure where photosynthesis takes place is called_______.",
+      "solutionText": "The structure contains stacks of membranes called thylakoid membranes. That’s where the light reaction begins.",
+      "hintText": "\"It contains chlorophyll, a green substance that absorbs light energy for photosynthesis."
+    },
+    {
+      "questionScore": 150,
+      "questionText": "A mixture of salt and water can be separated by which of the following?",
+      "solutionText": "A solution of salt dissolved in water can be separated by boiling the solution until all the water has evaporated.",
+      "hintText": "It involves boiling the solution.",
+      "answers": [
+        {
+          "answer": "Evaporation",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Magnetism",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Filteration",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 300,
+      "questionText": "What is the correct order of Mitosis?",
+      "solutionText": "During Mitosis, the sister chromatids separate from each other and move to opposite poles of the cell.",
+      "hintText": "Peter Makes an Anime character for Tina.",
+      "answers": [
+        {
+          "answer": "Prophase, Metaphase, Anaphase, Telophase",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Prophase, Metaphase,Anaphase",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Telophase, Aetaphase, Prophase, Metaphase",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 100,
+      "questionText": "What is the standard SI unit used to measure volume?",
+      "solutionText": "The SI unit of volume is the cube of the SI unit of length, and so it is the cubic metre (m3).",
+      "hintText": "1000 cm3 = 1 dm3 and 1000 dm3 = 1 m3",
+      "answers": [
+        {
+          "answer": "Cubic Meter",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Liters",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Grams",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 300,
+      "questionText": "Which is an example of alkali metal?",
+      "solutionText": "Potassium is a soft, silvery-white metal, member of the alkali group of the periodic chart.",
+      "hintText": "It can be found in Bananas.",
+      "answers": [
+        {
+          "answer": "Potasium",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Magnesium",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Calcium",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 170,
+      "questionText": "Sound following a flash of lightning is called________.",
+      "solutionText": "Thunder or thunder clap always follows lightning because light travels faster than sound.",
+      "hintText": "It is caused by the rush of air into space.",
+      "answers": [
+        {
+          "answer": "Thunder",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Earthquake",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Apocalypse",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 200,
+      "questionText": "Sound waves cannot travel in a __________.",
+      "solutionText": "Sound waves are travelling vibrations of particles in media such as air, water or metal.",
+      "hintText": "Homonym of a cleaning machine.",
+      "answers": [
+        {
+          "answer": "Vacuum",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Curve line",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Black Hole",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    }
+  ]
+}

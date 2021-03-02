@@ -1,0 +1,240 @@
+{
+  "questions": [
+    {
+      "questionScore": 150,
+      "questionText": "Deal with made-up people or events.",
+      "solutionText": "Fiction works are made with the imagination of the writer.",
+      "hintText": "Has letter T in the middle.",
+      "answers": [
+        {
+          "answer": "Fiction",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Poetry",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Metaphor",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 230,
+      "questionText": "What goes up but never comes down?",
+      "solutionText": "No one can stop you from growing old as time progresses.",
+      "hintText": "It is in your Birth certificate.",
+      "answers": [
+        {
+          "answer": "Age",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Spider",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Date",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 300,
+      "questionText": "Riddle: A man who was outside in the rain did not get a single hair on his head wet. Why?",
+      "solutionText": "His head can only get wet but not his hair because he's bald!",
+      "hintText": "Shiny tops.",
+      "answers": [
+        {
+          "answer": "He was bald",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "He is an alien",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "No scientific explanation",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 150,
+      "questionText": "David's parents have three sons: Peter Pan, Peter Pen and what's the name of the third son?",
+      "solutionText": "The son's are David, Peter Pan and Peter Pen",
+      "hintText": "The first name.",
+      "answers": [
+        {
+          "answer": "David",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Peter Pon",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Peter Poon",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 300,
+      "questionText": "Riddle: I follow you all the time and copy your every move, but you can't touch me or catch me. What am I?",
+      "solutionText": "When light is present, your shadow is visible and it is the only thing that follows you until the light disappears.",
+      "hintText": "It's color black.",
+      "answers": [
+        {
+          "answer": "Shadow",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Moon",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Dog",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 400,
+      "questionText": "Riddle: It belongs to you, but other people use it more than you do. What is it?",
+      "solutionText": "People call your name everyday more than you, mentioning your name.",
+      "hintText": "Given by you when you are born.",
+      "answers": [
+        {
+          "answer": "Your Name",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Pen",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Watch",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 450,
+      "questionText": "Who is the Father of Literature?",
+      "solutionText": "Geoffrey Chaucer was the first to write what became generally well-known and recognized poems of his time.",
+      "hintText": "Male",
+      "answers": [
+        {
+          "answer": "Geoffrey Chaucer",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "William Shakespeare",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Anna Kendrick",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 450,
+      "questionText": "What is the meaning of the phrase ‘Mein Kampf’ in Hitler’s autobiography of the same name?",
+      "solutionText": "This book describes the process by which Hitler became antisemitic.",
+      "hintText": "Having a hard time to proceed because I'm...",
+      "answers": [
+        {
+          "answer": "My Struggle.",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "I am gone",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "My God",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 500,
+      "questionText": "Whose death sparked World War I?",
+      "solutionText": "On June 28, 1914, Archduke Franz Ferdinand of Austria-Hungary was assassinated. His murder led to World War I.",
+      "hintText": "He was appointed inspector general of the Austro-Hungarian armed forces.",
+      "answers": [
+        {
+          "answer": "Archduke Franz Ferdinand",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Tsar Nicholas II",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "King George V",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 600,
+      "questionText": "Which book was written by Niccolò Machiavelli?",
+      "solutionText": "In The Prince, Niccolò Machiavelli studied the world of politics by using reason and scientific methods.",
+      "hintText": "Opposite of a female royalty below the overall throne.",
+      "answers": [
+        {
+          "answer": "The Prince",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "The Queen",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "The King",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    }
+  ]
+}

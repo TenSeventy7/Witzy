@@ -1,0 +1,240 @@
+{
+  "questions": [
+    {
+      "questionScore": 200,
+      "questionText": "Spermology is the study of_____.",
+      "solutionText": "Spermology encompasses the study of seed morphology, characteristics and their interactions with the environment.",
+      "hintText": "This is where plants originated in.",
+      "answers": [
+        {
+          "answer": "Seeds",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Flower",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Men",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 240,
+      "questionText": "Which element has no neutrons in it?",
+      "solutionText": "Hydrogen does not contain a neutron, because its nucleus is so small.",
+      "hintText": "It has an atomic number of 1.",
+      "answers": [
+        {
+          "answer": "Hydrogen",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Oxygen",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Sulfur",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 150,
+      "questionText": "What is the true color of the sky?",
+      "solutionText": "The sky has no true color.",
+      "hintText": "It's almost clear.",
+      "answers": [
+        {
+          "answer": "No color",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "sky blue",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "white",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 150,
+      "questionText": "What are the three subatomic particles in an atom?",
+      "solutionText": "It is smallesr than an atom.",
+      "hintText": "P.E.N.",
+      "answers": [
+        {
+          "answer": "Electrons, Protons and Neutrons",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Protons, Quartz and Electrons",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Atoms, Protons and Electrons",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 300,
+      "questionText": "What do you call a phenomenon where animals sleep in the summer?",
+      "solutionText": "Aestivation is a state of animal dormancy, similar to hibernation, although takes place in the summer.",
+      "hintText": "Many organisms like the snails do not find it comfortable in summer.",
+      "answers": [
+        {
+          "answer": "Aestivation",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Hibernation",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Lethargy",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 230,
+      "questionText": "Electrostatic precipitator is used to control the pollution of ___________.",
+      "solutionText": "The electrostatic precipitators are used for air pollution control.",
+      "hintText": "Dust and Smoke",
+      "answers": [
+        {
+          "answer": "Air",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Soil Erosion",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Oil Spill",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 300,
+      "questionText": "What is the instrument used to measure the force and velocity of the wind?",
+      "solutionText": "Anemometer is an instrument that measures wind speed and wind pressure.",
+      "hintText": "The term is derived from the Greek word anemos which means wind.",
+      "answers": [
+        {
+          "answer": "Anemometer",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Barometer",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Anomometer",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 200,
+      "questionText": "What is the shape of our galaxy?",
+      "solutionText": "Our Galaxy is a spiral galaxy, which are rotating structures that are flat like a DVD when looked upon edge-on.",
+      "hintText": "Shape of a Disk.",
+      "answers": [
+        {
+          "answer": "Spiral",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Circle",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Sphere",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 500,
+      "questionText": "Nuclear sizes are expressed in a unit named __________.",
+      "solutionText": "A Fermi is the smallest of three at 10^-15 m, also called a femtometer.",
+      "hintText": "It is named after the nuclear physics pioneer Enrico Fermi.",
+      "answers": [
+        {
+          "answer": "Fermi",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Miner's inch",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Watt",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 480,
+      "questionText": "Which is the lightest element?",
+      "solutionText": "Hydrogen is the lightest element and exhibits the simplest atomic structure.",
+      "hintText": "Has an atomic number of 1.",
+      "answers": [
+        {
+          "answer": "Hydrogen",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Oxygen",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Nitrogen",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    }
+  ]
+}
