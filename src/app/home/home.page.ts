@@ -17,45 +17,42 @@ export class HomePage implements OnInit {
   constructor(private router: Router, private platform: Platform,  private audio: AudioService, public alertController: AlertController, private gameData: GameDataService) {}
 
   categoryData: any[] = [];
-  musicEnabled: boolean = true;
-  audioEnabled: boolean = true;
+  musicEnabled: any;
+  audioEnabled: any;
 
   async ngOnInit() {
-    this.musicEnabled = await getGameData("game_music");
-    this.audioEnabled = await getGameData("game_audio");
+    this.audioEnabled = await getGameData("game_audio")
+    this.musicEnabled = await getGameData("game_music")
 
     if (this.musicEnabled) {
       this.audio.playBgm('game-bgm-main-menu');
       this.audio.setBgmVolume('game-bgm-main-menu', 0.6);
-    }
-
-    this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
-      console.log('Handler was called!');
-      this.presentAlertMultipleButtons();
-    });
-    
+    } 
   }
 
-  async presentAlertMultipleButtons() {
+  async alertExit() {
+    if (this.audioEnabled) {
+      this.audio.playSfx('game-sfx-confirm');
+    }
+
     const alert = await this.alertController.create({
-      header: 'Exit Level',
+      header: 'Exit Witzy',
       message: 'Are you sure you want to exit?',
       buttons: [
         {
-          text: 'Cancel',
+          text: 'Yes',
+          handler: () => {
+            App.exitApp();
+          }
+        }, {
+          text: 'No',
           role: 'cancel',
           handler: (blah) => {
             // console.log('Confirm Cancel: blah');
           }
-        }, {
-          text: 'OK',
-          handler: () => {
-            App.exitApp();
-          }
         }
       ]
     });
-
     await alert.present();
   }
 
@@ -67,7 +64,15 @@ export class HomePage implements OnInit {
     this.router.navigate(['/categories']);
   }
 
-  async toggleMusic() {
+  goAbout() {
+    if (this.audioEnabled) {
+      this.audio.playSfx('game-sfx-select');
+    }
+
+    this.router.navigate(['/about']);
+  }
+
+  toggleMusic() {
     if (this.musicEnabled) {
       this.musicEnabled = false;
       this.audio.setBgmState(false);
@@ -80,7 +85,7 @@ export class HomePage implements OnInit {
     }
   }
 
-  async toggleAudio() {
+  toggleAudio() {
     if (this.audioEnabled) {
       this.audioEnabled = false;
       this.audio.setSfxState(false);
@@ -89,5 +94,11 @@ export class HomePage implements OnInit {
       this.audio.setSfxState(true);
       this.audio.playSfx('game-sfx-select');
     }
+  }
+
+  ionViewWillEnter() {
+    this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
+      this.alertExit();
+    });
   }
 }

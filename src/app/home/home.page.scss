@@ -1,6 +1,23 @@
 
 $button-elevation: .25em;
 
+ion-content {
+    background-image: url("/assets/backgrounds/purple.png");
+    background-repeat: repeat;
+}
+
+.logo-container {
+    margin-top: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-logo {
+    width: 70%;
+    height: auto;
+}
+
 .play-button {
     --background: rgb(0, 0, 0, 0.0);
     --background-activated: rgb(0, 0, 0, 0.0);
@@ -88,7 +105,7 @@ $button-elevation: .25em;
 
 .footer-container {
     position: fixed;
-    bottom: 8vh;
+    bottom: 15vh;
     left: 0;
     width: 100%;
 }
