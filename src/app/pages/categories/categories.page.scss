@@ -1,5 +1,10 @@
 $button-elevation: .3em;
 
+ion-content {
+    background-image: url("/assets/backgrounds/darkPurple.png");
+    background-repeat: repeat;
+}
+
 .category-button-container {
     position: relative;
     display: flex;

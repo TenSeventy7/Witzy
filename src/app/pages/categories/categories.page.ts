@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
 import { GameDataService } from '../../services/game-data.service';
-import { NavController } from '@ionic/angular';
-import { Platform } from '@ionic/angular';
+import { NavController, Platform } from '@ionic/angular';
 import { AudioService } from '../../services/audio.service';
 import { getGameData } from '../../services/game-storage.service';
+
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.page.html',
@@ -18,35 +17,39 @@ export class CategoriesPage implements OnInit {
   selectedCategory: string;
   selectedCategoryMusic: any;
   buttonClass: string;
-  audioEnabled: boolean = true;
-  musicEnabled: boolean = true;
-  categories: Array<string> = this.gameData.getGameData('categoryData').categories;
+  audioEnabled: any;
+  musicEnabled: any;
+  categoriesData: any;
+  categoryId: any;
+  categories: Array<string>;
 
-  constructor(private navCtrl: NavController, private platform: Platform, private router: Router, private http: HttpClient, private gameData: GameDataService, private audio: AudioService) { }
+  constructor(private navCtrl: NavController, private platform: Platform, private router: Router, private gameData: GameDataService, private audio: AudioService) { }
 
   async ngOnInit() {
-    let categories: Array<string> = this.gameData.getGameData('categoryData').categories;
-    this.audioEnabled = await getGameData("game_audio");
-    this.musicEnabled = await getGameData("game_music");
+    this.categoriesData = await this.gameData.getPersistentGameData('categoryData');
+    this.categories = this.categoriesData.categories;
+    this.audioEnabled = await getGameData("game_audio")
+    this.musicEnabled = await getGameData("game_music")
 
     setTimeout(()=> {
       this.buttonClass = "category-buttons-in";
     }, 1000);
-
-    this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
-      this.navCtrl.navigateBack(['/home']);
-    });
   }
 
-  goCategory(url) {
+  async goCategory(url) {
     if (url.isAvailable) {
+      this.audio.stopBgm('game-bgm-main-menu');
+      this.setCurrentCategoryData(this.selectedCategory);
+      this.selectedCategoryMusic = await this.gameData.getPersistentGameData('currentCategoryMusic');
+      
+      this.categoryId = await this.gameData.getPersistentGameData('currentCategoryId')
       if (this.audioEnabled) {
         this.audio.playSfx('game-sfx-select');
       }
 
       if (this.musicEnabled) {
-        this.audio.preloadBgm('game-bgm-current-category', this.selectedCategoryMusic);
-        this.audio.playBgm('game-bgm-current-category');
+        this.audio.preloadBgm('game-bgm-current-category-'+this.categoryId, this.selectedCategoryMusic);
+        this.audio.playBgm('game-bgm-current-category-'+this.categoryId);
       }
 
       this.router.navigate(['/levels']);
@@ -54,16 +57,27 @@ export class CategoriesPage implements OnInit {
   }
 
   setCurrentCategoryData(name) {
-    this.gameData.setGameData('currentCategoryName', name.categoryName);
-    this.gameData.setGameData('currentCategoryId', name.categoryId);
-    this.gameData.setGameData('currentCategoryMusic', name.musicUrl);
+    this.gameData.setPersistentGameData('currentCategoryName', name.categoryName);
+    this.gameData.setPersistentGameData('currentCategoryId', name.categoryId);
+    this.gameData.setPersistentGameData('currentCategoryMusic', name.musicUrl);
   }
 
   async onClickCategory(index: number) {
     this.selectedCategory = this.categories[index];
-    this.audio.stopBgm('game-bgm-main-menu');
-    this.setCurrentCategoryData(this.selectedCategory);
-    this.selectedCategoryMusic = await this.gameData.getGameData('currentCategoryMusic');
     this.goCategory(this.selectedCategory);
+  }
+
+  ionViewWillEnter() {
+    this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
+      this.navCtrl.navigateBack(['/home']);
+    });
+  }
+
+  ionViewWillLeave() {
+    if (this.router.url == "/home") {
+      if (this.audioEnabled) {
+        this.audio.playSfx('game-sfx-back');
+      }
+    }
   }
 }
