@@ -3,7 +3,6 @@ import { Platform } from '@ionic/angular';
 import { Plugins } from "@capacitor/core";
 const { NativeAudio } = Plugins;
 import { getGameData, setGameData } from './game-storage.service';
-import { FindValueSubscriber } from 'rxjs/internal/operators/find';
 
 interface Sound {
   key: string;

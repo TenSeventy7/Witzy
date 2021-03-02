@@ -59,7 +59,7 @@ export class LevelsPage implements OnInit {
   async ngOnInit() {
     this.buttonClass = ""
     this.categoryName = await this.gameData.getPersistentGameData('currentCategoryName');
-    this.categoryId = this.gameData.getGameData('currentCategoryId');
+    this.categoryId = await this.gameData.getPersistentGameData('currentCategoryId');
     this.levels = await this.gameData.getPersistentGameData("currentLevelData_"+this.categoryId);
     this.audioEnabled = await getGameData("game_audio")
     this.musicEnabled = await getGameData("game_music")
@@ -72,6 +72,7 @@ export class LevelsPage implements OnInit {
     this.gameData.setPersistentGameData('currentLevelId', index.categoryName);
     this.gameData.setGameData('currentLevelNumber', this.levelNumber);
     this.gameData.setGameData('currentLevelNumberTrue', this.levelNumberShow);
+    this.gameData.setGameData('currentCategoryId', this.categoryId)
     this.gameData.setPersistentGameData('currentCategory', this.categoryId);
 
     this.levelRemark = index.levelRemark;
@@ -151,7 +152,6 @@ export class LevelsPage implements OnInit {
 
   ionViewWillEnter() {
     this.inputEnabled = true;
-    this.categoryId = this.gameData.getGameData('currentCategoryId');
 
     setTimeout(()=> {
       this.buttonClass = "bounceIn";
