@@ -30,8 +30,8 @@ export class LevelsPage implements OnInit {
   levels: any;
   recievedLevels: any;
 
-  categoryName: any = this.gameData.getGameData('currentCategoryName');
-  categoryId: any = this.gameData.getGameData('currentCategoryId');
+  categoryName: any;
+  categoryId: any;
   
   levelNumber: string;
   levelNumberShow: number;
@@ -41,40 +41,49 @@ export class LevelsPage implements OnInit {
   inputEnabled: boolean = true;
   selectedLevel: any;
 
-  musicEnabled: boolean = true;
-  audioEnabled: boolean = true;
+  musicEnabled: any;
+  audioEnabled: any;
 
   levelRemark: string;
   levelDescription: string;
+  buttonClass: string;
 
   modalFade: string;
   modalWindowRoll: boolean = false;
   earnedStars: number;
+  currentLevelNumber: any;
   modalShow: string;
 
   constructor(private navCtrl: NavController, private router: Router, private platform: Platform, private audio: AudioService, private gameData: GameDataService) { }
 
   async ngOnInit() {
-    this.categoryName = this.gameData.getGameData('currentCategoryName');
-    this.categoryId = this.gameData.getGameData('currentCategoryId');
-    this.levels = this.gameData.getGameData("currentLevelData_"+this.categoryId);
-    this.audioEnabled = await getGameData("game_audio");
-    this.musicEnabled = await getGameData("game_music");
+    this.buttonClass = ""
+    this.categoryName = await this.gameData.getPersistentGameData('currentCategoryName');
+    this.categoryId = await this.gameData.getPersistentGameData('currentCategoryId');
+    this.levels = await this.gameData.getPersistentGameData("currentLevelData_"+this.categoryId);
+    this.audioEnabled = await getGameData("game_audio")
+    this.musicEnabled = await getGameData("game_music")
+
     this.modalVisible = false;
     this.modalWindowRoll = false;
   }
 
   setCurrentLevelData(index) {
-    this.gameData.setGameData('currentLevelId', index.categoryName);
+    this.gameData.setPersistentGameData('currentLevelId', index.categoryName);
     this.gameData.setGameData('currentLevelNumber', this.levelNumber);
     this.gameData.setGameData('currentLevelNumberTrue', this.levelNumberShow);
-    this.gameData.setGameData('currentCategory', this.categoryId);
+    this.gameData.setGameData('currentCategoryId', this.categoryId)
+    this.gameData.setPersistentGameData('currentCategory', this.categoryId);
 
     this.levelRemark = index.levelRemark;
     this.levelDescription = index.levelDesc;
   }
 
   showLevelModal(index) {
+    if (this.audioEnabled) {
+      this.audio.playSfx('game-sfx-alert');
+    }
+
     this.modalVisible = true;
     this.inputEnabled = false;
 
@@ -96,14 +105,14 @@ export class LevelsPage implements OnInit {
     this.modalWindowRoll = false;
     this.inputEnabled = false;
 
+    if (this.audioEnabled) {
+      this.audio.playSfx('game-sfx-back');
+    }
+
     setTimeout(()=> {
       this.modalFade = "fadeOut"
       setTimeout(()=> {
         this.modalVisible = false;
-
-          this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
-            this.navCtrl.navigateBack(['/categories']);
-          });
 
         setTimeout(()=> {
           this.inputEnabled = true;
@@ -116,26 +125,20 @@ export class LevelsPage implements OnInit {
     if (this.audioEnabled) {
       this.audio.playSfx('game-sfx-select');
     }
-    this.audio.stopBgm('game-bgm-current-category');
-    this.audio.unloadBgm('game-bgm-current-category');
+    this.modalWindowRoll = false;
+    this.modalVisible = false;
+    this.audio.stopBgm('game-bgm-current-category-'+this.categoryId);
+    this.audio.unloadBgm('game-bgm-current-category-'+this.categoryId);
     this.router.navigate(['/loading']);
   }
 
   async onClickLevel(levelIndex: number) {
-
-    if (this.audioEnabled) {
-        this.audio.playSfx('game-sfx-select');
-    }
-
     this.selectedLevel = this.levels[levelIndex];
-
     this.gameData.setGameData('levelJsonData', this.levels[levelIndex].levelUrl);
-    console.log(this.levels[levelIndex].levelUrl);
-
     this.earnedStars = this.levels[levelIndex].starsObtained;
     this.levelNumber = levelIndex.toString();
     this.levelNumberShow = levelIndex + 1;
-    this.levelScore = this.gameData.getScoreInfo(this.categoryId, this.levelNumber);
+    this.levelScore = await this.gameData.getScoreInfo(this.categoryId, this.levelNumber);
 
     if (this.levelScore) {
       this.modalShow = "score"
@@ -147,11 +150,33 @@ export class LevelsPage implements OnInit {
     this.showLevelModal(this.selectedLevel);
   }
 
-  ionViewDidLeave() {
+  ionViewWillEnter() {
+    this.inputEnabled = true;
+
+    setTimeout(()=> {
+      this.buttonClass = "bounceIn";
+    }, 400);
+
+    this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
+      this.navCtrl.navigateBack(['/categories']);
+    });
+  }
+
+  ionViewWillLeave() {
     if (this.router.url == "/categories") {
-      this.audio.stopBgm('game-bgm-current-category');
-      this.audio.unloadBgm('game-bgm-current-category');
-      this.audio.playBgm('game-bgm-main-menu');
+      if (this.audioEnabled) {
+        this.audio.playSfx('game-sfx-back');
+      }
+
+      setTimeout(()=> {
+        this.buttonClass = "";
+      }, 1000);
+
+      if (this.musicEnabled) {
+        this.audio.stopBgm('game-bgm-current-category-'+this.categoryId);
+        this.audio.unloadBgm('game-bgm-current-category-'+this.categoryId);
+        this.audio.playBgm('game-bgm-main-menu');
+      }
     }
   }
 }

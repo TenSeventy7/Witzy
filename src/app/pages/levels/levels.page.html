@@ -3,7 +3,7 @@
 
   <ion-grid class="level-buttons-container">
   <ion-row class="ion-align-items-center ion-justify-content-evenly">
-    <ion-col size="6" class="level-button-container" *ngFor="let level of levels; let levelIndex = index;">
+    <ion-col size="6" class="level-button-container {{ buttonClass }}" *ngFor="let level of levels; let levelIndex = index;">
       <ion-button class="level-button level-button-{{ categoryId }}" mode="ios" (click)="onClickLevel(levelIndex)" disabled="{{ level.disabled }}">
         <div class="level-button-inner">
           <ion-grid class="ion-no-padding ion-no-padding">
