@@ -1,3 +1,11 @@
-<ion-content>
-  <app-splash-screen progress="{{ splashProgress }}"></app-splash-screen>
+<ion-content class="ion-align-items-center ion-padding">
+  <div class="splash-progress-container">
+      <div class="logo-container">
+        <img class="game-logo" src="/assets/logo.svg"/>
+      </div>
+      <div class="splash-progress-bar">
+          <ion-progress-bar value="{{ splashProgress }}" color="main"></ion-progress-bar>
+      </div>
+
+  </div>
 </ion-content>
