@@ -9,7 +9,6 @@ import { NgxTypedJsModule } from 'ngx-typed-js';
 
 import { ResultsPage } from './results.page';
 import { HeaderComponentModule } from '../../components/header/header.module';
-import { ResultsAnimationComponentModule } from '../../components/results-animation/results-animation.module';
 
 @NgModule({
   imports: [
@@ -18,7 +17,6 @@ import { ResultsAnimationComponentModule } from '../../components/results-animat
     IonicModule,
     NgxTypedJsModule,
     HeaderComponentModule,
-    ResultsAnimationComponentModule,
     ResultsPageRoutingModule
   ],
   declarations: [ResultsPage]
