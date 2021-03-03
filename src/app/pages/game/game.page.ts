@@ -479,7 +479,6 @@ export class GamePage implements OnInit {
 
   ionViewDidEnter() {
     let slides = document.querySelector('ion-slides');
-    this.currentCategory = this.scoreData.getGameData('currentCategoryId');
     this.oldScore = this.scoreData.getGameData('lastGameScore');
     this.currentLevel = this.scoreData.getGameData('currentLevelNumber');
     this.currentLevelTrue = (this.scoreData.getGameData('currentLevelNumberTrue')).toString();

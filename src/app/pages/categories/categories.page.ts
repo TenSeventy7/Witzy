@@ -49,7 +49,6 @@ export class CategoriesPage implements OnInit {
 
   setCurrentCategoryData(name) {
     this.gameData.setPersistentGameData('currentCategoryName', name.categoryName);
-    this.gameData.setPersistentGameData('currentCategoryId', name.categoryId);
     this.gameData.setGameData('currentCategoryId', name.categoryId);
   }
 

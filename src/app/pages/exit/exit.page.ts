@@ -46,14 +46,12 @@ export class ExitPage implements OnInit {
     this.splashProgress = 0.1;
     
     this.recievedcategoryData = await this.gameData.getPersistentGameData('categoryData');
-    this.currentCategoryMusic = await this.gameData.getPersistentGameData('currentCategoryMusic');
-    this.currentCategoryId = await this.gameData.getPersistentGameData('currentCategoryId')
+    this.currentCategoryId = await this.gameData.getGameData('currentCategoryId')
     this.categoryData =  this.recievedcategoryData.categories;
     this.splashProgress = 0.5;
 
     this.audio.stopBgm("game-bgm-level-screen");
     this.audio.unloadBgm("game-bgm-level-screen");
-    this.audio.preloadBgm("game-bgm-current-category-"+this.currentCategoryId, this.currentCategoryMusic);
     
     for (var index = 0; index < this.categoryData.length; index++) {
       this.categoryId = this.categoryData[index].categoryId;

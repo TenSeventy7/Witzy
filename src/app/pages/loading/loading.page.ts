@@ -65,11 +65,10 @@ export class LoadingPage implements OnInit {
   }
 
   async ionViewDidEnter() {
-    this.currentCategoryId = await this.gameData.getPersistentGameData('currentCategoryId')
+    this.currentCategoryId = await this.gameData.getGameData('currentCategoryId')
     this.splashProgress = 0.1;
 
     this.audio.stopBgm("game-bgm-current-category-"+this.currentCategoryId);
-    this.audio.unloadBgm("game-bgm-current-category-"+this.currentCategoryId);
     this.audio.preloadBgm("game-bgm-level-screen", '/assets/music/game_bgm_level_screen.ogg');
     
     this.jsonUrl = await this.gameData.getGameData('levelJsonData');
