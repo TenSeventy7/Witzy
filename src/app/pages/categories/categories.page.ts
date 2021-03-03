@@ -40,6 +40,7 @@ export class CategoriesPage implements OnInit {
     if (url.isAvailable) {
       if (this.musicEnabled) {
         this.audio.stopBgm('game-bgm-main-menu');
+        this.gameData.setGameData('mainBgmPlaying', 'stopped')
         this.audio.playBgm('game-bgm-current-category-'+this.categoryId);
       }
 

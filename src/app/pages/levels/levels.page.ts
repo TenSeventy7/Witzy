@@ -172,6 +172,7 @@ export class LevelsPage implements OnInit {
 
       if (this.musicEnabled) {
         this.audio.stopBgm('game-bgm-current-category-'+this.categoryId);
+        this.gameData.setGameData('mainBgmPlaying', 'playing')
         this.audio.playBgm('game-bgm-main-menu');
       }
     }
