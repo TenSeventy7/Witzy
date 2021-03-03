@@ -420,7 +420,7 @@ export class GamePage implements OnInit {
       setTimeout(()=> {
         this.typedJs = true;
 
-        if (this.currentCategory = "mathematics" && this.currentLevel > 0) {
+        if (this.currentCategory == 'mathematics' && this.currentLevel > 0) {
           this.timeLeft = this.timeLeft * (this.currentLevel + 1);
         } else {
           this.timeLeft = 10;
@@ -479,7 +479,7 @@ export class GamePage implements OnInit {
     this.questionData = this.scoreData.getGameData('currentQuestionsData').questions
     this.questionResponseClass = "normal";
 
-    if (this.currentCategory = "mathematics" && this.currentLevel > 0) {
+    if (this.currentCategory == 'mathematics' && this.currentLevel > 0) {
       this.timeLeft = this.timeLeft * (this.currentLevel + 1);
     }
 
