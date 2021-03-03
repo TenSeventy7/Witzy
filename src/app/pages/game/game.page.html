@@ -77,13 +77,12 @@
       <ion-grid>
         <ion-row class="ion-align-items-center">
           <ion-col size="3" class="ion-align-items-center">
-            <img src="/assets/ui/icons/alien.png" *ngIf="questionResponseClass == 'incorrect' && talkState == 'normal'" />
-            <img src="/assets/ui/icons/boy.png" *ngIf="questionResponseClass == 'normal' && talkState == 'normal'" />
-            <img src="/assets/ui/icons/alien_talk.png" *ngIf="questionResponseClass == 'incorrect' && talkState == 'talking'" />
-            <img src="/assets/ui/icons/boy_talk.png" *ngIf="questionResponseClass == 'correct' && talkState == 'talking'" />
+            <img src="/assets/ui/icons/alien_talk.png" *ngIf="questionResponseClass == 'incorrect'" />
+            <img src="/assets/ui/icons/boy.png" *ngIf="questionResponseClass == 'normal'" />
+            <img src="/assets/ui/icons/boy_talk.png" *ngIf="questionResponseClass == 'correct'" />
           </ion-col>
           <ion-col size="9" class="game-window-text">
-            <ngx-typed-js [strings]="[ hintText ]" [showCursor]="false" (complete)="onFinishTyped()" *ngIf="typedJs">
+            <ngx-typed-js [strings]="[ hintText ]" [showCursor]="false" *ngIf="typedJs">
               <h1 class="typing"></h1>
             </ngx-typed-js>
           </ion-col>
