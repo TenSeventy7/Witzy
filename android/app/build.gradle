@@ -3,8 +3,8 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "io.tensevntysevn.uphgma.witzy"
         minSdkVersion rootProject.ext.minSdkVersion
+        applicationId "io.tensevntysevn.friends.witzy"
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
