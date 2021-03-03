@@ -6,8 +6,8 @@ android {
         applicationId "io.tensevntysevn.friends.witzy"
         minSdkVersion 23
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 21030309
-        versionName "12.3.3I"
+        versionCode 21030311
+        versionName "12.3.3K"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
