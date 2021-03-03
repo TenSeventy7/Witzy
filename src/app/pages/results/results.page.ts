@@ -42,8 +42,7 @@ export class ResultsPage implements OnInit {
   gameStars: any = 0;
   gameLevel: any = 1;
   categoryId: any;
-  newHighScore: boolean;
-  isNewHighScore: any;
+  newHighScore: string;
   hintText: string;
   remarkText: string;
   randomDykSelection: number;

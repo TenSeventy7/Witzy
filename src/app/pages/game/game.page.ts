@@ -394,9 +394,9 @@ export class GamePage implements OnInit {
       this.scoreData.setStarInfo(this.currentCategory, this.currentLevel, this.roundStars)
     
       if (this.currentScore > this.oldScore) {
-        this.scoreData.setGameData('newHighScore', '1');
+        this.scoreData.setGameData('newHighScore', 'newHighScore');
       } else {
-        this.scoreData.setGameData('newHighScore', '0');
+        this.scoreData.setGameData('newHighScore', 'noNewHighScore');
       }
 
       this.scoreData.setGameData('currentGameScore', this.currentScore);
