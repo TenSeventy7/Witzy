@@ -136,9 +136,9 @@ $button-elevation: .2em;
     background: url("/assets/buttons/css-texture.png");
     background-size: contain;
     background-repeat: repeat-x;
-	margin: 10px;
-	display: inline-block;
-	border-radius: 7px;
+  	margin: 10px;
+  	display: inline-block;
+  	border-radius: 7px;
     padding: 10px 10px 10px 10px;
     transition: top 300ms ease-in-out;
     box-sizing: border-box;
@@ -146,7 +146,7 @@ $button-elevation: .2em;
     width: 60vw;
 
     font-family: "Kenney-Mini";
-    font-size: 4.5vw;
+    font-size: 4.25vw;
     font-weight: 500;
 
     transition: background-color 300ms ease;
