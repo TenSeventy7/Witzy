@@ -70,7 +70,7 @@ export class GamePage implements OnInit {
   answerButtons: boolean;
   hintText: string;
 
-  currentLevel: any;
+  currentLevel: number;
   currentLevelTrue: any;
   currentCategory: any;
   recievedquestionData = this.scoreData.getGameData('currentQuestionsData');
