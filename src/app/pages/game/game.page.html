@@ -114,10 +114,10 @@
     </ion-row>
     <ion-button class="modal-button modal-button-{{ currentCategory }}" mode="ios" (click)="alertExitLevel()">EXIT</ion-button>
   </div>
-  <div class="countdown-div">
+  <div class="close-modal" (click)="onClickOutsideModal()" *ngIf="!isCountdown"></div>
+  <div class="countdown-div" *ngIf="isCountdown">
     <ion-text class="countdown-text {{ countdownClass }}" *ngIf="(isCountdown && !isDone)">{{ countdown }}</ion-text>
     <ion-text class="countdown-text {{ countdownClass }}" *ngIf="(isCountdown && isDone)">Go!</ion-text>
   </div>
-  <div class="close-modal" (click)="onClickOutsideModal()" *ngIf="!isCountdown"></div>
 </div>
 <div class="disable-input" [hidden]="inputEnabled"></div>
