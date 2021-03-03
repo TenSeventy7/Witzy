@@ -58,14 +58,6 @@ export class LevelsPage implements OnInit {
 
   async ngOnInit() {
     this.buttonClass = ""
-    this.categoryName = await this.gameData.getPersistentGameData('currentCategoryName');
-    this.categoryId = this.gameData.getGameData('currentCategoryId');
-    this.levels = await this.gameData.getPersistentGameData("currentLevelData_"+this.categoryId);
-    this.audioEnabled = await getGameData("game_audio")
-    this.musicEnabled = await getGameData("game_music")
-
-    this.modalVisible = false;
-    this.modalWindowRoll = false;
   }
 
   setCurrentLevelData(index) {
@@ -146,9 +138,18 @@ export class LevelsPage implements OnInit {
     this.showLevelModal(this.selectedLevel);
   }
 
-  ionViewWillEnter() {
+  async ionViewWillEnter() {
     this.inputEnabled = true;
     this.categoryId = this.gameData.getGameData('currentCategoryId');
+    this.levels = await this.gameData.getPersistentGameData("currentLevelData_"+this.categoryId);
+    this.categoryName = await this.gameData.getPersistentGameData('currentCategoryName');
+    this.categoryId = this.gameData.getGameData('currentCategoryId');
+    this.audioEnabled = await getGameData("game_audio")
+    this.musicEnabled = await getGameData("game_music")
+    this.buttonClass = ""
+
+    this.modalVisible = false;
+    this.modalWindowRoll = false;
 
     setTimeout(()=> {
       this.buttonClass = "bounceIn";
