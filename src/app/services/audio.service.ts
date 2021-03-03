@@ -148,10 +148,16 @@ export class AudioService {
       return sound.key === key;
     });
 
-    if(soundToPlay.isNative){
-      NativeAudio.stop({
-        assetId: soundToPlay.key,
+    if(this.platform.is('capacitor') && !this.forceWebAudio){
+      NativeAudio.pause({
+        assetId: key,
       });
+
+      setTimeout(()=> {
+        NativeAudio.stop({
+          assetId: key,
+        });
+      }, 400);
     } else {
       this.bgAudioPlayer.src = soundToPlay.asset;
       this.bgAudioPlayer.loop = true;
