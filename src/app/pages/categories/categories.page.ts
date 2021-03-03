@@ -43,8 +43,8 @@ export class CategoriesPage implements OnInit {
         this.gameData.setGameData('mainBgmPlaying', 'stopped')
         this.audio.playBgm('game-bgm-current-category-'+this.categoryId);
       }
-
-      this.router.navigate(['/levels']);
+      
+      this.navCtrl.navigateRoot(['/levels'], { animated: true, animationDirection: 'forward' });
     }
   }
 

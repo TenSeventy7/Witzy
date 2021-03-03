@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-header',
@@ -10,10 +10,10 @@ export class HeaderComponent implements OnInit {
   @Input() name: string;
   @Input() backLink: string;
 
-  constructor(private router: Router) { }
+  constructor(private navCtrl: NavController) { }
 
   onClickBack() {
-    this.router.navigate([this.backLink]);
+    this.navCtrl.navigateRoot([this.backLink], { animated: true, animationDirection: 'back' });
   }
 
   ngOnInit() {}

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { GameDataService } from '../services/game-data.service';
 import { AudioService } from '../services/audio.service';
-import { Platform, AlertController } from '@ionic/angular';
+import { Platform, NavController, AlertController } from '@ionic/angular';
 import { getGameData } from '../services/game-storage.service';
 import { Plugins } from '@capacitor/core';
 const { App } = Plugins;
@@ -14,7 +13,7 @@ const { App } = Plugins;
 })
 export class HomePage implements OnInit {
 
-  constructor(private router: Router, private platform: Platform,  private audio: AudioService, public alertController: AlertController, private gameData: GameDataService) {}
+  constructor(private navCtrl: NavController, private platform: Platform,  private audio: AudioService, public alertController: AlertController, private gameData: GameDataService) {}
 
   categoryData: any[] = [];
   musicEnabled: any;
@@ -26,7 +25,7 @@ export class HomePage implements OnInit {
     this.musicEnabled = await getGameData("game_music")
     this.musicPlaying = this.gameData.getGameData("mainBgmPlaying")
 
-    if (this.musicEnabled && this.musicPlaying == 'stopped') {
+    if (this.musicEnabled && this.musicPlaying !== 'playing') {
       this.gameData.setGameData('mainBgmPlaying', 'playing')
       this.audio.playBgm('game-bgm-main-menu');
     } 
@@ -67,7 +66,7 @@ export class HomePage implements OnInit {
       this.audio.playSfx('game-sfx-select');
     }
 
-    this.router.navigate(['/categories']);
+    this.navCtrl.navigateRoot(['/categories'], { animated: true, animationDirection: 'forward' });
   }
 
   goAbout() {
@@ -75,7 +74,7 @@ export class HomePage implements OnInit {
       this.audio.playSfx('game-sfx-select');
     }
 
-    this.router.navigate(['/about']);
+    this.navCtrl.navigateRoot(['/about'], { animated: true, animationDirection: 'forward' });
   }
 
   toggleMusic() {

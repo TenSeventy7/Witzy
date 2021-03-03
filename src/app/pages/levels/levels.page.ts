@@ -117,7 +117,7 @@ export class LevelsPage implements OnInit {
     }
     this.modalWindowRoll = false;
     this.modalVisible = false;
-    this.router.navigate(['/loading']);
+    this.navCtrl.navigateRoot(['/loading'], { animated: true, animationDirection: 'forward' });
   }
 
   async onClickLevel(levelIndex: number) {
@@ -156,7 +156,7 @@ export class LevelsPage implements OnInit {
     }, 400);
 
     this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
-      this.navCtrl.navigateBack(['/categories']);
+      this.navCtrl.navigateRoot(['/categories'], { animated: true, animationDirection: 'back' });
     });
   }
 

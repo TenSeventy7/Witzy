@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Platform } from '@ionic/angular';
-import { Router } from '@angular/router';
+import { NavController, Platform } from '@ionic/angular';
 import { AudioService } from '../../services/audio.service';
 import { GameDataService } from '../../services/game-data.service';
 import { getGameData } from '../../services/game-storage.service';
@@ -21,7 +20,7 @@ export class SplashPage implements OnInit {
   musicEnabled: boolean;
   audioEnabled: boolean;
 
-  constructor(private router: Router, private platform: Platform, private audio: AudioService, private gameData: GameDataService) { }
+  constructor(private navCtrl: NavController, private platform: Platform, private audio: AudioService, private gameData: GameDataService) { }
 
   ngOnInit() {
     this.splashProgress = 0.0;
@@ -82,7 +81,8 @@ export class SplashPage implements OnInit {
     this.splashProgress = 0.9;
 
     setTimeout(()=> {
-      this.router.navigate(['/home']);
+
+      this.navCtrl.navigateRoot('/home', { animated: true, animationDirection: 'back' });
     }, 1000);
   }
 
