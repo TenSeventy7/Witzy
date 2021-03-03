@@ -106,6 +106,7 @@ export class GamePage implements OnInit {
 
   // Typed.js
   typedJs: boolean = true
+  talkState: string;
 
   // Modal
   modalFade: string;
@@ -131,6 +132,7 @@ export class GamePage implements OnInit {
     slides.lockSwipes(true);
     this.hintText = this.questionData[this.questionIndex].hintText;
     this.typedJs = false;
+    this.talkState = 'normal'
   }
 
   startCountdown() {
@@ -171,6 +173,7 @@ export class GamePage implements OnInit {
         
         this.startTimer();
         this.typedJs = true;
+        this.talkState = 'talking'
         setTimeout(()=> {
           this.answerButtons = true;
           this.inputEnabled = true;
@@ -207,6 +210,10 @@ export class GamePage implements OnInit {
         }, 400);
       }, 300);
     }
+  }
+
+  onFinishTyped() {
+    this.talkState = 'normal'
   }
 
   async toggleMusic() {
@@ -376,6 +383,7 @@ export class GamePage implements OnInit {
     setTimeout(()=> {
       this.hintText = this.questionData[this.questionIndex].solutionText;
       this.typedJs = true;
+      this.talkState = 'talking'
 
       setTimeout(()=> {
         this.presentNextQuestion();
@@ -419,6 +427,7 @@ export class GamePage implements OnInit {
 
       setTimeout(()=> {
         this.typedJs = true;
+        this.talkState = 'talking'
 
         if (this.currentCategory = "mathematics" && this.currentLevel > 0) {
           this.timeLeft = this.timeLeft * (this.currentLevel + 1);
