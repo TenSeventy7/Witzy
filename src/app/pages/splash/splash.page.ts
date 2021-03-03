@@ -82,7 +82,7 @@ export class SplashPage implements OnInit {
 
     setTimeout(()=> {
 
-      this.navCtrl.navigateRoot('/home', { animated: true, animationDirection: 'back' });
+      this.navCtrl.navigateRoot('/home', { animated: true, animationDirection: 'forward' });
     }, 1000);
   }
 
