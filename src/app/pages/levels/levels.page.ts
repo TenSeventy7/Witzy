@@ -126,8 +126,6 @@ export class LevelsPage implements OnInit {
     }
     this.modalWindowRoll = false;
     this.modalVisible = false;
-    this.audio.stopBgm('game-bgm-current-category-'+this.categoryId);
-    this.audio.unloadBgm('game-bgm-current-category-'+this.categoryId);
     this.router.navigate(['/loading']);
   }
 

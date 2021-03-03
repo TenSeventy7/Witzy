@@ -65,7 +65,8 @@ export class LoadingPage implements OnInit {
   }
 
   async ionViewDidEnter() {
-    this.currentCategoryId = await this.gameData.getGameData('currentCategoryId')
+    this.currentCategoryId = await this.gameData.getPersistentGameData('currentCategory')
+    this.gameData.setGameData('currentCategoryId', this.currentCategoryId);
     this.splashProgress = 0.1;
 
     this.audio.stopBgm("game-bgm-current-category-"+this.currentCategoryId);

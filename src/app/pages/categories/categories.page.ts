@@ -55,7 +55,7 @@ export class CategoriesPage implements OnInit {
   async onClickCategory(index: number) {
     this.selectedCategory = this.categories[index];
     await this.setCurrentCategoryData(this.selectedCategory);
-    this.categoryId = await this.gameData.getGameData('currentCategoryId')
+    this.categoryId = this.gameData.getGameData('currentCategoryId')
     this.goCategory(this.selectedCategory);
   }
 
