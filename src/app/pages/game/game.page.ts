@@ -279,6 +279,8 @@ export class GamePage implements OnInit {
               this.audio.playSfx('game-sfx-back');
             }
 
+            alert.dismiss();
+
             setTimeout(()=> {
               this.navCtrl.navigateBack(['/exit']);
             }, 400);
