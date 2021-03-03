@@ -19,12 +19,15 @@ export class HomePage implements OnInit {
   categoryData: any[] = [];
   musicEnabled: any;
   audioEnabled: any;
+  musicPlaying: string;
 
   async ngOnInit() {
     this.audioEnabled = await getGameData("game_audio")
     this.musicEnabled = await getGameData("game_music")
+    this.musicPlaying = this.gameData.getGameData("mainBgmPlaying")
 
-    if (this.musicEnabled) {
+    if (this.musicEnabled && this.musicPlaying == 'stopped') {
+      this.gameData.setGameData('mainBgmPlaying', 'playing')
       this.audio.playBgm('game-bgm-main-menu');
     } 
   }
@@ -80,11 +83,12 @@ export class HomePage implements OnInit {
       this.musicEnabled = false;
       this.audio.setBgmState(false);
       this.audio.stopBgm('game-bgm-main-menu');
+      this.gameData.setGameData('mainBgmPlaying', 'playing')
     } else {
       this.musicEnabled = true;
       this.audio.setBgmState(true);
       this.audio.playBgm('game-bgm-main-menu');
-      this.audio.setBgmVolume('game-bgm-main-menu', 0.6);
+      this.gameData.setGameData('mainBgmPlaying', 'stopped')
     }
   }
 
