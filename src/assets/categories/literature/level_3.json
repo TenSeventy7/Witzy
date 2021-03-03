@@ -1,236 +1,230 @@
 {
   "questions": [
     {
-      "questionScore": 150,
-      "questionText": "Who named the Philippines?",
-      "solutionText": "Lopez de Villalobos was commissioned in 1541 by the Viceroy of New Spain, Antonio de Mendoza, who was the first colonial administrator in the New World, to send an expedition to the Islas del Poniente, meaning Islands of the West, now known as the Philippines.",
-      "hintText": "He gave the name ¡°Las Islas Filipinas¡± to the Philippine archipelago in 1543.",
-      "answers": [
-        {
-          "answer": "Ruy Lopez de Villalobos",
-          "correct": true,
-          "selected": false
-        },
-        {
-          "answer": "Ferdinand Magellan",
-          "correct": false,
-          "selected": false
-        },
-        {
-          "answer": "King Phillip II",
-          "correct": false,
-          "selected": false
-        }
-      ]
-    },
-    {
       "questionScore": 100,
-      "questionText": "The National Hero of the Philippines",
-      "solutionText": "Jose Rizal became the National Hero of the Philippines not only because of his genius, his multiple talents but because of his unquenchable love of the Philippines.",
-      "hintText": "Fought with a pen.",
+      "questionText": "Riddle: What month of the year has 28 days?",
+      "solutionText": "All of the 12 months of the year has the 28th day.",
+      "hintText": "The month that have 28 days is not lower than 12 months.",
       "answers": [
         {
-          "answer": "Jose Rizal",
+          "answer": "All of the months",
           "correct": true,
           "selected": false
         },
         {
-          "answer": "Jose P. Rizal",
+          "answer": "January",
           "correct": false,
           "selected": false
         },
         {
-          "answer": "Jose Protacio Rizal Mercado Alonzo y Realonda",
+          "answer": "February",
           "correct": false,
           "selected": false
-        }
-      ]
-    },
-    {
-      "questionScore": 70,
-      "questionText": "Riddle: What has to be broken before you can use it?",
-      "solutionText": "",
-      "hintText": "The letter A and B is wrong, so the correct answer is either C or D.",
-      "answers": [
-        {
-          "answer": "Egg",
-          "correct": true,
-          "selected": false
-        },
-        {
-          "answer": "Glass",
-          "correct": false,
-          "selected": false
-        },
-        {
-          "answer": "Mirror",
-          "correct": false,
-          "selected": false
-        }
-      ]
-    },
-    {
-      "questionScore": 70,
-      "questionText": "Riddle: I’m tall when I’m young, and I’m short when I’m old. What am I?",
-      "solutionText": "",
-      "hintText": "Used In funeral.",
-      "answers": [
-        {
-          "answer": "Candle",
-          "correct": true,
-          "selected": false
-        },
-        {
-          "answer": "Tree",
-          "correct": false,
-          "selected": false
-        },
-        {
-          "answer": "Money",
-          "correct": false,
-          "selected": false,
-          "": {}
-        }
-      ]
-    },
-    {
-      "questionScore": 150,
-      "questionText": "Who is the author of The Origin Of Species?",
-      "solutionText": "On the Origin of Species, published on 24 November 1859, is a work of scientific literature by Charles Darwin that is considered to be the foundation of evolutionary biology.",
-      "hintText": "Proposed the theory of Evolution.",
-      "answers": [
-        {
-          "answer": "Charles Darwin",
-          "correct": true,
-          "selected": false
-        },
-        {
-          "answer": "George Louis Leclerc",
-          "correct": false,
-          "selected": false
-        },
-        {
-          "answer": "Charles Dickens",
-          "correct": false,
-          "selected": false,
-          "": {}
-        }
-      ]
-    },
-    {
-      "questionScore": 200,
-      "questionText": "How many stars does the American Flag have?",
-      "solutionText": "The 50 stars on the flag represent the 50 states of the United States of America",
-      "hintText": "It represent the states of the United States of America",
-      "answers": [
-        {
-          "answer": "50",
-          "correct": true,
-          "selected": false
-        },
-        {
-          "answer": "49",
-          "correct": false,
-          "selected": false
-        },
-        {
-          "answer": "60",
-          "correct": false,
-          "selected": false,
-          "": {}
-        }
-      ]
-    },
-    {
-      "questionScore": 275,
-      "questionText": "Who is the Goddess of Wisdom and War?",
-      "solutionText": "Athena the Goddess of wisdom, war and the crafts, and favourite daughter of Zeus.",
-      "hintText": "The favorite daughter of Zeus.",
-      "answers": [
-        {
-          "answer": "Athena",
-          "correct": true,
-          "selected": false
-        },
-        {
-          "answer": "Aphrodite",
-          "correct": false,
-          "selected": false
-        },
-        {
-          "answer": "Minerva",
-          "correct": false,
-          "selected": false,
-          "": {}
         }
       ]
     },
     {
       "questionScore": 250,
-      "questionText": "What is Neil Armstrong's Nationality?",
-      "solutionText": "He was an American astronaut and aeronautical engineer, and the first person to walk on the Moon.",
-      "hintText": "He is from Wapakoneta, Ohio, U.S. Cincinnati, Ohio, U.S.",
+      "questionText": "Who was the 'Great Dissenter' in the Philippines?",
+      "solutionText": "He was called as such for his stand against the pro-American policy of R. Magsaysay.",
+      "hintText": "The Champion of Filipino Nationalism.",
       "answers": [
         {
-          "answer": "American",
+          "answer": "Claro M. Recto",
           "correct": true,
           "selected": false
         },
         {
-          "answer": "Australian",
+          "answer": "John Harlan",
           "correct": false,
           "selected": false
         },
         {
-          "answer": "Belgian",
+          "answer": "Polina Generacion",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 150,
+      "questionText": "Tweedledum and Tweedledee are two characters of which Children’s book?",
+      "solutionText": "Tweedledee and tweedledum are a pair of identical twins in Alice in the Wonderland.",
+      "hintText": "Twins inside a twisted world.",
+      "answers": [
+        {
+          "answer": "Alice in the Wonderland",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "The cat in the hat",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Winnie the Pooh",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 200,
+      "questionText": "What temple pf Athena still sits today atop Athens’s  Acropolis?",
+      "solutionText": "Built in the 5th century B.C., it was a symbol pf the power,wealth and elevated culture of Athens",
+      "hintText": "It was the largest and most lavish temple the Greek mainland had ever seen.",
+      "answers": [
+        {
+          "answer": "Parthenon",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Olympia",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Taj Mahal",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 200,
+      "questionText": "Riddle: It’s so fragile that if you say its name you break it, what is it?",
+      "solutionText": "I thought so, too!",
+      "hintText": "Something that most extroverts hates.",
+      "answers": [
+        {
+          "answer": "Silence",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Heart",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Sound",
           "correct": false,
           "selected": false,
-          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 250,
+      "questionText": "Who is the main speaker of “ The allegory of the cave”?",
+      "solutionText": "After Socrates  was executed, Plato wrote a number of dialogues in which Socrates is the main speaker.",
+      "hintText": "According to Plato, he is portrayed as a messenger of the Gods.",
+      "answers": [
+        {
+          "answer": "Socrates",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Plato",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Aristotle",
+          "correct": false,
+          "selected": false,
+        }
+      ]
+    },
+    {
+      "questionScore": 350,
+      "questionTexts": "\"The practice or the principle of giving a group priority over each individual in it\" is the definition of…",
+      "solutionText": "Collectivism is a value that is characterized by prioritization of the group over the self.",
+      "hintText": "“in-group”",
+      "answers": [
+        {
+          "answer": "Collectivism",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Communism",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Conservatism",
+          "correct": false,
+          "selected": false,
         }
       ]
     },
     {
       "questionScore": 400,
-      "questionText": "Henry the Eighth had how many wives?",
-      "solutionText": "Henry VIII is best known for his six wives, and several mistresses he kept on the side.",
-      "hintText": "He had more than 5 wives",
+      "questionText": "What is the scholarly abbreviation of the Latin phrase “ and others ”?",
+      "solutionText": "Et al. is used in academic  citation when referring to a source with multiple authors.",
+      "hintText": "You use it a lot when you do your research.",
       "answers": [
         {
-          "answer": "Six",
+          "answer": "Et al.",
           "correct": true,
           "selected": false
         },
         {
-          "answer": "Seven",
+          "answer": "Also.",
           "correct": false,
           "selected": false
         },
         {
-          "answer": "Eight",
+          "answer": "etc.",
           "correct": false,
           "selected": false,
-          "": {}
         }
       ]
     },
     {
-      "questionScore": 600,
-      "questionText": "People of which religion consider ‘The Bhagavad Gita’ as their sacred text?",
-      "solutionText": "Bhagavat Gita is the most important religious texts of Hinduism and easily the best known.",
-      "hintText": "It is the world's third-largest religion.",
+      "questionScore": 350,
+      "questionText": "Which country awards the Pulitzer Prize?",
+      "solutionText": "The Pulitzer prize is an award for achievements in journalism, literature, and musical composition within the U.S.",
+      "hintText": "It established in 1917 by provisions in the will of Joseph Pulitzer.",
       "answers": [
         {
-          "answer": "Hinduism",
+          "answer": "USA",
           "correct": true,
           "selected": false
         },
         {
-          "answer": "Buddhism",
+          "answer": "France",
           "correct": false,
           "selected": false
         },
         {
-          "answer": "Shintoism",
+          "answer": "Italy",
+          "correct": false,
+          "selected": false,
+        }
+      ]
+    },
+    {
+      "questionScore": 500,
+      "questionText": "Which one is the first tragedy play of Shakespeare?",
+      "solutionText": "The play is often seen as Shakespeare’s  attempt to emulate the violent plays of his contemporaries.",
+      "hintText": "The play begins shortly after the death of the Roman emperor.",
+      "answers": [
+        {
+          "answer": "Titus Andronicus",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Hamlet",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Romeo and Juliet",
           "correct": false,
           "selected": false
         }
