@@ -1,4 +1,4 @@
-package io.tensevntysevn.uphgma.witzy;
+package io.tensevntysevn.friends.witzy;
 
 import android.os.Bundle;
 
