@@ -114,7 +114,7 @@ export class AudioService {
       return sound.key === key;
     });
 
-    if(soundToPlay.isNative){
+    if(this.platform.is('capacitor') && !this.forceWebAudio){
       NativeAudio.loop({
         assetId: key,
       });
@@ -133,7 +133,7 @@ export class AudioService {
       return sound.key === key;
     });
 
-    if(soundToPlay.isNative){
+    if(this.platform.is('capacitor') && !this.forceWebAudio){
       NativeAudio.resume({
         assetId: key,
       });
@@ -164,7 +164,7 @@ export class AudioService {
       return sound.key === key;
     });
 
-    if(soundToPlay.isNative){
+    if(this.platform.is('capacitor') && !this.forceWebAudio){
       NativeAudio.pause({
         assetId: key,
       });
@@ -179,7 +179,7 @@ export class AudioService {
       return sound.key === key;
     });
 
-    if(soundToPlay.isNative){
+    if(this.platform.is('capacitor') && !this.forceWebAudio){
       NativeAudio.setVolume({
         assetId: soundToPlay.key,
         volume: volume,
@@ -195,7 +195,7 @@ export class AudioService {
       return sound.key === key;
     });
 
-    if(soundToPlay.isNative){
+    if(this.platform.is('capacitor') && !this.forceWebAudio){
       NativeAudio.loop({
         assetId: soundToPlay.key,
       });
@@ -224,7 +224,4 @@ export class AudioService {
   public async getSfxState() {
     await getGameData("game_audio");
   }
-
-  
-
 }
