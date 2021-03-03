@@ -66,7 +66,7 @@ export class ExitPage implements OnInit {
         this.audio.playBgm("game-bgm-current-category-"+this.currentCategoryId);
       }
 
-      this.navCtrl.navigateBack(['/levels']);
+      this.navCtrl.navigateRoot('/levels', { animated: true, animationDirection: 'backward' });
     }, 1000);
   }
 

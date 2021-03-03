@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Platform } from '@ionic/angular';
-import { Router } from '@angular/router';
+import { Platform, NavController } from '@ionic/angular';
 import { AudioService } from '../../services/audio.service';
 import { GameDataService } from '../../services/game-data.service';
 import { getGameData, setGameData } from '../../services/game-storage.service';
@@ -29,7 +28,7 @@ export class LoadingPage implements OnInit {
   roundStar2Requirement: number = 0;
   roundStar3Requirement: number = 0;
 
-  constructor(private router: Router, private platform: Platform, private audio: AudioService, private gameData: GameDataService) { }
+  constructor(private navCtrl: NavController, private platform: Platform, private audio: AudioService, private gameData: GameDataService) { }
 
   ngOnInit() {
     this.splashProgress = 0.1;
@@ -84,7 +83,7 @@ export class LoadingPage implements OnInit {
     this.splashProgress = 0.8;
 
     setTimeout(()=> {
-      this.router.navigate(['/game']);
+      this.navCtrl.navigateRoot(['/game'], { animated: true, animationDirection: 'forward' });
     }, 1500);
   }
 

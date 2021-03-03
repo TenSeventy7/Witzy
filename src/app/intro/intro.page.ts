@@ -36,9 +36,7 @@ export class IntroPage implements OnInit {
           this.tnsLogo = ""
           this.uphLogo = ""
           this.textLogo = ""
-
-          this.navCtrl.navigateForward(['/splash'], { animated: false })
-          
+          this.navCtrl.navigateRoot(['/splash'], { animated: false, animationDirection: 'forward' });
         }, 3500);        
       }, 3500);
     }, 3500);

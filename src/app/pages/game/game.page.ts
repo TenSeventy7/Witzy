@@ -1,9 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
-import { NavController } from '@ionic/angular';
+import { NavController, Platform, AlertController } from '@ionic/angular';
 import { trigger, transition, animate, style } from '@angular/animations'
-
-import { Platform, AlertController } from '@ionic/angular';
 
 import { NgxTypedJsComponent } from 'ngx-typed-js';
 import { AudioService } from '../../services/audio.service';
@@ -118,7 +115,7 @@ export class GamePage implements OnInit {
   musicEnabled: any;
   audioEnabled: any;
 
-  constructor(private navCtrl: NavController, private router: Router, private platform: Platform, private audio: AudioService, public alertController: AlertController, private scoreData: GameDataService) {}
+  constructor(private navCtrl: NavController, private platform: Platform, private audio: AudioService, public alertController: AlertController, private scoreData: GameDataService) {}
 
   ngOnInit() {
     this.questionData = this.scoreData.getGameData('currentQuestionsData').questions
@@ -295,10 +292,6 @@ export class GamePage implements OnInit {
     await alert.present();
   }
 
-  onClickPlayButton(){
-    this.router.navigate(['/game']);
-  }
-
   startTimer() {
       this.interval = setInterval(() => {
         if(this.timeLeft > 1) {
@@ -398,7 +391,7 @@ export class GamePage implements OnInit {
 
       this.scoreData.setGameData('currentGameScore', this.currentScore);
       this.scoreData.setGameData('currentGameStars', this.roundStars);
-      this.router.navigate(['/results']);
+      this.navCtrl.navigateRoot(['/results'], { animated: true, animationDirection: 'forward' });
     }
     else {
       let slides = document.querySelector('ion-slides');
