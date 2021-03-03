@@ -121,16 +121,11 @@ export class GamePage implements OnInit {
   constructor(private navCtrl: NavController, private router: Router, private platform: Platform, private audio: AudioService, public alertController: AlertController, private scoreData: GameDataService) {}
 
   ngOnInit() {
-    let slides = document.querySelector('ion-slides');
+    this.questionData = this.scoreData.getGameData('currentQuestionsData').questions
     this.currentCategory = this.scoreData.getGameData('currentCategoryId');
     this.currentLevel = this.scoreData.getGameData('currentLevelNumber');
     this.currentLevelTrue = (this.scoreData.getGameData('currentLevelNumberTrue')).toString();
-    this.questionData = this.scoreData.getGameData('currentQuestionsData').questions
-    this.questionResponseClass = "normal"
-    slides.options = this.slideOptions;
-    slides.lockSwipes(true);
     this.hintText = this.questionData[this.questionIndex].hintText;
-    this.typedJs = false;
   }
 
   startCountdown() {
@@ -460,10 +455,10 @@ export class GamePage implements OnInit {
   }
 
   async ionViewWillEnter() {
-    
     this.audioEnabled = await getGameData("game_audio")
     this.musicEnabled = await getGameData("game_music")
     this.inputEnabled = false;
+    this.typedJs = false;
 
     this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
       this.showGameModal();
@@ -471,22 +466,30 @@ export class GamePage implements OnInit {
   }
 
   ionViewDidEnter() {
-    let slides = document.querySelector('ion-slides');
-    this.oldScore = this.scoreData.getGameData('lastGameScore');
+    this.questionData = this.scoreData.getGameData('currentQuestionsData').questions
+    this.currentCategory = this.scoreData.getGameData('currentCategoryId');
     this.currentLevel = this.scoreData.getGameData('currentLevelNumber');
     this.currentLevelTrue = (this.scoreData.getGameData('currentLevelNumberTrue')).toString();
+
+    this.hintText = this.questionData[this.questionIndex].hintText;
+    this.typedJs = false;
+
     this.roundStar1Requirement = this.scoreData.getGameData('roundStar1Requirement')
     this.roundStar2Requirement = this.scoreData.getGameData('roundStar2Requirement')
     this.roundStar3Requirement = this.scoreData.getGameData('roundStar3Requirement')
-    this.questionData = this.scoreData.getGameData('currentQuestionsData').questions
+
+    this.oldScore = this.scoreData.getGameData('lastGameScore');
+
+    let slides = document.querySelector('ion-slides');
+    slides.options = this.slideOptions;
+    slides.lockSwipes(true);
+
     this.questionResponseClass = "normal";
 
     if (this.currentCategory == 'mathematics' && this.currentLevel > 0) {
       this.timeLeft = this.timeLeft * (this.currentLevel + 1);
     }
 
-    slides.options = this.slideOptions;
-    slides.lockSwipes(true);
     this.modalVisible = true;
     this.inputEnabled = false;
     this.isCountdown = true;
