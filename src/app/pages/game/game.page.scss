@@ -33,7 +33,7 @@ $button-elevation: .2em;
     ion-text {
       margin: auto;
       font-family: 'KenVector-Future-Thin';
-      font-size: 18px;
+      font-size: 16px;
 
       &:nth-child(1) {
         font-family: 'KenVector-Future';
@@ -119,7 +119,7 @@ $button-elevation: .2em;
     ion-card-title {
         font-family: 'KenVector-Future';
         color: var(--ion-color-white);
-        font-size: 4.25vw;
+        font-size: 4vw;
         font-weight: 400;
     }
 }
