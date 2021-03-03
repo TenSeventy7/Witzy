@@ -72,7 +72,6 @@ export class LevelsPage implements OnInit {
     this.gameData.setPersistentGameData('currentLevelId', index.categoryName);
     this.gameData.setGameData('currentLevelNumber', this.levelNumber);
     this.gameData.setGameData('currentLevelNumberTrue', this.levelNumberShow);
-    this.gameData.setPersistentGameData('currentCategory', this.categoryId);
 
     this.levelRemark = index.levelRemark;
     this.levelDescription = index.levelDesc;
