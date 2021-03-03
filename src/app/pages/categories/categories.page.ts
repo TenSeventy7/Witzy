@@ -38,10 +38,8 @@ export class CategoriesPage implements OnInit {
 
   goCategory(url) {
     if (url.isAvailable) {
-      this.audio.stopBgm('game-bgm-main-menu');
-      console.log(this.categoryId)
-
       if (this.musicEnabled) {
+        this.audio.stopBgm('game-bgm-main-menu');
         this.audio.playBgm('game-bgm-current-category-'+this.categoryId);
       }
 
@@ -51,20 +49,14 @@ export class CategoriesPage implements OnInit {
 
   setCurrentCategoryData(name) {
     this.gameData.setPersistentGameData('currentCategoryName', name.categoryName);
+    this.gameData.setPersistentGameData('currentCategoryId', name.categoryId);
     this.gameData.setGameData('currentCategoryId', name.categoryId);
-    this.gameData.setPersistentGameData('currentCategoryMusic', name.musicUrl);
   }
 
   async onClickCategory(index: number) {
     this.selectedCategory = this.categories[index];
     await this.setCurrentCategoryData(this.selectedCategory);
     this.categoryId = await this.gameData.getGameData('currentCategoryId')
-    this.selectedCategoryMusic = await this.gameData.getPersistentGameData('currentCategoryMusic');
-
-    if (this.musicEnabled) {
-      this.audio.preloadBgm('game-bgm-current-category-'+this.categoryId, this.selectedCategoryMusic);
-    }
-
     this.goCategory(this.selectedCategory);
   }
 
