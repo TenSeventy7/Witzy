@@ -17,8 +17,8 @@
       <ion-text class="level-modal-remark" *ngIf="newHighScore == 'noNewHighScore'">{{ remarkText }}</ion-text>
       <ion-text class="level-modal-remark" *ngIf="newHighScore == 'newHighScore'">New high score!</ion-text>
   
-      <ion-button class="modal-button modal-button-science" mode="ios" (click)="onClickPlay()">PLAY AGAIN</ion-button>
-      <ion-button class="modal-button modal-button-science" mode="ios" (click)="onClickBack()">BACK</ion-button>
+      <ion-button class="modal-button modal-button-{{ categoryId }}" mode="ios" (click)="onClickPlay()">PLAY AGAIN</ion-button>
+      <ion-button class="modal-button modal-button-{{ categoryId }}" mode="ios" (click)="onClickBack()">BACK</ion-button>
 
     </div>
   </div>
