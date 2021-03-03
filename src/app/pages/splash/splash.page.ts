@@ -15,6 +15,7 @@ export class SplashPage implements OnInit {
   splashProgress: number;
   categoryData: any;
   categoryId: any;
+  categoryMusic: any;
   completeLevelData: any;
   receivedcategoryData: any;
   musicEnabled: boolean;
@@ -70,8 +71,10 @@ export class SplashPage implements OnInit {
     
     for (var index = 0; index < this.categoryData.length; index++) {
       this.categoryId = this.categoryData[index].categoryId;
+      this.categoryMusic = this.categoryData[index].musicUrl;
       await this.gameData.getGameInfo(this.categoryData[index].jsonUrl, "currentLevelData_"+this.categoryId, true);
       this.completeLevelData = await this.gameData.getUnlockedLevels(this.categoryId);
+      this.preloadBgm('game-bgm-current-category-'+this.categoryId, this.categoryMusic);
       this.gameData.setPersistentGameData("currentLevelData_"+this.categoryId, this.completeLevelData);
       this.splashProgress = this.splashProgress + 0.05
     }
