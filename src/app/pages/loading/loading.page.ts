@@ -86,7 +86,7 @@ export class LoadingPage implements OnInit {
 
     setTimeout(()=> {
       this.router.navigate(['/game']);
-    }, 1000);
+    }, 1500);
   }
 
   ionViewDidLeave() {
