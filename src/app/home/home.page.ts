@@ -26,7 +26,6 @@ export class HomePage implements OnInit {
 
     if (this.musicEnabled) {
       this.audio.playBgm('game-bgm-main-menu');
-      this.audio.setBgmVolume('game-bgm-main-menu', 0.6);
     } 
   }
 
@@ -42,6 +41,10 @@ export class HomePage implements OnInit {
         {
           text: 'Yes',
           handler: () => {
+            if (this.musicEnabled) {
+              this.audio.stopBgm('game-bgm-main-menu');
+            }
+
             App.exitApp();
           }
         }, {
