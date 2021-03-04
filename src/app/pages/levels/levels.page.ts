@@ -147,10 +147,11 @@ export class LevelsPage implements OnInit {
     this.audioEnabled = await getGameData("game_audio")
     this.musicEnabled = await getGameData("game_music")
     this.buttonClass = ""
-
     this.modalVisible = false;
     this.modalWindowRoll = false;
+  }
 
+  ionViewDidEnter() {
     setTimeout(()=> {
       this.buttonClass = "bounceIn";
     }, 400);
@@ -165,6 +166,11 @@ export class LevelsPage implements OnInit {
       if (this.audioEnabled) {
         this.audio.playSfx('game-sfx-back');
       }
+    }
+  }
+
+  async ionViewDidLeave() {
+    if (this.router.url == "/categories") {
 
       setTimeout(()=> {
         this.buttonClass = "";

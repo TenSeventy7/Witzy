@@ -25,25 +25,11 @@ export class CategoriesPage implements OnInit {
 
   constructor(private navCtrl: NavController, private platform: Platform, private router: Router, private gameData: GameDataService, private audio: AudioService) { }
 
-  async ngOnInit() {
-    this.categoriesData = await this.gameData.getPersistentGameData('categoryData');
-    this.categories = this.categoriesData.categories;
-    this.audioEnabled = await getGameData("game_audio")
-    this.musicEnabled = await getGameData("game_music")
-
-    setTimeout(()=> {
-      this.buttonClass = "category-buttons-in";
-    }, 1000);
+  ngOnInit() {
   }
 
   goCategory(url) {
     if (url.isAvailable) {
-      if (this.musicEnabled) {
-        this.audio.stopBgm('game-bgm-main-menu');
-        this.gameData.setGameData('mainBgmPlaying', 'stopped')
-        this.audio.playBgm('game-bgm-current-category-'+this.categoryId);
-      }
-      
       this.navCtrl.navigateRoot(['/levels'], { animated: true, animationDirection: 'forward' });
     }
   }
@@ -60,16 +46,37 @@ export class CategoriesPage implements OnInit {
     this.goCategory(this.selectedCategory);
   }
 
-  ionViewWillEnter() {
+  async ionViewWillEnter() {
+    this.categoriesData = await this.gameData.getPersistentGameData('categoryData');
+    this.categories = this.categoriesData.categories;
+    this.audioEnabled = await getGameData("game_audio")
+    this.musicEnabled = await getGameData("game_music")
+
     this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
       this.navCtrl.navigateBack(['/home']);
     });
+  }
+
+  async ionViewDidEnter() {
+    setTimeout(()=> {
+      this.buttonClass = "category-buttons-in";
+    }, 1000);
   }
 
   ionViewWillLeave() {
     if (this.router.url == "/home") {
       if (this.audioEnabled) {
         this.audio.playSfx('game-sfx-back');
+      }
+    }
+  }
+
+  async ionViewDidLeave() {
+    if (this.router.url == "/levels") {
+      if (this.musicEnabled) {
+        this.audio.stopBgm('game-bgm-main-menu');
+        this.gameData.setGameData('mainBgmPlaying', 'stopped')
+        this.audio.playBgm('game-bgm-current-category-'+this.categoryId);
       }
     }
   }
