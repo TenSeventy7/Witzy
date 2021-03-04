@@ -69,9 +69,7 @@ export class CategoriesPage implements OnInit {
         this.audio.playSfx('game-sfx-back');
       }
     }
-  }
 
-  async ionViewDidLeave() {
     if (this.router.url == "/levels") {
       if (this.musicEnabled) {
         this.audio.stopBgm('game-bgm-main-menu');
