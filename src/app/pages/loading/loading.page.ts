@@ -9,6 +9,7 @@ import { getGameData, setGameData } from '../../services/game-storage.service';
   templateUrl: './loading.page.html',
   styleUrls: ['./loading.page.scss'],
 })
+
 export class LoadingPage implements OnInit {
 
   splashProgress: number = 0.1;
@@ -21,7 +22,8 @@ export class LoadingPage implements OnInit {
   jsonUrl: any;
   currentLevel: any;
 
-  questionData: any
+  questionData: any;
+  randomQuestions: any;
   lastGameScore: any;
   totalPossibleScore: number = 0;
   roundStar1Requirement: number = 0;
@@ -52,26 +54,35 @@ export class LoadingPage implements OnInit {
     this.gameData.setGameData('roundStar3Requirement', this.roundStar3Requirement)
   }
 
+  randomizeQuestions(data) {
+    return data.reduce((a, b) => {
+      const size = a.length;
+      const index = Math.trunc(Math.random() * (size - 1));
+      a.splice(index, 0, b);
+      return a;
+    }, []);
+  }
+
   preloadAudio(key: string, file: string) {
     this.audio.preload(key, file);
     this.splashProgress = this.splashProgress + 0.025
   }
 
-  ionViewWillEnter() {
+  async ionViewWillEnter() {
+    this.currentCategoryId = await this.gameData.getGameData('currentCategoryId')
+    this.audio.stopBgm("game-bgm-current-category-"+this.currentCategoryId);
+    this.audio.preloadBgm("game-bgm-level-screen", '/assets/music/game_bgm_level_screen.ogg');
+    
+    this.jsonUrl = await this.gameData.getGameData('levelJsonData');
+    this.currentLevel = await this.gameData.getGameData('currentLevelNumber');
+
     this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
       console.log("Back disabled.")
     });
   }
 
   async ionViewDidEnter() {
-    this.currentCategoryId = await this.gameData.getGameData('currentCategoryId')
     this.splashProgress = 0.1;
-
-    this.audio.stopBgm("game-bgm-current-category-"+this.currentCategoryId);
-    this.audio.preloadBgm("game-bgm-level-screen", '/assets/music/game_bgm_level_screen.ogg');
-    
-    this.jsonUrl = await this.gameData.getGameData('levelJsonData');
-    this.currentLevel = await this.gameData.getGameData('currentLevelNumber');
     this.lastGameScore = await this.gameData.getScoreInfo(this.currentCategoryId, this.currentLevel);
     this.splashProgress = 0.5;
 
@@ -80,6 +91,10 @@ export class LoadingPage implements OnInit {
     this.gameData.setGameData('lastGameScore', this.lastGameScore)
     this.questionData = await this.gameData.getGameData('currentQuestionsData').questions
     this.calculateRequiredStars();
+
+    this.randomQuestions = this.randomizeQuestions(this.questionData);
+    this.gameData.setGameData('currentQuestionsData', this.randomQuestions)
+
     this.splashProgress = 0.8;
 
     setTimeout(()=> {
@@ -88,6 +103,6 @@ export class LoadingPage implements OnInit {
   }
 
   ionViewDidLeave() {
-    this.splashProgress = 0.0;
+    this.splashProgress = 0.1;
   }
 }
