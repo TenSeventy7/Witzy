@@ -15,20 +15,11 @@ export class HomePage implements OnInit {
 
   constructor(private navCtrl: NavController, private platform: Platform,  private audio: AudioService, public alertController: AlertController, private gameData: GameDataService) {}
 
-  categoryData: any[] = [];
   musicEnabled: any;
   audioEnabled: any;
   musicPlaying: string;
 
-  async ngOnInit() {
-    this.audioEnabled = await getGameData("game_audio")
-    this.musicEnabled = await getGameData("game_music")
-    this.musicPlaying = this.gameData.getGameData("mainBgmPlaying")
-
-    if (this.musicEnabled && this.musicPlaying !== 'playing') {
-      this.gameData.setGameData('mainBgmPlaying', 'playing')
-      this.audio.playBgm('game-bgm-main-menu');
-    } 
+  ngOnInit() {
   }
 
   async alertExit() {
@@ -43,6 +34,10 @@ export class HomePage implements OnInit {
         {
           text: 'Yes',
           handler: () => {
+            if (this.audioEnabled) {
+              this.audio.playSfx('game-sfx-back');
+            }
+
             if (this.musicEnabled) {
               this.audio.stopBgm('game-bgm-main-menu');
             }
@@ -53,7 +48,9 @@ export class HomePage implements OnInit {
           text: 'No',
           role: 'cancel',
           handler: (blah) => {
-            // console.log('Confirm Cancel: blah');
+            if (this.audioEnabled) {
+              this.audio.playSfx('game-sfx-back');
+            }
           }
         }
       ]
@@ -61,7 +58,7 @@ export class HomePage implements OnInit {
     await alert.present();
   }
 
-  goCategories() {
+  async goCategories() {
     if (this.audioEnabled) {
       this.audio.playSfx('game-sfx-select');
     }
@@ -69,7 +66,7 @@ export class HomePage implements OnInit {
     this.navCtrl.navigateRoot(['/categories'], { animated: true, animationDirection: 'forward' });
   }
 
-  goAbout() {
+  async goAbout() {
     if (this.audioEnabled) {
       this.audio.playSfx('game-sfx-select');
     }
@@ -102,9 +99,20 @@ export class HomePage implements OnInit {
     }
   }
 
-  ionViewWillEnter() {
+  async ionViewWillEnter() {
     this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
       this.alertExit();
     });
+
+    this.audioEnabled = await getGameData("game_audio")
+    this.musicEnabled = await getGameData("game_music")
+    this.musicPlaying = this.gameData.getGameData("mainBgmPlaying")
+  }
+
+  async ionViewDidEnter() {
+    if (this.musicEnabled && this.musicPlaying !== 'playing') {
+      this.gameData.setGameData('mainBgmPlaying', 'playing')
+      this.audio.playBgm('game-bgm-main-menu');
+    }
   }
 }

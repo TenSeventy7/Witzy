@@ -115,8 +115,7 @@ export class LevelsPage implements OnInit {
     if (this.audioEnabled) {
       this.audio.playSfx('game-sfx-select');
     }
-    this.modalWindowRoll = false;
-    this.modalVisible = false;
+
     this.navCtrl.navigateRoot(['/loading'], { animated: true, animationDirection: 'forward' });
   }
 
@@ -170,6 +169,9 @@ export class LevelsPage implements OnInit {
   }
 
   async ionViewDidLeave() {
+    this.modalWindowRoll = false;
+    this.modalVisible = false;
+    
     if (this.router.url == "/categories") {
 
       setTimeout(()=> {
