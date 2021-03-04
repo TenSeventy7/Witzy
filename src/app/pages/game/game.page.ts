@@ -52,8 +52,35 @@ export class GamePage implements OnInit {
     'game-sfx-wrong_1',
     'game-sfx-wrong_2'
   ];
+  
+  correctRemarkArray = [
+    'Great job!',
+    'You got the correct answer!',
+    'Amazing!',
+    'Such a champ!',
+    'Smart choice!',
+    'Awesome!',
+    'Correct answer!',
+    'Best pick!',
+    'You picked the right answer!',
+    'Woah!'
+  ];
+  
+  incorrectRemarkArray = [
+    'Oh noes!',
+    'I thought so too!',
+    'Oh no!',
+    'You\'re on the right track.',
+    'It\'s not exactly what I\'m looking for.',
+    'I see where you\'re going.',
+    'That\'s okay.',
+    'You got the spirit!',
+    'Oh noes!',
+    'You did great anyway!'
+  ];
 
   randomAudioSelection: number;
+  randomRemarkSelection: number;
 
   slideOptions = {
     slidesPerView: 1,
@@ -70,16 +97,16 @@ export class GamePage implements OnInit {
   currentLevel: number;
   currentLevelTrue: any;
   currentCategory: any;
-  recievedquestionData = this.scoreData.getGameData('currentQuestionsData');
 
   // Score
   currentScore: number = 0;
   questionScore: number = 0;
   totalPossibleScore: number = 0;
-  cuurentScoreAnimate: boolean = false;
+  animateScore: boolean = false;
 
   multiplierScore: number;
   actualScore: number;
+  oldScore: any;
 
   // Stars
   roundStars: number = 0;
@@ -89,6 +116,7 @@ export class GamePage implements OnInit {
 
   userAnswer: any;
   questionResponseClass: any;
+  questionResponseString: string;
   countdownClass: any;
 
   id: number = 0
@@ -110,19 +138,13 @@ export class GamePage implements OnInit {
   inputEnabled: boolean = true;
   modalVisible: boolean = false;
   modalWindowRoll: boolean = false;
-  oldScore: any;
 
   musicEnabled: any;
   audioEnabled: any;
 
-  constructor(private navCtrl: NavController, private platform: Platform, private audio: AudioService, public alertController: AlertController, private scoreData: GameDataService) {}
+  constructor(private navCtrl: NavController, private platform: Platform, private audio: AudioService, public alertController: AlertController, private gameData: GameDataService) {}
 
   ngOnInit() {
-    this.questionData = this.scoreData.getGameData('currentQuestionsData').questions
-    this.currentCategory = this.scoreData.getGameData('currentCategoryId');
-    this.currentLevel = this.scoreData.getGameData('currentLevelNumber');
-    this.currentLevelTrue = (this.scoreData.getGameData('currentLevelNumberTrue')).toString();
-    this.hintText = this.questionData[this.questionIndex].hintText;
   }
 
   startCountdown() {
@@ -298,13 +320,15 @@ export class GamePage implements OnInit {
           this.timeLeft--;
         } else {
           this.timeLeft = 0;
+          this.randomRemarkSelection = Math.floor(Math.random()*this.correctRemarkArray.length);
+          this.questionResponseString = this.incorrectRemarkArray[this.randomRemarkSelection]
           this.questionResponseClass = "incorrect"
           this.questionResponse()
         }
-      },1000)
+      }, 1000)
   }
 
-  checkStarScore() {
+  async checkStarScore() {
     // Check if the current score matches our star requirements
     if (this.currentScore >= this.roundStar1Requirement) {
       this.roundStars = 1;
@@ -322,27 +346,34 @@ export class GamePage implements OnInit {
   checkUserAnswer(index: number) {
     // Set current question index
     this.questionScore = this.questionData[this.questionIndex].questionScore
-    if ( this.timeLeft > 5 ) {
+    this.userAnswer = this.questionData[this.questionIndex].answers[index]
+    this.randomRemarkSelection = Math.floor(Math.random()*this.correctRemarkArray.length);
+
+    if (this.timeLeft > 5) {
       this.multiplierScore = this.questionScore / 10
     } else {  
       this.multiplierScore = this.questionScore / 8
     }
-
-    this.actualScore = Math.round(this.multiplierScore * this.timeLeft)
-
-    this.userAnswer = this.questionData[this.questionIndex].answers[index]
+    
+    // Only set timer score for Science and Literature, and Math L1
+    if (this.currentCategory == 'mathematics' && this.currentLevel >= 1) {
+      this.actualScore = this.questionScore
+    } else {
+      this.actualScore = Math.round(this.multiplierScore * this.timeLeft)
+    }
     
     // Check if the answer user selected is correct
     if (this.id > -1) {
       if (this.userAnswer.correct) {
           this.currentScore = this.currentScore + this.actualScore;
-          this.checkStarScore(); // Check if the current score matches our star requirements
           this.questionResponseClass = "correct"
-          this.cuurentScoreAnimate = true;
+          this.questionResponseString = this.correctRemarkArray[this.randomRemarkSelection]
+          this.animateScore = true;
           this.questionResponse()
       }
       else {
           this.questionResponseClass = "incorrect"
+          this.questionResponseString = this.incorrectRemarkArray[this.randomRemarkSelection]
           this.questionResponse()
       }
     }
@@ -353,6 +384,8 @@ export class GamePage implements OnInit {
     this.typedJs = false;
     this.userInputOk = false;
     clearInterval(this.interval);
+    
+    this.checkStarScore();
 
     if (this.audioEnabled) {
       this.randomAudioSelection = Math.floor(Math.random()*this.correctSfxArray.length);
@@ -374,23 +407,23 @@ export class GamePage implements OnInit {
   }
 
   presentNextQuestion() {
-    this.cuurentScoreAnimate = false;
+    this.animateScore = false;
 
     if (this.questionIndex >= this.questionData.length - 1) {
       this.questionIndex = 0
 
       this.audio.stopBgm("game-bgm-level-screen");
-      this.scoreData.setScoreInfo(this.currentCategory, this.currentLevel, this.currentScore)
-      this.scoreData.setStarInfo(this.currentCategory, this.currentLevel, this.roundStars)
+      this.gameData.setScoreInfo(this.currentCategory, this.currentLevel, this.currentScore)
+      this.gameData.setStarInfo(this.currentCategory, this.currentLevel, this.roundStars)
     
       if (this.currentScore > this.oldScore) {
-        this.scoreData.setGameData('newHighScore', 'newHighScore');
+        this.gameData.setGameData('newHighScore', 'newHighScore');
       } else {
-        this.scoreData.setGameData('newHighScore', 'noNewHighScore');
+        this.gameData.setGameData('newHighScore', 'noNewHighScore');
       }
 
-      this.scoreData.setGameData('currentGameScore', this.currentScore);
-      this.scoreData.setGameData('currentGameStars', this.roundStars);
+      this.gameData.setGameData('currentGameScore', this.currentScore);
+      this.gameData.setGameData('currentGameStars', this.roundStars);
       this.navCtrl.navigateRoot(['/results'], { animated: true, animationDirection: 'forward' });
     }
     else {
@@ -410,8 +443,8 @@ export class GamePage implements OnInit {
       setTimeout(()=> {
         this.typedJs = true;
 
-        if (this.currentCategory == 'mathematics' && this.currentLevel > 0) {
-          this.timeLeft = this.timeLeft * (this.currentLevel + 1);
+        if (this.currentCategory == 'mathematics' && this.currentLevel >= 1) {
+          this.timeLeft = this.timeLeft * this.currentLevelTrue;
         } else {
           this.timeLeft = 10;
         }
@@ -447,48 +480,49 @@ export class GamePage implements OnInit {
     this.questionData[this.questionIndex].answers = shuffleArray(this.questionData[this.questionIndex].answers)
   }
 
-  async ionViewWillEnter() {
-    this.audioEnabled = await getGameData("game_audio")
-    this.musicEnabled = await getGameData("game_music")
+  ionViewWillEnter() {
+    // 0. Disable Typed.js Component, as well as input
     this.inputEnabled = false;
     this.typedJs = false;
+    this.isDone = false;
 
-    this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
-      this.showGameModal();
-    });
-  }
-
-  ionViewDidEnter() {
-    this.questionData = this.scoreData.getGameData('currentQuestionsData').questions
-    this.currentCategory = this.scoreData.getGameData('currentCategoryId');
-    this.currentLevel = this.scoreData.getGameData('currentLevelNumber');
-    this.currentLevelTrue = (this.scoreData.getGameData('currentLevelNumberTrue')).toString();
-
+    // 1. Load Game Data
+    this.questionData = this.gameData.getGameData('currentQuestionsData');
+    this.currentCategory = this.gameData.getGameData('currentCategoryId');
+    this.currentLevel = this.gameData.getGameData('currentLevelNumber');
+    this.currentLevelTrue = this.gameData.getGameData('currentLevelNumberTrue');
     this.hintText = this.questionData[this.questionIndex].hintText;
-    this.typedJs = false;
 
-    this.roundStar1Requirement = this.scoreData.getGameData('roundStar1Requirement')
-    this.roundStar2Requirement = this.scoreData.getGameData('roundStar2Requirement')
-    this.roundStar3Requirement = this.scoreData.getGameData('roundStar3Requirement')
+    this.roundStar1Requirement = this.gameData.getGameData('roundStar1Requirement');
+    this.roundStar2Requirement = this.gameData.getGameData('roundStar2Requirement');
+    this.roundStar3Requirement = this.gameData.getGameData('roundStar3Requirement');
+    this.oldScore = this.gameData.getGameData('lastGameScore');
+    
+    // 2. Randomize Answers
+    this.randomizeAnswerArray();
 
-    this.oldScore = this.scoreData.getGameData('lastGameScore');
-
+    // 3. Set slide options
     let slides = document.querySelector('ion-slides');
     slides.options = this.slideOptions;
     slides.lockSwipes(true);
 
     this.questionResponseClass = "normal";
 
-    if (this.currentCategory == 'mathematics' && this.currentLevel > 0) {
-      this.timeLeft = this.timeLeft * (this.currentLevel + 1);
+    if (this.currentCategory == 'mathematics' && this.currentLevel >= 1) {
+      this.timeLeft = this.timeLeft * this.currentLevelTrue;
     }
+  }
+
+  async ionViewDidEnter() {
+    this.audioEnabled = await getGameData("game_audio");
+    this.musicEnabled = await getGameData("game_music");
+
+    this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
+      this.showGameModal();
+    });
 
     this.modalVisible = true;
-    this.inputEnabled = false;
     this.isCountdown = true;
-    this.hintText = this.questionData[this.questionIndex].hintText;
-    this.typedJs = false;
-    this.isDone = false;
 
     setTimeout(()=> {
       this.modalFade = "fadeIn";
@@ -496,5 +530,6 @@ export class GamePage implements OnInit {
         this.startCountdown();
       }, 400);
     }, 300);
+
   }
 }

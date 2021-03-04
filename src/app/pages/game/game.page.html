@@ -28,7 +28,7 @@
             </ion-grid>
           </ion-col>
           <ion-col size="4" class="ion-text-center game-detail-score">
-            <ion-badge [ngClass]="{ 'witzy-leveldetail-score-animation': cuurentScoreAnimate == true }" mode="ios">{{ currentScore }}</ion-badge>
+            <ion-badge [ngClass]="{ 'witzy-leveldetail-score-animation': animateScore == true }" mode="ios">{{ currentScore }}</ion-badge>
           </ion-col>
           <ion-col size="4" class="ion-text-center game-detail-stars">
             <img src="/assets/ui/icons/star.png" class="earned-star-{{ currentCategory }}" [ngClass]="{'unearned-star': roundStars < 1}"/>
@@ -56,8 +56,7 @@
         <ion-card-header class="game-card-question">
           <ion-card-title >
             <ion-text class="ion-text-center" *ngIf="questionResponseClass == 'normal'">{{ question.questionText }}</ion-text>
-            <ion-text class="ion-text-center" *ngIf="questionResponseClass == 'correct'">Your answer is correct!</ion-text>
-            <ion-text class="ion-text-center" *ngIf="questionResponseClass == 'incorrect'">Oh noes!</ion-text>
+            <ion-text class="ion-text-center" *ngIf="questionResponseClass !== 'normal'">{{ questionResponseString }}</ion-text>
           </ion-card-title>
         </ion-card-header>
         <ion-card-content class="game-card-answers">
@@ -65,7 +64,7 @@
             <ion-button class="game-answer-button button-color-{{ currentCategory }}"
             [ngClass]="{ 'button-color-disabled': !answerButtons }" mode="ios"
             *ngFor="let answer of questionData[questionIndex].answers; let userAnswerIndex = index;"
-            (click)="checkUserAnswer(userAnswerIndex)" [disabled]="!answerButtons">{{answer.answer}}</ion-button>
+            (click)="checkUserAnswer(userAnswerIndex)" [disabled]="!answerButtons">{{ answer.answer }}</ion-button>
           </div>
         </ion-card-content>
       </div>
