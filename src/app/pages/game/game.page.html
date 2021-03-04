@@ -63,8 +63,8 @@
           <div class="ion-padding-vertical">
             <ion-button class="game-answer-button button-color-{{ currentCategory }}"
             [ngClass]="{ 'button-color-disabled': !answerButtons }" mode="ios"
-            *ngFor="let answer of questionData[questionIndex].answers; let userAnswerIndex = index;"
-            (click)="checkUserAnswer(userAnswerIndex)" [disabled]="!answerButtons">{{ answer.answer }}</ion-button>
+            *ngFor="let answer of question.answers"
+            (click)="checkUserAnswer(answer)" [disabled]="!answerButtons">{{ answer.answer }}</ion-button>
           </div>
         </ion-card-content>
       </div>

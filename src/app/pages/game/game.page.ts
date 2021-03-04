@@ -114,7 +114,6 @@ export class GamePage implements OnInit {
   roundStar2Requirement: number = 0;
   roundStar3Requirement: number = 0;
 
-  userAnswer: any;
   questionResponseClass: any;
   questionResponseString: string;
   countdownClass: any;
@@ -349,10 +348,9 @@ export class GamePage implements OnInit {
     }
   }
 
-  checkUserAnswer(index: number) {
+  checkUserAnswer(answer: any) {
     // Set current question index
     this.questionScore = this.questionData[this.questionIndex].questionScore
-    this.userAnswer = this.questionData[this.questionIndex].answers[index]
     this.randomRemarkSelection = Math.floor(Math.random()*this.correctRemarkArray.length);
 
     if (this.timeLeft > 5) {
@@ -370,7 +368,7 @@ export class GamePage implements OnInit {
     
     // Check if the answer user selected is correct
     if (this.id > -1) {
-      if (this.userAnswer.correct) {
+      if (answer.correct) {
           this.currentScore = this.currentScore + this.actualScore;
           this.questionResponseClass = "correct"
           this.questionResponseString = this.correctRemarkArray[this.randomRemarkSelection]
@@ -440,8 +438,6 @@ export class GamePage implements OnInit {
       slides.slideNext(350);
       slides.lockSwipes(true);
       this.typedJs = false;
-      
-      // this.randomizeAnswerArray();
 
       this.questionResponseClass = "normal"
       this.hintText = this.questionData[this.questionIndex].hintText
@@ -465,27 +461,6 @@ export class GamePage implements OnInit {
     }
   }
 
-  randomizeAnswerArray() {
-    var shuffleArray = function(array) {
-      var m = array.length, t, i;
-    
-      // While there remain elements to shuffle
-      while (m) {
-        // Pick a remaining element…
-        i = Math.floor(Math.random() * m--);
-    
-        // And swap it with the current element.
-        t = array[m];
-        array[m] = array[i];
-        array[i] = t;
-      }
-    
-      return array;
-    }
-
-    this.questionData[this.questionIndex].answers = shuffleArray(this.questionData[this.questionIndex].answers)
-  }
-
   ionViewWillEnter() {
     // 0. Disable Typed.js Component, as well as input
     this.inputEnabled = false;
@@ -496,9 +471,6 @@ export class GamePage implements OnInit {
     this.roundStar2Requirement = this.gameData.getGameData('roundStar2Requirement');
     this.roundStar3Requirement = this.gameData.getGameData('roundStar3Requirement');
     this.oldScore = this.gameData.getGameData('lastGameScore');
-    
-    // 2. Randomize Answers
-    // this.randomizeAnswerArray();
 
     // 3. Set slide options
     let slides = document.querySelector('ion-slides');

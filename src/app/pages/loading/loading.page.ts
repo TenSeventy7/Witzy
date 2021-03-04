@@ -77,12 +77,24 @@ export class LoadingPage implements OnInit {
   }
 
   randomize(data) {
-    return data.reduce((a, b) => {
-      const size = a.length;
-      const index = Math.trunc(Math.random() * (size - 1));
-      a.splice(index, 0, b);
-      return a;
-    }, []);
+    var shuffleArray = function(array) {
+      var m = array.length, t, i;
+    
+      // While there remain elements to shuffle
+      while (m) {
+        // Pick a remaining element…
+        i = Math.floor(Math.random() * m--);
+    
+        // And swap it with the current element.
+        t = array[m];
+        array[m] = array[i];
+        array[i] = t;
+      }
+    
+      return array;
+    }
+
+    return shuffleArray(data)
   }
 
   preloadAudio(key: string, file: string) {
@@ -135,7 +147,7 @@ export class LoadingPage implements OnInit {
 
       this.splashProgress = this.splashProgress + 0.05;
     }
-    
+
     this.gameData.setGameData('currentQuestionsData', this.questions)
     this.splashProgress = 0.8;
 
