@@ -2,36 +2,36 @@
   "levels": [
     {
       "levelId": 1,
-      "levelDesc": "Math",
-      "levelRemark": "Math",
+      "levelDesc": "General knowledge and logic.",
+      "levelRemark": "Are you ready to be awesome at Math?",
       "neededStars": 0,
       "levelUrl": "/assets/categories/math/level_1.json"
     },
     {
       "levelId": 2,
-      "levelDesc": "Math",
-      "levelRemark": "Math",
+      "levelDesc": "History of Mathematics and logic.",
+      "levelRemark": "You're getting there!",
       "neededStars": 1,
       "levelUrl": "/assets/categories/math/level_2.json"
     },
     {
       "levelId": 3,
       "levelDesc": "Math",
-      "levelRemark": "Math",
+      "levelRemark": "Math-tastic!",
       "neededStars": 1,
       "levelUrl": "/assets/categories/math/level_3.json"
     },
     {
       "levelId": 4,
       "levelDesc": "Math",
-      "levelRemark": "Math",
+      "levelRemark": "We're getting there!",
       "neededStars": 2,
       "levelUrl": "/assets/categories/math/level_4.json"
     },
     {
       "levelId": 5,
-      "levelDesc": "Math",
-      "levelRemark": "Math",
+      "levelDesc": "Advanced algebra.",
+      "levelRemark": "Last round, here we go!",
       "neededStars": 2,
       "levelUrl": "/assets/categories/math/level_5.json"
     }

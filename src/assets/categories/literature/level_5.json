@@ -88,8 +88,7 @@
         {
           "answer": "Peter Poon",
           "correct": false,
-          "selected": false,
-          "": {}
+          "selected": false
         }
       ]
     },
@@ -112,8 +111,7 @@
         {
           "answer": "Dog",
           "correct": false,
-          "selected": false,
-          "": {}
+          "selected": false
         }
       ]
     },
@@ -136,8 +134,7 @@
         {
           "answer": "Watch",
           "correct": false,
-          "selected": false,
-          "": {}
+          "selected": false
         }
       ]
     },
@@ -160,8 +157,7 @@
         {
           "answer": "Anna Kendrick",
           "correct": false,
-          "selected": false,
-          "": {}
+          "selected": false
         }
       ]
     },
@@ -184,8 +180,7 @@
         {
           "answer": "My God",
           "correct": false,
-          "selected": false,
-          "": {}
+          "selected": false
         }
       ]
     },
@@ -208,8 +203,7 @@
         {
           "answer": "King George V",
           "correct": false,
-          "selected": false,
-          "": {}
+          "selected": false
         }
       ]
     },

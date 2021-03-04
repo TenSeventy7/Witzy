@@ -88,8 +88,7 @@
         {
           "answer": "Keith David",
           "correct": false,
-          "selected": false,
-          "": {}
+          "selected": false
         }
       ]
     },
@@ -112,8 +111,7 @@
         {
           "answer": "Claudius Ptolemy",
           "correct": false,
-          "selected": false,
-          "": {}
+          "selected": false
         }
       ]
     },
@@ -136,8 +134,7 @@
         {
           "answer": "Persephone",
           "correct": false,
-          "selected": false,
-          "": {}
+          "selected": false
         }
       ]
     },
@@ -160,8 +157,7 @@
         {
           "answer": "Pangasinan",
           "correct": false,
-          "selected": false,
-          "": {}
+          "selected": false
         }
       ]
     },
@@ -184,8 +180,7 @@
         {
           "answer": "Joshua",
           "correct": false,
-          "selected": false,
-          "": {}
+          "selected": false
         }
       ]
     },
@@ -208,8 +203,7 @@
         {
           "answer": "Richard Feynman",
           "correct": false,
-          "selected": false,
-          "": {}
+          "selected": false
         }
       ]
     },

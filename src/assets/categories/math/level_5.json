@@ -88,8 +88,7 @@
         {
           "answer": "18",
           "correct": false,
-          "selected": false,
-          "": {}
+          "selected": false
         }
       ]
     },
@@ -112,8 +111,7 @@
         {
           "answer": "-28a + 30b",
           "correct": false,
-          "selected": false,
-          "": {}
+          "selected": false
         }
       ]
     },
@@ -136,8 +134,7 @@
         {
           "answer": "-2",
           "correct": false,
-          "selected": false,
-          "": {}
+          "selected": false
         }
       ]
     },
@@ -160,8 +157,7 @@
         {
           "answer": "x^2 + 5x - 20",
           "correct": false,
-          "selected": false,
-          "": {}
+          "selected": false
         }
       ]
     },
@@ -184,8 +180,7 @@
         {
           "answer": "3y(x – 3)",
           "correct": false,
-          "selected": false,
-          "": {}
+          "selected": false
         }
       ]
     },
@@ -208,8 +203,7 @@
         {
           "answer": "40900",
           "correct": false,
-          "selected": false,
-          "": {}
+          "selected": false
         }
       ]
     },

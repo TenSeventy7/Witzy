@@ -2,36 +2,36 @@
   "levels": [
     {
       "levelId": 1,
-      "levelDesc": "Literature",
-      "levelRemark": "Literature",
+      "levelDesc": "General knowledge and riddles.",
+      "levelRemark": "Are you ready to start your adventure?",
       "neededStars": 0,
       "levelUrl": "/assets/categories/literature/level_1.json"
     },
     {
       "levelId": 2,
-      "levelDesc": "Literature",
-      "levelRemark": "Literature",
+      "levelDesc": "Language, history, and Greek literature.",
+      "levelRemark": "Let's go!",
       "neededStars": 1,
       "levelUrl": "/assets/categories/literature/level_2.json"
     },
     {
       "levelId": 3,
-      "levelDesc": "Literature",
-      "levelRemark": "Literature",
+      "levelDesc": "Riddles and books.",
+      "levelRemark": "Let's continue our journey!",
       "neededStars": 1,
       "levelUrl": "/assets/categories/literature/level_3.json"
     },
     {
       "levelId": 4,
       "levelDesc": "Literature",
-      "levelRemark": "Literature",
+      "levelRemark": "Getting there...",
       "neededStars": 2,
       "levelUrl": "/assets/categories/literature/level_4.json"
     },
     {
       "levelId": 5,
-      "levelDesc": "Literature",
-      "levelRemark": "Literature",
+      "levelDesc": "Language and literature.",
+      "levelRemark": "The last round!",
       "neededStars": 2,
       "levelUrl": "/assets/categories/literature/level_5.json"
     }

@@ -1,236 +1,230 @@
 {
   "questions": [
     {
-      "questionScore": 150,
-      "questionText": "Who named the Philippines?",
-      "solutionText": "Lopez de Villalobos was commissioned in 1541 by the Viceroy of New Spain, Antonio de Mendoza, who was the first colonial administrator in the New World, to send an expedition to the Islas del Poniente, meaning Islands of the West, now known as the Philippines.",
-      "hintText": "He gave the name ¡°Las Islas Filipinas¡± to the Philippine archipelago in 1543.",
-      "answers": [
-        {
-          "answer": "Ruy Lopez de Villalobos",
-          "correct": true,
-          "selected": false
-        },
-        {
-          "answer": "Ferdinand Magellan",
-          "correct": false,
-          "selected": false
-        },
-        {
-          "answer": "King Phillip II",
-          "correct": false,
-          "selected": false
-        }
-      ]
-    },
-    {
       "questionScore": 100,
-      "questionText": "The National Hero of the Philippines",
-      "solutionText": "Jose Rizal became the National Hero of the Philippines not only because of his genius, his multiple talents but because of his unquenchable love of the Philippines.",
-      "hintText": "Fought with a pen.",
+      "questionText": "If it takes 48 days to cover the entire lake, how long would it take for the patch to cover half of the lake?",
+      "solutionText": "Since the patch of pads doubles in size every day, the lake would be half covered just one day before it was covered entirely.",
+      "hintText": "Less than 50 days",
       "answers": [
         {
-          "answer": "Jose Rizal",
+          "answer": "47 days",
           "correct": true,
           "selected": false
         },
         {
-          "answer": "Jose P. Rizal",
+          "answer": "32 days",
           "correct": false,
           "selected": false
         },
         {
-          "answer": "Jose Protacio Rizal Mercado Alonzo y Realonda",
+          "answer": "24 days",
           "correct": false,
           "selected": false
-        }
-      ]
-    },
-    {
-      "questionScore": 70,
-      "questionText": "Riddle: What has to be broken before you can use it?",
-      "solutionText": "",
-      "hintText": "The letter A and B is wrong, so the correct answer is either C or D.",
-      "answers": [
-        {
-          "answer": "Egg",
-          "correct": true,
-          "selected": false
-        },
-        {
-          "answer": "Glass",
-          "correct": false,
-          "selected": false
-        },
-        {
-          "answer": "Mirror",
-          "correct": false,
-          "selected": false
-        }
-      ]
-    },
-    {
-      "questionScore": 70,
-      "questionText": "Riddle: I’m tall when I’m young, and I’m short when I’m old. What am I?",
-      "solutionText": "",
-      "hintText": "Used In funeral.",
-      "answers": [
-        {
-          "answer": "Candle",
-          "correct": true,
-          "selected": false
-        },
-        {
-          "answer": "Tree",
-          "correct": false,
-          "selected": false
-        },
-        {
-          "answer": "Money",
-          "correct": false,
-          "selected": false,
-          "": {}
         }
       ]
     },
     {
       "questionScore": 150,
-      "questionText": "Who is the author of The Origin Of Species?",
-      "solutionText": "On the Origin of Species, published on 24 November 1859, is a work of scientific literature by Charles Darwin that is considered to be the foundation of evolutionary biology.",
-      "hintText": "Proposed the theory of Evolution.",
+      "questionText": "Which number is Equivalent to 3^4/3^2",
+      "solutionText": "In order to solve this problem, you simply need to subtract the exponents (4-2) and solve for 32, which is equals to 9.",
+      "hintText": "The answer is less than 20.",
       "answers": [
         {
-          "answer": "Charles Darwin",
+          "answer": "9",
           "correct": true,
           "selected": false
         },
         {
-          "answer": "George Louis Leclerc",
+          "answer": "16",
           "correct": false,
           "selected": false
         },
         {
-          "answer": "Charles Dickens",
+          "answer": "18",
           "correct": false,
-          "selected": false,
-          "": {}
+          "selected": false
         }
       ]
     },
     {
-      "questionScore": 200,
-      "questionText": "How many stars does the American Flag have?",
-      "solutionText": "The 50 stars on the flag represent the 50 states of the United States of America",
-      "hintText": "It represent the states of the United States of America",
+      "questionScore": 300,
+      "questionText": "The average of first 50 natural numbers is _________.",
+      "solutionText": "Average of n natural numbers is (n+1)/2 = 25.5",
+      "hintText": "Use Division to get the answer.",
       "answers": [
         {
-          "answer": "50",
+          "answer": "25.5",
           "correct": true,
           "selected": false
         },
         {
-          "answer": "49",
+          "answer": "25",
           "correct": false,
           "selected": false
         },
         {
-          "answer": "60",
+          "answer": "25.3",
           "correct": false,
-          "selected": false,
-          "": {}
+          "selected": false
         }
       ]
     },
     {
-      "questionScore": 275,
-      "questionText": "Who is the Goddess of Wisdom and War?",
-      "solutionText": "Athena the Goddess of wisdom, war and the crafts, and favourite daughter of Zeus.",
-      "hintText": "The favorite daughter of Zeus.",
+      "questionScore": 230,
+      "questionText": "Which of the following numbers gives 240 when added to its own square?",
+      "solutionText": "15 when added to it's square gives 240.",
+      "hintText": "The answer is less than 20.",
       "answers": [
         {
-          "answer": "Athena",
+          "answer": "15",
           "correct": true,
           "selected": false
         },
         {
-          "answer": "Aphrodite",
+          "answer": "10",
           "correct": false,
           "selected": false
         },
         {
-          "answer": "Minerva",
+          "answer": "12",
           "correct": false,
-          "selected": false,
-          "": {}
+          "selected": false
         }
       ]
     },
     {
-      "questionScore": 250,
-      "questionText": "What is Neil Armstrong's Nationality?",
-      "solutionText": "He was an American astronaut and aeronautical engineer, and the first person to walk on the Moon.",
-      "hintText": "He is from Wapakoneta, Ohio, U.S. Cincinnati, Ohio, U.S.",
+      "questionScore": 460,
+      "questionText": "A clock strikes once at 1 o’clock, twice at 2 o’clock, and so on. How many times will it strike in 24 hours?",
+      "solutionText": "We have to multiply series by 2 to make it 24 hours. Hence, the clock will strike 156 times in a day.",
+      "hintText": "More than 100 times.",
       "answers": [
         {
-          "answer": "American",
+          "answer": "156 times",
           "correct": true,
           "selected": false
         },
         {
-          "answer": "Australian",
+          "answer": "98 times",
           "correct": false,
           "selected": false
         },
         {
-          "answer": "Belgian",
+          "answer": "148 times",
           "correct": false,
-          "selected": false,
-          "": {}
+          "selected": false
         }
       ]
     },
     {
-      "questionScore": 400,
-      "questionText": "Henry the Eighth had how many wives?",
-      "solutionText": "Henry VIII is best known for his six wives, and several mistresses he kept on the side.",
-      "hintText": "He had more than 5 wives",
+      "questionScore": 325,
+      "questionText": "The difference between the smallest number of four digits and the largest number of three digits is __________.",
+      "solutionText": "Difference = 1000-999 = 1",
+      "hintText": "Less than 10.",
       "answers": [
         {
-          "answer": "Six",
+          "answer": "1",
           "correct": true,
           "selected": false
         },
         {
-          "answer": "Seven",
+          "answer": "3",
           "correct": false,
           "selected": false
         },
         {
-          "answer": "Eight",
+          "answer": "5",
           "correct": false,
-          "selected": false,
-          "": {}
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 150,
+      "questionTexts": "The wages of 10 workers for a six-day week is $ 1200.",
+      "solutionText": "Wages of 4 workers for one day = 4 × 20 = Rs. 80",
+      "hintText": "The answer is less than $100.What are the one day’s wages of 4 workers?",
+      "answers": [
+        {
+          "answer": "80 dollars",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "30 dollars",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "50 dollars",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 580,
+      "questionText": "Simplify the following question: 2(x+4)-(x-3)",
+      "solutionText": "x+11",
+      "hintText": "In simplifying expressions use the Combining Like Terms and the Distributive Property.",
+      "answers": [
+        {
+          "answer": "x + 11",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "2x + 3",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "x - 11",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 260,
+      "questionText": "Find the value of 3 + 2 ? (8 – 3)",
+      "solutionText": "13",
+      "hintText": "Apply PEMDAS.",
+      "answers": [
+        {
+          "answer": "13",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "25",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "24",
+          "correct": false,
+          "selected": false
         }
       ]
     },
     {
       "questionScore": 600,
-      "questionText": "People of which religion consider ‘The Bhagavad Gita’ as their sacred text?",
-      "solutionText": "Bhagavat Gita is the most important religious texts of Hinduism and easily the best known.",
-      "hintText": "It is the world's third-largest religion.",
+      "questionText": "104(54 - 24) / 21 = ?",
+      "solutionText": "290,000",
+      "hintText": "Factor  (54 - 24) first then substitute in the main expression and simplify.",
       "answers": [
         {
-          "answer": "Hinduism",
+          "answer": "290,000",
           "correct": true,
           "selected": false
         },
         {
-          "answer": "Buddhism",
+          "answer": "380,000",
           "correct": false,
           "selected": false
         },
         {
-          "answer": "Shintoism",
+          "answer": "290,500",
           "correct": false,
           "selected": false
         }

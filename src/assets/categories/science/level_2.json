@@ -26,7 +26,7 @@
     {
       "questionScore": 100,
       "questionText": "How old are the oldest fossils on earth?",
-      "solutionText": "Researchers have verified that microscopic fossils uncovered in an almost 3.5 billion-year-old piece of rock in Western Australia are the oldest fossils ever found.",
+      "solutionText": "Fossils uncovered in an almost 3.5 billion-year-old piece of rock in Australia are the oldest fossils ever found.",
       "hintText": "It is a billion years old.",
       "answers": [
         {
@@ -73,7 +73,7 @@
       "questionScore": 200,
       "questionText": "The plant cell structure where photosynthesis takes place is called_______.",
       "solutionText": "The structure contains stacks of membranes called thylakoid membranes. That’s where the light reaction begins.",
-      "hintText": "\"It contains chlorophyll, a green substance that absorbs light energy for photosynthesis."
+      "hintText": "It contains chlorophyll, a green substance that absorbs light energy for photosynthesis."
     },
     {
       "questionScore": 150,
@@ -94,32 +94,30 @@
         {
           "answer": "Filteration",
           "correct": false,
-          "selected": false,
-          "": {}
+          "selected": false
         }
       ]
     },
     {
       "questionScore": 300,
-      "questionText": "What is the correct order of Mitosis?",
+      "questionText": "Which comes first?",
       "solutionText": "During Mitosis, the sister chromatids separate from each other and move to opposite poles of the cell.",
       "hintText": "Peter Makes an Anime character for Tina.",
       "answers": [
         {
-          "answer": "Prophase, Metaphase, Anaphase, Telophase",
+          "answer": "Prophase",
           "correct": true,
           "selected": false
         },
         {
-          "answer": "Prophase, Metaphase,Anaphase",
+          "answer": "Metaphase",
           "correct": false,
           "selected": false
         },
         {
-          "answer": "Telophase, Aetaphase, Prophase, Metaphase",
+          "answer": "Telophase",
           "correct": false,
-          "selected": false,
-          "": {}
+          "selected": false
         }
       ]
     },
@@ -142,8 +140,7 @@
         {
           "answer": "Grams",
           "correct": false,
-          "selected": false,
-          "": {}
+          "selected": false
         }
       ]
     },
@@ -166,8 +163,7 @@
         {
           "answer": "Calcium",
           "correct": false,
-          "selected": false,
-          "": {}
+          "selected": false
         }
       ]
     },
@@ -190,8 +186,7 @@
         {
           "answer": "Apocalypse",
           "correct": false,
-          "selected": false,
-          "": {}
+          "selected": false
         }
       ]
     },
