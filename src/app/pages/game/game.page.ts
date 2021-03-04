@@ -350,40 +350,37 @@ export class GamePage implements OnInit {
   }
 
   checkUserAnswer(index: number) {
-    if (this.answerButtons) {    
-      // Set current question index
-      this.questionScore = this.questionData[this.questionIndex].questionScore
-      this.userAnswer = this.questionData[this.questionIndex].answers[index]
-      this.userAnswer.selected = true
-      this.randomRemarkSelection = Math.floor(Math.random()*this.correctRemarkArray.length);
+    // Set current question index
+    this.questionScore = this.questionData[this.questionIndex].questionScore
+    this.userAnswer = this.questionData[this.questionIndex].answers[index]
+    this.randomRemarkSelection = Math.floor(Math.random()*this.correctRemarkArray.length);
 
-      if (this.timeLeft > 5) {
-        this.multiplierScore = this.questionScore / 10
-      } else {  
-        this.multiplierScore = this.questionScore / 8
+    if (this.timeLeft > 5) {
+      this.multiplierScore = this.questionScore / 10
+    } else {  
+      this.multiplierScore = this.questionScore / 8
+    }
+    
+    // Only set timer score for Science and Literature, and Math L1
+    if (this.currentCategory == 'mathematics' && this.currentLevel >= 1) {
+      this.actualScore = this.questionScore
+    } else {
+      this.actualScore = Math.round(this.multiplierScore * this.timeLeft)
+    }
+    
+    // Check if the answer user selected is correct
+    if (this.id > -1) {
+      if (this.userAnswer.correct) {
+          this.currentScore = this.currentScore + this.actualScore;
+          this.questionResponseClass = "correct"
+          this.questionResponseString = this.correctRemarkArray[this.randomRemarkSelection]
+          this.animateScore = true;
+          this.questionResponse()
       }
-      
-      // Only set timer score for Science and Literature, and Math L1
-      if (this.currentCategory == 'mathematics' && this.currentLevel >= 1) {
-        this.actualScore = this.questionScore
-      } else {
-        this.actualScore = Math.round(this.multiplierScore * this.timeLeft)
-      }
-      
-      // Check if the answer user selected is correct
-      if (this.id > -1) {
-        if (this.userAnswer.correct) {
-            this.currentScore = this.currentScore + this.actualScore;
-            this.questionResponseClass = "correct"
-            this.questionResponseString = this.correctRemarkArray[this.randomRemarkSelection]
-            this.animateScore = true;
-            this.questionResponse()
-        }
-        else {
-            this.questionResponseClass = "incorrect"
-            this.questionResponseString = this.incorrectRemarkArray[this.randomRemarkSelection]
-            this.questionResponse()
-        }
+      else {
+          this.questionResponseClass = "incorrect"
+          this.questionResponseString = this.incorrectRemarkArray[this.randomRemarkSelection]
+          this.questionResponse()
       }
     }
   }
