@@ -44,9 +44,9 @@
       </div>
     </div>
 
-    <ion-text class="level-modal-description" *ngIf="modalShow == 'desc'">{{ levelDescription }}</ion-text>
+    <ion-text class="level-modal-description" *ngIf="modalShow == 'desc'">{{ levelRemark }}</ion-text>
     <ion-text class="level-modal-description" *ngIf="modalShow == 'score'"><b>Best score:</b> {{ levelScore }}</ion-text>
-    <ion-text class="level-modal-remark">{{ levelRemark }}</ion-text>
+    <ion-text class="level-modal-remark">{{ levelDescription }}</ion-text>
 
     <ion-button class="modal-button modal-button-{{ categoryId }}" mode="ios" (click)="onClickPlayButton()">PLAY</ion-button>
     <ion-button class="modal-button modal-button-{{ categoryId }}" mode="ios" (click)="onClickOutsideModal()">CANCEL</ion-button>
