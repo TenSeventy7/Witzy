@@ -4,6 +4,20 @@ import { AudioService } from '../../services/audio.service';
 import { GameDataService } from '../../services/game-data.service';
 import { getGameData, setGameData } from '../../services/game-storage.service';
 
+interface QuestionData {
+  questionScore: number,
+  questionText: string,
+  solutionText: string,
+  hintText: string,
+  answers: []
+}
+
+interface AnswerData {
+  answer: string,
+  correct: boolean,
+  selected: boolean
+}
+
 @Component({
   selector: 'app-loading',
   templateUrl: './loading.page.html',
@@ -11,6 +25,13 @@ import { getGameData, setGameData } from '../../services/game-storage.service';
 })
 
 export class LoadingPage implements OnInit {
+
+  questions: QuestionData[] = [];
+  questionScore: number;
+  questionText: string;
+  solutionText: string;
+  hintText: string;
+  answers: AnswerData[] = [];
 
   splashProgress: number = 0.1;
   categoryData: any;
@@ -24,6 +45,7 @@ export class LoadingPage implements OnInit {
 
   questionData: any;
   randomQuestions: any;
+  randomAnswers: any;
   lastGameScore: any;
   totalPossibleScore: number = 0;
   roundStar1Requirement: number = 0;
@@ -54,7 +76,7 @@ export class LoadingPage implements OnInit {
     this.gameData.setGameData('roundStar3Requirement', this.roundStar3Requirement)
   }
 
-  randomizeQuestions(data) {
+  randomize(data) {
     return data.reduce((a, b) => {
       const size = a.length;
       const index = Math.trunc(Math.random() * (size - 1));
@@ -84,7 +106,7 @@ export class LoadingPage implements OnInit {
   async ionViewDidEnter() {
     this.splashProgress = 0.1;
     this.lastGameScore = await this.gameData.getScoreInfo(this.currentCategoryId, this.currentLevel);
-    this.splashProgress = 0.5;
+    this.splashProgress = 0.3;
 
     await this.gameData.getGameInfo(this.jsonUrl, 'currentQuestionsData', false);
 
@@ -92,12 +114,33 @@ export class LoadingPage implements OnInit {
     this.questionData = await this.gameData.getGameData('currentQuestionsData').questions
     this.calculateRequiredStars();
 
-    this.randomQuestions = this.randomizeQuestions(this.questionData);
-    this.gameData.setGameData('currentQuestionsData', this.randomQuestions)
+    this.randomQuestions = this.randomize(this.questionData);
+    this.splashProgress = 0.5;
+    
+    for (var index = 0; index < this.randomQuestions.length; index++) {
+      this.questionScore = this.randomQuestions[index].questionScore;
+      this.questionText = this.randomQuestions[index].questionText;
+      this.solutionText = this.randomQuestions[index].solutionText;
+      this.hintText = this.randomQuestions[index].hintText;
+      this.answers = this.randomQuestions[index].answers;
+      this.randomAnswers = this.randomize(this.answers);
 
+      this.questions.push({
+        questionScore: this.questionScore,
+        questionText: this.questionText,
+        solutionText: this.solutionText,
+        hintText: this.hintText,
+        answers: this.randomAnswers
+      });
+
+      this.splashProgress = this.splashProgress + 0.05;
+    }
+    
+    this.gameData.setGameData('currentQuestionsData', this.questions)
     this.splashProgress = 0.8;
 
     setTimeout(()=> {
+      this.splashProgress = 0.9;
       this.navCtrl.navigateRoot(['/game'], { animated: true, animationDirection: 'forward' });
     }, 1500);
   }

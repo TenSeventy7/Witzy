@@ -441,7 +441,7 @@ export class GamePage implements OnInit {
       slides.lockSwipes(true);
       this.typedJs = false;
       
-      this.randomizeAnswerArray();
+      // this.randomizeAnswerArray();
 
       this.questionResponseClass = "normal"
       this.hintText = this.questionData[this.questionIndex].hintText
@@ -498,7 +498,7 @@ export class GamePage implements OnInit {
     this.oldScore = this.gameData.getGameData('lastGameScore');
     
     // 2. Randomize Answers
-    this.randomizeAnswerArray();
+    // this.randomizeAnswerArray();
 
     // 3. Set slide options
     let slides = document.querySelector('ion-slides');
