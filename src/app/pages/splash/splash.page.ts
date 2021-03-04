@@ -41,6 +41,7 @@ export class SplashPage implements OnInit {
       console.log("Back disabled.")
     });
 
+    this.musicEnabled = await getGameData("game_music")
     this.splashProgress = 0.1;
 
     this.preloadBgm('game-bgm-main-menu', '/assets/music/game_bgm_primary.ogg');    
@@ -81,6 +82,9 @@ export class SplashPage implements OnInit {
     this.splashProgress = 0.9;
 
     setTimeout(()=> {
+      if (this.musicEnabled) {
+        this.audio.playBgm('game-bgm-main-menu');
+      }
 
       this.navCtrl.navigateRoot('/home', { animated: true, animationDirection: 'forward' });
     }, 1000);
