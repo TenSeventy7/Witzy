@@ -165,6 +165,12 @@ export class LevelsPage implements OnInit {
       if (this.audioEnabled) {
         this.audio.playSfx('game-sfx-back');
       }
+
+      if (this.musicEnabled) {
+        this.audio.stopBgm('game-bgm-current-category-'+this.categoryId);
+        this.gameData.setGameData('mainBgmPlaying', 'playing')
+        this.audio.playBgm('game-bgm-main-menu');
+      }
     }
   }
 
@@ -177,12 +183,6 @@ export class LevelsPage implements OnInit {
       setTimeout(()=> {
         this.buttonClass = "";
       }, 1000);
-
-      if (this.musicEnabled) {
-        this.audio.stopBgm('game-bgm-current-category-'+this.categoryId);
-        this.gameData.setGameData('mainBgmPlaying', 'playing')
-        this.audio.playBgm('game-bgm-main-menu');
-      }
     }
   }
 }
