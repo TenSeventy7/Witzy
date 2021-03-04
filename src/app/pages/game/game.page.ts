@@ -145,6 +145,12 @@ export class GamePage implements OnInit {
   constructor(private navCtrl: NavController, private platform: Platform, private audio: AudioService, public alertController: AlertController, private gameData: GameDataService) {}
 
   ngOnInit() {
+    // Load Game Data
+    this.questionData = this.gameData.getGameData('currentQuestionsData');
+    this.currentCategory = this.gameData.getGameData('currentCategoryId');
+    this.currentLevel = this.gameData.getGameData('currentLevelNumber');
+    this.currentLevelTrue = this.gameData.getGameData('currentLevelNumberTrue');
+    this.hintText = this.questionData[this.questionIndex].hintText;
   }
 
   startCountdown() {
@@ -485,13 +491,6 @@ export class GamePage implements OnInit {
     this.inputEnabled = false;
     this.typedJs = false;
     this.isDone = false;
-
-    // 1. Load Game Data
-    this.questionData = this.gameData.getGameData('currentQuestionsData');
-    this.currentCategory = this.gameData.getGameData('currentCategoryId');
-    this.currentLevel = this.gameData.getGameData('currentLevelNumber');
-    this.currentLevelTrue = this.gameData.getGameData('currentLevelNumberTrue');
-    this.hintText = this.questionData[this.questionIndex].hintText;
 
     this.roundStar1Requirement = this.gameData.getGameData('roundStar1Requirement');
     this.roundStar2Requirement = this.gameData.getGameData('roundStar2Requirement');
