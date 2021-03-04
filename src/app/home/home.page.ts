@@ -104,6 +104,5 @@ export class HomePage implements OnInit {
 
     this.audioEnabled = await getGameData("game_audio")
     this.musicEnabled = await getGameData("game_music")
-    this.musicPlaying = this.gameData.getGameData("mainBgmPlaying")
   }
 }
