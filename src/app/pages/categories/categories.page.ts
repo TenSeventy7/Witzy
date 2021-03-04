@@ -28,7 +28,7 @@ export class CategoriesPage implements OnInit {
   ngOnInit() {
   }
 
-  async goCategory(url) {
+  goCategory(url) {
     if (url.isAvailable) {
       this.navCtrl.navigateRoot(['/levels'], { animated: true, animationDirection: 'forward' });
     }
@@ -39,10 +39,10 @@ export class CategoriesPage implements OnInit {
     this.gameData.setGameData('currentCategoryId', name.categoryId);
   }
 
-  async onClickCategory(index: number) {
+  onClickCategory(index: number) {
     this.selectedCategory = this.categories[index];
-    await this.setCurrentCategoryData(this.selectedCategory);
-    this.categoryId = await this.gameData.getGameData('currentCategoryId')
+    this.categoryId = this.gameData.getGameData('currentCategoryId')
+    this.setCurrentCategoryData(this.selectedCategory);
     this.goCategory(this.selectedCategory);
   }
 
@@ -60,7 +60,7 @@ export class CategoriesPage implements OnInit {
   async ionViewDidEnter() {
     setTimeout(()=> {
       this.buttonClass = "category-buttons-in";
-    }, 1000);
+    }, 500);
   }
 
   ionViewWillLeave() {
@@ -73,7 +73,6 @@ export class CategoriesPage implements OnInit {
     if (this.router.url == "/levels") {
       if (this.musicEnabled) {
         this.audio.stopBgm('game-bgm-main-menu');
-        this.gameData.setGameData('mainBgmPlaying', 'stopped')
         this.audio.playBgm('game-bgm-current-category-'+this.categoryId);
       }
     }
