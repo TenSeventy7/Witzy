@@ -505,13 +505,13 @@ export class GamePage implements OnInit {
       if (!state.isActive) {
         let taskId = BackgroundTask.beforeExit(async () => {
 
-            await this.modalVisible = true;
-            await clearInterval(this.interval);
-            await this.modalFade = "fadeIn";
-            await this.modalWindowRoll = true;
+            this.modalVisible = true;
+            clearInterval(this.interval);
+            this.modalFade = "fadeIn";
+            this.modalWindowRoll = true;
 
-            await this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
-            await this.onClickOutsideModal();
+            this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
+              this.onClickOutsideModal();
           });
 
           if (this.musicEnabled) {
