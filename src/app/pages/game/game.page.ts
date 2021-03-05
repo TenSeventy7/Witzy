@@ -1,11 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NavController, Platform, AlertController } from '@ionic/angular';
+import { Plugins } from '@capacitor/core';
 import { trigger, transition, animate, style } from '@angular/animations'
 
 import { NgxTypedJsComponent } from 'ngx-typed-js';
 import { AudioService } from '../../services/audio.service';
 import { GameDataService } from '../../services/game-data.service';
 import { getGameData } from '../../services/game-storage.service';
+
+const { App, BackgroundTask } = Plugins;
 
 @Component({
   selector: 'app-game',
@@ -507,5 +510,11 @@ export class GamePage implements OnInit {
       }, 400);
     }, 300);
 
+    App.addListener('appStateChange', (state) => {
+      if (!state.isActive) {
+        this.showGameModal();
+      }
+    });
+    
   }
 }
