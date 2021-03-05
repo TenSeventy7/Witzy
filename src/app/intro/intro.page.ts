@@ -12,6 +12,10 @@ export class IntroPage implements OnInit {
   uphLogo: any;
   textLogo: any;
 
+  tnsTime: any;
+  uphTime: any;
+  textTime: any;
+
   constructor(private navCtrl: NavController, private platform: Platform) { }
 
   ngOnInit() {
@@ -22,24 +26,39 @@ export class IntroPage implements OnInit {
       
     }, 400);
 
-    setTimeout(()=> {
-      this.tnsLogo = ""
-      this.uphLogo = "fade"
-      this.textLogo = ""
-      
-      setTimeout(()=> {
-        this.tnsLogo = ""
-        this.uphLogo = ""
-        this.textLogo = "fade"
-
-        setTimeout(()=> {
-          this.tnsLogo = ""
-          this.uphLogo = ""
-          this.textLogo = ""
-          this.navCtrl.navigateRoot(['/splash'], { animated: false, animationDirection: 'forward' });
-        }, 3500);        
-      }, 3500);
+    this.tnsTime = setTimeout(()=> {
+      this.showUphLogo();
     }, 3500);
+  }
+
+  showUphLogo() {
+    clearInterval(this.tnsTime);
+    this.tnsLogo = ""
+    this.uphLogo = "fade"
+    this.textLogo = ""
+      
+    this.uphTime = setTimeout(()=> {
+      this.showTextLogo();
+    }, 3500);
+  }
+
+  showTextLogo() {
+    clearInterval(this.uphTime);
+    this.tnsLogo = ""
+    this.uphLogo = ""
+    this.textLogo = "fade"
+
+    this.textTime = setTimeout(()=> {
+      this.goToSplash();
+    }, 3500);
+  }
+
+  goToSplash() {
+    clearInterval(this.textTime);
+    this.tnsLogo = ""
+    this.uphLogo = ""
+    this.textLogo = ""
+    this.navCtrl.navigateRoot(['/splash'], { animated: false, animationDirection: 'forward' });
   }
 
 }
