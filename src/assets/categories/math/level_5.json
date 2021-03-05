@@ -1,1 +1,234 @@
-eyJxdWVzdGlvbnMiOlt7InF1ZXN0aW9uU2NvcmUiOjMwMCwicXVlc3Rpb25UZXh0IjoiVGhlIGRpc3RhbmNlIGxpZ2h0IHRyYXZlbHMgaW4gMTAwIHllYXJzIGlzOiIsInNvbHV0aW9uVGV4dCI6IjUsODcwLDAwMCwwMDAsMDAwIFx1MDBkNyAxMDAgbWlsZXM9IDU4NywwMDAsMDAwLDAwMCwwMDAiLCJoaW50VGV4dCI6IlRoZSBkaXN0YW5jZSBsaWdodCB0cmF2ZWxzIGluIG9uZSB5ZWFyIGlzIGFwcHJveGltYXRlbHkgNSw4NzAsMDAwLDAwMCwwMDAgbWlsZXMuIiwiYW5zd2VycyI6W3siYW5zd2VyIjoiNTg3LDAwMCwwMDAsMDAwLDAwMCBtaWxlcyIsImNvcnJlY3QiOnRydWUsInNlbGVjdGVkIjpmYWxzZX0seyJhbnN3ZXIiOiIxMTcsNDAwLDAwMCwwMDAsMDAwIG1pbGVzIiwiY29ycmVjdCI6ZmFsc2UsInNlbGVjdGVkIjpmYWxzZX0seyJhbnN3ZXIiOiIyOTMsNTAwLDAwMCwwMDAsMDAwIG1pbGVzIiwiY29ycmVjdCI6ZmFsc2UsInNlbGVjdGVkIjpmYWxzZX1dfSx7InF1ZXN0aW9uU2NvcmUiOjQ1MCwicXVlc3Rpb25UZXh0IjoiSm9uZXMgY292ZXJlZCBhIGRpc3RhbmNlIG9mIDUwIG1pbGVzLCB0aGVuIDMwMCBtaWxlcyB3aGlsZSBnb2luZyB0aHJlZSB0aW1lcyBhcyBmYXN0LiBIb3cgZG9lcyBpdCBjb21wYXJlPyIsInNvbHV0aW9uVGV4dCI6IlwiU28sIHRpbWVzIHRha2VuIHRvIGNvdmVyZWQgYSBkaXN0YW5jZSBvZiA1MCBtaWxlcyBvbiBoaXMgZmlyc3QgdHJpcCA9IDUwL3ggaHIgPSAxMDAveCBoci5cIiIsImhpbnRUZXh0IjoiSXQgaXMgdHdpY2UgYXMgbXVjaC4iLCJhbnN3ZXJzIjpbeyJhbnN3ZXIiOiIxMDAveCBociIsImNvcnJlY3QiOnRydWUsInNlbGVjdGVkIjpmYWxzZX0seyJhbnN3ZXIiOiI2MDAveCBociIsImNvcnJlY3QiOmZhbHNlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoiMjUwMC94IGhyIiwiY29ycmVjdCI6ZmFsc2UsInNlbGVjdGVkIjpmYWxzZX1dfSx7InF1ZXN0aW9uU2NvcmUiOjIzMCwicXVlc3Rpb25UZXh0IjoiSWYgMTAyeSA9IDI1LCB0aGVuIDEwLXkgaXMgZXF1YWwgdG8uLi4iLCJzb2x1dGlvblRleHQiOiJcIjEwMnkgPSAyNSA9ICgxMHkpMiA9IDUyID0gMTB5ID0gNSA9IDEvMTB5ID0gMS81ID0gMTAteSA9IDEvNVwiIiwiaGludFRleHQiOiJUaGUgZGVub21pbmF0b3IgaXMgNS4iLCJhbnN3ZXJzIjpbeyJhbnN3ZXIiOiIxLzUiLCJjb3JyZWN0Ijp0cnVlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoiMS8yNSIsImNvcnJlY3QiOmZhbHNlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoiMS81MCIsImNvcnJlY3QiOmZhbHNlLCJzZWxlY3RlZCI6ZmFsc2V9XX0seyJxdWVzdGlvblNjb3JlIjo1MzAsInF1ZXN0aW9uVGV4dCI6IlRoZSB2YWx1ZSBvZiB4ICsgeCh4eCkgd2hlbiB4ID0gMiBpcy4uLiIsInNvbHV0aW9uVGV4dCI6IlwiUHV0IHRoZSB2YWx1ZSBvZiB4ID0gMiBpbiB0aGUgYWJvdmUgZXhwcmVzc2lvbiB3ZSBnZXQsIDIgKyAyKDIyKSA9IDEwXCIiLCJoaW50VGV4dCI6IlNxdWFyZSByb290IG9mIHRoZSBhbnN3ZXIgaXMgMy4xNjIyNzc2NjAxNy4iLCJhbnN3ZXJzIjpbeyJhbnN3ZXIiOiIxMCIsImNvcnJlY3QiOnRydWUsInNlbGVjdGVkIjpmYWxzZX0seyJhbnN3ZXIiOiIxNiIsImNvcnJlY3QiOmZhbHNlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoiMTgiLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfV19LHsicXVlc3Rpb25TY29yZSI6MjkwLCJxdWVzdGlvblRleHQiOiJDb21iaW5lIHRlcm1zOiAxMmEgKyAyNmIgLTRiIFx1MjAxMyAxNmEiLCJzb2x1dGlvblRleHQiOiIxMmEgKyAyNmIgLTRiIFx1MjAxMyAxNmEuIiwiaGludFRleHQiOiJUaGUgYW5zd2VyIGhhcyBhIG5lZ3RpdmUgc2lnbi4iLCJhbnN3ZXJzIjpbeyJhbnN3ZXIiOiItNGEgKyAyMmIiLCJjb3JyZWN0Ijp0cnVlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoiNGEgKyAyMmIiLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfSx7ImFuc3dlciI6Ii0yOGEgKyAzMGIiLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfV19LHsicXVlc3Rpb25TY29yZSI6NDUwLCJxdWVzdGlvblRleHQiOiJTaW1wbGlmeTogKDQgXHUyMDEzIDUpIFx1MjAxMyAoMTMgXHUyMDEzIDE4ICsgMikiLCJzb2x1dGlvblRleHQiOiJcIig0IFx1MjAxMyA1KSBcdTIwMTMgKDEzIFx1MjAxMyAxOCArIDIpID0gLTEtKDEzKzItMTgpID0gLTEtKDE1LTE4KSA9IC0xLSgtMykgPSAtMSszID0gMlwiIiwiaGludFRleHQiOiJJdCBpcyBwcmltZSBudW1iZXIuIiwiYW5zd2VycyI6W3siYW5zd2VyIjoiMiIsImNvcnJlY3QiOnRydWUsInNlbGVjdGVkIjpmYWxzZX0seyJhbnN3ZXIiOiIxIiwiY29ycmVjdCI6ZmFsc2UsInNlbGVjdGVkIjpmYWxzZX0seyJhbnN3ZXIiOiItMiIsImNvcnJlY3QiOmZhbHNlLCJzZWxlY3RlZCI6ZmFsc2V9XX0seyJxdWVzdGlvblNjb3JlIjoxOTAsInF1ZXN0aW9uVGV4dCI6Ik11bHRpcGx5OiAoeCBcdTIwMTMgNCkoeCArIDUpIiwic29sdXRpb25UZXh0IjoiXCIoeCBcdTIwMTMgNCkoeCArIDUpID0geCh4ICsgNSkgLTQoeCArIDUpID0geF4yICsgNXggXHUyMDEzIDR4IFx1MjAxMyAyMCA9IHheMiArIHggLSAyMFwiIiwiaGludFRleHQiOiJTb2x2ZSAgeF4yICsgNXggXHUyMDEzIDR4IFx1MjAxMyAyMCIsImFuc3dlcnMiOlt7ImFuc3dlciI6IngyICsgeCAtIDIwIiwiY29ycmVjdCI6dHJ1ZSwic2VsZWN0ZWQiOmZhbHNlfSx7ImFuc3dlciI6InheMiAtIDR4IC0gMjAiLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfSx7ImFuc3dlciI6InheMiArIDV4IC0gMjAiLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfV19LHsicXVlc3Rpb25TY29yZSI6MzUwLCJxdWVzdGlvblRleHQiOiJGYWN0b3I6IDN5KHggXHUyMDEzIDMpIC0yKHggXHUyMDEzIDMpIiwic29sdXRpb25UZXh0IjoiXCIzeSh4IFx1MjAxMyAzKSAtMih4IFx1MjAxMyAzKSA9ICh4IFx1MjAxMyAzKSgzeSBcdTIwMTMgMilcIiIsImhpbnRUZXh0IjoiVGhlIG51bWJlcnMgYXJlIGFsbCBwcmltZSBudW1iZXIuIiwiYW5zd2VycyI6W3siYW5zd2VyIjoiKHggXHUyMDEzIDMpKDN5IFx1MjAxMyAyKSIsImNvcnJlY3QiOnRydWUsInNlbGVjdGVkIjpmYWxzZX0seyJhbnN3ZXIiOiIoeCBcdTIwMTMgMykoeCBcdTIwMTMgMykiLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfSx7ImFuc3dlciI6IjN5KHggXHUyMDEzIDMpIiwiY29ycmVjdCI6ZmFsc2UsInNlbGVjdGVkIjpmYWxzZX1dfSx7InF1ZXN0aW9uU2NvcmUiOjUxMCwicXVlc3Rpb25UZXh0IjoiUm91bmQgKDIwMileMiB0byB0aGUgbmVhcmVzdCBodW5kcmVkLiIsInNvbHV0aW9uVGV4dCI6IlwiPSgyMDIpXjIgPSA0MDgwNCwgcm91bmRlZCB0byB0aGUgbmVhcmVzdCBodW5kcmVkcyA9IDQwODAwXCIiLCJoaW50VGV4dCI6IkV2YWx1YXRlICgyMDIpXjIgZmlyc3QgdGhlbiByb3VuZCB1cC4iLCJhbnN3ZXJzIjpbeyJhbnN3ZXIiOiI0MDgwMCIsImNvcnJlY3QiOnRydWUsInNlbGVjdGVkIjpmYWxzZX0seyJhbnN3ZXIiOiIzMDgwMCIsImNvcnJlY3QiOmZhbHNlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoiNDA5MDAiLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfV19LHsicXVlc3Rpb25TY29yZSI6NDUwLCJxdWVzdGlvblRleHQiOiJTaW1wbGlmeTogKDR4XjIgLSAyeCkgLSAoLTV4XjIgLSA4eCkiLCJzb2x1dGlvblRleHQiOiJcIjN4KDN4ICsgMilcIiIsImhpbnRUZXh0IjoiQ29tYmluYXRpb24gb2YgdGhlIGFuc3dlciA5eF4yICsgNngiLCJhbnN3ZXJzIjpbeyJhbnN3ZXIiOiIzeCgzeCArIDIpIiwiY29ycmVjdCI6dHJ1ZSwic2VsZWN0ZWQiOmZhbHNlfSx7ImFuc3dlciI6IjN4KDJ4IC0gMikiLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfSx7ImFuc3dlciI6IjN4KDJ4ICsgMikiLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfV19XX0
+{
+  "questions": [
+    {
+      "questionScore": 300,
+      "questionText": "The distance light travels in 100 years is:",
+      "solutionText": "5,870,000,000,000 × 100 miles= 587,000,000,000,000",
+      "hintText": "The distance light travels in one year is approximately 5,870,000,000,000 miles.",
+      "answers": [
+        {
+          "answer": "587,000,000,000,000 miles",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "117,400,000,000,000 miles",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "293,500,000,000,000 miles",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 450,
+      "questionText": "Jones covered a distance of 50 miles, then 300 miles while going three times as fast. How does it compare?",
+      "solutionText": "\"So, times taken to covered a distance of 50 miles on his first trip = 50/x hr = 100/x hr.\"",
+      "hintText": "It is twice as much.",
+      "answers": [
+        {
+          "answer": "100/x hr",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "600/x hr",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "2500/x hr",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 230,
+      "questionText": "If 102y = 25, then 10-y is equal to...",
+      "solutionText": "\"102y = 25 = (10y)2 = 52 = 10y = 5 = 1/10y = 1/5 = 10-y = 1/5\"",
+      "hintText": "The denominator is 5.",
+      "answers": [
+        {
+          "answer": "1/5",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "1/25",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "1/50",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 530,
+      "questionText": "The value of x + x(xx) when x = 2 is...",
+      "solutionText": "\"Put the value of x = 2 in the above expression we get, 2 + 2(22) = 10\"",
+      "hintText": "Square root of the answer is 3.16227766017.",
+      "answers": [
+        {
+          "answer": "10",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "16",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "18",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 290,
+      "questionText": "Combine terms: 12a + 26b -4b – 16a",
+      "solutionText": "12a + 26b -4b – 16a.",
+      "hintText": "The answer has a negtive sign.",
+      "answers": [
+        {
+          "answer": "-4a + 22b",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "4a + 22b",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "-28a + 30b",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 450,
+      "questionText": "Simplify: (4 – 5) – (13 – 18 + 2)",
+      "solutionText": "\"(4 – 5) – (13 – 18 + 2) = -1-(13+2-18) = -1-(15-18) = -1-(-3) = -1+3 = 2\"",
+      "hintText": "It is prime number.",
+      "answers": [
+        {
+          "answer": "2",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "1",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "-2",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 190,
+      "questionText": "Multiply: (x – 4)(x + 5)",
+      "solutionText": "\"(x – 4)(x + 5) = x(x + 5) -4(x + 5) = x^2 + 5x – 4x – 20 = x^2 + x - 20\"",
+      "hintText": "Solve  x^2 + 5x – 4x – 20",
+      "answers": [
+        {
+          "answer": "x2 + x - 20",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "x^2 - 4x - 20",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "x^2 + 5x - 20",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 350,
+      "questionText": "Factor: 3y(x – 3) -2(x – 3)",
+      "solutionText": "\"3y(x – 3) -2(x – 3) = (x – 3)(3y – 2)\"",
+      "hintText": "The numbers are all prime number.",
+      "answers": [
+        {
+          "answer": "(x – 3)(3y – 2)",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "(x – 3)(x – 3)",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "3y(x – 3)",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 510,
+      "questionText": "Round (202)^2 to the nearest hundred.",
+      "solutionText": "\"=(202)^2 = 40804, rounded to the nearest hundreds = 40800\"",
+      "hintText": "Evaluate (202)^2 first then round up.",
+      "answers": [
+        {
+          "answer": "40800",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "30800",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "40900",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 450,
+      "questionText": "Simplify: (4x^2 - 2x) - (-5x^2 - 8x)",
+      "solutionText": "\"3x(3x + 2)\"",
+      "hintText": "Combination of the answer 9x^2 + 6x",
+      "answers": [
+        {
+          "answer": "3x(3x + 2)",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "3x(2x - 2)",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "3x(2x + 2)",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    }
+  ]
+}

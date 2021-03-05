@@ -1,1 +1,240 @@
-eyJxdWVzdGlvbnMiOlt7InF1ZXN0aW9uU2NvcmUiOjcwLCJxdWVzdGlvblRleHQiOiJSb3VuZC1vZmYgMy44NjQgdG8gdGhlIG5lYXJlc3QgdGVudGguIiwic29sdXRpb25UZXh0IjoiOCBpcyB0aGUgdGVudGggbnVtYmVyIG9mIDMuODY0LCBhbnl0aGluZyByYW5naW5nIGZyb20gMCw1LTkgd2lsbCByb3VuZCB1cC4iLCJoaW50VGV4dCI6IlJvdW5kIHVwLiIsImFuc3dlcnMiOlt7ImFuc3dlciI6IjMuOSIsImNvcnJlY3QiOnRydWUsInNlbGVjdGVkIjpmYWxzZX0seyJhbnN3ZXIiOiI0IiwiY29ycmVjdCI6ZmFsc2UsInNlbGVjdGVkIjpmYWxzZX0seyJhbnN3ZXIiOiJUaGVyZSBpcyBubyBjb3JyZWN0IGFuc3dlci4iLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfV19LHsicXVlc3Rpb25TY29yZSI6NTAsInF1ZXN0aW9uVGV4dCI6IkhvdyBtYW55IGZlZXQgYXJlIGluIGEgbWlsZT8iLCJzb2x1dGlvblRleHQiOiJUaGVyZSBhcmUgOCBmdXJsb25ncyBpbiBhIG1pbGUuIChtaSwgVS5TLikgVGhlcmUgYXJlIDUsMjgwIGZlZXQgaW4gYSBtaWxlLiIsImhpbnRUZXh0IjoiVGhlIGFuc3dlciBjYW4gYmUgaGlnaGVyIHRoYW4gNTAwMCBmZWV0LiIsImFuc3dlcnMiOlt7ImFuc3dlciI6IjUyODAgRmVldCIsImNvcnJlY3QiOnRydWUsInNlbGVjdGVkIjpmYWxzZX0seyJhbnN3ZXIiOiI1MTgwIEZlZXQiLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfSx7ImFuc3dlciI6IjUwODAgRmVldCIsImNvcnJlY3QiOmZhbHNlLCJzZWxlY3RlZCI6ZmFsc2V9XX0seyJxdWVzdGlvblNjb3JlIjo1MCwicXVlc3Rpb25UZXh0IjoiV2hhdCBudW1iZXIgZG9lc24ndCBoYXZlIGl0cyBvd24gUm9tYW4gbnVtZXJhbD8iLCJzb2x1dGlvblRleHQiOiJUaGUgbnVtYmVyIHplcm8gZGlkIG5vdCBvcmlnaW5hbGx5IGhhdmUgaXRzIG93biBSb21hbiBudW1lcmFsLiIsImhpbnRUZXh0IjoiVGhpcyBpcyB1c2VkIGFzIGEgcGxhY2Vob2xkZXIgaW4gcGxhY2UgdmFsdWUgc3lzdGVtcy4iLCJhbnN3ZXJzIjpbeyJhbnN3ZXIiOiIwIiwiY29ycmVjdCI6dHJ1ZSwic2VsZWN0ZWQiOmZhbHNlfSx7ImFuc3dlciI6IjEiLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfSx7ImFuc3dlciI6IjEwMDAiLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfV19LHsicXVlc3Rpb25TY29yZSI6MTcwLCJxdWVzdGlvblRleHQiOiJXaGF0IGlzIHRoZSBzbWFsbGVzdCBwZXJmZWN0IG51bWJlcj8iLCJzb2x1dGlvblRleHQiOiJQZXJmZWN0IG51bWJlciwgYSBwb3NpdGl2ZSBpbnRlZ2VyIHRoYXQgaXMgZXF1YWwgdG8gdGhlIHN1bSBvZiBpdHMgcHJvcGVyIGRpdmlzb3JzLiIsImhpbnRUZXh0IjoiVGhlIHN1bSBvZiAxLCAyIGFuZCAzLiIsImFuc3dlcnMiOlt7ImFuc3dlciI6IjYiLCJjb3JyZWN0Ijp0cnVlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoiOCIsImNvcnJlY3QiOmZhbHNlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoiMyIsImNvcnJlY3QiOmZhbHNlLCJzZWxlY3RlZCI6ZmFsc2UsIiI6e319XX0seyJxdWVzdGlvblNjb3JlIjo4MCwicXVlc3Rpb25UZXh0IjoiV2hhdCBpcyB0aGUgTENEIG9mIDMvOCBhbmQgMS82PyIsInNvbHV0aW9uVGV4dCI6IlwiRXF1aXZhbGVudCBGcmFjdGlvbnMgd2l0aCB0aGUgTENEIDMvOCAgPSAgOS8yNCwgIDEvNiAgPSAgNC8yNFwiIiwiaGludFRleHQiOiJMaXN0IGFsbCBvZiB0aGUgZmFjdG9ycyBvZiBlYWNoIGRlbm9taW5hdG9yLiIsImFuc3dlcnMiOlt7ImFuc3dlciI6IjI0IiwiY29ycmVjdCI6dHJ1ZSwic2VsZWN0ZWQiOmZhbHNlfSx7ImFuc3dlciI6IjE0IiwiY29ycmVjdCI6ZmFsc2UsInNlbGVjdGVkIjpmYWxzZX0seyJhbnN3ZXIiOiI0OCIsImNvcnJlY3QiOmZhbHNlLCJzZWxlY3RlZCI6ZmFsc2UsIiI6e319XX0seyJxdWVzdGlvblNjb3JlIjoxMTAsInF1ZXN0aW9uVGV4dCI6IkhvdyBtYW55IGN1cGNha2VzIGFyZSBpbiBhIGJha2VyJ3MgZG96ZW4_Iiwic29sdXRpb25UZXh0IjoiVGhlcmUgYXJlIGEgZmV3IHRoZW9yaWVzLCBidXQgdGhlIG1vc3Qgd2lkZWx5IGFjY2VwdGVkIG9uZSBoYXMgdG8gZG8gd2l0aCBhdm9pZGluZyBhIGJlYXRpbmcuIiwiaGludFRleHQiOiJUaGUgdGFsZSBiZWhpbmQgaXRzIG9yaWdpbiBpcyB0aGF0IGEgbWVkaWFldmFsIGxhdyBzcGVjaWZpZWQgdGhlIHdlaWdodCBvZiBicmVhZCBsb2F2ZXMuIiwiYW5zd2VycyI6W3siYW5zd2VyIjoiMTMiLCJjb3JyZWN0Ijp0cnVlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoiMTIiLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfSx7ImFuc3dlciI6IjExIiwiY29ycmVjdCI6ZmFsc2UsInNlbGVjdGVkIjpmYWxzZSwiIjp7fX1dfSx7InF1ZXN0aW9uU2NvcmUiOjUwMCwicXVlc3Rpb25UZXh0IjoiV2hhdCB0eXBlIG9mIG51bWJlciBpcyBQaSBudW1iZXI_Iiwic29sdXRpb25UZXh0IjoicGkgY2Fubm90IGJlIGV4cHJlc3NlZCBpbiB0aGUgZnJhY3Rpb24gb2YgdHdvIGludGVnZXJzIGFuZCBoYXMgbm8gYWNjdXJhdGUgZGVjaW1hbCB2YWx1ZS4iLCJoaW50VGV4dCI6Ikl0IGNhbm5vdCBiZSB3cml0dGVuIGFzIGEgZnJhY3Rpb24uIiwiYW5zd2VycyI6W3siYW5zd2VyIjoiSXJyYXRpb25hbCIsImNvcnJlY3QiOnRydWUsInNlbGVjdGVkIjpmYWxzZX0seyJhbnN3ZXIiOiJSYXRpb25hbCIsImNvcnJlY3QiOmZhbHNlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoiSW5maW5pdGUiLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlLCIiOnt9fV19LHsicXVlc3Rpb25TY29yZSI6MjAwLCJxdWVzdGlvblRleHQiOiJXaGF0IGlzIHRoZSBvbmx5IHRlbXBlcmF0dXJlIHRoYXQgaXMgdGhlIHNhbWUgaW4gRmFocmVuaGVpdCBhbmQgQ2Vsc2l1cz8iLCJzb2x1dGlvblRleHQiOiJUaGUgRmFocmVuaGVpdCBhbmQgQ2Vsc2l1cyBzY2FsZXMgaGF2ZSBvbmUgcG9pbnQgYXQgd2hpY2ggdGhleSBpbnRlcnNlY3QuIFRoZXkgYXJlIGVxdWFsIGF0IC00MEMgYW5kIC00MEYuIiwiaGludFRleHQiOiJCZWxvdyA1MC4iLCJhbnN3ZXJzIjpbeyJhbnN3ZXIiOiI0MCBhbmQgYmVsb3ciLCJjb3JyZWN0Ijp0cnVlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoiNDUiLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfSx7ImFuc3dlciI6IjQ4IiwiY29ycmVjdCI6ZmFsc2UsInNlbGVjdGVkIjpmYWxzZSwiIjp7fX1dfSx7InF1ZXN0aW9uU2NvcmUiOjUwLCJxdWVzdGlvblRleHQiOiJXaGF0IGlzIHRoZSBvbmx5IGV2ZW4gcHJpbWUgbnVtYmVyPyIsInNvbHV0aW9uVGV4dCI6IkFsbCBvdGhlciBwcmltZXMgYXJlIG9kZCBwcmltZXMuIFRoYXQgbWVhbnMgMiBpcyB0aGUgXCJvZGRlc3RcIiBwcmltZSBvZiBhbGwuIiwiaGludFRleHQiOiJBIHByaW1lIG51bWJlciBjYW4gaGF2ZSBvbmx5IDEgYW5kIGl0c2VsZiBhcyBmYWN0b3JzLiIsImFuc3dlcnMiOlt7ImFuc3dlciI6IjIiLCJjb3JyZWN0Ijp0cnVlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoiMyIsImNvcnJlY3QiOmZhbHNlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoiMSIsImNvcnJlY3QiOmZhbHNlLCJzZWxlY3RlZCI6ZmFsc2UsIiI6e319XX0seyJxdWVzdGlvblNjb3JlIjoxNjAsInF1ZXN0aW9uVGV4dCI6IklmIEkgaGF2ZSA2IHBlbmNpbHMsIGFuZCBteSBmcmllbmQgaGF2ZSAzIHBlbmNpbHMuIEhvdyBtYW55IHBlbmNpbHMgZG8gSSBoYXZlPyIsInNvbHV0aW9uVGV4dCI6IkknbSB0YWxraW5nIGFib3V0IG15c2VsZiBzbyBJIGhhdmUgNiBwZW5jaWxzLiIsImhpbnRUZXh0IjoiSG93IG1hbnkgcGVuY2lscyBkbyBJIGhhdmUsIGFnYWluPyIsImFuc3dlcnMiOlt7ImFuc3dlciI6IjYiLCJjb3JyZWN0Ijp0cnVlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoiMyIsImNvcnJlY3QiOmZhbHNlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoiOSIsImNvcnJlY3QiOmZhbHNlLCJzZWxlY3RlZCI6ZmFsc2V9XX1dfQ
+{
+  "questions": [
+    {
+      "questionScore": 70,
+      "questionText": "Round-off 3.864 to the nearest tenth.",
+      "solutionText": "8 is the tenth number of 3.864, anything ranging from 0,5-9 will round up.",
+      "hintText": "Round up.",
+      "answers": [
+        {
+          "answer": "3.9",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "4",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "There is no correct answer.",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 50,
+      "questionText": "How many feet are in a mile?",
+      "solutionText": "There are 8 furlongs in a mile. (mi, U.S.) There are 5,280 feet in a mile.",
+      "hintText": "The answer can be higher than 5000 feet.",
+      "answers": [
+        {
+          "answer": "5280 Feet",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "5180 Feet",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "5080 Feet",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 50,
+      "questionText": "What number doesn't have its own Roman numeral?",
+      "solutionText": "The number zero did not originally have its own Roman numeral.",
+      "hintText": "This is used as a placeholder in place value systems.",
+      "answers": [
+        {
+          "answer": "0",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "1",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "1000",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 170,
+      "questionText": "What is the smallest perfect number?",
+      "solutionText": "Perfect number, a positive integer that is equal to the sum of its proper divisors.",
+      "hintText": "The sum of 1, 2 and 3.",
+      "answers": [
+        {
+          "answer": "6",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "8",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "3",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 80,
+      "questionText": "What is the LCD of 3/8 and 1/6?",
+      "solutionText": "\"Equivalent Fractions with the LCD 3/8  =  9/24,  1/6  =  4/24\"",
+      "hintText": "List all of the factors of each denominator.",
+      "answers": [
+        {
+          "answer": "24",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "14",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "48",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 110,
+      "questionText": "How many cupcakes are in a baker's dozen?",
+      "solutionText": "There are a few theories, but the most widely accepted one has to do with avoiding a beating.",
+      "hintText": "The tale behind its origin is that a mediaeval law specified the weight of bread loaves.",
+      "answers": [
+        {
+          "answer": "13",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "12",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "11",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 500,
+      "questionText": "What type of number is Pi number?",
+      "solutionText": "pi cannot be expressed in the fraction of two integers and has no accurate decimal value.",
+      "hintText": "It cannot be written as a fraction.",
+      "answers": [
+        {
+          "answer": "Irrational",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Rational",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Infinite",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 200,
+      "questionText": "What is the only temperature that is the same in Fahrenheit and Celsius?",
+      "solutionText": "The Fahrenheit and Celsius scales have one point at which they intersect. They are equal at -40C and -40F.",
+      "hintText": "Below 50.",
+      "answers": [
+        {
+          "answer": "40 and below",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "45",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "48",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 50,
+      "questionText": "What is the only even prime number?",
+      "solutionText": "All other primes are odd primes. That means 2 is the \"oddest\" prime of all.",
+      "hintText": "A prime number can have only 1 and itself as factors.",
+      "answers": [
+        {
+          "answer": "2",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "3",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "1",
+          "correct": false,
+          "selected": false,
+          "": {}
+        }
+      ]
+    },
+    {
+      "questionScore": 160,
+      "questionText": "If I have 6 pencils, and my friend have 3 pencils. How many pencils do I have?",
+      "solutionText": "I'm talking about myself so I have 6 pencils.",
+      "hintText": "How many pencils do I have, again?",
+      "answers": [
+        {
+          "answer": "6",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "3",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "9",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    }
+  ]
+}

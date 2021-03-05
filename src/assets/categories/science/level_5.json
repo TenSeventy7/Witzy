@@ -1,1 +1,234 @@
-eyJxdWVzdGlvbnMiOlt7InF1ZXN0aW9uU2NvcmUiOjIwMCwicXVlc3Rpb25UZXh0IjoiU3Blcm1vbG9neSBpcyB0aGUgc3R1ZHkgb2YuLi4iLCJzb2x1dGlvblRleHQiOiJTcGVybW9sb2d5IGVuY29tcGFzc2VzIHRoZSBzdHVkeSBvZiBzZWVkIG1vcnBob2xvZ3ksIGNoYXJhY3RlcmlzdGljcyBhbmQgdGhlaXIgaW50ZXJhY3Rpb25zIHdpdGggdGhlIGVudmlyb25tZW50LiIsImhpbnRUZXh0IjoiVGhpcyBpcyB3aGVyZSBwbGFudHMgb3JpZ2luYXRlZCBpbi4iLCJhbnN3ZXJzIjpbeyJhbnN3ZXIiOiJTZWVkcyIsImNvcnJlY3QiOnRydWUsInNlbGVjdGVkIjpmYWxzZX0seyJhbnN3ZXIiOiJGbG93ZXIiLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfSx7ImFuc3dlciI6Ik1lbiIsImNvcnJlY3QiOmZhbHNlLCJzZWxlY3RlZCI6ZmFsc2V9XX0seyJxdWVzdGlvblNjb3JlIjoyNDAsInF1ZXN0aW9uVGV4dCI6IldoaWNoIGVsZW1lbnQgaGFzIG5vIG5ldXRyb25zIGluIGl0PyIsInNvbHV0aW9uVGV4dCI6Ikh5ZHJvZ2VuIGRvZXMgbm90IGNvbnRhaW4gYSBuZXV0cm9uLCBiZWNhdXNlIGl0cyBudWNsZXVzIGlzIHNvIHNtYWxsLiIsImhpbnRUZXh0IjoiSXQgaGFzIGFuIGF0b21pYyBudW1iZXIgb2YgMS4iLCJhbnN3ZXJzIjpbeyJhbnN3ZXIiOiJIeWRyb2dlbiIsImNvcnJlY3QiOnRydWUsInNlbGVjdGVkIjpmYWxzZX0seyJhbnN3ZXIiOiJPeHlnZW4iLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfSx7ImFuc3dlciI6IlN1bGZ1ciIsImNvcnJlY3QiOmZhbHNlLCJzZWxlY3RlZCI6ZmFsc2V9XX0seyJxdWVzdGlvblNjb3JlIjoxNTAsInF1ZXN0aW9uVGV4dCI6IldoYXQgaXMgdGhlIHRydWUgY29sb3Igb2YgdGhlIHNreT8iLCJzb2x1dGlvblRleHQiOiJUaGUgc2t5IGhhcyBubyB0cnVlIGNvbG9yLiIsImhpbnRUZXh0IjoiSXQncyBhbG1vc3QgY2xlYXIuIiwiYW5zd2VycyI6W3siYW5zd2VyIjoiTm8gY29sb3IiLCJjb3JyZWN0Ijp0cnVlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoic2t5IGJsdWUiLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfSx7ImFuc3dlciI6IndoaXRlIiwiY29ycmVjdCI6ZmFsc2UsInNlbGVjdGVkIjpmYWxzZX1dfSx7InF1ZXN0aW9uU2NvcmUiOjE1MCwicXVlc3Rpb25UZXh0IjoiV2hhdCBhcmUgdGhlIHRocmVlIHN1YmF0b21pYyBwYXJ0aWNsZXMgaW4gYW4gYXRvbT8iLCJzb2x1dGlvblRleHQiOiJJdCBpcyBzbWFsbGVzciB0aGFuIGFuIGF0b20uIiwiaGludFRleHQiOiJQLkUuTi4iLCJhbnN3ZXJzIjpbeyJhbnN3ZXIiOiJFbGVjdHJvbnMsIFByb3RvbnMgYW5kIE5ldXRyb25zIiwiY29ycmVjdCI6dHJ1ZSwic2VsZWN0ZWQiOmZhbHNlfSx7ImFuc3dlciI6IlByb3RvbnMsIFF1YXJ0eiBhbmQgRWxlY3Ryb25zIiwiY29ycmVjdCI6ZmFsc2UsInNlbGVjdGVkIjpmYWxzZX0seyJhbnN3ZXIiOiJBdG9tcywgUHJvdG9ucyBhbmQgRWxlY3Ryb25zIiwiY29ycmVjdCI6ZmFsc2UsInNlbGVjdGVkIjpmYWxzZX1dfSx7InF1ZXN0aW9uU2NvcmUiOjMwMCwicXVlc3Rpb25UZXh0IjoiV2hhdCBkbyB5b3UgY2FsbCBhIHBoZW5vbWVub24gd2hlcmUgYW5pbWFscyBzbGVlcCBpbiB0aGUgc3VtbWVyPyIsInNvbHV0aW9uVGV4dCI6IkFlc3RpdmF0aW9uIGlzIGEgc3RhdGUgb2YgYW5pbWFsIGRvcm1hbmN5LCBzaW1pbGFyIHRvIGhpYmVybmF0aW9uLCBhbHRob3VnaCB0YWtlcyBwbGFjZSBpbiB0aGUgc3VtbWVyLiIsImhpbnRUZXh0IjoiTWFueSBvcmdhbmlzbXMgbGlrZSB0aGUgc25haWxzIGRvIG5vdCBmaW5kIGl0IGNvbWZvcnRhYmxlIGluIHN1bW1lci4iLCJhbnN3ZXJzIjpbeyJhbnN3ZXIiOiJBZXN0aXZhdGlvbiIsImNvcnJlY3QiOnRydWUsInNlbGVjdGVkIjpmYWxzZX0seyJhbnN3ZXIiOiJIaWJlcm5hdGlvbiIsImNvcnJlY3QiOmZhbHNlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoiTGV0aGFyZ3kiLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfV19LHsicXVlc3Rpb25TY29yZSI6MjMwLCJxdWVzdGlvblRleHQiOiJFbGVjdHJvc3RhdGljIHByZWNpcGl0YXRvciBpcyB1c2VkIHRvIGNvbnRyb2wgdGhlIHBvbGx1dGlvbiBvZi4uLiIsInNvbHV0aW9uVGV4dCI6IlRoZSBlbGVjdHJvc3RhdGljIHByZWNpcGl0YXRvcnMgYXJlIHVzZWQgZm9yIGFpciBwb2xsdXRpb24gY29udHJvbC4iLCJoaW50VGV4dCI6IkR1c3QgYW5kIFNtb2tlIiwiYW5zd2VycyI6W3siYW5zd2VyIjoiQWlyIiwiY29ycmVjdCI6dHJ1ZSwic2VsZWN0ZWQiOmZhbHNlfSx7ImFuc3dlciI6IlNvaWwgRXJvc2lvbiIsImNvcnJlY3QiOmZhbHNlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoiT2lsIFNwaWxsIiwiY29ycmVjdCI6ZmFsc2UsInNlbGVjdGVkIjpmYWxzZX1dfSx7InF1ZXN0aW9uU2NvcmUiOjMwMCwicXVlc3Rpb25UZXh0IjoiV2hhdCBpcyB0aGUgaW5zdHJ1bWVudCB1c2VkIHRvIG1lYXN1cmUgdGhlIGZvcmNlIGFuZCB2ZWxvY2l0eSBvZiB0aGUgd2luZD8iLCJzb2x1dGlvblRleHQiOiJBbmVtb21ldGVyIGlzIGFuIGluc3RydW1lbnQgdGhhdCBtZWFzdXJlcyB3aW5kIHNwZWVkIGFuZCB3aW5kIHByZXNzdXJlLiIsImhpbnRUZXh0IjoiVGhlIHRlcm0gaXMgZGVyaXZlZCBmcm9tIHRoZSBHcmVlayB3b3JkIGFuZW1vcyB3aGljaCBtZWFucyB3aW5kLiIsImFuc3dlcnMiOlt7ImFuc3dlciI6IkFuZW1vbWV0ZXIiLCJjb3JyZWN0Ijp0cnVlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoiQmFyb21ldGVyIiwiY29ycmVjdCI6ZmFsc2UsInNlbGVjdGVkIjpmYWxzZX0seyJhbnN3ZXIiOiJBbm9tb21ldGVyIiwiY29ycmVjdCI6ZmFsc2UsInNlbGVjdGVkIjpmYWxzZX1dfSx7InF1ZXN0aW9uU2NvcmUiOjIwMCwicXVlc3Rpb25UZXh0IjoiV2hhdCBpcyB0aGUgc2hhcGUgb2Ygb3VyIGdhbGF4eT8iLCJzb2x1dGlvblRleHQiOiJPdXIgR2FsYXh5IGlzIGEgc3BpcmFsIGdhbGF4eSwgd2hpY2ggYXJlIHJvdGF0aW5nIHN0cnVjdHVyZXMgdGhhdCBhcmUgZmxhdCBsaWtlIGEgRFZEIHdoZW4gbG9va2VkIHVwb24gZWRnZS1vbi4iLCJoaW50VGV4dCI6IlNoYXBlIG9mIGEgRGlzay4iLCJhbnN3ZXJzIjpbeyJhbnN3ZXIiOiJTcGlyYWwiLCJjb3JyZWN0Ijp0cnVlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoiQ2lyY2xlIiwiY29ycmVjdCI6ZmFsc2UsInNlbGVjdGVkIjpmYWxzZX0seyJhbnN3ZXIiOiJTcGhlcmUiLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfV19LHsicXVlc3Rpb25TY29yZSI6NTAwLCJxdWVzdGlvblRleHQiOiJOdWNsZWFyIHNpemVzIGFyZSBleHByZXNzZWQgaW4gYSB1bml0IG5hbWVkLi4uIiwic29sdXRpb25UZXh0IjoiQSBGZXJtaSBpcyB0aGUgc21hbGxlc3Qgb2YgdGhyZWUgYXQgMTBeLTE1IG0sIGFsc28gY2FsbGVkIGEgZmVtdG9tZXRlci4iLCJoaW50VGV4dCI6Ikl0IGlzIG5hbWVkIGFmdGVyIHRoZSBudWNsZWFyIHBoeXNpY3MgcGlvbmVlciBFbnJpY28gRmVybWkuIiwiYW5zd2VycyI6W3siYW5zd2VyIjoiRmVybWkiLCJjb3JyZWN0Ijp0cnVlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoiTWluZXIncyBpbmNoIiwiY29ycmVjdCI6ZmFsc2UsInNlbGVjdGVkIjpmYWxzZX0seyJhbnN3ZXIiOiJXYXR0IiwiY29ycmVjdCI6ZmFsc2UsInNlbGVjdGVkIjpmYWxzZX1dfSx7InF1ZXN0aW9uU2NvcmUiOjQ4MCwicXVlc3Rpb25UZXh0IjoiV2hpY2ggaXMgdGhlIGxpZ2h0ZXN0IGVsZW1lbnQ/Iiwic29sdXRpb25UZXh0IjoiSHlkcm9nZW4gaXMgdGhlIGxpZ2h0ZXN0IGVsZW1lbnQgYW5kIGV4aGliaXRzIHRoZSBzaW1wbGVzdCBhdG9taWMgc3RydWN0dXJlLiIsImhpbnRUZXh0IjoiSGFzIGFuIGF0b21pYyBudW1iZXIgb2YgMS4iLCJhbnN3ZXJzIjpbeyJhbnN3ZXIiOiJIeWRyb2dlbiIsImNvcnJlY3QiOnRydWUsInNlbGVjdGVkIjpmYWxzZX0seyJhbnN3ZXIiOiJPeHlnZW4iLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfSx7ImFuc3dlciI6Ik5pdHJvZ2VuIiwiY29ycmVjdCI6ZmFsc2UsInNlbGVjdGVkIjpmYWxzZX1dfV19
+{
+  "questions": [
+    {
+      "questionScore": 200,
+      "questionText": "Spermology is the study of...",
+      "solutionText": "Spermology encompasses the study of seed morphology, characteristics and their interactions with the environment.",
+      "hintText": "This is where plants originated in.",
+      "answers": [
+        {
+          "answer": "Seeds",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Flower",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Men",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 240,
+      "questionText": "Which element has no neutrons in it?",
+      "solutionText": "Hydrogen does not contain a neutron, because its nucleus is so small.",
+      "hintText": "It has an atomic number of 1.",
+      "answers": [
+        {
+          "answer": "Hydrogen",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Oxygen",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Sulfur",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 150,
+      "questionText": "What is the true color of the sky?",
+      "solutionText": "The sky has no true color.",
+      "hintText": "It's almost clear.",
+      "answers": [
+        {
+          "answer": "No color",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "sky blue",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "white",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 150,
+      "questionText": "What are the three subatomic particles in an atom?",
+      "solutionText": "It is smallesr than an atom.",
+      "hintText": "P.E.N.",
+      "answers": [
+        {
+          "answer": "Electrons, Protons and Neutrons",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Protons, Quartz and Electrons",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Atoms, Protons and Electrons",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 300,
+      "questionText": "What do you call a phenomenon where animals sleep in the summer?",
+      "solutionText": "Aestivation is a state of animal dormancy, similar to hibernation, although takes place in the summer.",
+      "hintText": "Many organisms like the snails do not find it comfortable in summer.",
+      "answers": [
+        {
+          "answer": "Aestivation",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Hibernation",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Lethargy",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 230,
+      "questionText": "Electrostatic precipitator is used to control the pollution of...",
+      "solutionText": "The electrostatic precipitators are used for air pollution control.",
+      "hintText": "Dust and Smoke",
+      "answers": [
+        {
+          "answer": "Air",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Soil Erosion",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Oil Spill",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 300,
+      "questionText": "What is the instrument used to measure the force and velocity of the wind?",
+      "solutionText": "Anemometer is an instrument that measures wind speed and wind pressure.",
+      "hintText": "The term is derived from the Greek word anemos which means wind.",
+      "answers": [
+        {
+          "answer": "Anemometer",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Barometer",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Anomometer",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 200,
+      "questionText": "What is the shape of our galaxy?",
+      "solutionText": "Our Galaxy is a spiral galaxy, which are rotating structures that are flat like a DVD when looked upon edge-on.",
+      "hintText": "Shape of a Disk.",
+      "answers": [
+        {
+          "answer": "Spiral",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Circle",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Sphere",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 500,
+      "questionText": "Nuclear sizes are expressed in a unit named...",
+      "solutionText": "A Fermi is the smallest of three at 10^-15 m, also called a femtometer.",
+      "hintText": "It is named after the nuclear physics pioneer Enrico Fermi.",
+      "answers": [
+        {
+          "answer": "Fermi",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Miner's inch",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Watt",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 480,
+      "questionText": "Which is the lightest element?",
+      "solutionText": "Hydrogen is the lightest element and exhibits the simplest atomic structure.",
+      "hintText": "Has an atomic number of 1.",
+      "answers": [
+        {
+          "answer": "Hydrogen",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Oxygen",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Nitrogen",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    }
+  ]
+}

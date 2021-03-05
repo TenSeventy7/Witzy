@@ -1,1 +1,234 @@
-eyJxdWVzdGlvbnMiOlt7InF1ZXN0aW9uU2NvcmUiOjE1MCwicXVlc3Rpb25UZXh0IjoiV2hhdCBmbGllcyB3aXRob3V0IHdpbmdzPyIsInNvbHV0aW9uVGV4dCI6IlRpbWUgZmxpZXMgd2l0aG91dCB5b3Uga25vd2luZyBpdC4iLCJoaW50VGV4dCI6IlRpY2sgdG9jayB0aWNrIHRvY2suIiwiYW5zd2VycyI6W3siYW5zd2VyIjoiVGltZSIsImNvcnJlY3QiOnRydWUsInNlbGVjdGVkIjpmYWxzZX0seyJhbnN3ZXIiOiJCb21iIiwiY29ycmVjdCI6ZmFsc2UsInNlbGVjdGVkIjpmYWxzZX0seyJhbnN3ZXIiOiJXYXRjaCIsImNvcnJlY3QiOmZhbHNlLCJzZWxlY3RlZCI6ZmFsc2V9XX0seyJxdWVzdGlvblNjb3JlIjo4MCwicXVlc3Rpb25UZXh0IjoiV2hlbiBkaWQgQWwtS2h3YXJpem1pIHdyaXRlIHRoZSBib29rIHdoaWNoIGludHJvZHVjZWQgSW5kaWFuIG51bWJlcnMgYW5kIHplcm8gdG8gdGhlIEFyYWIgd29ybGQ_Iiwic29sdXRpb25UZXh0IjoiQWwtS2h3YXJpem1pJ3MgcG9wdWxhcml6aW5nIHRyZWF0aXNlIG9uIGFsZ2VicmEgcHJlc2VudGVkIHRoZSBmaXJzdCBsaW5lYXIgYW5kIHF1YWRyYXRpYyBlcXVhdGlvbnMuIiwiaGludFRleHQiOiJJdCdzIDYwMCBhYm92ZS4iLCJhbnN3ZXJzIjpbeyJhbnN3ZXIiOiI4MjAgQS5ELiIsImNvcnJlY3QiOnRydWUsInNlbGVjdGVkIjpmYWxzZX0seyJhbnN3ZXIiOiI2MDEgQy5FLiIsImNvcnJlY3QiOmZhbHNlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoiNzYzIEMuRS4iLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfV19LHsicXVlc3Rpb25TY29yZSI6MjUwLCJxdWVzdGlvblRleHQiOiJXaG8gd3JvdGUgXHUyMDFjTGliZXIgQWJhY2lcdTIwMWQgd2hpY2ggaW50cm9kdWNlZCB0aGUgSW5kaWFuIG51bWJlciBzeXN0ZW0gYW5kIHplcm8gdG8gRXVyb3BlPyIsInNvbHV0aW9uVGV4dCI6Ikxlb25hcmRvIEZpYm9uYWNjaSdzIGJvb2sgTGliZXIgQWJhY2kgaW50cm9kdWNlZCBBcmFiaWMgbnVtZXJhbHMgdG8gdGhlIExhdGluIHdvcmxkLiIsImhpbnRUZXh0IjoiSXQgaXMgYWxzbyBrbm93biBhcyBMZW9uYXJkbyBCb25hY2NpLCBMZW9uYXJkbyBvZiBQaXNhLiIsImFuc3dlcnMiOlt7ImFuc3dlciI6IkZpYm9uYWNjaSIsImNvcnJlY3QiOnRydWUsInNlbGVjdGVkIjpmYWxzZX0seyJhbnN3ZXIiOiJHZW9yZyBDYW50b3IiLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfSx7ImFuc3dlciI6Ikh5cGF0aWEiLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfV19LHsicXVlc3Rpb25TY29yZSI6Mzc1LCJxdWVzdGlvblRleHQiOiJJdCBpcyBkZWZpbmVkIGFzIHRoZSByYXRpbyBvZiBhIGNpcmNsZSdzIGNpcmN1bWZlcmVuY2UgdG8gaXRzIGRpYW1ldGVyLiIsInNvbHV0aW9uVGV4dCI6IlN1Y2NpbmN0bHksIHBpLCBpcyB0aGUgcmF0aW8gb2YgdGhlIGNpcmN1bWZlcmVuY2Ugb2YgYW55IGNpcmNsZSB0byB0aGUgZGlhbWV0ZXIgb2YgdGhhdCBjaXJjbGUuIiwiaGludFRleHQiOiJFYXN5IGFzIHBpZS4iLCJhbnN3ZXJzIjpbeyJhbnN3ZXIiOiJcdTAzYzAiLCJjb3JyZWN0Ijp0cnVlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoiPCIsImNvcnJlY3QiOmZhbHNlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoiZSIsImNvcnJlY3QiOmZhbHNlLCJzZWxlY3RlZCI6ZmFsc2V9XX0seyJxdWVzdGlvblNjb3JlIjoxNTAsInF1ZXN0aW9uVGV4dCI6IldoaWNoIG9mIHRoZSBmb2xsb3dpbmcgbnVtYmVycyBhcmUgZGl2aXNpYmxlIGJ5IDk_Iiwic29sdXRpb25UZXh0IjoiNyArIDMgKyA4ID0gMTguIDE4IGRpdmlkZWQgYnkgOSBpcyBlcXVhbCB0byAyLiBUaGVyZWZvcmUgNzM4IGlzIGRpdmlzaWJsZSBieSA5LiIsImhpbnRUZXh0IjoiQSBudW1iZXIgaXMgZGl2aXNpYmxlIGJ5IDkgaWYgdGhlIHN1bSBvZiB0aGUgZGlnaXRzIGlzIGRpdmlzaWJsZSBieSA5LiIsImFuc3dlcnMiOlt7ImFuc3dlciI6IjczOCIsImNvcnJlY3QiOnRydWUsInNlbGVjdGVkIjpmYWxzZX0seyJhbnN3ZXIiOiI4NTIiLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfSx7ImFuc3dlciI6IjUwMSIsImNvcnJlY3QiOmZhbHNlLCJzZWxlY3RlZCI6ZmFsc2V9XX0seyJxdWVzdGlvblNjb3JlIjo4MCwicXVlc3Rpb25UZXh0IjoiSG93IG1hbnkgc2lkZXMgZG9lcyBhIGRvZGVjYWdvbiBoYXZlPyIsInNvbHV0aW9uVGV4dCI6IkFsc28ga25vd24gYXMgMTItZ29uLCBhIGRvZGVjYWdvbiBpcyBhbnkgcG9seWdvbiB3aXRoIHR3ZWx2ZSAoeWVzLCB0d2VsdmUhKSBzaWRlcy4iLCJoaW50VGV4dCI6IkZlcnJpcyB3aGVlbHMgaW4gXCJwZXJ5YXNcIiBvZiB0aGUgUGhpbGlwcGluZXMgYXJlIHVzdWFsbHkgZG9kZWNhZ29ucyEiLCJhbnN3ZXJzIjpbeyJhbnN3ZXIiOiIxMiIsImNvcnJlY3QiOnRydWUsInNlbGVjdGVkIjpmYWxzZX0seyJhbnN3ZXIiOiIxMSIsImNvcnJlY3QiOmZhbHNlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoiMTAiLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfV19LHsicXVlc3Rpb25TY29yZSI6MzUwLCJxdWVzdGlvblRleHQiOiJBbnkgbnVtYmVyIGdyZWF0ZXIgdGhhbiB6ZXJvIHRoYXQgaXMgcmFpc2VkIHRvIHplcm8gaXMgZXF1YWwgdG8_Iiwic29sdXRpb25UZXh0IjoiQW55IG51bWJlciByYWlzZWQgdG8gemVybyBwb3dlciBpcyBlcXVhbCB0byBvbmUuIiwiaGludFRleHQiOiJBbGwgbnVtYmVycyBkaXNhcHBlYXJlZCBhbmQgb25seSBvbmUgaGFzIHJlbWFpbmVkLiIsImFuc3dlcnMiOlt7ImFuc3dlciI6Ik9uZSIsImNvcnJlY3QiOnRydWUsInNlbGVjdGVkIjpmYWxzZX0seyJhbnN3ZXIiOiJaZXJvIiwiY29ycmVjdCI6ZmFsc2UsInNlbGVjdGVkIjpmYWxzZX0seyJhbnN3ZXIiOiJUaGUgc2FtZSBudW1iZXIiLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfV19LHsicXVlc3Rpb25TY29yZSI6NTAwLCJxdWVzdGlvblRleHQiOiJFYWNoIHJvdyBpbiBQYXNjYWwncyBUcmlhbmdsZSBzdGFydHMgd2l0aCB3aGF0IG51bWJlcj8iLCJzb2x1dGlvblRleHQiOiJJbiBtYXRoZW1hdGljcywgUGFzY2FsJ3MgdHJpYW5nbGUgaXMgYW4gYXJyYXkgdGhhdCBhcmlzZXMgaW4gcHJvYmFiaWxpdHkgdGhlb3J5LCBhbmQgYWxnZWJyYS4iLCJoaW50VGV4dCI6IkFsbCBvZiB1cyBoYXZlIHRvIHN0YXJ0IGF0IHN0ZXAgMSwgb3IgZWxzZSB3ZSB3b3VsZCBzdHJ1Z2dsZS4iLCJhbnN3ZXJzIjpbeyJhbnN3ZXIiOiIxIiwiY29ycmVjdCI6dHJ1ZSwic2VsZWN0ZWQiOmZhbHNlfSx7ImFuc3dlciI6IjIiLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfSx7ImFuc3dlciI6IjEyIiwiY29ycmVjdCI6ZmFsc2UsInNlbGVjdGVkIjpmYWxzZX1dfSx7InF1ZXN0aW9uU2NvcmUiOjQ3NSwicXVlc3Rpb25UZXh0IjoiV2hvIGludmVudGVkIHRoZSBncmVhdGVyIGFuZCBsZXNzIHRoYW4gc3ltYm9scz8iLCJzb2x1dGlvblRleHQiOiJUaG9tYXMgSGFycmlvdCBpbnZlbnRlZCB0aGUgc2lnbnMgZm9yIGdyZWF0ZXIgdGhhbiAoPikgYW5kIGxlc3MgdGhhbiAoPCkgd2UgdXNlIHRvZGF5LiIsImhpbnRUZXh0IjoiQW4gRW5nbGlzaCBhc3Ryb25vbWVyLCBtYXRoZW1hdGljaWFuLCBldGhub2dyYXBoZXIgYW5kIHRyYW5zbGF0b3Igd2hvIG1hZGUgYWR2YW5jZXMgd2l0aGluIHRoZSBzY2llbnRpZmljIGZpZWxkLiIsImFuc3dlcnMiOlt7ImFuc3dlciI6IlRob21hcyBIYXJyaW90IiwiY29ycmVjdCI6dHJ1ZSwic2VsZWN0ZWQiOmZhbHNlfSx7ImFuc3dlciI6Ikp1YW4gTmVwb211Y2VubyBBZG9ybm8iLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfSx7ImFuc3dlciI6IkpvaG4gSi4gTG91ZCIsImNvcnJlY3QiOmZhbHNlLCJzZWxlY3RlZCI6ZmFsc2V9XX0seyJxdWVzdGlvblNjb3JlIjo2NTAsInF1ZXN0aW9uVGV4dCI6IklmIGEgaGVuIGFuZCBhIGhhbGYgbGF5IGFuIGVnZyBhbmQgYSBoYWxmIGluIGEgZGF5IGFuZCBhIGhhbGYsIGhvdyBtYW55IGVnZ3Mgd2lsbCBoYWxmIGEgZG96ZW4gaGVucyBsYXkgaW4gaGFsZiBhIGRvemVuIGRheXM_Iiwic29sdXRpb25UZXh0IjoiMTYgeCAxLjUgPSAyNC4iLCJoaW50VGV4dCI6IjE2IHggMS41ID0_Pz8iLCJhbnN3ZXJzIjpbeyJhbnN3ZXIiOiIyIGRvemVuIiwiY29ycmVjdCI6dHJ1ZSwic2VsZWN0ZWQiOmZhbHNlfSx7ImFuc3dlciI6IjQgZG96ZW4iLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfSx7ImFuc3dlciI6IjI0IGRvemVuIiwiY29ycmVjdCI6ZmFsc2UsInNlbGVjdGVkIjpmYWxzZX1dfV19
+{
+  "questions": [
+    {
+      "questionScore": 150,
+      "questionText": "What flies without wings?",
+      "solutionText": "Time flies without you knowing it.",
+      "hintText": "Tick tock tick tock.",
+      "answers": [
+        {
+          "answer": "Time",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Bomb",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Watch",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 80,
+      "questionText": "When did Al-Khwarizmi write the book which introduced Indian numbers and zero to the Arab world?",
+      "solutionText": "Al-Khwarizmi's popularizing treatise on algebra presented the first linear and quadratic equations.",
+      "hintText": "It's 600 above.",
+      "answers": [
+        {
+          "answer": "820 A.D.",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "601 C.E.",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "763 C.E.",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 250,
+      "questionText": "Who wrote “Liber Abaci” which introduced the Indian number system and zero to Europe?",
+      "solutionText": "Leonardo Fibonacci's book Liber Abaci introduced Arabic numerals to the Latin world.",
+      "hintText": "It is also known as Leonardo Bonacci, Leonardo of Pisa.",
+      "answers": [
+        {
+          "answer": "Fibonacci",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Georg Cantor",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Hypatia",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 375,
+      "questionText": "It is defined as the ratio of a circle's circumference to its diameter.",
+      "solutionText": "Succinctly, pi, is the ratio of the circumference of any circle to the diameter of that circle.",
+      "hintText": "Easy as pie.",
+      "answers": [
+        {
+          "answer": "π",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "<",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "e",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 150,
+      "questionText": "Which of the following numbers are divisible by 9?",
+      "solutionText": "7 + 3 + 8 = 18. 18 divided by 9 is equal to 2. Therefore 738 is divisible by 9.",
+      "hintText": "A number is divisible by 9 if the sum of the digits is divisible by 9.",
+      "answers": [
+        {
+          "answer": "738",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "852",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "501",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 80,
+      "questionText": "How many sides does a dodecagon have?",
+      "solutionText": "Also known as 12-gon, a dodecagon is any polygon with twelve (yes, twelve!) sides.",
+      "hintText": "Ferris wheels in \"peryas\" of the Philippines are usually dodecagons!",
+      "answers": [
+        {
+          "answer": "12",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "11",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "10",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 350,
+      "questionText": "Any number greater than zero that is raised to zero is equal to?",
+      "solutionText": "Any number raised to zero power is equal to one.",
+      "hintText": "All numbers disappeared and only one has remained.",
+      "answers": [
+        {
+          "answer": "One",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Zero",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "The same number",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 500,
+      "questionText": "Each row in Pascal's Triangle starts with what number?",
+      "solutionText": "In mathematics, Pascal's triangle is an array that arises in probability theory, and algebra.",
+      "hintText": "All of us have to start at step 1, or else we would struggle.",
+      "answers": [
+        {
+          "answer": "1",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "2",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "12",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 475,
+      "questionText": "Who invented the greater and less than symbols?",
+      "solutionText": "Thomas Harriot invented the signs for greater than (>) and less than (<) we use today.",
+      "hintText": "An English astronomer, mathematician, ethnographer and translator who made advances within the scientific field.",
+      "answers": [
+        {
+          "answer": "Thomas Harriot",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Juan Nepomuceno Adorno",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "John J. Loud",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 650,
+      "questionText": "If a hen and a half lay an egg and a half in a day and a half, how many eggs will half a dozen hens lay in half a dozen days?",
+      "solutionText": "16 x 1.5 = 24.",
+      "hintText": "16 x 1.5 =???",
+      "answers": [
+        {
+          "answer": "2 dozen",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "4 dozen",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "24 dozen",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    }
+  ]
+}

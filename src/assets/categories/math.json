@@ -1,1 +1,39 @@
-eyJsZXZlbHMiOlt7ImxldmVsSWQiOjEsImxldmVsRGVzYyI6IkdlbmVyYWwga25vd2xlZGdlIGFuZCBsb2dpYy4iLCJsZXZlbFJlbWFyayI6IkFyZSB5b3UgcmVhZHkgdG8gYmUgYXdlc29tZSBhdCBNYXRoPyIsIm5lZWRlZFN0YXJzIjowLCJsZXZlbFVybCI6Ii9hc3NldHMvY2F0ZWdvcmllcy9tYXRoL2xldmVsXzEuanNvbiJ9LHsibGV2ZWxJZCI6MiwibGV2ZWxEZXNjIjoiSGlzdG9yeSBvZiBNYXRoZW1hdGljcyBhbmQgbG9naWMuIiwibGV2ZWxSZW1hcmsiOiJZb3UncmUgZ2V0dGluZyB0aGVyZSEiLCJuZWVkZWRTdGFycyI6MSwibGV2ZWxVcmwiOiIvYXNzZXRzL2NhdGVnb3JpZXMvbWF0aC9sZXZlbF8yLmpzb24ifSx7ImxldmVsSWQiOjMsImxldmVsRGVzYyI6Ik1hdGgiLCJsZXZlbFJlbWFyayI6Ik1hdGgtdGFzdGljISIsIm5lZWRlZFN0YXJzIjoxLCJsZXZlbFVybCI6Ii9hc3NldHMvY2F0ZWdvcmllcy9tYXRoL2xldmVsXzMuanNvbiJ9LHsibGV2ZWxJZCI6NCwibGV2ZWxEZXNjIjoiTWF0aCIsImxldmVsUmVtYXJrIjoiV2UncmUgZ2V0dGluZyB0aGVyZSEiLCJuZWVkZWRTdGFycyI6MiwibGV2ZWxVcmwiOiIvYXNzZXRzL2NhdGVnb3JpZXMvbWF0aC9sZXZlbF80Lmpzb24ifSx7ImxldmVsSWQiOjUsImxldmVsRGVzYyI6IkFkdmFuY2VkIGFsZ2VicmEuIiwibGV2ZWxSZW1hcmsiOiJMYXN0IHJvdW5kLCBoZXJlIHdlIGdvISIsIm5lZWRlZFN0YXJzIjoyLCJsZXZlbFVybCI6Ii9hc3NldHMvY2F0ZWdvcmllcy9tYXRoL2xldmVsXzUuanNvbiJ9XX0
+{
+  "levels": [
+    {
+      "levelId": 1,
+      "levelDesc": "General knowledge and logic.",
+      "levelRemark": "Are you ready to be awesome at Math?",
+      "neededStars": 0,
+      "levelUrl": "/assets/categories/math/level_1.json"
+    },
+    {
+      "levelId": 2,
+      "levelDesc": "History of Mathematics and logic.",
+      "levelRemark": "You're getting there!",
+      "neededStars": 1,
+      "levelUrl": "/assets/categories/math/level_2.json"
+    },
+    {
+      "levelId": 3,
+      "levelDesc": "Math",
+      "levelRemark": "Math-tastic!",
+      "neededStars": 1,
+      "levelUrl": "/assets/categories/math/level_3.json"
+    },
+    {
+      "levelId": 4,
+      "levelDesc": "Math",
+      "levelRemark": "We're getting there!",
+      "neededStars": 2,
+      "levelUrl": "/assets/categories/math/level_4.json"
+    },
+    {
+      "levelId": 5,
+      "levelDesc": "Advanced algebra.",
+      "levelRemark": "Last round, here we go!",
+      "neededStars": 2,
+      "levelUrl": "/assets/categories/math/level_5.json"
+    }
+  ]
+}

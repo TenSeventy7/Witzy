@@ -1,1 +1,234 @@
-eyJxdWVzdGlvbnMiOlt7InF1ZXN0aW9uU2NvcmUiOjEwMCwicXVlc3Rpb25UZXh0IjoiUmlkZGxlOiBXaGF0IG1vbnRoIG9mIHRoZSB5ZWFyIGhhcyAyOCBkYXlzPyIsInNvbHV0aW9uVGV4dCI6IkFsbCBvZiB0aGUgMTIgbW9udGhzIG9mIHRoZSB5ZWFyIGhhdmUgdGhlIDI4dGggZGF5LiIsImhpbnRUZXh0IjoiRG9lc24ndCBGZWJydWFyeSBlbmQgb24gdGhlIDI4dGg_IiwiYW5zd2VycyI6W3siYW5zd2VyIjoiQWxsIG9mIHRoZSBtb250aHMiLCJjb3JyZWN0Ijp0cnVlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoiSmFudWFyeSIsImNvcnJlY3QiOmZhbHNlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoiRmVicnVhcnkiLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfV19LHsicXVlc3Rpb25TY29yZSI6MjUwLCJxdWVzdGlvblRleHQiOiJXaG8gd2FzIHRoZSAnR3JlYXQgRGlzc2VudGVyJyBpbiB0aGUgUGhpbGlwcGluZXM_Iiwic29sdXRpb25UZXh0IjoiSGUgd2FzIGNhbGxlZCBhcyBzdWNoIGZvciBoaXMgc3RhbmQgYWdhaW5zdCB0aGUgcHJvLUFtZXJpY2FuIHBvbGljeSBvZiBSLiBNYWdzYXlzYXkuIiwiaGludFRleHQiOiJUaGUgQ2hhbXBpb24gb2YgRmlsaXBpbm8gTmF0aW9uYWxpc20uIiwiYW5zd2VycyI6W3siYW5zd2VyIjoiQ2xhcm8gTS4gUmVjdG8iLCJjb3JyZWN0Ijp0cnVlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoiSm9obiBIYXJsYW4iLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfSx7ImFuc3dlciI6IlBvbGluYSBHZW5lcmFjaW9uIiwiY29ycmVjdCI6ZmFsc2UsInNlbGVjdGVkIjpmYWxzZX1dfSx7InF1ZXN0aW9uU2NvcmUiOjE1MCwicXVlc3Rpb25UZXh0IjoiVHdlZWRsZWR1bSBhbmQgVHdlZWRsZWRlZSBhcmUgdHdvIGNoYXJhY3RlcnMgb2Ygd2hpY2ggQ2hpbGRyZW5cdTIwMTlzIGJvb2s_Iiwic29sdXRpb25UZXh0IjoiVHdlZWRsZWRlZSBhbmQgdHdlZWRsZWR1bSBhcmUgYSBwYWlyIG9mIGlkZW50aWNhbCB0d2lucyBpbiBBbGljZSBpbiB0aGUgV29uZGVybGFuZC4iLCJoaW50VGV4dCI6IlR3aW5zIGluc2lkZSBhIHR3aXN0ZWQgd29ybGQuIiwiYW5zd2VycyI6W3siYW5zd2VyIjoiQWxpY2UgaW4gdGhlIFdvbmRlcmxhbmQiLCJjb3JyZWN0Ijp0cnVlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoiVGhlIGNhdCBpbiB0aGUgaGF0IiwiY29ycmVjdCI6ZmFsc2UsInNlbGVjdGVkIjpmYWxzZX0seyJhbnN3ZXIiOiJXaW5uaWUgdGhlIFBvb2giLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfV19LHsicXVlc3Rpb25TY29yZSI6MjAwLCJxdWVzdGlvblRleHQiOiJXaGF0IHRlbXBsZSBvZiBBdGhlbmEgc3RpbGwgc2l0cyB0b2RheSBhdG9wIEF0aGVuc1x1MjAxOSBBY3JvcG9saXM_Iiwic29sdXRpb25UZXh0IjoiQnVpbHQgaW4gdGhlIDV0aCBjZW50dXJ5IEIuQy4sIGl0IHdhcyBhIHN5bWJvbCBwZiB0aGUgcG93ZXIsd2VhbHRoIGFuZCBlbGV2YXRlZCBjdWx0dXJlIG9mIEF0aGVucyIsImhpbnRUZXh0IjoiSXQgd2FzIHRoZSBsYXJnZXN0IGFuZCBtb3N0IGxhdmlzaCB0ZW1wbGUgdGhlIEdyZWVrIG1haW5sYW5kIGhhZCBldmVyIHNlZW4uIiwiYW5zd2VycyI6W3siYW5zd2VyIjoiUGFydGhlbm9uIiwiY29ycmVjdCI6dHJ1ZSwic2VsZWN0ZWQiOmZhbHNlfSx7ImFuc3dlciI6Ik9seW1waWEiLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfSx7ImFuc3dlciI6IlRhaiBNYWhhbCIsImNvcnJlY3QiOmZhbHNlLCJzZWxlY3RlZCI6ZmFsc2V9XX0seyJxdWVzdGlvblNjb3JlIjoyMDAsInF1ZXN0aW9uVGV4dCI6IlJpZGRsZTogSXRcdTIwMTlzIHNvIGZyYWdpbGUgdGhhdCBpZiB5b3Ugc2F5IGl0cyBuYW1lIHlvdSBicmVhayBpdCwgd2hhdCBpcyBpdD8iLCJzb2x1dGlvblRleHQiOiJTaGghIiwiaGludFRleHQiOiJTb21ldGhpbmcgdGhhdCBtb3N0IGV4dHJvdmVydHMgaGF0ZS4iLCJhbnN3ZXJzIjpbeyJhbnN3ZXIiOiJTaWxlbmNlIiwiY29ycmVjdCI6dHJ1ZSwic2VsZWN0ZWQiOmZhbHNlfSx7ImFuc3dlciI6IkhlYXJ0IiwiY29ycmVjdCI6ZmFsc2UsInNlbGVjdGVkIjpmYWxzZX0seyJhbnN3ZXIiOiJTb3VuZCIsImNvcnJlY3QiOmZhbHNlLCJzZWxlY3RlZCI6ZmFsc2V9XX0seyJxdWVzdGlvblNjb3JlIjoyNTAsInF1ZXN0aW9uVGV4dCI6IldobyBpcyB0aGUgbWFpbiBzcGVha2VyIG9mIFwiVGhlIEFsbGVnb3J5IG9mIHRoZSBDYXZlXCI_Iiwic29sdXRpb25UZXh0IjoiQWZ0ZXIgU29jcmF0ZXMgd2FzIGV4ZWN1dGVkLCBQbGF0byB3cm90ZSBhIG51bWJlciBvZiBkaWFsb2d1ZXMgaW4gd2hpY2ggU29jcmF0ZXMgaXMgdGhlIG1haW4gc3BlYWtlci4iLCJoaW50VGV4dCI6IkFjY29yZGluZyB0byBQbGF0bywgaGUgaXMgcG9ydHJheWVkIGFzIGEgXCJtZXNzZW5nZXIgb2YgdGhlIEdvZHNcIi4iLCJhbnN3ZXJzIjpbeyJhbnN3ZXIiOiJTb2NyYXRlcyIsImNvcnJlY3QiOnRydWUsInNlbGVjdGVkIjpmYWxzZX0seyJhbnN3ZXIiOiJQbGF0byIsImNvcnJlY3QiOmZhbHNlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoiQXJpc3RvdGxlIiwiY29ycmVjdCI6ZmFsc2UsInNlbGVjdGVkIjpmYWxzZX1dfSx7InF1ZXN0aW9uU2NvcmUiOjM1MCwicXVlc3Rpb25UZXh0cyI6Ikl0IGlzIHRoZSBwcmluY2lwbGUgb2YgZ2l2aW5nIGEgZ3JvdXAgcHJpb3JpdHkgb3ZlciBlYWNoIGluZGl2aWR1YWwgaW4gaXQuIiwic29sdXRpb25UZXh0IjoiQ29sbGVjdGl2aXNtIGlzIGEgdmFsdWUgdGhhdCBpcyBjaGFyYWN0ZXJpemVkIGJ5IHByaW9yaXRpemF0aW9uIG9mIHRoZSBncm91cCBvdmVyIHRoZSBzZWxmLiIsImhpbnRUZXh0IjoiXCJpbi1ncm91cFwiIiwiYW5zd2VycyI6W3siYW5zd2VyIjoiQ29sbGVjdGl2aXNtIiwiY29ycmVjdCI6dHJ1ZSwic2VsZWN0ZWQiOmZhbHNlfSx7ImFuc3dlciI6IkNvbW11bmlzbSIsImNvcnJlY3QiOmZhbHNlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoiQ29uc2VydmF0aXNtIiwiY29ycmVjdCI6ZmFsc2UsInNlbGVjdGVkIjpmYWxzZX1dfSx7InF1ZXN0aW9uU2NvcmUiOjQwMCwicXVlc3Rpb25UZXh0IjoiV2hhdCBpcyB0aGUgc2Nob2xhcmx5IGFiYnJldmlhdGlvbiBvZiB0aGUgTGF0aW4gcGhyYXNlIFwiYW5kIG90aGVyc1wiPyIsInNvbHV0aW9uVGV4dCI6IkV0IGFsLiBpcyB1c2VkIGluIGFjYWRlbWljIGNpdGF0aW9uIHdoZW4gcmVmZXJyaW5nIHRvIGEgc291cmNlIHdpdGggbXVsdGlwbGUgYXV0aG9ycy4iLCJoaW50VGV4dCI6IllvdSB1c2UgaXQgYSBsb3Qgd2hlbiB5b3UgZG8geW91ciByZXNlYXJjaC4iLCJhbnN3ZXJzIjpbeyJhbnN3ZXIiOiJFdCBhbC4iLCJjb3JyZWN0Ijp0cnVlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoiQWxzby4iLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfSx7ImFuc3dlciI6ImV0Yy4iLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfV19LHsicXVlc3Rpb25TY29yZSI6MzUwLCJxdWVzdGlvblRleHQiOiJXaGljaCBjb3VudHJ5IGF3YXJkcyB0aGUgUHVsaXR6ZXIgUHJpemU_Iiwic29sdXRpb25UZXh0IjoiVGhlIFB1bGl0emVyIHByaXplIGlzIGFuIGF3YXJkIGZvciBqb3VybmFsaXNtLCBsaXRlcmF0dXJlLCBhbmQgbXVzaWNhbCBjb21wb3NpdGlvbiB3aXRoaW4gdGhlIFUuUy4iLCJoaW50VGV4dCI6Ikl0IGVzdGFibGlzaGVkIGluIDE5MTcgYnkgcHJvdmlzaW9ucyBpbiB0aGUgd2lsbCBvZiBKb3NlcGggUHVsaXR6ZXIuIiwiYW5zd2VycyI6W3siYW5zd2VyIjoiVVNBIiwiY29ycmVjdCI6dHJ1ZSwic2VsZWN0ZWQiOmZhbHNlfSx7ImFuc3dlciI6IkZyYW5jZSIsImNvcnJlY3QiOmZhbHNlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoiSXRhbHkiLCJjb3JyZWN0IjpmYWxzZSwic2VsZWN0ZWQiOmZhbHNlfV19LHsicXVlc3Rpb25TY29yZSI6NTAwLCJxdWVzdGlvblRleHQiOiJXaGljaCBvbmUgaXMgdGhlIGZpcnN0IHRyYWdlZHkgcGxheSBvZiBTaGFrZXNwZWFyZT8iLCJzb2x1dGlvblRleHQiOiJUaGUgcGxheSBpcyBvZnRlbiBzZWVuIGFzIFNoYWtlc3BlYXJlXHUyMDE5cyBhdHRlbXB0IHRvIGVtdWxhdGUgdGhlIHZpb2xlbnQgcGxheXMgb2YgaGlzIGNvbnRlbXBvcmFyaWVzLiIsImhpbnRUZXh0IjoiVGhlIHBsYXkgYmVnaW5zIHNob3J0bHkgYWZ0ZXIgdGhlIGRlYXRoIG9mIHRoZSBSb21hbiBlbXBlcm9yLiIsImFuc3dlcnMiOlt7ImFuc3dlciI6IlRpdHVzIEFuZHJvbmljdXMiLCJjb3JyZWN0Ijp0cnVlLCJzZWxlY3RlZCI6ZmFsc2V9LHsiYW5zd2VyIjoiSGFtbGV0IiwiY29ycmVjdCI6ZmFsc2UsInNlbGVjdGVkIjpmYWxzZX0seyJhbnN3ZXIiOiJSb21lbyBhbmQgSnVsaWV0IiwiY29ycmVjdCI6ZmFsc2UsInNlbGVjdGVkIjpmYWxzZX1dfV19
+{
+  "questions": [
+    {
+      "questionScore": 100,
+      "questionText": "Riddle: What month of the year has 28 days?",
+      "solutionText": "All of the 12 months of the year have the 28th day.",
+      "hintText": "Doesn't February end on the 28th?",
+      "answers": [
+        {
+          "answer": "All of the months",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "January",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "February",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 250,
+      "questionText": "Who was the 'Great Dissenter' in the Philippines?",
+      "solutionText": "He was called as such for his stand against the pro-American policy of R. Magsaysay.",
+      "hintText": "The Champion of Filipino Nationalism.",
+      "answers": [
+        {
+          "answer": "Claro M. Recto",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "John Harlan",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Polina Generacion",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 150,
+      "questionText": "Tweedledum and Tweedledee are two characters of which Children’s book?",
+      "solutionText": "Tweedledee and tweedledum are a pair of identical twins in Alice in the Wonderland.",
+      "hintText": "Twins inside a twisted world.",
+      "answers": [
+        {
+          "answer": "Alice in the Wonderland",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "The cat in the hat",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Winnie the Pooh",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 200,
+      "questionText": "What temple of Athena still sits today atop Athens’ Acropolis?",
+      "solutionText": "Built in the 5th century B.C., it was a symbol pf the power,wealth and elevated culture of Athens",
+      "hintText": "It was the largest and most lavish temple the Greek mainland had ever seen.",
+      "answers": [
+        {
+          "answer": "Parthenon",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Olympia",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Taj Mahal",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "questionScore": 200,
+      "questionText": "Riddle: It’s so fragile that if you say its name you break it, what is it?",
+      "solutionText": "Shh!",
+      "hintText": "Something that most extroverts hate.",
+      "answers": [
+        {
+          "answer": "Silence",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Heart",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Sound",
+          "correct": false,
+          "selected": false,
+        }
+      ]
+    },
+    {
+      "questionScore": 250,
+      "questionText": "Who is the main speaker of \"The Allegory of the Cave\"?",
+      "solutionText": "After Socrates was executed, Plato wrote a number of dialogues in which Socrates is the main speaker.",
+      "hintText": "According to Plato, he is portrayed as a \"messenger of the Gods\".",
+      "answers": [
+        {
+          "answer": "Socrates",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Plato",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Aristotle",
+          "correct": false,
+          "selected": false,
+        }
+      ]
+    },
+    {
+      "questionScore": 350,
+      "questionTexts": "It is the principle of giving a group priority over each individual in it.",
+      "solutionText": "Collectivism is a value that is characterized by prioritization of the group over the self.",
+      "hintText": "\"in-group\"",
+      "answers": [
+        {
+          "answer": "Collectivism",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Communism",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Conservatism",
+          "correct": false,
+          "selected": false,
+        }
+      ]
+    },
+    {
+      "questionScore": 400,
+      "questionText": "What is the scholarly abbreviation of the Latin phrase \"and others\"?",
+      "solutionText": "Et al. is used in academic citation when referring to a source with multiple authors.",
+      "hintText": "You use it a lot when you do your research.",
+      "answers": [
+        {
+          "answer": "Et al.",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Also.",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "etc.",
+          "correct": false,
+          "selected": false,
+        }
+      ]
+    },
+    {
+      "questionScore": 350,
+      "questionText": "Which country awards the Pulitzer Prize?",
+      "solutionText": "The Pulitzer prize is an award for journalism, literature, and musical composition within the U.S.",
+      "hintText": "It established in 1917 by provisions in the will of Joseph Pulitzer.",
+      "answers": [
+        {
+          "answer": "USA",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "France",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Italy",
+          "correct": false,
+          "selected": false,
+        }
+      ]
+    },
+    {
+      "questionScore": 500,
+      "questionText": "Which one is the first tragedy play of Shakespeare?",
+      "solutionText": "The play is often seen as Shakespeare’s attempt to emulate the violent plays of his contemporaries.",
+      "hintText": "The play begins shortly after the death of the Roman emperor.",
+      "answers": [
+        {
+          "answer": "Titus Andronicus",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Hamlet",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Romeo and Juliet",
+          "correct": false,
+          "selected": false
+        }
+      ]
+    }
+  ]
+}
