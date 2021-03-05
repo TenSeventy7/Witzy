@@ -59,8 +59,8 @@ export class LevelsPage implements OnInit {
   async ngOnInit() {
     this.buttonClass = ""
     this.categoryId = this.gameData.getGameData('currentCategoryId');
+    this.categoryName = await this.gameData.getGameData('currentCategoryName');
     this.levels = await this.gameData.getPersistentGameData("currentLevelData_"+this.categoryId);
-    this.categoryName = await this.gameData.getPersistentGameData('currentCategoryName');
   }
 
   setCurrentLevelData(index) {
