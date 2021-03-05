@@ -500,6 +500,22 @@ export class GamePage implements OnInit {
       this.showGameModal();
     });
 
+    App.addListener('appStateChange', (state) => {
+      if (!state.isActive) {
+          let taskId = BackgroundTask.beforeExit(async () => {
+            this.modalVisible = true;
+            clearInterval(this.interval);
+            this.modalFade = "fadeIn";
+            this.modalWindowRoll = true;
+
+            this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
+              this.onClickOutsideModal();
+            });
+          }
+          BackgroundTask.finish({taskId});
+        }
+    });
+
     this.modalVisible = true;
     this.isCountdown = true;
 
@@ -509,12 +525,6 @@ export class GamePage implements OnInit {
         this.startCountdown();
       }, 400);
     }, 300);
-
-    App.addListener('appStateChange', (state) => {
-      if (!state.isActive) {
-        this.showGameModal();
-      }
-    });
     
   }
 }
