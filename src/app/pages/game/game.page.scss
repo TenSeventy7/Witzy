@@ -149,7 +149,7 @@ $button-elevation: .2em;
     font-size: 4.25vw;
     font-weight: 500;
 
-    transition: background-color 300ms ease;
+    transition: background-color 400ms ease, box-shadow 400ms ease, border 400ms ease;
 
     &:active {
         top: $button-elevation;
@@ -161,7 +161,7 @@ $button-elevation: .2em;
 .card-color-correct {
     background-color: var(--ion-color-success-tint) !important;
     border: 3px solid var(--ion-color-success) !important;
-    transition: background-color 400ms ease;
+    transition: background-color 400ms ease, border 400ms ease;
 }
 
 .timer-color-correct ion-text {
@@ -196,6 +196,7 @@ $button-elevation: .2em;
     background-color: var(--ion-color-success) !important;
     box-shadow: 0 $button-elevation var(--ion-color-success-shade) !important;
     border: 3px solid var(--ion-color-success-tint) !important;
+    transition: background-color 400ms ease, box-shadow 400ms ease, border 400ms ease;
 
     &:active {
         box-shadow: 0 $button-elevation var(--ion-color-success-shade) !important;
@@ -207,7 +208,7 @@ $button-elevation: .2em;
 .card-color-science {
     background-color: var(--ion-color-science-accent);
     border: 3px solid var(--ion-color-science-accent-shade);
-    transition: background-color 300ms ease;
+    transition: background-color 400ms ease, border 400ms ease;
 }
 
 .button-color-science {
@@ -221,6 +222,7 @@ $button-elevation: .2em;
 .timer-color-science ion-text {
     $color: #058AA6;
     color: darken(saturate($color, 0.38), 16.08);
+    transition: color 400ms ease;
 }
 // Science //
 // ================================== //
@@ -230,7 +232,7 @@ $button-elevation: .2em;
 .card-color-mathematics {
   background-color: var(--ion-color-mathematics-accent);
   border: 3px solid var(--ion-color-mathematics-accent-shade);
-  transition: background-color 300ms ease;
+  transition: background-color 400ms ease, border 400ms ease;
 }
 
 .button-color-mathematics {
@@ -244,6 +246,7 @@ $button-elevation: .2em;
 .timer-color-mathematics ion-text {
   $color: #764EAD;
   color: darken(saturate($color, 0.38), 16.08);
+  transition: color 400ms ease;
 }
 // Mathematics //
 // ================================== //
@@ -253,7 +256,7 @@ $button-elevation: .2em;
 .card-color-literature {
     background-color: var(--ion-color-literature-accent);
     border: 3px solid var(--ion-color-literature-accent-shade);
-    transition: background-color 300ms ease;
+    transition: background-color 400ms ease, border 400ms ease;
 }
 
 .button-color-literature {
@@ -267,6 +270,7 @@ $button-elevation: .2em;
 .timer-color-literature ion-text {
     $color: #6505A6;
     color: darken(saturate($color, 0.38), 16.08);
+    transition: color 400ms ease;
 }
 // Literature //
 // ================================== //
