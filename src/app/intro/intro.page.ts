@@ -58,7 +58,10 @@ export class IntroPage implements OnInit {
     this.tnsLogo = ""
     this.uphLogo = ""
     this.textLogo = ""
-    this.navCtrl.navigateRoot(['/splash'], { animated: false, animationDirection: 'forward' });
+
+    setTimeout(()=> {
+      this.navCtrl.navigateRoot(['/splash'], { animated: false, animationDirection: 'forward' });
+    }, 200);
   }
 
 }
