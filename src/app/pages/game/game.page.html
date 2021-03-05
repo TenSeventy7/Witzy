@@ -55,8 +55,7 @@
         </ion-card-header>
         <ion-card-header class="game-card-question">
           <ion-card-title >
-            <ion-text class="ion-text-center" *ngIf="questionResponseClass == 'normal'">{{ question.questionText }}</ion-text>
-            <ion-text class="ion-text-center" *ngIf="questionResponseClass !== 'normal'">{{ questionResponseString }}</ion-text>
+            <ion-text class="ion-text-center">{{ question.questionText }}</ion-text>
           </ion-card-title>
         </ion-card-header>
         <ion-card-content class="game-card-answers">

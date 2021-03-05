@@ -390,6 +390,7 @@ export class GamePage implements OnInit {
     clearInterval(this.interval);
     
     this.checkStarScore();
+    this.questionData[this.questionIndex].questionText = this.questionResponseString
 
     if (this.audioEnabled) {
       this.randomAudioSelection = Math.floor(Math.random()*this.correctSfxArray.length);
