@@ -63,7 +63,7 @@
             <ion-button class="game-answer-button button-color-{{ currentCategory }}"
             [ngClass]="{ 'button-color-disabled': !answerButtons && !answer.selected,
                          'button-color-correct': !answerButtons && answer.correct,
-                         'button-color-selected' !answerButtons
+                         'button-color-selected': !answerButtons
                        }" mode="ios"
             *ngFor="let answer of question.answers"
             (click)="checkUserAnswer(answer)" [disabled]="!answerButtons && !answer.selected && !answer.correct">{{ answer.answer }}</ion-button>
