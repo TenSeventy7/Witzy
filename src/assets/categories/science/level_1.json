@@ -96,7 +96,7 @@
     {
       "questionScore": 90,
       "questionText": "What is the nearest planet to the sun?",
-      "solutionText": "Even though Mercury is closest to the Sun, the average temperature on it's surface is much less than that of Venus.",
+      "solutionText": "Even though Mercury is closest to the Sun, the average temperature on it's surface is much less than Venus.",
       "hintText": "The planet probably received this name because it moves so quickly across the space.",
       "answers": [
         {

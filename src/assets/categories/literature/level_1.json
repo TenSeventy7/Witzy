@@ -26,7 +26,7 @@
     {
       "questionScore": 100,
       "questionText": "The National Hero of the Philippines",
-      "solutionText": "Jose Rizal became the National Hero of the Philippines not only because of his genius.",
+      "solutionText": "Jose Rizal became the National Hero of the Philippines because of his love for the country.",
       "hintText": "Fought with a pen.",
       "answers": [
         {
@@ -49,8 +49,8 @@
     {
       "questionScore": 70,
       "questionText": "Riddle: What has to be broken before you can use it?",
-      "solutionText": "",
-      "hintText": "The letter A and B is wrong, so the correct answer is either C or D.",
+      "solutionText": "Yum!",
+      "hintText": "It's hard to break, I'm gonna say.",
       "answers": [
         {
           "answer": "Egg",
@@ -72,8 +72,8 @@
     {
       "questionScore": 70,
       "questionText": "Riddle: I’m tall when I’m young, and I’m short when I’m old. What am I?",
-      "solutionText": "",
-      "hintText": "Used In funeral.",
+      "solutionText": "I thought so too!",
+      "hintText": "This is used in a funeral.",
       "answers": [
         {
           "answer": "Candle",
@@ -168,7 +168,7 @@
     {
       "questionScore": 250,
       "questionText": "What is Neil Armstrong's Nationality?",
-      "solutionText": "He was an American astronaut and aeronautical engineer, and the first person to walk on the Moon.",
+      "solutionText": "He was an American astronaut, and the first person to walk on the Moon.",
       "hintText": "He is from Wapakoneta, Ohio, U.S. Cincinnati, Ohio, U.S.",
       "answers": [
         {

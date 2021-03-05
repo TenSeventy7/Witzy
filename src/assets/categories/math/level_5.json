@@ -48,7 +48,7 @@
     },
     {
       "questionScore": 230,
-      "questionText": "If 102y = 25, then 10-y is equal to ______.",
+      "questionText": "If 102y = 25, then 10-y is equal to...",
       "solutionText": "\"102y = 25 = (10y)2 = 52 = 10y = 5 = 1/10y = 1/5 = 10-y = 1/5\"",
       "hintText": "The denominator is 5.",
       "answers": [
@@ -71,7 +71,7 @@
     },
     {
       "questionScore": 530,
-      "questionText": "The value of x + x(xx) when x = 2 is _______.",
+      "questionText": "The value of x + x(xx) when x = 2 is...",
       "solutionText": "\"Put the value of x = 2 in the above expression we get, 2 + 2(22) = 10\"",
       "hintText": "Square root of the answer is 3.16227766017.",
       "answers": [

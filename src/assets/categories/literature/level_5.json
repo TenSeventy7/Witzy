@@ -95,8 +95,8 @@
     {
       "questionScore": 300,
       "questionText": "Riddle: I follow you all the time and copy your every move, but you can't touch me or catch me. What am I?",
-      "solutionText": "When light is present, your shadow is visible and it is the only thing that follows you until the light disappears.",
-      "hintText": "It's color black.",
+      "solutionText": "When light is present, your shadow is visible and it is the only thing that follows you until light disappears.",
+      "hintText": "Look behind you!",
       "answers": [
         {
           "answer": "Shadow",
