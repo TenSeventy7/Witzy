@@ -505,17 +505,23 @@ export class GamePage implements OnInit {
       if (!state.isActive) {
         let taskId = BackgroundTask.beforeExit(async () => {
 
-            this.modalVisible = true;
-            clearInterval(this.interval);
-            this.modalFade = "fadeIn";
-            this.modalWindowRoll = true;
+            await this.modalVisible = true;
+            await clearInterval(this.interval);
+            await this.modalFade = "fadeIn";
+            await this.modalWindowRoll = true;
 
-            this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
-              this.onClickOutsideModal();
-            });
-          BackgroundTask.finish({
-            taskId
+            await this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
+            await this.onClickOutsideModal();
           });
+
+          if (this.musicEnabled) {
+            this.audio.pauseBgm("game-bgm-level-screen");
+          }
+
+          setTimeout(()=> {
+            BackgroundTask.finish({taskId});
+          }, 1500);
+
         });
       }
     });
