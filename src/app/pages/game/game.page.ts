@@ -352,6 +352,7 @@ export class GamePage implements OnInit {
     // Set current question index
     this.questionScore = this.questionData[this.questionIndex].questionScore
     this.randomRemarkSelection = Math.floor(Math.random()*this.correctRemarkArray.length);
+    answer.selected = true
 
     if (this.timeLeft > 5) {
       this.multiplierScore = this.questionScore / 10
