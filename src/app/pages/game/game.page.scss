@@ -190,6 +190,7 @@ $button-elevation: .2em;
 
 .button-color-selected {
     box-shadow: none !important;
+    transition: background-color 400ms ease, box-shadow 400ms ease, border 400ms ease;
 
     &:active {
         box-shadow: none !important;
@@ -198,13 +199,13 @@ $button-elevation: .2em;
 }
 
 .button-color-correct {
-    background-color: var(--ion-color-main) !important;
-    box-shadow: 0 $button-elevation var(--ion-color-main-shade) !important;
-    border: 3px solid var(--ion-color-main-tint) !important;
+    background-color: var(--ion-color-success) !important;
+    box-shadow: 0 $button-elevation var(--ion-color-success-shade) !important;
+    border: 3px solid var(--ion-color-success-tint) !important;
     transition: background-color 400ms ease, box-shadow 400ms ease, border 400ms ease;
 
     &:active {
-        box-shadow: 0 $button-elevation var(--ion-color-main-shade) !important;
+        box-shadow: 0 $button-elevation var(--ion-color-success-shade) !important;
         top: 0 !important;
     }
 }
