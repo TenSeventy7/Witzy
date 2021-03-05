@@ -126,6 +126,7 @@ export class GamePage implements OnInit {
   countdownInterval: any;
   isCountdown: boolean = false;
   isDone: boolean = false;
+  roundStarted: boolean = false;
   interval: any;
 
   // Typed.js
@@ -192,6 +193,7 @@ export class GamePage implements OnInit {
         this.typedJs = true;
         setTimeout(()=> {
           this.answerButtons = true;
+          this.roundStarted = true;
           this.inputEnabled = true;
         }, 250);
       }, 300);
@@ -466,6 +468,7 @@ export class GamePage implements OnInit {
   ionViewWillEnter() {
     // 0. Disable Typed.js Component, as well as input
     this.inputEnabled = false;
+    this.roundStarted = false;
     this.typedJs = false;
     this.isDone = false;
 
