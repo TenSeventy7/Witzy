@@ -41,8 +41,8 @@ export class CategoriesPage implements OnInit {
 
   onClickCategory(index: number) {
     this.selectedCategory = this.categories[index];
-    this.categoryId = this.gameData.getGameData('currentCategoryId')
     this.setCurrentCategoryData(this.selectedCategory);
+    this.categoryId = this.gameData.getGameData('currentCategoryId')
     this.goCategory(this.selectedCategory);
   }
 
