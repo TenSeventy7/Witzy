@@ -2,7 +2,7 @@
   "questions": [
     {
       "questionScore": 150,
-      "questionText": "The modern atomic mass unit is based on_______.",
+      "questionText": "The modern atomic mass unit is based on...",
       "solutionText": "Atomic mass is based on a relative scale and the mass of 12C(carbon twelve) is defined as 12 amu.",
       "hintText": "I saw a Dog in my backyard.",
       "answers": [
@@ -48,8 +48,8 @@
     },
     {
       "questionScore": 200,
-      "questionText": "The type of cell division in which each daughter cell receivesthe same number of chromosomes the parent cell had is....",
-      "solutionText": "Mitosis is a process of nuclear division in eukaryotic cells that occurs when a parent cell divides to produce two identical daughter cells.",
+      "questionText": "This is a process where a single cell divides into two identical daughter cells.",
+      "solutionText": "Mitosis is a process of nuclear division in eukaryotic cells.",
       "hintText": "This stage is where PMAT occur.",
       "answers": [
         {
@@ -71,7 +71,7 @@
     },
     {
       "questionScore": 100,
-      "questionText": "An object that has kinetic energy must be in______.",
+      "questionText": "An object that has kinetic energy must be in...",
       "solutionText": "The kinetic energy of an object is the energy that it possesses due to its motion.",
       "hintText": "An example of this is moving.",
       "answers": [
@@ -95,7 +95,7 @@
     {
       "questionScore": 350,
       "questionText": "How many quarts are in a gallon?",
-      "solutionText": "",
+      "solutionText": "Woah!",
       "hintText": "Multiply the volume value by 4.",
       "answers": [
         {
@@ -119,7 +119,7 @@
       "questionScore": 200,
       "questionText": "What is the outer skeleton of organisms such as spiders and insects called?",
       "solutionText": "An exoskeleton is a hard covering that supports and protects the bodies of some types of animals.",
-      "hintText": "It is referred to as the “Outside Skeleton\".",
+      "hintText": "It is referred to as the \"Outside Skeleton\".",
       "answers": [
         {
           "answer": "Exoskeleton",
@@ -205,15 +205,12 @@
           "correct": false,
           "selected": false
         }
-      ],
-      "answer": "Paprika",
-      "correct": false,
-      "selected": false
+      ]
     },
     {
       "questionScore": 650,
       "questionText": "Who invented the first battery?",
-      "solutionText": "Alessandro Giuseppe Antonio Anastasio Volta was an Italian physicist, chemist, and pioneer of electricity and power whois credited as the inventor of the electric battery and the discoverer of methane.",
+      "solutionText": "Alessandro Giuseppe Antonio Anastasio Volta was the pioneer of electricity and power.",
       "hintText": "Born on February 18, 1745, in the town of Como in Lombardy, Italy.",
       "answers": [
         {

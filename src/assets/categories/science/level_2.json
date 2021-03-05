@@ -71,9 +71,26 @@
     },
     {
       "questionScore": 200,
-      "questionText": "The plant cell structure where photosynthesis takes place is called_______.",
+      "questionText": "The plant cell structure where photosynthesis takes place is called...",
       "solutionText": "The structure contains stacks of membranes called thylakoid membranes. That’s where the light reaction begins.",
-      "hintText": "It contains chlorophyll, a green substance that absorbs light energy for photosynthesis."
+      "hintText": "It contains chlorophyll, a green substance that absorbs light energy for photosynthesis.",
+      "answers": [
+        {
+          "answer": "Chloroplast",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "Chlorophyll",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "Vacuole",
+          "correct": false,
+          "selected": false
+        }
+      ]
     },
     {
       "questionScore": 150,
@@ -169,7 +186,7 @@
     },
     {
       "questionScore": 170,
-      "questionText": "Sound following a flash of lightning is called________.",
+      "questionText": "Sound following a flash of lightning is called...",
       "solutionText": "Thunder or thunder clap always follows lightning because light travels faster than sound.",
       "hintText": "It is caused by the rush of air into space.",
       "answers": [
@@ -192,7 +209,7 @@
     },
     {
       "questionScore": 200,
-      "questionText": "Sound waves cannot travel in a __________.",
+      "questionText": "Sound waves cannot travel in a...",
       "solutionText": "Sound waves are travelling vibrations of particles in media such as air, water or metal.",
       "hintText": "Homonym of a cleaning machine.",
       "answers": [

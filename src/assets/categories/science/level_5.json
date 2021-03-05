@@ -2,7 +2,7 @@
   "questions": [
     {
       "questionScore": 200,
-      "questionText": "Spermology is the study of_____.",
+      "questionText": "Spermology is the study of...",
       "solutionText": "Spermology encompasses the study of seed morphology, characteristics and their interactions with the environment.",
       "hintText": "This is where plants originated in.",
       "answers": [
@@ -117,7 +117,7 @@
     },
     {
       "questionScore": 230,
-      "questionText": "Electrostatic precipitator is used to control the pollution of ___________.",
+      "questionText": "Electrostatic precipitator is used to control the pollution of...",
       "solutionText": "The electrostatic precipitators are used for air pollution control.",
       "hintText": "Dust and Smoke",
       "answers": [
@@ -186,7 +186,7 @@
     },
     {
       "questionScore": 500,
-      "questionText": "Nuclear sizes are expressed in a unit named __________.",
+      "questionText": "Nuclear sizes are expressed in a unit named...",
       "solutionText": "A Fermi is the smallest of three at 10^-15 m, also called a femtometer.",
       "hintText": "It is named after the nuclear physics pioneer Enrico Fermi.",
       "answers": [

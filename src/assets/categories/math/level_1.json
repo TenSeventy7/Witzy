@@ -72,7 +72,7 @@
     {
       "questionScore": 170,
       "questionText": "What is the smallest perfect number?",
-      "solutionText": "Perfect number, a positive integer that is equal to the sum of its proper divisors. The smallest perfect number is 6.",
+      "solutionText": "Perfect number, a positive integer that is equal to the sum of its proper divisors.",
       "hintText": "The sum of 1, 2 and 3.",
       "answers": [
         {
@@ -144,7 +144,7 @@
     {
       "questionScore": 500,
       "questionText": "What type of number is Pi number?",
-      "solutionText": "pi cannot be expressed in the fraction of two integers and has no accurate decimal value, so pi is an irrational number.",
+      "solutionText": "pi cannot be expressed in the fraction of two integers and has no accurate decimal value.",
       "hintText": "It cannot be written as a fraction.",
       "answers": [
         {
@@ -192,7 +192,7 @@
     {
       "questionScore": 50,
       "questionText": "What is the only even prime number?",
-      "solutionText": "\"The unique even prime number 2. All other primes are odd primes. Humorously, that means 2 is the \"\"oddest\"\" prime of all.\"",
+      "solutionText": "All other primes are odd primes. That means 2 is the \"oddest\" prime of all.",
       "hintText": "A prime number can have only 1 and itself as factors.",
       "answers": [
         {
@@ -217,7 +217,7 @@
       "questionScore": 160,
       "questionText": "If I have 6 pencils, and my friend have 3 pencils. How many pencils do I have?",
       "solutionText": "I'm talking about myself so I have 6 pencils.",
-      "hintText": "It is between 7 and 5.",
+      "hintText": "How many pencils do I have, again?",
       "answers": [
         {
           "answer": "6",

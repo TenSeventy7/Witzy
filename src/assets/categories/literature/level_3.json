@@ -3,8 +3,8 @@
     {
       "questionScore": 100,
       "questionText": "Riddle: What month of the year has 28 days?",
-      "solutionText": "All of the 12 months of the year has the 28th day.",
-      "hintText": "The month that have 28 days is not lower than 12 months.",
+      "solutionText": "All of the 12 months of the year have the 28th day.",
+      "hintText": "Doesn't February end on the 28th?",
       "answers": [
         {
           "answer": "All of the months",
@@ -71,7 +71,7 @@
     },
     {
       "questionScore": 200,
-      "questionText": "What temple pf Athena still sits today atop Athens’s  Acropolis?",
+      "questionText": "What temple of Athena still sits today atop Athens’ Acropolis?",
       "solutionText": "Built in the 5th century B.C., it was a symbol pf the power,wealth and elevated culture of Athens",
       "hintText": "It was the largest and most lavish temple the Greek mainland had ever seen.",
       "answers": [
@@ -95,8 +95,8 @@
     {
       "questionScore": 200,
       "questionText": "Riddle: It’s so fragile that if you say its name you break it, what is it?",
-      "solutionText": "I thought so, too!",
-      "hintText": "Something that most extroverts hates.",
+      "solutionText": "Shh!",
+      "hintText": "Something that most extroverts hate.",
       "answers": [
         {
           "answer": "Silence",
@@ -117,9 +117,9 @@
     },
     {
       "questionScore": 250,
-      "questionText": "Who is the main speaker of “ The allegory of the cave”?",
-      "solutionText": "After Socrates  was executed, Plato wrote a number of dialogues in which Socrates is the main speaker.",
-      "hintText": "According to Plato, he is portrayed as a messenger of the Gods.",
+      "questionText": "Who is the main speaker of \"The Allegory of the Cave\"?",
+      "solutionText": "After Socrates was executed, Plato wrote a number of dialogues in which Socrates is the main speaker.",
+      "hintText": "According to Plato, he is portrayed as a \"messenger of the Gods\".",
       "answers": [
         {
           "answer": "Socrates",
@@ -140,9 +140,9 @@
     },
     {
       "questionScore": 350,
-      "questionTexts": "\"The practice or the principle of giving a group priority over each individual in it\" is the definition of…",
+      "questionTexts": "It is the principle of giving a group priority over each individual in it.",
       "solutionText": "Collectivism is a value that is characterized by prioritization of the group over the self.",
-      "hintText": "“in-group”",
+      "hintText": "\"in-group\"",
       "answers": [
         {
           "answer": "Collectivism",
@@ -163,8 +163,8 @@
     },
     {
       "questionScore": 400,
-      "questionText": "What is the scholarly abbreviation of the Latin phrase “ and others ”?",
-      "solutionText": "Et al. is used in academic  citation when referring to a source with multiple authors.",
+      "questionText": "What is the scholarly abbreviation of the Latin phrase \"and others\"?",
+      "solutionText": "Et al. is used in academic citation when referring to a source with multiple authors.",
       "hintText": "You use it a lot when you do your research.",
       "answers": [
         {
@@ -187,7 +187,7 @@
     {
       "questionScore": 350,
       "questionText": "Which country awards the Pulitzer Prize?",
-      "solutionText": "The Pulitzer prize is an award for achievements in journalism, literature, and musical composition within the U.S.",
+      "solutionText": "The Pulitzer prize is an award for journalism, literature, and musical composition within the U.S.",
       "hintText": "It established in 1917 by provisions in the will of Joseph Pulitzer.",
       "answers": [
         {
@@ -210,7 +210,7 @@
     {
       "questionScore": 500,
       "questionText": "Which one is the first tragedy play of Shakespeare?",
-      "solutionText": "The play is often seen as Shakespeare’s  attempt to emulate the violent plays of his contemporaries.",
+      "solutionText": "The play is often seen as Shakespeare’s attempt to emulate the violent plays of his contemporaries.",
       "hintText": "The play begins shortly after the death of the Roman emperor.",
       "answers": [
         {

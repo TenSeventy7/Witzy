@@ -25,8 +25,8 @@
     },
     {
       "questionScore": 80,
-      "questionText": "When did Al-Khwarizmi write the popular book which introduced Indian numbers and zero to the Arab world?",
-      "solutionText": "Al-Khwarizmi's popularizing treatise on algebra presented the first systematic solution of linear and quadratic equations.",
+      "questionText": "When did Al-Khwarizmi write the book which introduced Indian numbers and zero to the Arab world?",
+      "solutionText": "Al-Khwarizmi's popularizing treatise on algebra presented the first linear and quadratic equations.",
       "hintText": "It's 600 above.",
       "answers": [
         {
@@ -49,7 +49,7 @@
     {
       "questionScore": 250,
       "questionText": "Who wrote “Liber Abaci” which introduced the Indian number system and zero to Europe?",
-      "solutionText": "Leonardo Fibonacci brought this system to Europe. His book Liber Abaci introduced Arabic numerals to the Latin world.",
+      "solutionText": "Leonardo Fibonacci's book Liber Abaci introduced Arabic numerals to the Latin world.",
       "hintText": "It is also known as Leonardo Bonacci, Leonardo of Pisa.",
       "answers": [
         {
@@ -95,7 +95,7 @@
     {
       "questionScore": 150,
       "questionText": "Which of the following numbers are divisible by 9?",
-      "solutionText": "The sum of numbers 7, 3, and 8 is equal to 18. 18 divided by 9 is equal to 2. Therefore 738 is divisible by 9.",
+      "solutionText": "7 + 3 + 8 = 18. 18 divided by 9 is equal to 2. Therefore 738 is divisible by 9.",
       "hintText": "A number is divisible by 9 if the sum of the digits is divisible by 9.",
       "answers": [
         {
@@ -119,7 +119,7 @@
       "questionScore": 80,
       "questionText": "How many sides does a dodecagon have?",
       "solutionText": "Also known as 12-gon, a dodecagon is any polygon with twelve (yes, twelve!) sides.",
-      "hintText": "\"Ferris wheels in \"\"peryas\"\" of the Philippines are usually dodecagons!\"",
+      "hintText": "Ferris wheels in \"peryas\" of the Philippines are usually dodecagons!",
       "answers": [
         {
           "answer": "12",
@@ -164,7 +164,7 @@
     {
       "questionScore": 500,
       "questionText": "Each row in Pascal's Triangle starts with what number?",
-      "solutionText": "\"In mathematics, Pascal's triangle is an array of the binomial coefficients that arises in probability theory, combinatorics, and algebra.",
+      "solutionText": "In mathematics, Pascal's triangle is an array that arises in probability theory, and algebra.",
       "hintText": "All of us have to start at step 1, or else we would struggle.",
       "answers": [
         {
@@ -186,8 +186,8 @@
     },
     {
       "questionScore": 475,
-      "questionText": "Who invented the <, > symbol?",
-      "solutionText": "\"Thomas Harriot invented the signs for \"\"greater than\"\" (>) and \"\"less than\"\" (<) in use today.\"",
+      "questionText": "Who invented the greater and less than symbols?",
+      "solutionText": "Thomas Harriot invented the signs for greater than (>) and less than (<) we use today.",
       "hintText": "An English astronomer, mathematician, ethnographer and translator who made advances within the scientific field.",
       "answers": [
         {
@@ -209,7 +209,7 @@
     },
     {
       "questionScore": 650,
-      "questionText": "Riddle: If a hen and a half lay an egg and a half in a day and a half, how many eggs will half a dozen hens lay in half a dozen days?",
+      "questionText": "If a hen and a half lay an egg and a half in a day and a half, how many eggs will half a dozen hens lay in half a dozen days?",
       "solutionText": "16 x 1.5 = 24.",
       "hintText": "16 x 1.5 =???",
       "answers": [

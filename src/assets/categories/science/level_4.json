@@ -2,8 +2,8 @@
   "questions": [
     {
       "questionScore": 150,
-      "questionText": "An insect with a 13 - Chambered heart.",
-      "solutionText": "A cockroach has one heart, but the heart may have as many as 13 chambers. It's heart is tube shaped and it can stop without the cockroach dying.",
+      "questionText": "An insect with a 13-chambered heart.",
+      "solutionText": "A cockroach's heart is tube shaped and it can stop without the cockroach dying.",
       "hintText": "It lives in your house and majority scream at it when they see it.",
       "answers": [
         {
@@ -25,8 +25,9 @@
     },
     {
       "questionScore": 200,
-      "questionText": "The number of moles of solute in one liter of the solution.  solutionText s =Molarity (M) is defined as the number of moles of solute (n) divided by the volume (V) of the solution in liters. It is important to note that the molarity is defined as moles of solute per liter of solution, not moles of solute per liter of solvent.",
-      "hintText": "It has a formula wherein M=n/v.",
+      "questionText": "The number of moles of solute in one liter of the solution.",
+      "solutionText": "Molarity (M) is defined as the ratio of moles of solute per liter of solution.",
+      "hintText": "It has a formula wherein M=m/L.",
       "answers": [
         {
           "answer": "Molarity",
@@ -47,8 +48,8 @@
     },
     {
       "questionScore": 250,
-      "questionText": "Pyorrhea is a disease of the________.",
-      "solutionText": "Pyorrhea is the inflammation of the gums characterized by the discharge of pus and loosening of the teeth; periodontal disease.",
+      "questionText": "Pyorrhea is a disease of the...",
+      "solutionText": "Pyorrhea is the inflammation of the gums characterized by the discharge of pus and loosening of the teeth.",
       "hintText": "This can be found in your mouth.",
       "answers": [
         {
@@ -70,9 +71,9 @@
     },
     {
       "questionScore": 400,
-      "questionText": "Just like DNA polymerase, RNA polymerase performs a template-directed synthesis in the________,",
-      "solutionText": "DNA is always synthesized in the 5'-to-3' direction, meaning that nucleotides direction, meaning that nucleotides are added only to the 3' end of the growing strand.",
-      "hintText": "The shape of the infinity sign is similar to...",
+      "questionText": "Just like DNA polymerase, RNA polymerase performs a template-directed synthesis in the...",
+      "solutionText": "Nucleotides are added only to the 3' end of the growing strand.",
+      "hintText": "The shape of the infinity sign is similar to?",
       "answers": [
         {
           "answer": "5' to 3' direction",
@@ -116,8 +117,8 @@
     },
     {
       "questionScore": 400,
-      "questionText": "What is the scientific name of the material commonly called 'fool’s gold'?",
-      "solutionText": "The mineral pyrite, or iron pyrite, also known as fool's gold. Pyrite's metallic luster and pale brass-yellow hue give it a superficial resemblance to gold, hence the well-known nickname of fool's gold.",
+      "questionText": "What is the scientific name of the material commonly called 'fool's gold'?",
+      "solutionText": "Pyrite's metallic luster and pale brass-yellow hue give it a superficial resemblance to gold.",
       "hintText": "This has the chemical formula \"FeS\".",
       "answers": [
         {
@@ -140,8 +141,8 @@
     {
       "questionScore": 200,
       "questionTexts": "What is the symbol for silver?",
-      "solutionText": "Silver (Ag), chemical element, a white lustrous metal valued for its decorative beauty and electrical conductivity.",
-      "hintText": "The \"Ageis\" band was one of the most popular band in the Philippines.",
+      "solutionText": "Silver (Ag) is a white lustrous metal valued for its decorative beauty and electrical conductivity.",
+      "hintText": "The \"Aegis\" Band was one of the most popular band in the Philippines.",
       "answers": [
         {
           "answer": "Ag",
@@ -163,7 +164,7 @@
     {
       "questionScore": 150,
       "questionText": "In the atmosphere, ultraviolet is mostly absorbed by which of the following?",
-      "solutionText": "As sunlight passes through the atmosphere, all UVC and most UVB is absorbed by ozone, water vapour, oxygen and carbon dioxide.",
+      "solutionText": "As sunlight passes through the atmosphere, all UVC and most UVB is absorbed by the ozone.",
       "hintText": "Protects us from the dangers of UV Light.",
       "answers": [
         {
@@ -185,8 +186,8 @@
     },
     {
       "questionScore": 300,
-      "questionText": "The animal which uses sounds as it 'eyes' is a___________.",
-      "solutionText": "By comparing the outgoing pulse with the returning echoes, the brain and auditory nervous system can produce detailed images of the bat’s surroundings.",
+      "questionText": "The animal which uses sounds as its 'eyes' is a...",
+      "solutionText": "By comparing the outgoing pulse with the returning echoes, the brain can produce detailed images of its surroundings.",
       "hintText": "Vampires can transform into this kind of creature.",
       "answers": [
         {
@@ -209,7 +210,7 @@
     {
       "questionScore": 650,
       "questionText": "Who invented the electron microscope?",
-      "solutionText": "Ernst Ruska at the University of Berlin, along with Max Knoll, combined these characteristics and built the first transmission electron microscope (TEM) in 1931.",
+      "solutionText": "Ernst Ruska, along with Max Knoll, built the first transmission electron microscope in 1931.",
       "hintText": "Germany",
       "answers": [
         {

@@ -95,7 +95,7 @@
     {
       "questionScore": 250,
       "questionText": "Whom did Cleopatra marry after her relationship with Julius Caesar?",
-      "solutionText": "Cleopatra eventually married Mark Antony, but their relationship also spawned a massive scandal in Rome.",
+      "solutionText": "Their relationship spawned a massive scandal in Rome.",
       "hintText": "Her younger brother.",
       "answers": [
         {
@@ -118,7 +118,7 @@
     {
       "questionScore": 300,
       "questionText": "What was the name of the Greek Goddess of Love?",
-      "solutionText": "Aphrodite, ancient Greek goddess of sexual love and beauty, identified with Venus by the Romans.",
+      "solutionText": "Aphrodite, \"Venus\" by the Romans, is the ancient Greek goddess of sexual love and beauty.",
       "hintText": "Born from the white foam produced by the severed genitals of Uranus.",
       "answers": [
         {
@@ -141,8 +141,8 @@
     {
       "questionScore": 250,
       "questionText": "What is the oldest Philippine city?",
-      "solutionText": "\"Cebu City or Cebu is the main center of Christianity in the Philippines. \"",
-      "hintText": "\"Known as the \"\"Queen City of the South\"\".\"",
+      "solutionText": "Cebu City or Cebu is the main center of Christianity in the Philippines.",
+      "hintText": "It is known as the \"Queen City of the South\".",
       "answers": [
         {
           "answer": "Cebu",
@@ -210,7 +210,7 @@
     {
       "questionScore": 500,
       "questionText": "What did Ptolemy think of the shape of the earth?",
-      "solutionText": "Ptolemy accepted Aristotle's idea that the Sun and the planets revolve around a spherical Earth, a geocentric view.",
+      "solutionText": "Ptolemy accepted Aristotle's idea that the Sun and planets revolve around a spherical Earth, a geocentric view.",
       "hintText": "Used in Mathematics to describe a round shape.",
       "answers": [
         {
