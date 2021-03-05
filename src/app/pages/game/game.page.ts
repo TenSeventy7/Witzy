@@ -501,8 +501,10 @@ export class GamePage implements OnInit {
     });
 
     App.addListener('appStateChange', (state) => {
+
       if (!state.isActive) {
-          let taskId = BackgroundTask.beforeExit(async () => {
+        let taskId = BackgroundTask.beforeExit(async () => {
+
             this.modalVisible = true;
             clearInterval(this.interval);
             this.modalFade = "fadeIn";
@@ -511,9 +513,11 @@ export class GamePage implements OnInit {
             this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
               this.onClickOutsideModal();
             });
-          }
-          BackgroundTask.finish({taskId});
-        }
+          BackgroundTask.finish({
+            taskId
+          });
+        });
+      }
     });
 
     this.modalVisible = true;
