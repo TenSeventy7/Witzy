@@ -450,7 +450,7 @@ export class GamePage implements OnInit {
         this.typedJs = true;
 
         if (this.currentCategory == 'mathematics' && this.currentLevel >= 1) {
-          this.timeLeft = this.timeLeft * this.currentLevelTrue;
+          this.timeLeft = 10 * this.currentLevelTrue;
         } else {
           this.timeLeft = 10;
         }
