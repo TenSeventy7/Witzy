@@ -61,7 +61,6 @@ export class LevelsPage implements OnInit {
     this.categoryId = this.gameData.getGameData('currentCategoryId');
     this.levels = await this.gameData.getPersistentGameData("currentLevelData_"+this.categoryId);
     this.categoryName = await this.gameData.getPersistentGameData('currentCategoryName');
-    this.categoryId = this.gameData.getGameData('currentCategoryId');
   }
 
   setCurrentLevelData(index) {
