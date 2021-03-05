@@ -41,6 +41,15 @@ ion-content {
     color: #9f9f9f;
 }
 
+.disable-input {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+}
+
 ion-text {
     display: inline-block;
     padding: 1vh 4vw;
