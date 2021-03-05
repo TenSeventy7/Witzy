@@ -188,6 +188,20 @@ $button-elevation: .2em;
     border: 3px solid var(--ion-color-medium-tint) !important;
 }
 
+.button-color-selected {
+    box-shadow: none !important;
+}
+
+.button-color-correct {
+    background-color: var(--ion-color-success) !important;
+    box-shadow: 0 $button-elevation var(--ion-color-success-shade) !important;
+    border: 3px solid var(--ion-color-success-tint) !important;
+
+    &:active {
+        box-shadow: 0 $button-elevation var(--ion-color-success-shade) !important;
+    }
+}
+
 // ================================== //
 // Science //
 .card-color-science {
