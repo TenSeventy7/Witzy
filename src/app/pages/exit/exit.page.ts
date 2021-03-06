@@ -35,7 +35,7 @@ export class ExitPage implements OnInit {
 
   async ionViewWillEnter() {
     this.musicEnabled = await getGameData("game_music")
-    this.musicEnabled = await getGameData("game_audio")
+    this.audioEnabled = await getGameData("game_audio")
 
     this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
       console.log("Back disabled.")
