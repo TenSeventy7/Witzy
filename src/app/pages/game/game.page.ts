@@ -559,7 +559,7 @@ export class GamePage implements OnInit {
     
   }
 
-  async ionViewDidLeave() {
+  async ionViewWillLeave() {
     if (this.platform.is('capacitor')) {
       await Plugins.KeepAwake.allowSleep();
     }
