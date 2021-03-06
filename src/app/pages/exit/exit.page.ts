@@ -33,15 +33,16 @@ export class ExitPage implements OnInit {
     this.splashProgress = this.splashProgress + 0.025
   }
 
-  ionViewWillEnter() {
+  async ionViewWillEnter() {
+    this.musicEnabled = await getGameData("game_music")
+    this.musicEnabled = await getGameData("game_audio")
+
     this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
       console.log("Back disabled.")
     });
   }
 
   async ionViewDidEnter() {
-    this.musicEnabled = await getGameData("game_music")
-    this.musicEnabled = await getGameData("game_audio")
 
     this.splashProgress = 0.1;
     
@@ -50,14 +51,16 @@ export class ExitPage implements OnInit {
     this.categoryData =  this.recievedcategoryData.categories;
     this.splashProgress = 0.5;
 
-    this.audio.stopBgm("game-bgm-level-screen");
-    this.audio.unloadBgm("game-bgm-level-screen");
+    if (this.musicEnabled) {
+      this.audio.stopBgm("game-bgm-level-screen");
+      this.audio.unloadBgm("game-bgm-level-screen");
+    }
     
     for (var index = 0; index < this.categoryData.length; index++) {
       this.categoryId = this.categoryData[index].categoryId;
       await this.gameData.getGameInfo(this.categoryData[index].jsonUrl, "currentLevelData_"+this.categoryId, true);
       this.completeLevelData = await this.gameData.getUnlockedLevels(this.categoryId);
-      this.gameData.setPersistentGameData("currentLevelData_"+this.categoryId, this.completeLevelData);
+      this.gameData.setGameData("currentLevelData_"+this.categoryId, this.completeLevelData);
       this.splashProgress = this.splashProgress + 0.05
     }
 
