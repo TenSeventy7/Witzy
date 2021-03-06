@@ -276,14 +276,13 @@ export class GamePage implements OnInit {
       this.modalFade = "fadeOut"
       setTimeout(()=> {
         this.modalVisible = false;
+        this.startTimer();
         setTimeout(()=> {
           this.inputEnabled = true;
 
           this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
             this.showGameModal();
           });
-
-          this.startTimer();
         }, 400);
       }, 300);
     }, 400);
@@ -331,7 +330,7 @@ export class GamePage implements OnInit {
   }
 
   startTimer() {
-    if (this.interval == 'none') {
+    if (typeof(this.interval) === 'undefined') {
       this.interval = setInterval(() => {
         if(this.timeLeft > 1) {
           this.timeLeft--;
@@ -348,7 +347,7 @@ export class GamePage implements OnInit {
 
   clearTimer() {
     clearInterval(this.interval);
-    this.interval = 'none';
+    this.interval = undefined;
   }
 
   async checkStarScore() {
