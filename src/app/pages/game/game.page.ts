@@ -510,6 +510,26 @@ export class GamePage implements OnInit {
 
     App.addListener('appStateChange', (state) => {
       if (!state.isActive) {
+
+        this.modalVisible = true;
+        this.inputEnabled = false;
+  
+        if (this.musicEnabled) {
+          this.audio.pauseBgm("game-bgm-level-screen");
+        }
+  
+        clearInterval(this.interval);
+        this.modalFade = "fadeIn";
+        this.modalWindowRoll = true;
+        this.inputEnabled = true;
+        this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
+          this.onClickOutsideModal();
+        });
+
+        setTimeout(()=> {
+          // sleep
+        }, 2000);
+
         let taskId = BackgroundTask.beforeExit(() => {
 
           this.modalVisible = true;
@@ -520,19 +540,12 @@ export class GamePage implements OnInit {
           }
     
           clearInterval(this.interval);
-    
-          setTimeout(()=> {
-            this.modalFade = "fadeIn";
-            setTimeout(()=> {
-              this.modalWindowRoll = true;
-              setTimeout(()=> {
-                this.inputEnabled = true;
-                this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
-                  this.onClickOutsideModal();
-                });
-              }, 400);
-            }, 400);
-          }, 300);
+          this.modalFade = "fadeIn";
+          this.modalWindowRoll = true;
+          this.inputEnabled = true;
+          this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
+            this.onClickOutsideModal();
+          });
 
           setTimeout(()=> {
             BackgroundTask.finish({taskId});
