@@ -10,91 +10,108 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-header class="ion-no-border" mode='md'>
-      <ion-grid class="ion-align-items-center">
-        <ion-row class="ion-align-items-center">
-          <ion-col size="4" class="ion-align-items-center game-detail-question">
+  <ion-grid class="game-container">
+    
+    <ion-row class="game-detail-container">
+      <ion-col>
+        <ion-header class="ion-no-border" mode='md'>
+          <ion-grid class="ion-align-items-center game-detail-container">
+            <ion-row class="ion-align-items-center">
+              <ion-col size="4" class="ion-align-items-center game-detail-question">
+                <ion-grid>
+                  <ion-row class="ion-align-items-left ion-text-center">
+                    <ion-col size="4" class="ion-align-items-center game-detail-icon">
+                      <img src="/assets/ui/icons/question.png" class="unearned-star"/>
+                    </ion-col>
+                    <ion-col size="8" class="ion-align-items-center game-detail-text">
+                      <div class="game-detail-text">
+                        <ion-text>{{ questionIndex + 1 }}</ion-text><ion-text>/{{ questionData.length }}</ion-text>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-col>
+              <ion-col size="4" class="ion-text-center game-detail-score">
+                <ion-badge [ngClass]="{ 'witzy-leveldetail-score-animation': animateScore == true }" mode="ios">{{ currentScore }}</ion-badge>
+              </ion-col>
+              <ion-col size="4" class="ion-text-center game-detail-stars">
+                <img src="/assets/ui/icons/star.png" class="earned-star-{{ currentCategory }}" [ngClass]="{'unearned-star': roundStars < 1}"/>
+                <img src="/assets/ui/icons/star.png" class="earned-star-{{ currentCategory }}" [ngClass]="{'unearned-star': roundStars < 2}"/>
+                <img src="/assets/ui/icons/star.png" class="earned-star-{{ currentCategory }}" [ngClass]="{'unearned-star': roundStars < 3}"/>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+      </ion-header>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row class="game-slides-container">
+      <ion-col>
+        <ion-slides class="game-cards-container">
+          <ion-slide *ngFor="let question of questionData">
+            <div class="game-card card-color-{{ currentCategory }}"
+            [ngClass]="{ 'card-color-correct': questionResponseClass == 'correct',
+                         'card-color-incorrect': questionResponseClass == 'incorrect'
+                        }">
+              <ion-card-header class="game-card-timer timer-color-{{ currentCategory }}"
+              [ngClass]="{ 'timer-color-correct': questionResponseClass == 'correct',
+                           'timer-color-incorrect': questionResponseClass == 'incorrect'
+                          }">
+                <ion-card-title>
+                  <ion-text>{{ timeLeft }}</ion-text>
+                </ion-card-title>
+              </ion-card-header>
+              <ion-card-header class="game-card-question">
+                <ion-card-title >
+                  <ion-text class="ion-text-center">{{ question.questionText }}</ion-text>
+                </ion-card-title>
+              </ion-card-header>
+              <ion-card-content class="game-card-answers">
+                <div class="ion-padding-vertical">
+                  <ion-button class="game-answer-button button-color-{{ currentCategory }}"
+                  [ngClass]="{ 'button-color-disabled': !answerButtons && !answer.selected,
+                               'button-color-correct': !answerButtons && questionResponseClass == 'incorrect' && answer.correct,
+                               'button-color-selected': !answerButtons
+                             }" mode="ios"
+                  *ngFor="let answer of question.answers"
+                  (click)="answerButtons && checkUserAnswer(answer)" [disabled]="!roundStarted || !answerButtons && questionResponseClass == 'correct' && !answer.selected || !answerButtons && questionResponseClass == 'incorrect' && !answer.correct && !answer.selected">{{ answer.answer }}</ion-button>
+                </div>
+              </ion-card-content>
+            </div>
+          </ion-slide>
+        </ion-slides>
+
+      </ion-col>
+    </ion-row>
+    
+    <ion-row class="ion-align-self-end">
+      <ion-col>
+        <div class="game-hint-container">
+          <div class="game-window">
             <ion-grid>
-              <ion-row class="ion-align-items-left ion-text-center">
-                <ion-col size="4" class="ion-align-items-center game-detail-icon">
-                  <img src="/assets/ui/icons/question.png" class="unearned-star"/>
+              <ion-row class="ion-align-items-center">
+                <ion-col size="3" class="ion-align-items-center">
+                  <img src="/assets/ui/icons/alien_talk.png" *ngIf="questionResponseClass == 'incorrect'" />
+                  <img src="/assets/ui/icons/boy.png" *ngIf="questionResponseClass == 'normal'" />
+                  <img src="/assets/ui/icons/boy_talk.png" *ngIf="questionResponseClass == 'correct'" />
                 </ion-col>
-                <ion-col size="8" class="ion-align-items-center game-detail-text">
-                  <div class="game-detail-text">
-                    <ion-text>{{ questionIndex + 1 }}</ion-text><ion-text>/{{ questionData.length }}</ion-text>
-                  </div>
+                <ion-col size="9" class="game-window-text">
+                  <ngx-typed-js [strings]="[ hintText ]" [showCursor]="false" *ngIf="typedJs">
+                    <h1 class="typing"></h1>
+                  </ngx-typed-js>
                 </ion-col>
               </ion-row>
             </ion-grid>
-          </ion-col>
-          <ion-col size="4" class="ion-text-center game-detail-score">
-            <ion-badge [ngClass]="{ 'witzy-leveldetail-score-animation': animateScore == true }" mode="ios">{{ currentScore }}</ion-badge>
-          </ion-col>
-          <ion-col size="4" class="ion-text-center game-detail-stars">
-            <img src="/assets/ui/icons/star.png" class="earned-star-{{ currentCategory }}" [ngClass]="{'unearned-star': roundStars < 1}"/>
-            <img src="/assets/ui/icons/star.png" class="earned-star-{{ currentCategory }}" [ngClass]="{'unearned-star': roundStars < 2}"/>
-            <img src="/assets/ui/icons/star.png" class="earned-star-{{ currentCategory }}" [ngClass]="{'unearned-star': roundStars < 3}"/>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-  </ion-header>
-
-  <ion-slides class="game-cards-container">
-    <ion-slide *ngFor="let question of questionData">
-      <div class="game-card card-color-{{ currentCategory }}"
-      [ngClass]="{ 'card-color-correct': questionResponseClass == 'correct',
-                   'card-color-incorrect': questionResponseClass == 'incorrect'
-                  }">
-        <ion-card-header class="game-card-timer timer-color-{{ currentCategory }}"
-        [ngClass]="{ 'timer-color-correct': questionResponseClass == 'correct',
-                     'timer-color-incorrect': questionResponseClass == 'incorrect'
-                    }">
-          <ion-card-title>
-            <ion-text>{{ timeLeft }}</ion-text>
-          </ion-card-title>
-        </ion-card-header>
-        <ion-card-header class="game-card-question">
-          <ion-card-title >
-            <ion-text class="ion-text-center">{{ question.questionText }}</ion-text>
-          </ion-card-title>
-        </ion-card-header>
-        <ion-card-content class="game-card-answers">
-          <div class="ion-padding-vertical">
-            <ion-button class="game-answer-button button-color-{{ currentCategory }}"
-            [ngClass]="{ 'button-color-disabled': !answerButtons && !answer.selected,
-                         'button-color-correct': !answerButtons && questionResponseClass == 'incorrect' && answer.correct,
-                         'button-color-selected': !answerButtons
-                       }" mode="ios"
-            *ngFor="let answer of question.answers"
-            (click)="answerButtons && checkUserAnswer(answer)" [disabled]="!roundStarted || !answerButtons && questionResponseClass == 'correct' && !answer.selected || !answerButtons && questionResponseClass == 'incorrect' && !answer.correct && !answer.selected">{{ answer.answer }}</ion-button>
           </div>
-        </ion-card-content>
-      </div>
-    </ion-slide>
-  </ion-slides>
+        </div>
+      </ion-col>
+    </ion-row>
 
-  <div class="game-window-container">
-    <div class="game-window">
-      <ion-grid>
-        <ion-row class="ion-align-items-center">
-          <ion-col size="3" class="ion-align-items-center">
-            <img src="/assets/ui/icons/alien_talk.png" *ngIf="questionResponseClass == 'incorrect'" />
-            <img src="/assets/ui/icons/boy.png" *ngIf="questionResponseClass == 'normal'" />
-            <img src="/assets/ui/icons/boy_talk.png" *ngIf="questionResponseClass == 'correct'" />
-          </ion-col>
-          <ion-col size="9" class="game-window-text">
-            <ngx-typed-js [strings]="[ hintText ]" [showCursor]="false" *ngIf="typedJs">
-              <h1 class="typing"></h1>
-            </ngx-typed-js>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </div>
-  </div>
+  </ion-grid>
 </ion-content>
 
 <div class="level-modal" [ngClass]="{ 'level-modal-visible': modalFade == 'fadeIn' }" *ngIf="modalVisible">
-  <div class="level-modal-window" *ngIf="modalWindowRoll" [@slideInOut]>
+  <div class="game-modal-window" *ngIf="modalWindowRoll" [@slideInOut]>
 
     <ion-text>Level {{ currentLevelTrue }}</ion-text>
 
