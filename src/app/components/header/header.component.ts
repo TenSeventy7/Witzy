@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   constructor(private navCtrl: NavController) { }
 
   onClickBack() {
-    this.navCtrl.navigateRoot([this.backLink], { animated: true, animationDirection: 'back' });
+    this.navCtrl.navigateBack([this.backLink], { animated: true });
   }
 
   ngOnInit() {}

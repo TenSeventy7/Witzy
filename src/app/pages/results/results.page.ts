@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Platform } from '@ionic/angular';
-import { Router } from '@angular/router';
+import { NavController, Platform } from '@ionic/angular';
 import { GameDataService } from '../../services/game-data.service';
 import { AudioService } from '../../services/audio.service';
 import { getGameData } from '../../services/game-storage.service';
@@ -51,7 +50,7 @@ export class ResultsPage implements OnInit {
   audioEnabled: any;
 
   randomSelection: number;
-  constructor(private platform: Platform, private router: Router, private audio: AudioService, private scoreData: GameDataService) { }
+  constructor(private platform: Platform, private navCtrl: NavController, private audio: AudioService, private scoreData: GameDataService) { }
 
   ngOnInit() {
     this.gameStars = this.scoreData.getGameData('currentGameStars');
@@ -70,7 +69,7 @@ export class ResultsPage implements OnInit {
       this.audio.playSfx('game-sfx-select');
     }
 
-    this.router.navigate(['/loading']);
+    this.navCtrl.navigateRoot(['/loading'], { animated: false, animationDirection: 'back' });
   }
 
   onClickBack() {
@@ -78,7 +77,7 @@ export class ResultsPage implements OnInit {
       this.audio.playSfx('game-sfx-back');
     }
 
-    this.router.navigate(['/exit']);
+    this.navCtrl.navigateRoot(['/exit'], { animated: false, animationDirection: 'back' });
   }
 
   async ionViewWillEnter() {

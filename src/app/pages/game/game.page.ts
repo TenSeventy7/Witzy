@@ -308,7 +308,7 @@ export class GamePage implements OnInit {
             alert.dismiss();
 
             setTimeout(()=> {
-              this.navCtrl.navigateBack(['/exit']);
+              this.navCtrl.navigateRoot(['/exit'], { animated: true, animationDirection: 'back' });
             }, 400);
           }
         }, {
