@@ -495,14 +495,11 @@ export class GamePage implements OnInit {
   async ionViewDidEnter() {
     this.audioEnabled = await getGameData("game_audio");
     this.musicEnabled = await getGameData("game_music");
-    await Plugins.KeepAwake.keepAwake();
 
-    this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
-      this.showGameModal();
-    });
+    if (this.platform.is('capacitor')) {
+      await Plugins.KeepAwake.keepAwake();
 
     App.addListener('appStateChange', (state) => {
-
       if (!state.isActive) {
 
         this.modalVisible = true;
@@ -544,6 +541,11 @@ export class GamePage implements OnInit {
         });
       }
     });
+  }
+
+    this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
+      this.showGameModal();
+    });
 
     this.modalVisible = true;
     this.isCountdown = true;
@@ -558,6 +560,8 @@ export class GamePage implements OnInit {
   }
 
   async ionViewDidLeave() {
-    await Plugins.KeepAwake.allowSleep();
+    if (this.platform.is('capacitor')) {
+      await Plugins.KeepAwake.allowSleep();
+    }
   }
 }
