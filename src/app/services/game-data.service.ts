@@ -25,6 +25,7 @@ export class GameDataService {
   private response: any;
   private data = [];
   private persistentData = [];
+  private fetched: any;
   private category: any;
   private oldScore: any;
   private oldStars: any;
@@ -75,12 +76,16 @@ export class GameDataService {
 
   getGameInfo(url: string, key: string, persist: boolean) {
     return new Promise<void>((resolve, reject) => {
-      this.http.get(url, {responseType: 'json'}).toPromise().then(
+      this.http.get(url, {responseType: 'text'}).toPromise().then(
         (data) => {
+        this.fetched = data
+        const decodedData = atob(this.fetched);
+        const jsonData = JSON.parse(decodedData)
+
         if (persist) {
-          this.setPersistentGameData(key, data);
+          this.setPersistentGameData(key, jsonData);
         } else {
-          this.setGameData(key, data);
+          this.setGameData(key, jsonData);
         }
         resolve();
       });
