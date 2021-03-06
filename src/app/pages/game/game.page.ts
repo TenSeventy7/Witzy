@@ -181,7 +181,7 @@ export class GamePage implements OnInit {
         this.countdownClass = "bounce"
         this.isDone = true;
         clearInterval(this.countdownInterval);
-        clearInterval(this.interval);
+        this.clearTimer(this.interval);
         this.startLevel()
       }
     },1000)
@@ -222,7 +222,7 @@ export class GamePage implements OnInit {
         this.audio.pauseBgm("game-bgm-level-screen");
       }
 
-      clearInterval(this.interval);
+      this.clearTimer(this.interval);
 
       setTimeout(()=> {
         this.modalFade = "fadeIn";
@@ -346,6 +346,11 @@ export class GamePage implements OnInit {
     }
   }
 
+  clearTimer(id: any) {
+    clearInterval(id);
+    id = null;
+  }
+
   async checkStarScore() {
     // Check if the current score matches our star requirements
     if (this.currentScore >= this.roundStar1Requirement) {
@@ -401,7 +406,7 @@ export class GamePage implements OnInit {
     this.answerButtons = false;
     this.typedJs = false;
     this.userInputOk = false;
-    clearInterval(this.interval);
+    this.clearTimer(this.interval);
     
     this.checkStarScore();
     this.questionData[this.questionIndex].questionText = this.questionResponseString
