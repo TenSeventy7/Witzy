@@ -504,6 +504,24 @@ export class GamePage implements OnInit {
     App.addListener('appStateChange', (state) => {
 
       if (!state.isActive) {
+
+        this.modalVisible = true;
+        clearInterval(this.interval);
+        this.modalFade = "fadeIn";
+        this.modalWindowRoll = true;
+
+        this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
+          this.onClickOutsideModal();
+        });
+
+        if (this.musicEnabled) {
+          this.audio.pauseBgm("game-bgm-level-screen");
+        }
+
+        setTimeout(()=> {
+          console.log("App on standby.");
+        }, 1500);
+
         let taskId = BackgroundTask.beforeExit(async () => {
 
             this.modalVisible = true;
