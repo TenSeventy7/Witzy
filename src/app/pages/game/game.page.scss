@@ -37,16 +37,17 @@ $button-elevation: .2em;
   }
 
   .game-detail-text { 
-    width: 50px;
+    width: 60px;
     margin-top: 1px;
 
     ion-text {
       margin: auto;
       font-family: 'KenVector-Future-Thin';
-      font-size: 16px;
+      font-size: 14px;
 
       &:nth-child(1) {
         font-family: 'KenVector-Future';
+        font-size: 14px;
         font-weight: 700;
       }
     }
@@ -58,7 +59,7 @@ $button-elevation: .2em;
     font-family: "KenVector-Future-Thin";
     line-height: 18px;
     font-size: 16px;
-    width: 4.2rem;
+    width: 4.1rem;
     height: 24px;
 }
 
