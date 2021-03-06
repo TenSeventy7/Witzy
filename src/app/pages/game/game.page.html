@@ -70,7 +70,7 @@
                 <div class="ion-padding-vertical">
                   <ion-button class="game-answer-button button-color-{{ currentCategory }}"
                   [ngClass]="{ 'button-color-disabled': !answerButtons && !answer.selected,
-                               'button-color-correct': !answerButtons && questionResponseClass == 'incorrect' && answer.correct,
+                               'button-color-correct': question.response == 'incorrect' && answer.correct,
                                'button-color-selected': !answerButtons
                              }" mode="ios"
                   *ngFor="let answer of question.answers"
