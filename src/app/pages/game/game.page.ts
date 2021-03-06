@@ -495,6 +495,7 @@ export class GamePage implements OnInit {
   async ionViewDidEnter() {
     this.audioEnabled = await getGameData("game_audio");
     this.musicEnabled = await getGameData("game_music");
+    await Plugins.KeepAwake.keepAwake();
 
     this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
       this.showGameModal();
@@ -536,5 +537,9 @@ export class GamePage implements OnInit {
       }, 400);
     }, 300);
     
+  }
+
+  async ionViewDidLeave() {
+    await Plugins.KeepAwake.allowSleep();
   }
 }
