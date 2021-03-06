@@ -6,6 +6,7 @@ import com.getcapacitor.BridgeActivity;
 import com.getcapacitor.Plugin;
 
 import com.getcapacitor.community.audio.NativeAudio;
+import com.getcapacitor.community.keepawake.KeepAwake;
 
 import java.util.ArrayList;
 
