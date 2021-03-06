@@ -366,9 +366,9 @@ export class GamePage implements OnInit {
     answer.selected = true
 
     if (this.timeLeft > 5) {
-      this.multiplierScore = this.questionScore / (10 * this.currentLevelTrue)
+      this.multiplierScore = this.questionScore / (10 + (5 * (this.currentLevelTrue - 1)))
     } else {  
-      this.multiplierScore = this.questionScore / (7 * this.currentLevelTrue)
+      this.multiplierScore = this.questionScore / (7 + (5 * (this.currentLevelTrue - 1)))
     }
     
     // Only set timer score for Science and Literature, and Math L1
