@@ -82,12 +82,15 @@ export class SplashPage implements OnInit {
     this.splashProgress = 0.9;
 
     setTimeout(()=> {
-      if (this.musicEnabled) {
-        this.audio.playBgm('game-bgm-main-menu');
-      }
 
       this.navCtrl.navigateRoot('/home', { animated: true, animationDirection: 'forward' });
     }, 1000);
+  }
+
+  ionViewWillLeave() {
+    if (this.musicEnabled) {
+      this.audio.playBgm('game-bgm-main-menu');
+    }
   }
 
   ionViewDidLeave() {

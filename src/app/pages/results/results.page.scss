@@ -1,18 +1,20 @@
 $button-elevation: .15em;
 @import "../game/game.page";
 
-.results-window {
-    position: fixed;
-    left: 10%;
-    top: 16vh;
+.results-window-container {
+    height: 65vh;
+}
 
+.results-window {
+    margin: auto;
+    margin-top: 3vh;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-
-    height: 60%;
+    left: 10vw;
+    height: 58vh;
     width: 80%;
     background-color: var(--ion-color-white);
     border: 3px ridge var(--ion-color-white-shade);
@@ -20,7 +22,7 @@ $button-elevation: .15em;
 
     ion-text {
         font-family: "Kenney-Mini";
-        font-size: 18vw;
+        font-size: 4rem;
         margin: 4vw 4vw;
     }
 
@@ -40,6 +42,17 @@ $button-elevation: .15em;
             margin: 0 -4px;
         }
 
+    }
+}
+
+@media (aspect-ratio: 9/16), (aspect-ratio: 375/667) {
+    .results-window {
+      margin-top: 0;
+      height: 63vh;
+    }
+
+    .level-modal-remark {
+        margin: 2vh 2vw;
     }
 }
 

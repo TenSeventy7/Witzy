@@ -163,9 +163,9 @@ ion-content {
     position: absolute;
     float: left;
     left: 5vw;
-    top: 0;
+    top: 0.05rem;
     z-index: 4;
-    height: 36vw;
+    height: 9rem;
 	width: auto;
 }
 
@@ -206,5 +206,17 @@ ion-content {
         vertical-align: middle;
         line-height: 22px;
         font-family: 'Kenney-Mini';
+    }
+}
+
+@media (aspect-ratio: 9/16), (aspect-ratio: 375/667) {
+    .category-button {
+        height: 12vh;
+    }
+
+    .category-icon {
+        left: 8vw;
+        top: 0;
+        height: 34vw;
     }
 }

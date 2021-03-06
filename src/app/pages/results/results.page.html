@@ -1,42 +1,53 @@
 <ion-content>
   <app-header name="Level {{ gameLevel }}" backLink="/home"></app-header>
 
-  <div class="results-window-container">
-    <div class="results-window">
-  
-      <ion-text>{{ gameResult }}</ion-text>
-  
-      <div class="level-modal-stars">
-        <div>
-          <img src="/assets/ui/icons/star.png" class="earned-star-{{ categoryId }}" [ngClass]="{'unearned-star-modal': gameStars == 0}"/>
-          <img src="/assets/ui/icons/star.png" class="earned-star-{{ categoryId }}" [ngClass]="{'unearned-star-modal': gameStars < 2}"/>
-          <img src="/assets/ui/icons/star.png" class="earned-star-{{ categoryId }}" [ngClass]="{'unearned-star-modal': gameStars < 3}"/>
+  <ion-grid>
+    
+    <ion-row class="results-window-container">
+      <ion-col>
+        <div class="results-window">
+      
+          <ion-text>{{ gameResult }}</ion-text>
+      
+          <div class="level-modal-stars">
+            <div>
+              <img src="/assets/ui/icons/star.png" class="earned-star-{{ categoryId }}" [ngClass]="{'unearned-star-modal': gameStars == 0}"/>
+              <img src="/assets/ui/icons/star.png" class="earned-star-{{ categoryId }}" [ngClass]="{'unearned-star-modal': gameStars < 2}"/>
+              <img src="/assets/ui/icons/star.png" class="earned-star-{{ categoryId }}" [ngClass]="{'unearned-star-modal': gameStars < 3}"/>
+            </div>
+          </div>
+    
+          <ion-text class="level-modal-remark" *ngIf="newHighScore !== 'newHighScore'">{{ remarkText }}</ion-text>
+          <ion-text class="level-modal-remark" *ngIf="newHighScore == 'newHighScore'">New high score!</ion-text>
+      
+          <ion-button class="modal-button modal-button-{{ categoryId }}" mode="ios" (click)="onClickPlay()">PLAY AGAIN</ion-button>
+          <ion-button class="modal-button modal-button-{{ categoryId }}" mode="ios" (click)="onClickBack()">BACK</ion-button>
+    
         </div>
-      </div>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row class="ion-align-self-end">
+      <ion-col>
+        <div class="game-window-container">
+          <div class="game-window">
+            <ion-grid>
+              <ion-row class="ion-align-items-center">
+                <ion-col size="3" class="ion-align-items-center">
+                  <img src="/assets/ui/icons/alien_talk.png" />
+                </ion-col>
+                <ion-col size="9" class="game-window-text">
+                  <ngx-typed-js [strings]="[ hintText ]" [showCursor]="false">
+                    <h1 class="typing"></h1>
+                  </ngx-typed-js>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+        </div>
 
-      <ion-text class="level-modal-remark" *ngIf="newHighScore == 'noNewHighScore'">{{ remarkText }}</ion-text>
-      <ion-text class="level-modal-remark" *ngIf="newHighScore == 'newHighScore'">New high score!</ion-text>
-  
-      <ion-button class="modal-button modal-button-{{ categoryId }}" mode="ios" (click)="onClickPlay()">PLAY AGAIN</ion-button>
-      <ion-button class="modal-button modal-button-{{ categoryId }}" mode="ios" (click)="onClickBack()">BACK</ion-button>
+      </ion-col>
+    </ion-row>
 
-    </div>
-  </div>
-
-  <div class="game-window-container">
-    <div class="game-window">
-      <ion-grid>
-        <ion-row class="ion-align-items-center">
-          <ion-col size="3" class="ion-align-items-center">
-            <img src="/assets/ui/icons/alien_talk.png" />
-          </ion-col>
-          <ion-col size="9" class="game-window-text">
-            <ngx-typed-js [strings]="[ hintText ]" [showCursor]="false">
-              <h1 class="typing"></h1>
-            </ngx-typed-js>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </div>
-  </div>
+  </ion-grid>
 </ion-content>
