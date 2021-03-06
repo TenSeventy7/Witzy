@@ -59,7 +59,7 @@ export class SplashPage implements OnInit {
     this.preloadAudio('game-sfx-select', '/assets/ui/sounds/select.ogg');
     this.preloadAudio('game-sfx-toggle', '/assets/ui/sounds/toggle.ogg');
 
-    await this.gameData.getGameInfo('/assets/categories/categories.json', 'categoryData', true);
+    await this.gameData.getGameInfo('/assets/categories/categories.wtdb', 'categoryData', true);
     this.receivedcategoryData =  await this.gameData.getPersistentGameData('categoryData');
     
     this.categoryData =  this.receivedcategoryData.categories;
