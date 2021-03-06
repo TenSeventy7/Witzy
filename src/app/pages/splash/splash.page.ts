@@ -75,7 +75,7 @@ export class SplashPage implements OnInit {
       await this.gameData.getGameInfo(this.categoryData[index].jsonUrl, "currentLevelData_"+this.categoryId, true);
       this.completeLevelData = await this.gameData.getUnlockedLevels(this.categoryId);
       this.preloadBgm('game-bgm-current-category-'+this.categoryId, this.categoryMusic);
-      this.gameData.setPersistentGameData("currentLevelData_"+this.categoryId, this.completeLevelData);
+      this.gameData.setGameData("currentLevelData_"+this.categoryId, this.completeLevelData);
       this.splashProgress = this.splashProgress + 0.05
     }
 
