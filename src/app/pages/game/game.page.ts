@@ -192,7 +192,7 @@ export class GamePage implements OnInit {
           this.audio.playBgm("game-bgm-level-screen");
         }
         
-        //this.startTimer();
+        this.startTimer();
         this.typedJs = true;
         setTimeout(()=> {
           this.answerButtons = true;
