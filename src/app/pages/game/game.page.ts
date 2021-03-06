@@ -331,6 +331,7 @@ export class GamePage implements OnInit {
   }
 
   startTimer() {
+    if (!this.interval) {
       this.interval = setInterval(() => {
         if(this.timeLeft > 1) {
           this.timeLeft--;
@@ -342,6 +343,7 @@ export class GamePage implements OnInit {
           this.questionResponse()
         }
       }, 1000)
+    }
   }
 
   async checkStarScore() {
