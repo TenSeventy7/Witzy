@@ -397,6 +397,7 @@ export class GamePage implements OnInit {
     
     this.checkStarScore();
     this.questionData[this.questionIndex].questionText = this.questionResponseString
+    this.questionData[this.questionIndex].response = this.questionResponseClass
 
     if (this.audioEnabled) {
       this.randomAudioSelection = Math.floor(Math.random()*this.correctSfxArray.length);
