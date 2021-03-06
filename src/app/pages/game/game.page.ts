@@ -154,6 +154,12 @@ export class GamePage implements OnInit {
     this.currentLevel = this.gameData.getGameData('currentLevelNumber');
     this.currentLevelTrue = this.gameData.getGameData('currentLevelNumberTrue');
     this.hintText = this.questionData[this.questionIndex].hintText;
+
+    if (this.currentCategory == 'mathematics' && this.currentLevel >= 1) {
+      this.timeLeft = 10 * this.currentLevelTrue;
+    } else {
+      this.timeLeft = 10 + (5 * this.currentLevelTrue);
+    }
   }
 
   startCountdown() {
@@ -360,9 +366,9 @@ export class GamePage implements OnInit {
     answer.selected = true
 
     if (this.timeLeft > 5) {
-      this.multiplierScore = this.questionScore / 10
+      this.multiplierScore = this.questionScore / (10 * this.currentLevelTrue)
     } else {  
-      this.multiplierScore = this.questionScore / 8
+      this.multiplierScore = this.questionScore / (7 * this.currentLevelTrue)
     }
     
     // Only set timer score for Science and Literature, and Math L1
@@ -456,7 +462,7 @@ export class GamePage implements OnInit {
         if (this.currentCategory == 'mathematics' && this.currentLevel >= 1) {
           this.timeLeft = 10 * this.currentLevelTrue;
         } else {
-          this.timeLeft = 10;
+          this.timeLeft = 10 + (5 * this.currentLevelTrue);
         }
         
         this.startTimer();
@@ -489,7 +495,9 @@ export class GamePage implements OnInit {
     this.questionResponseClass = "normal";
 
     if (this.currentCategory == 'mathematics' && this.currentLevel >= 1) {
-      this.timeLeft = this.timeLeft * this.currentLevelTrue;
+      this.timeLeft = 10 * this.currentLevelTrue;
+    } else {
+      this.timeLeft = 10 + (5 * this.currentLevelTrue);
     }
   }
 
@@ -512,7 +520,7 @@ export class GamePage implements OnInit {
         let taskId = BackgroundTask.beforeExit(async () => {
 
           this.showGameModal();
-          
+
           setTimeout(()=> {
             BackgroundTask.finish({taskId});
           }, 1500);
