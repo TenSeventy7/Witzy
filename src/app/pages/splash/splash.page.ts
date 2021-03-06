@@ -3,6 +3,7 @@ import { NavController, Platform } from '@ionic/angular';
 import { AudioService } from '../../services/audio.service';
 import { GameDataService } from '../../services/game-data.service';
 import { getGameData } from '../../services/game-storage.service';
+import { Plugins } from '@capacitor/core';
 
 @Component({
   selector: 'app-splash',
@@ -67,6 +68,10 @@ export class SplashPage implements OnInit {
     if (await getGameData("game_music") == null || await getGameData("game_audio") == null ) {
       this.audio.setBgmState(true);
       this.audio.setSfxState(true);
+    }
+
+    if (this.platform.is('capacitor')) {
+      await Plugins.KeepAwake.keepAwake();
     }
     
     for (var index = 0; index < this.categoryData.length; index++) {
