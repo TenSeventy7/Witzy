@@ -510,20 +510,11 @@ export class GamePage implements OnInit {
 
     if (this.platform.is('capacitor')) {
       this.platform.pause.subscribe(async () => {
+        this.showGameModal();
+    });
 
-        this.modalVisible = true;
-        this.modalFade = "fadeIn";
-        this.modalWindowRoll = true;
-  
-        if (this.musicEnabled) {
-          this.audio.pauseBgm("game-bgm-level-screen");
-        }
-        
-        this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
-          this.onClickOutsideModal();
-        });
-  
-        this.clearTimer();
+    this.platform.resume.subscribe(async () => {
+      this.showGameModal();
     });
   }
 
