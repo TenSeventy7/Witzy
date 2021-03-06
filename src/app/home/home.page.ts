@@ -63,7 +63,7 @@ export class HomePage implements OnInit {
       this.audio.playSfx('game-sfx-select');
     }
 
-    this.navCtrl.navigateRoot(['/categories'], { animated: true, animationDirection: 'forward' });
+    this.navCtrl.navigateForward(['/categories'], { animated: true });
   }
 
   async goAbout() {
@@ -71,7 +71,7 @@ export class HomePage implements OnInit {
       this.audio.playSfx('game-sfx-select');
     }
 
-    this.navCtrl.navigateRoot(['/about'], { animated: true, animationDirection: 'forward' });
+    this.navCtrl.navigateForward(['/about'], { animated: true });
   }
 
   toggleMusic() {

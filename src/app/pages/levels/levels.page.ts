@@ -155,7 +155,7 @@ export class LevelsPage implements OnInit {
     }, 400);
 
     this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
-      this.navCtrl.navigateRoot(['/categories'], { animated: true, animationDirection: 'back' });
+      this.navCtrl.navigateBack(['/categories'], { animated: true });
     });
   }
 

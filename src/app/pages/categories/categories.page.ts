@@ -30,7 +30,7 @@ export class CategoriesPage implements OnInit {
 
   goCategory(url) {
     if (url.isAvailable) {
-      this.navCtrl.navigateRoot(['/levels'], { animated: true, animationDirection: 'forward' });
+      this.navCtrl.navigateForward(['/levels'], { animated: true });
     }
   }
 
