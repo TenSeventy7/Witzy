@@ -1,14 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NavController, Platform, AlertController } from '@ionic/angular';
-import { Plugins } from '@capacitor/core';
 import { trigger, transition, animate, style } from '@angular/animations'
 
 import { NgxTypedJsComponent } from 'ngx-typed-js';
 import { AudioService } from '../../services/audio.service';
 import { GameDataService } from '../../services/game-data.service';
 import { getGameData } from '../../services/game-storage.service';
-
-const { App, BackgroundTask } = Plugins;
 
 @Component({
   selector: 'app-game',
@@ -512,37 +509,21 @@ export class GamePage implements OnInit {
     this.musicEnabled = await getGameData("game_music");
 
     if (this.platform.is('capacitor')) {
-      await Plugins.KeepAwake.keepAwake();
+      this.platform.pause.subscribe(async () => {
 
-    App.addListener('appStateChange', (state) => {
-      if (!state.isActive) {
-        let taskId = BackgroundTask.beforeExit(() => {
-
-          this.modalVisible = true;
-          this.modalFade = "fadeIn";
-          this.modalWindowRoll = true;
-    
-          if (this.musicEnabled) {
-            this.audio.pauseBgm("game-bgm-level-screen");
-          }
-          
-          this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
-            this.onClickOutsideModal();
-          });
-    
-          this.clearTimer();
-
-          setTimeout(()=> {
-            // sleep
-          }, 2000);
+        this.modalVisible = true;
+        this.modalFade = "fadeIn";
+        this.modalWindowRoll = true;
+  
+        if (this.musicEnabled) {
+          this.audio.pauseBgm("game-bgm-level-screen");
+        }
+        
+        this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
+          this.onClickOutsideModal();
         });
-
-        setTimeout(()=> {
-          BackgroundTask.finish({taskId});
-        }, 5000);
-
-      }
-
+  
+        this.clearTimer();
     });
   }
 
@@ -560,11 +541,5 @@ export class GamePage implements OnInit {
       }, 400);
     }, 300);
     
-  }
-
-  async ionViewWillLeave() {
-    if (this.platform.is('capacitor')) {
-      await Plugins.KeepAwake.allowSleep();
-    }
   }
 }
