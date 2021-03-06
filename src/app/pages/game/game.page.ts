@@ -526,10 +526,6 @@ export class GamePage implements OnInit {
           this.onClickOutsideModal();
         });
 
-        setTimeout(()=> {
-          // sleep
-        }, 2000);
-
         let taskId = BackgroundTask.beforeExit(() => {
 
           this.modalVisible = true;
@@ -546,12 +542,15 @@ export class GamePage implements OnInit {
           this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
             this.onClickOutsideModal();
           });
-
-          setTimeout(()=> {
-            BackgroundTask.finish({taskId});
-          }, 1500);
-
         });
+
+        setTimeout(()=> {
+          // sleep
+        }, 2000);
+
+        setTimeout(()=> {
+          BackgroundTask.finish({taskId});
+        }, 3500);
       }
     });
   }
