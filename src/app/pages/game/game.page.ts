@@ -517,48 +517,33 @@ export class GamePage implements OnInit {
 
     App.addListener('appStateChange', (state) => {
       if (!state.isActive) {
-
-        this.modalVisible = true;
-        this.inputEnabled = false;
-  
-        if (this.musicEnabled) {
-          this.audio.pauseBgm("game-bgm-level-screen");
-        }
-  
-        clearInterval(this.interval);
-        this.modalFade = "fadeIn";
-        this.modalWindowRoll = true;
-        this.inputEnabled = true;
-        this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
-          this.onClickOutsideModal();
-        });
-
         let taskId = BackgroundTask.beforeExit(() => {
 
           this.modalVisible = true;
-          this.inputEnabled = false;
+          this.modalFade = "fadeIn";
+          this.modalWindowRoll = true;
     
           if (this.musicEnabled) {
             this.audio.pauseBgm("game-bgm-level-screen");
           }
-    
-          clearInterval(this.interval);
-          this.modalFade = "fadeIn";
-          this.modalWindowRoll = true;
-          this.inputEnabled = true;
+          
           this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
             this.onClickOutsideModal();
           });
+    
+          this.clearTimer(this.interval);
+
+          setTimeout(()=> {
+            // sleep
+          }, 2000);
         });
 
         setTimeout(()=> {
-          // sleep
-        }, 2000);
-
-        setTimeout(()=> {
           BackgroundTask.finish({taskId});
-        }, 3500);
+        }, 5000);
+
       }
+
     });
   }
 
