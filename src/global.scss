@@ -84,5 +84,9 @@ ion-alert {
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+ion-button {
+    --background-focused: transparent;
+}
+
 @import "./theme/witzy";
 @import "./theme/witzy/witzy";
