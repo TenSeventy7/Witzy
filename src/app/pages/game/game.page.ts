@@ -158,7 +158,7 @@ export class GamePage implements OnInit {
     if (this.currentCategory == 'mathematics' && this.currentLevel >= 1) {
       this.timeLeft = 10 * this.currentLevelTrue;
     } else {
-      this.timeLeft = 10 + (5 * this.currentLevelTrue);
+      this.timeLeft = 10 + (5 * (this.currentLevelTrue - 1));
     }
   }
 
@@ -462,7 +462,7 @@ export class GamePage implements OnInit {
         if (this.currentCategory == 'mathematics' && this.currentLevel >= 1) {
           this.timeLeft = 10 * this.currentLevelTrue;
         } else {
-          this.timeLeft = 10 + (5 * this.currentLevelTrue);
+          this.timeLeft = 10 + (5 * (this.currentLevelTrue - 1));
         }
         
         this.startTimer();
@@ -497,7 +497,7 @@ export class GamePage implements OnInit {
     if (this.currentCategory == 'mathematics' && this.currentLevel >= 1) {
       this.timeLeft = 10 * this.currentLevelTrue;
     } else {
-      this.timeLeft = 10 + (5 * this.currentLevelTrue);
+      this.timeLeft = 10 + (5 * (this.currentLevelTrue - 1));
     }
   }
 
