@@ -7,6 +7,9 @@ import { AudioService } from '../../services/audio.service';
 import { GameDataService } from '../../services/game-data.service';
 import { getGameData } from '../../services/game-storage.service';
 
+import { Plugins, AppState } from '@capacitor/core';
+const { App } = Plugins;
+
 @Component({
   selector: 'app-game',
   templateUrl: './game.page.html',
@@ -509,14 +512,21 @@ export class GamePage implements OnInit {
     this.musicEnabled = await getGameData("game_music");
 
     if (this.platform.is('capacitor')) {
-      this.platform.pause.subscribe(async () => {
-        this.showGameModal();
-    });
 
-    this.platform.resume.subscribe(async () => {
-      this.showGameModal();
-    });
-  }
+      App.addListener('appStateChange', (state: AppState) => {
+          if (!state.isActive) {
+            this.showGameModal();
+
+            setTimeout(()=> {
+              this.showGameModal();
+            }, 1200);
+          }
+      });
+
+      App.addListener('appRestoredResult', (data: any) => {
+        this.showGameModal();
+      });
+    }
 
     this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
       this.showGameModal();
