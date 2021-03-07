@@ -3,6 +3,7 @@ import { NavController, Platform } from '@ionic/angular';
 import { AudioService } from '../../services/audio.service';
 import { GameDataService } from '../../services/game-data.service';
 import { getGameData } from '../../services/game-storage.service';
+
 import { Plugins } from '@capacitor/core';
 
 @Component({
@@ -68,6 +69,8 @@ export class SplashPage implements OnInit {
     if (await getGameData("game_music") == null || await getGameData("game_audio") == null ) {
       this.audio.setBgmState(true);
       this.audio.setSfxState(true);
+      this.musicEnabled = true
+      this.audioEnabled = true
     }
 
     if (this.platform.is('capacitor')) {
