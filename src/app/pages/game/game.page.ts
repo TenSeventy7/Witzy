@@ -120,6 +120,7 @@ export class GamePage implements OnInit {
   questionResponseClass: any;
   questionResponseString: string;
   countdownClass: any;
+  inactive: boolean;
 
   id: number = 0
   questionData: any
@@ -515,16 +516,41 @@ export class GamePage implements OnInit {
 
       App.addListener('appStateChange', (state: AppState) => {
           if (!state.isActive) {
-            this.showGameModal();
+            this.modalVisible = true;
+            this.modalFade = "fadeIn";
+            this.modalWindowRoll = true;
+            this.inputEnabled = true;
 
             setTimeout(()=> {
-              this.showGameModal();
-            }, 1200);
+              this.clearTimer();
+            }, 750);
+
+          } else if (state.isActive && this.inactive) {
+            this.modalVisible = true;
+            this.modalFade = "fadeIn";
+            this.modalWindowRoll = true;
+            this.inputEnabled = true;
           }
       });
 
       App.addListener('appRestoredResult', (data: any) => {
-        this.showGameModal();
+        this.modalVisible = true;
+        this.modalFade = "fadeIn";
+        this.modalWindowRoll = true;
+        this.inputEnabled = true;
+
+        setTimeout(()=> {
+          if (this.musicEnabled) {
+            this.audio.pauseBgm("game-bgm-level-screen");
+          }
+
+          setTimeout(()=> {
+            this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
+              this.onClickOutsideModal();
+            });
+          }, 1000);
+
+        }, 1000);
       });
     }
 
