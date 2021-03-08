@@ -115,11 +115,21 @@ export class LevelsPage implements OnInit {
   }
 
   onClickPlayButton(){
+    this.modalWindowRoll = false;
+    this.inputEnabled = false;
+    this.modalVisible = false;
+
     if (this.audioEnabled) {
       this.audio.playSfx('game-sfx-select');
     }
+    
+    if (this.musicEnabled) {
+      this.audio.stopBgm("game-bgm-current-category-"+this.categoryId);
+    }
 
-    this.navCtrl.navigateRoot(['/loading'], { animated: true, animationDirection: 'forward' });
+    setTimeout(()=> {
+        this.navCtrl.navigateRoot(['/loading'], { animated: true, animationDirection: 'forward' });
+    }, 400);
   }
 
   async onClickLevel(levelIndex: number) {
