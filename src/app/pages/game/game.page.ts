@@ -219,10 +219,6 @@ export class GamePage implements OnInit {
         this.audio.playSfx('game-sfx-alert');
       }
 
-      if (this.musicEnabled) {
-        this.audio.pauseBgm("game-bgm-level-screen");
-      }
-
       this.clearTimer();
 
       setTimeout(()=> {
@@ -244,9 +240,11 @@ export class GamePage implements OnInit {
     if (this.musicEnabled) {
       this.musicEnabled = false;
       this.audio.setBgmState(false);
+      this.audio.pauseBgm("game-bgm-level-screen");
     } else {
       this.musicEnabled = true;
       this.audio.setBgmState(true);
+      this.audio.playBgm("game-bgm-level-screen");
     }
   }
 
@@ -307,6 +305,10 @@ export class GamePage implements OnInit {
 
             if (this.audioEnabled) {
               this.audio.playSfx('game-sfx-back');
+            }
+
+            if (this.musicEnabled) {
+              this.audio.stopBgm("game-bgm-level-screen");
             }
 
             alert.dismiss();
@@ -437,7 +439,10 @@ export class GamePage implements OnInit {
     if (this.questionIndex >= this.questionData.length - 1) {
       this.questionIndex = 0
 
-      this.audio.stopBgm("game-bgm-level-screen");
+      if (this.musicEnabled) {
+        this.audio.stopBgm("game-bgm-level-screen");
+      }
+      
       this.gameData.setScoreInfo(this.currentCategory, this.currentLevel, this.currentScore)
       this.gameData.setStarInfo(this.currentCategory, this.currentLevel, this.roundStars)
     
@@ -525,10 +530,7 @@ export class GamePage implements OnInit {
             this.inputEnabled = true;
 
             setTimeout(()=> {
-              this.audio.pauseBgm("game-bgm-level-screen");
-              setTimeout(()=> {
-                this.clearTimer();
-              }, 750);
+              this.clearTimer();
             }, 750);
 
           } else if (state.isActive && this.inactive) {
@@ -546,14 +548,11 @@ export class GamePage implements OnInit {
         this.inputEnabled = true;
 
         setTimeout(()=> {
-          this.audio.pauseBgm("game-bgm-level-screen");
-
           setTimeout(()=> {
             this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
               this.onClickOutsideModal();
             });
           }, 1000);
-
         }, 1000);
       });
     }
