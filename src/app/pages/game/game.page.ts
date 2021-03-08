@@ -369,7 +369,6 @@ export class GamePage implements OnInit {
   checkUserAnswer(answer: any) {
     // Set current question index
     this.questionScore = this.questionData[this.questionIndex].questionScore
-    this.randomRemarkSelection = Math.floor(Math.random()*this.correctRemarkArray.length);
     answer.selected = true
 
     if (this.timeLeft > 5) {
@@ -413,7 +412,6 @@ export class GamePage implements OnInit {
     this.questionData[this.questionIndex].response = this.questionResponseClass
 
     if (this.audioEnabled) {
-      this.randomAudioSelection = Math.floor(Math.random()*this.correctSfxArray.length);
       if ( this.questionResponseClass == "incorrect" ) {
         this.audio.playSfx(this.incorrectSfxArray[this.randomAudioSelection]);
       } else {
@@ -425,6 +423,9 @@ export class GamePage implements OnInit {
       this.hintText = this.questionData[this.questionIndex].solutionText;
       this.typedJs = true;
 
+      this.randomRemarkSelection = Math.floor(Math.random()*this.correctRemarkArray.length);
+      this.randomAudioSelection = Math.floor(Math.random()*this.correctSfxArray.length);
+      
       setTimeout(()=> {
         this.presentNextQuestion();
       }, 4000);
@@ -499,6 +500,9 @@ export class GamePage implements OnInit {
     slides.options = this.slideOptions;
     slides.lockSwipes(true);
 
+    this.randomRemarkSelection = Math.floor(Math.random()*this.correctRemarkArray.length);
+    this.randomAudioSelection = Math.floor(Math.random()*this.correctSfxArray.length);
+    
     this.questionResponseClass = "normal";
 
     if (this.currentCategory == 'mathematics' && this.currentLevel >= 1) {
