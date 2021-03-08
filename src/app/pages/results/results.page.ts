@@ -69,7 +69,7 @@ export class ResultsPage implements OnInit {
       this.audio.playSfx('game-sfx-select');
     }
 
-    this.navCtrl.navigateRoot(['/loading'], { animated: false, animationDirection: 'back' });
+    this.navCtrl.navigateRoot(['/loading'], { animated: true, animationDirection: 'back' });
   }
 
   onClickBack() {
@@ -77,7 +77,7 @@ export class ResultsPage implements OnInit {
       this.audio.playSfx('game-sfx-back');
     }
 
-    this.navCtrl.navigateRoot(['/exit'], { animated: false, animationDirection: 'back' });
+    this.navCtrl.navigateRoot(['/exit'], { animated: true, animationDirection: 'back' });
   }
 
   async ionViewWillEnter() {
