@@ -79,14 +79,19 @@ export class GameDataService {
       this.http.get(url, {responseType: 'text'}).toPromise().then(
         (data) => {
         this.fetched = data
-        const decodedData = atob(this.fetched);
-        const jsonData = JSON.parse(decodedData)
+        try {   
+          const decodedData = atob(this.fetched);
+          const jsonData = JSON.parse(decodedData)
 
-        if (persist) {
-          this.setPersistentGameData(key, jsonData);
-        } else {
-          this.setGameData(key, jsonData);
+          if (persist) {
+            this.setPersistentGameData(key, jsonData);
+          } else {
+            this.setGameData(key, jsonData);
+          }
+        } catch(e) {
+            console.error("WT: Invalid WTDB file! "+url)
         }
+
         resolve();
       });
     });
