@@ -337,7 +337,6 @@ export class GamePage implements OnInit {
           this.timeLeft--;
         } else {
           this.timeLeft = 0;
-          this.randomRemarkSelection = Math.floor(Math.random()*this.correctRemarkArray.length);
           this.questionResponseString = this.incorrectRemarkArray[this.randomRemarkSelection]
           this.questionResponseClass = "incorrect"
           this.questionResponse()
