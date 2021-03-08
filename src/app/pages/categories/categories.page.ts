@@ -43,6 +43,11 @@ export class CategoriesPage implements OnInit {
     this.selectedCategory = this.categories[index];
     this.setCurrentCategoryData(this.selectedCategory);
     this.categoryId = this.gameData.getGameData('currentCategoryId')
+
+    if (this.audioEnabled) {
+      this.audio.playSfx('game-sfx-select');
+    }
+
     this.goCategory(this.selectedCategory);
   }
 
