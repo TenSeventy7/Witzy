@@ -20,6 +20,10 @@ export class AudioService {
   private audioPlayer: HTMLAudioElement = new Audio();
   private bgAudioPlayer: HTMLAudioElement = new Audio();
   private forceWebAudio: boolean = false;
+  private fadeOutInterval: any;
+  private fadeInInterval: any;
+  private fadeOutVolume: any;
+  private fadeInVolume: any;
 
   constructor(private platform: Platform){
 
@@ -67,7 +71,7 @@ export class AudioService {
       NativeAudio.preloadComplex({
         assetPath: actualAsset,
         assetId: key,
-        volume: 0.8,
+        volume: 0.0,
         audioChannelNum: 1,
         fade: true,
         isUrl: false
@@ -108,7 +112,7 @@ export class AudioService {
     }
   }
 
-  public playBgm(key: string): void {
+  public async playBgm(key: string): Promise<void> {
 
     let soundToPlay = this.sounds.find((sound) => {
       return sound.key === key;
@@ -118,6 +122,8 @@ export class AudioService {
       NativeAudio.loop({
         assetId: key,
       });
+      
+      await this.fadeIn(soundToPlay.key)
       
     } else {
       this.bgAudioPlayer.src = soundToPlay.asset;
@@ -142,13 +148,61 @@ export class AudioService {
     }
   }
 
-  public stopBgm(key: string): void {
+  private async fadeIn(key: string): Promise<void> {
+    let soundToPlay = this.sounds.find((sound) => {
+      return sound.key === key;
+    });
+
+    this.fadeInVolume = 0.0
+    await this.fadeInVolume
+
+    this.fadeInInterval = setInterval(() => {
+      if ( this.fadeInVolume < 0.8 ) {
+        this.fadeInVolume + 0.01;
+
+        NativeAudio.setVolume({
+          assetId: soundToPlay.key,
+          volume: this.fadeInVolume,
+        });
+      } else {
+        clearInterval(this.fadeInInterval);
+        this.fadeInInterval = undefined;
+      }
+    }, 190)
+  }
+
+  private async fadeOut(key: string): Promise<void> {
+    let soundToPlay = this.sounds.find((sound) => {
+      return sound.key === key;
+    });
+
+    this.fadeOutVolume = 0.8
+    await this.fadeOutVolume
+
+    this.fadeOutInterval = setInterval(() => {
+      if ( this.fadeOutVolume > 0.0 ) {
+        this.fadeOutVolume - 0.01;
+
+        NativeAudio.setVolume({
+          assetId: soundToPlay.key,
+          volume: this.fadeOutVolume,
+        });
+      } else {
+        clearInterval(this.fadeOutInterval);
+        this.fadeOutInterval = undefined;
+      }
+    }, 190)
+  }
+
+  public async stopBgm(key: string): Promise<void> {
 
     let soundToPlay = this.sounds.find((sound) => {
       return sound.key === key;
     });
 
     if(soundToPlay.isNative){
+      await this.fadeOut(soundToPlay.key)
+
       NativeAudio.stop({
         assetId: soundToPlay.key,
       });
@@ -158,12 +212,12 @@ export class AudioService {
     }
   }
 
-  public pauseBgm(key: string): void {
+  public async pauseBgm(key: string): Promise<void> {
 
     let soundToPlay = this.sounds.find((sound) => {
       return sound.key === key;
     });
-
+    await this.fadeOut(soundToPlay.key)
     if(this.platform.is('capacitor') && !this.forceWebAudio){
       NativeAudio.pause({
         assetId: key,
