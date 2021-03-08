@@ -117,7 +117,6 @@ export class LevelsPage implements OnInit {
   onClickPlayButton(){
     this.modalWindowRoll = false;
     this.inputEnabled = false;
-    this.modalVisible = false;
 
     if (this.audioEnabled) {
       this.audio.playSfx('game-sfx-select');
@@ -128,7 +127,11 @@ export class LevelsPage implements OnInit {
     }
 
     setTimeout(()=> {
+      this.modalFade = "fadeOut"
+      setTimeout(()=> {
+        this.modalVisible = false;
         this.navCtrl.navigateRoot(['/loading'], { animated: true, animationDirection: 'forward' });
+      }, 300);
     }, 400);
   }
 
