@@ -502,7 +502,7 @@ export class GamePage implements OnInit {
 
     this.randomRemarkSelection = Math.floor(Math.random()*this.correctRemarkArray.length);
     this.randomAudioSelection = Math.floor(Math.random()*this.correctSfxArray.length);
-    
+
     this.questionResponseClass = "normal";
 
     if (this.currentCategory == 'mathematics' && this.currentLevel >= 1) {
@@ -526,7 +526,10 @@ export class GamePage implements OnInit {
             this.inputEnabled = true;
 
             setTimeout(()=> {
-              this.clearTimer();
+              this.audio.pauseBgm("game-bgm-level-screen");
+              setTimeout(()=> {
+                this.clearTimer();
+              }, 750);
             }, 750);
 
           } else if (state.isActive && this.inactive) {
@@ -544,9 +547,7 @@ export class GamePage implements OnInit {
         this.inputEnabled = true;
 
         setTimeout(()=> {
-          if (this.musicEnabled) {
-            this.audio.pauseBgm("game-bgm-level-screen");
-          }
+          this.audio.pauseBgm("game-bgm-level-screen");
 
           setTimeout(()=> {
             this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
