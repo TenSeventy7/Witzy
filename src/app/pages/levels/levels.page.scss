@@ -1,7 +1,7 @@
 $button-elevation: .15em;
 
 .background-layers {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     height: 100%;
@@ -9,12 +9,18 @@ $button-elevation: .15em;
     z-index: -1;
 
     .background-layer-1 {
+        position: absolute;
+        top: 0;
+        left: 0;
         height: 100%;
         width: 100%;
         z-index: -2;    
     }
 
     .background-layer-2 {
+        position: absolute;
+        top: 0;
+        left: 0;
         height: 100%;
         width: 100%;
         z-index: -3;
@@ -22,18 +28,27 @@ $button-elevation: .15em;
     }
     
     .background-layer-3 {
+        position: absolute;
+        top: 0;
+        left: 0;
         height: 100%;
         width: 100%;
         z-index: -4;
     }
     
     .background-layer-4 {
+        position: absolute;
+        top: 0;
+        left: 0;
         height: 100%;
         width: 100%;
         z-index: -5;
     }
     
     .background-layer-5 {
+        position: absolute;
+        top: 0;
+        left: 0;
         height: 100%;
         width: 100%;
         z-index: -6;
@@ -56,7 +71,6 @@ $button-elevation: .15em;
 
     .background-layer-3 {
         background-image: url("/assets/backgrounds/stars_black.gif");
-        backdrop-filter: invert(28%) sepia(40%) saturate(919%) hue-rotate(223deg) brightness(91%) contrast(84%);
         background-repeat: no-repeat;
     }
 
