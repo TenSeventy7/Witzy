@@ -2,11 +2,11 @@
   <ion-header class="ion-no-border game-header" mode='md'>
     <ion-toolbar>
       <ion-buttons slot="start">
-        <ion-button class="header-back-button" shape="round" size="small" fill="clear" (click)="showGameModal()">
+        <ion-button class="header-back-button header-back-button-{{ currentCategory }}" shape="round" size="small" fill="clear" (click)="showGameModal()">
           <img src="/assets/ui/icons/barsHorizontal.png"/>
         </ion-button>
       </ion-buttons>
-      <ion-title class="header-title">Level {{ currentLevelTrue }}</ion-title>
+      <ion-title class="header-title header-title-{{ currentCategory }}">Level {{ currentLevelTrue }}</ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -32,7 +32,7 @@
                 </ion-grid>
               </ion-col>
               <ion-col size="4" class="ion-text-center game-detail-score">
-                <ion-badge [ngClass]="{ 'witzy-leveldetail-score-animation': animateScore == true }" mode="ios">{{ currentScore }}</ion-badge>
+                <ion-badge class="game-detail-score-{{ currentCategory }}" [ngClass]="{ 'witzy-leveldetail-score-animation': animateScore == true }" mode="ios">{{ currentScore }}</ion-badge>
               </ion-col>
               <ion-col size="4" class="ion-text-center game-detail-stars">
                 <img src="/assets/ui/icons/star.png" class="earned-star-{{ currentCategory }}" [ngClass]="{'unearned-star': roundStars < 1}"/>

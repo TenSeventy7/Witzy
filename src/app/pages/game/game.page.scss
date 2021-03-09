@@ -251,6 +251,20 @@ $button-elevation: .2em;
     border: 3px solid var(--ion-color-science-main-tint);
 }
 
+.game-detail-score-science {
+    background-color: var(--ion-color-science-main) !important;
+}
+
+.header-title-science {
+  color: var(--ion-color-science-main-shade) !important;
+}
+
+.header-back-button-science {
+  img {
+    filter: invert(34%) sepia(75%) saturate(2904%) hue-rotate(22deg) brightness(98%) contrast(105%);
+  }
+}
+
 .timer-color-science ion-text {
     $color: #058AA6;
     color: darken(saturate($color, 0.38), 16.08);
@@ -275,6 +289,20 @@ $button-elevation: .2em;
   border: 3px solid var(--ion-color-mathematics-main-tint);
 }
 
+.game-detail-score-mathematics {
+    background-color: var(--ion-color-mathematics-main) !important;
+}
+
+.header-title-mathematics {
+  color: var(--ion-color-mathematics-main-shade) !important;
+}
+
+.header-back-button-mathematics {
+  img {
+    filter: invert(18%) sepia(22%) saturate(4978%) hue-rotate(337deg) brightness(91%) contrast(97%);
+  }
+}
+
 .timer-color-mathematics ion-text {
   $color: #764EAD;
   color: darken(saturate($color, 0.38), 16.08);
@@ -297,6 +325,20 @@ $button-elevation: .2em;
     background-color: var(--ion-color-literature-main);
     box-shadow: 0 $button-elevation var(--ion-color-literature-main-shade);
     border: 3px solid var(--ion-color-literature-main-tint);
+}
+
+.game-detail-score-literature {
+    background-color: var(--ion-color-literature-main) !important;
+}
+
+.header-title-literature {
+  color: var(--ion-color-literature-main-shade) !important;
+}
+
+.header-back-button-literature {
+  img {
+    filter: invert(20%) sepia(81%) saturate(372%) hue-rotate(29deg) brightness(97%) contrast(96%);
+  }
 }
 
 .timer-color-literature ion-text {
