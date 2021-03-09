@@ -33,37 +33,3 @@ ion-content {
     }
 }
 
-
-.preload-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 0;
-    width: 0;
-    z-index: -999;
-
-    .background-layer-1 {
-        background-image: url("/assets/backgrounds/science/layer_1.png");
-        position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: -2;
-    }
-
-    .background-layer-2 {
-        background-image: url("/assets/backgrounds/science/layer_2.png");
-        position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: -2;
-        
-    }
-    
-    .background-layer-3 {
-        background-image: url("/assets/backgrounds/stars_black.gif");
-        position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: -2;
-    }
-    
-    .background-layer-4 {
-        background-image: url("/assets/backgrounds/lightPurple.png");
-        position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: -2;
-    }
-    
-    .background-layer-5 {
-        position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: -2;
-    }
-}
