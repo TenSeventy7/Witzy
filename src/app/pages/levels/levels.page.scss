@@ -1,5 +1,71 @@
 $button-elevation: .15em;
 
+.background-layers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+
+    .background-layer-1 {
+        height: 100%;
+        width: 100%;
+        z-index: -2;    
+    }
+
+    .background-layer-2 {
+        height: 100%;
+        width: 100%;
+        z-index: -3;
+        
+    }
+    
+    .background-layer-3 {
+        height: 100%;
+        width: 100%;
+        z-index: -4;
+    }
+    
+    .background-layer-4 {
+        height: 100%;
+        width: 100%;
+        z-index: -5;
+    }
+    
+    .background-layer-5 {
+        height: 100%;
+        width: 100%;
+        z-index: -6;
+    }
+}
+
+.background-layers-science {
+    .background-layer-1 {
+        background-image: url("/assets/backgrounds/science/layer_1.png");
+        background-size: contain;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+    }
+
+    .background-layer-2 {
+        background-image: url("/assets/backgrounds/science/layer_2.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .background-layer-3 {
+        background-image: url("/assets/backgrounds/stars_black.gif");
+        backdrop-filter: invert(28%) sepia(40%) saturate(919%) hue-rotate(223deg) brightness(91%) contrast(84%);
+        background-repeat: no-repeat;
+    }
+
+    .background-layer-4 {
+        background-image: url("/assets/backgrounds/lightPurple.png");
+        background-repeat: repeat;
+    }
+}
+
 .bounceIn {
 	-webkit-animation-name: bounceIn !important;
 	animation-name: bounceIn !important;

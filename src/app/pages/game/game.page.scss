@@ -6,6 +6,18 @@ ion-content {
   background-repeat: repeat;
 }
 
+.background-layer-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  background-image: url("/assets/backgrounds/spaceShip.png");
+  background-repeat: no-repeat;
+  z-index: -2;
+}
+
 ion-toolbar {
   background: transparent !important;
 }
