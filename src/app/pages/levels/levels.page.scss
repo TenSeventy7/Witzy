@@ -8,7 +8,7 @@ $button-elevation: .15em;
     width: 100%;
     z-index: -1;
     transform-style: preserve-3d;
-    transform: perspective(2000px);
+    transform: perspective(1500px);
 
     .background-layer-1 {
         position: absolute;
@@ -18,13 +18,20 @@ $button-elevation: .15em;
         width: 100%;
         z-index: -2;
     }
+}
+
+.background-layers-np {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -2;
 
     .background-layer-2 {
         position: absolute;
-        top: -25%;
-        left: -25%;
-        height: 175%;
-        width: 175%;
+        height: 100%;
+        width: 100%;
         z-index: -3;
     }
     
@@ -36,15 +43,6 @@ $button-elevation: .15em;
         width: 100%;
         z-index: -4;
     }
-}
-
-.background-layers-np {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: -2;
     
     .background-layer-4 {
         position: absolute;
@@ -81,11 +79,6 @@ $button-elevation: .15em;
     }
 
     .background-layer-3 {
-        background-image: url("/assets/backgrounds/stars_black.gif");
-        background-repeat: no-repeat;
-    }
-
-    .background-layer-4 {
         background-image: url("/assets/backgrounds/lightPurple.png");
         background-repeat: repeat;
     }
