@@ -12,7 +12,7 @@
 
   <ion-grid class="game-container">
     
-    <ion-row class="game-detail-container">
+    <ion-row class="game-detail-bg">
       <ion-col>
         <ion-header class="ion-no-border" mode='md'>
           <ion-grid class="ion-align-items-center game-detail-container">
@@ -84,7 +84,7 @@
       </ion-col>
     </ion-row>
     
-    <ion-row class="ion-align-self-end">
+    <ion-row class="game-window-container ion-align-self-end">
       <ion-col>
         <div class="game-hint-container">
           <div class="game-window">
@@ -109,6 +109,7 @@
 
   </ion-grid>
   <div class="background-layer-1"></div>
+  <div class="background-layer-2"></div>
 </ion-content>
 
 <div class="level-modal" [ngClass]="{ 'level-modal-visible': modalFade == 'fadeIn' }" *ngIf="modalVisible">
