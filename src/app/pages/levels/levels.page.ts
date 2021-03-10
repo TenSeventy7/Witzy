@@ -168,7 +168,7 @@ export class LevelsPage implements OnInit {
     this.modalVisible = false;
     this.modalWindowRoll = false;
 
-    VanillaTilt.init(document.querySelector(".background-layers"), { max: 20, gyroscope: true, glare: false, reset: true, perspective: 1500 });
+    VanillaTilt.init(document.querySelector(".background-layers"), { max: 15, gyroscope: true, glare: false, reset: true, perspective: 2000 });
     VanillaTilt.init(document.querySelectorAll(".background-layers"));
   }
 
