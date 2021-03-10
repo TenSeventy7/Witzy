@@ -112,6 +112,10 @@ export class LevelsPage implements OnInit {
 
         setTimeout(()=> {
           this.inputEnabled = true;
+
+          this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
+            this.navCtrl.navigateBack(['/categories'], { animated: true });
+          });
         }, 400);
       }, 300);
     }, 400);
