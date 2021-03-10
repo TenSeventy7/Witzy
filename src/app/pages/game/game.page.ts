@@ -572,4 +572,8 @@ export class GamePage implements OnInit {
     }, 300);
     
   }
+
+  ionViewDidLeave() {
+    App.removeAllListeners();
+  }
 }
