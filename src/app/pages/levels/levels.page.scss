@@ -13,7 +13,6 @@ ion-content {
     z-index: -1;
     transform: perspective(1500px);
     transform-style: preserve-3d;
-    overflow: hidden;
 
     .background-layer-1 {
         position: fixed;
@@ -76,7 +75,7 @@ ion-content {
         background-size: contain;
         background-position: center bottom;
         background-repeat: no-repeat;
-        transform: translateZ(100px);
+        transform: translateZ(70px);
     }
 
     .background-layer-2 {
