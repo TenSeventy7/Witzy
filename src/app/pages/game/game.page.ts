@@ -574,6 +574,16 @@ export class GamePage implements OnInit {
   }
 
   ionViewDidLeave() {
-    App.removeAllListeners();
+
+    if (this.platform.is('capacitor')) {
+
+      App.addListener('appStateChange', (state: AppState) => {
+        //console.log("App state changed.")
+      });
+
+      App.addListener('appRestoredResult', (data: any) => {
+        //console.log("App restored.")
+      });
+    }
   }
 }
