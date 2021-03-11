@@ -190,15 +190,20 @@ export class GamePage implements OnInit {
 
   startLevel() {
     setTimeout(()=> {
-      this.modalVisible = false;
       this.isCountdown = false;
       this.modalFade = "fadeOut";
   
       setTimeout(()=> {
+        this.modalVisible = false;
+
         if (this.musicEnabled) {
           this.audio.playBgm("game-bgm-level-screen");
         }
-        
+
+        this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
+          this.showGameModal();
+        });
+
         this.startTimer();
         this.typedJs = true;
         setTimeout(()=> {
@@ -558,7 +563,7 @@ export class GamePage implements OnInit {
     }
 
     this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
-      this.showGameModal();
+      // Button disabled
     });
 
     this.modalVisible = true;
