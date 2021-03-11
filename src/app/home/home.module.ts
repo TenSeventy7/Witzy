@@ -5,14 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
-import { MenuBackgroundComponentModule } from '../components/menu-background/menu-background.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MenuBackgroundComponentModule,
     RouterModule.forChild([
       {
         path: '',
