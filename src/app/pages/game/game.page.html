@@ -142,10 +142,5 @@
     <ion-text class="countdown-text {{ countdownClass }}" *ngIf="(isCountdown && !isDone)">{{ countdown }}</ion-text>
     <ion-text class="countdown-text {{ countdownClass }}" *ngIf="(isCountdown && isDone)">Go!</ion-text>
   </div>
-  <div class="countdown-background" *ngIf="isCountdown">
-    <div id='stars'></div>
-    <div id='stars2'></div>
-    <div id='stars3'></div>
-  </div>
 </div>
 <div class="disable-input" [hidden]="inputEnabled"></div>
