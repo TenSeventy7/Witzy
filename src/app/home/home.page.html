@@ -15,14 +15,14 @@
         <ion-row class="ion-align-items-center">
           <ion-col size="4" class="ion-text-center">
               <ion-button class="setting-button" mode="ios" (click)="toggleMusic()">
-                <img *ngIf="musicEnabled" src="/assets/ui/icons/musicOn.png"/>
-                <img *ngIf="!musicEnabled" class="icon-inactive" src="/assets/ui/icons/musicOff.png"/>
+                <img *ngIf="musicEnabled" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAAAM1BMVEUAAAD///////////////////////////////////////////////////////////////+3leKCAAAAEHRSTlMA7w+/jz+fX9/PL2+vfx9PzQlaYQAAARJJREFUaN7t2MuOgzAMheEkzo1wqd//aUfqqhpllLgmHqk9/xbEJxYcBA4hhBBC6CMKJxH/HVFOemPjYVmLZJ6oKJE6g1QlwlOZIOFj7gQIECBmiOsEBAiQ70BSJL94VhKt367dYCAzr0cKr0cSr0eCN0Air0cCGyDFAjksEH8vkrLvXIb70VtEI2aeR+I7xs4sQh5O3skyxDtB43XausgpBAbrFPVf8eN1urhTkwGDdeoe9UUIjNcpbL+NICbG6xQyv7Y1KTC3TqUqnsLpdQrleJ5V46UcRPkE6hFvgRwWSLoVIcULQ7jy4idOP12+uZvbBQt4359gn9yC9glDX3uZ2hjcqh65Pjf2vBxCCCH07/0At+ZxOXvne30AAAAASUVORK5CYII="/>
+                <img *ngIf="!musicEnabled" class="icon-inactive" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAAAM1BMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACjBUbJAAAAEHRSTlMA7y9fD8+/P59vj38fr0/fmUt1XQAAAW1JREFUaN7t192OhCAMhuGiUPB3ev9XuzGbPVnFj6EdN9n0PVafNBhE8jzP8zzP+xfFhVnqMZesN14CK1pkloZGJTIEwb2oq4mZt71Z6TJ2OQpDqxJ7kCRQ0U8ighU9ghU9wljRI1mgokdofE+hJxR6QqEnFHpCISvlHET0Ckb0Ckb0Ckb0Ckb0Ckb0Ckb0Ckb0ij0Sz4o9kq6VWIKIGSIVZRRLBChGCFb0CFCMEKzoEaAYIpLoUtmDJSLVL7IpUlUskbpiitSVQH3lEk4bR1XhLmLg65PVcK0sPcZUO76FC6WzRWqImCmjVBG2UrLUkUlslBhukPV46KpXZqkj38uVolaJcovEZKGM9wjFYqBsACGag1oJEKF1Dkql7Yct55VOihoJLSdYLbIRVliLZGpQmhG+NLjppdfs8iIhUoOyKbYuvKQjvgqPAu8ekghHeqPye45MH2gyMvD0P82RPtVeXoeQlpU8z/M878/7ArAzb6jFbOtkAAAAAElFTkSuQmCC"/>
               </ion-button>
           </ion-col>
           <ion-col size="4" class="ion-text-center">
               <ion-button class="setting-button" mode="ios" (click)="toggleAudio()">
-                <img *ngIf="audioEnabled" src="/assets/ui/icons/audioOn.png"/>
-                <img *ngIf="!audioEnabled" class="icon-inactive" src="/assets/ui/icons/audioOff.png"/>
+                <img *ngIf="audioEnabled" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAAAM1BMVEUAAAD///////////////////////////////////////////////////////////////+3leKCAAAAEHRSTlMAD+/PLz+/33+vX59PH49vk36SzgAAAVJJREFUaN7t2MFugzAQhOGxjYGkIez7P22byNFo1R5ItYNy2P+4WukTIBMUZFmWZVmWPZvmn9a1QNhU7VmlojBGX2ACYwSmMYjoDCI6g4jOIKIziOgNExpMaDChwYQGExrM77RJYHikNKtdYDjk/hhcow2PdDMqYYZHyjJGPdTwyMVGtQQbRAq3LsEGEWzNXvVYw/7cnGMNc7v26oZDzaNqxxHsbz4VOxhcy5hWJdJ5v2QIL2VVIvcxnnUI79eiRArnOgSJfNwz6WPclMh6xjlpJ5z47Yx312yjcgjpo/YO0v/5K1/acYTfEleEKn6Tr8dQBexivJBYhVuzGU9irMItLk0IVtzHE29WrAK28z+dYMUdRRqRike2SiNUcTs3uwMCBa4NUCj4lUCBUiGiVIgoFSJKhYhSIaJUiCgVIkplAZMpK5hK2aGs9EcFWZZlWca+AUJUcxWx75VLAAAAAElFTkSuQmCC"/>
+                <img *ngIf="!audioEnabled" class="icon-inactive" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkBAMAAACCzIhnAAAAJFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACmWAJHAAAAC3RSTlMAD+/PLz+/f9+fb+YJrcAAAACgSURBVFjD7c2xDUEBGADhkxhAYgK1EXQ2ULwV3grWsQVyy1GKRq72X3/5mKZp+my7rtcdqbN6aMhRfWZEM6IdsSN2xI7YETtiR+yIHbEjdsSO2BE7YkfsiB2xI1bk97K+O7ZF1Vlm+cdleXdqC8C+L5svhs7QGTpDZ+gMnaEzdIbO0Bk6Q2foDJ2hM3SGztAZMvMgM3cyc6Mxy3JhmqbPXiD1NdcG685JAAAAAElFTkSuQmCC"/>
               </ion-button>
           </ion-col>
           <ion-col size="4" class="ion-text-center">
