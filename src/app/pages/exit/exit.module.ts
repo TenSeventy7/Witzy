@@ -7,14 +7,12 @@ import { IonicModule } from '@ionic/angular';
 import { ExitPageRoutingModule } from './exit-routing.module';
 
 import { ExitPage } from './exit.page';
-import { SplashComponentModule } from '../../components/splash/splash.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SplashComponentModule,
     ExitPageRoutingModule
   ],
   declarations: [ExitPage]

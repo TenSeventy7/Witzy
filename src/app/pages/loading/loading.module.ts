@@ -7,14 +7,12 @@ import { IonicModule } from '@ionic/angular';
 import { LoadingPageRoutingModule } from './loading-routing.module';
 
 import { LoadingPage } from './loading.page';
-import { SplashComponentModule } from '../../components/splash/splash.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SplashComponentModule,
     LoadingPageRoutingModule
   ],
   declarations: [LoadingPage]
