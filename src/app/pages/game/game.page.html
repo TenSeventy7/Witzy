@@ -1,4 +1,4 @@
-<ion-content>
+<ion-content class="game-bg-{{ currentCategory }}">
   <ion-header class="ion-no-border game-header" mode='md'>
     <ion-toolbar>
       <ion-buttons slot="start">
@@ -111,7 +111,7 @@
   <div class="background-layer-1"></div>
   <div class="background-layer-2"></div>
   <div class="twinkling-container"> 
-    <div class="twinkling"></div>
+    <div class="twinkling twinkling-{{ currentCategory }}"></div>
   </div>
 </ion-content>
 
