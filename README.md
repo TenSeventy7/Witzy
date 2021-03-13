@@ -12,7 +12,30 @@ Join the adventures of boy and alien as they traverse the galaxy of knowledge an
 You can also play Witzy **online!**
 https://witzy.vercel.app
 
-This APK distributed below has been checked by Google Play Protect and has no threats.
+## About Witzy
+Witzy is developed by University of Perpetual Help - GMA Campus students as our capstone project for March 2021.
+
+**Developer:** John Vincent Corcega (TenSeventy7)
+
+**Art Designer:** Micaela Denise Sarra
+
+### Main Contributors
+
+ - ANDRES, K.
+ - APUNTAR, A.
+ - ARANDIA, J.
+ - JAMOROL, R.
+ - RODAJE, R.
+ - TALLOD, C.
+ 
+### Special Thanks
+* MALIMATA, C.
+* LACHICA, J.
+* STACKOVERFLOW (HAHA)
+* PERPETUAL GMA
+* YOU! (OFC)
+
+Assets provided by Kenney Game Studios. Music provided by HeatlyBros Music.
 
 ## Developing
 
