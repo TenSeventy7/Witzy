@@ -45,6 +45,11 @@ $button-elevation: .15em;
     }
 }
 
+.game-hint-container {
+    margin-top: 4vh;
+    position: fixed;
+}
+
 @media (aspect-ratio: 9/16), (aspect-ratio: 375/667) {
     .results-window {
       margin-top: 0;
@@ -133,6 +138,4 @@ $button-elevation: .15em;
     box-shadow: 0 $button-elevation var(--ion-color-literature-main-shade);
     border: 3px solid var(--ion-color-literature-main-tint);
     color: darken(saturate($color, 0.38), 16.08);
-}
-
 }
