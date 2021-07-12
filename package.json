@@ -22,7 +22,7 @@
     "@angular/router": "~11.2.3",
     "@capacitor-community/keep-awake": "^1.0.0",
     "@capacitor-community/native-audio": "git+https://github.com/kheftel/native-audio.git#new-features",
-    "@capacitor/android": "^2.4.6",
+    "@capacitor/android": "^2.4.8",
     "@capacitor/core": "2.4.7",
     "@ionic-native/android-full-screen": "^5.31.1",
     "@ionic-native/core": "^5.31.1",
